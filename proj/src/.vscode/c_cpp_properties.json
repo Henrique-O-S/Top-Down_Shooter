@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+<<<<<<< HEAD:proj/.vscode/c_cpp_properties.json
 {
   "env": {
     "minix.include": "${workspaceFolder}/../.minix-src/include"
@@ -21,7 +21,7 @@
 =======
 {
   "env": {
-    "minix.include": "${workspaceFolder}/../.minix-src/include"
+    "minix.include": "${workspaceFolder}/../../.minix-src/include"
   },
   "configurations": [{
     "name": "Minix",
@@ -38,4 +38,4 @@
   "version": 4
 }
 
->>>>>>> 780fe79cac34be104bb521b0e6e20dfa2d44e197
+>>>>>>> 780fe79cac34be104bb521b0e6e20dfa2d44e197:proj/src/.vscode/c_cpp_properties.json

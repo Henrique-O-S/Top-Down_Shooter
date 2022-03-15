@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "env": {
     "minix.include": "${workspaceFolder}/../.minix-src/include"
@@ -17,3 +18,24 @@
   "version": 4
 }
 
+=======
+{
+  "env": {
+    "minix.include": "${workspaceFolder}/../.minix-src/include"
+  },
+  "configurations": [{
+    "name": "Minix",
+    "compilerPath": "",
+    "cStandard": "c11",
+    "defines": ["__minix", "_MINIX", "_NETBSD_SOURCE", "__i386__"],
+    "includePath": ["${workspaceFolder}", "${env:minix.include}"],
+    "browse": {
+      "path": ["${workspaceFolder}", "${env:minix.include}"],
+      "limitSymbolsToIncludedHeaders": false,
+      "databaseFilename": ""
+    }
+  }],
+  "version": 4
+}
+
+>>>>>>> 780fe79cac34be104bb521b0e6e20dfa2d44e197
