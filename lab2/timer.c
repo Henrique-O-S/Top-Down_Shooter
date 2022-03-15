@@ -33,15 +33,27 @@ void (timer_int_handler)() {
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
   /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  //printf("%s is not yet implemented!\n", __func__);
+  if(st == NULL) return 1;
+  int port = TIMER_0;
 
-  return 1;
+  if(util_sys_inb(port, st)) return 1;
+
+  return 0;
 }
 
 int (timer_display_conf)(uint8_t timer, uint8_t st,
                         enum timer_status_field field) {
   /* To be implemented by the students */
   printf("%s is not yet implemented!\n", __func__);
-
   return 1;
+  /*
+  union timer_status_field_val conf;
+  switch(field) {
+    
+  }
+
+  timer_print_config(timer, field, st);
+  return 1;
+  */
 }
