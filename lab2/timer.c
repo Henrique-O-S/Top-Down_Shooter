@@ -7,29 +7,30 @@
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   
-  if(timer < 0 || timer > 2){
-    printf("Invalid timer!\n");
+  if(freq > TIMER_FREQ || freq == 0) {
+    printf("Frequency out of range\n");
     return 1;
   }
-
-  uint16_t val = TIMER_FREQ / freq;
-
+  if(timer < 0 || timer > 2) {
+    printf("Timer out of range\n");
+    return 1;
+  }
+  
   uint8_t lsb;
-  util_get_LSB(val, &lsb);
-
   uint8_t msb;
-  util_get_MSB(val, &msb);
+  uint16_t val = (uint16_t) (TIMER_FREQ / freq);
+  if(util_get_LSB(val, &lsb)) return 1;
+  if(util_get_MSB(val, &msb)) return 1;
 
   uint8_t readback;
-  if(timer_get_conf(timer, readback)){
+  if(timer_get_conf(timer, &readback)){
     printf("Failed while getting conf\n");
     return 1;
   }
 
-  uint8_t timer_reg = TIMER_0 | timer;
-  uint8_t timer_sel = (timer << 6);
-  
-  
+  /* Qual a funcionalidade disto?? */
+  //uint8_t timer_reg = TIMER_0 | timer;
+  //uint8_t timer_sel = (timer << 6);
   
   return 0;
 }
@@ -57,7 +58,6 @@ void (timer_int_handler)() {
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
 
   if(st == NULL) return 1;
-
   if(timer < 0 || timer > 2){
     printf("Invalid timer!\n");
     return 1;
@@ -68,7 +68,6 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
   if(sys_outb(TIMER_CTRL, readback)) return 1;
 
   int port = TIMER_0 | timer;
-
   return util_sys_inb(port, st);
 }
 
@@ -86,7 +85,7 @@ int (timer_display_conf)(uint8_t timer, uint8_t st,
       conf.byte = st; /* Displays status byte */
       break;
     case tsf_initial:
-      init_mode = (st & aux) >> 4;
+      init_mode = (st & aux) >> 0x04;
       switch (init_mode)
       {
       case 0:
@@ -103,17 +102,16 @@ int (timer_display_conf)(uint8_t timer, uint8_t st,
         break;
       
       default:
-        break;
+        return 1;
       }
-    
       break;
-
-    aux = 0x0e;
     case tsf_mode:
-      conf.count_mode = (st & aux) >> 1;
-      if(conf.count_mode > 5) conf.count_mode -= 4;
+      aux = 0x0e;
+      conf.count_mode = (st & aux) >> 0x01;
+      if(conf.count_mode > 0x05) conf.count_mode -= 0x04;
       break;
     case tsf_base:
+      conf.bcd = (st & 0x01);
       break;
     
   }
