@@ -6,6 +6,7 @@
 #include "i8254.h"
 #include "error.h"
 
+
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   
   if(freq > TIMER_FREQ || freq < TIMER_MIN_FREQ) {
@@ -49,24 +50,24 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   return SUCCESS;
 }
 
+static int hook_id;
 
 int (timer_subscribe_int)(uint8_t *bit_no) {
-    /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+    if(bit_no == NULL) return NULL_PTR;
+    hook_id = 2;
+    *bit_no = hook_id;
+    return sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id);
 
   return 1;
 }
 
 int (timer_unsubscribe_int)() {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
-
-  return 1;
+  return sys_irqrmpolicy(&hook_id);
 }
 
+uint32_t no_interrupts = 0;
 void (timer_int_handler)() {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  no_interrupts++;
 }
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {

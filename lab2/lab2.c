@@ -4,6 +4,8 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+#include "lcom/timer.h"
+
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -48,13 +50,14 @@ int(timer_test_time_base)(uint8_t timer, uint32_t freq) {
 }
 
 int(timer_test_int)(uint8_t time) {
-  const int freq = 60; /* Recommended frequency */
+  const int frequency = 60; /* Recommended frequency */
   message msg;
   int ipc_status, r;
   uint8_t timer_id = 0;
   if(timer_subscribe_int(&timer_id)) return 1;
-
-
+  int irq_set = BIT(timer_id);
+  
+  no_interrupts = 0;
   while (1) {
     /* Get a request message. */
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
@@ -65,7 +68,11 @@ int(timer_test_int)(uint8_t time) {
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: /* hardware interrupt notification */
           if (msg.m_notify.interrupts & irq_set) { /* subscribed interrupt */
-            
+            timer_int_handler();
+            if (!(no_interrupts % frequency)) { /* second elapsed */
+              timer_print_elapsed_time();
+              time--;
+            }
           }
           break;
         default:

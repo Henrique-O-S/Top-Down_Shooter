@@ -112,4 +112,6 @@ int(timer_print_config)(uint8_t timer, enum timer_status_field field,
  */
 uint32_t(timer_print_elapsed_time)();
 
+uint32_t no_interrupts;
+
 #endif /* __TIMER_H */
