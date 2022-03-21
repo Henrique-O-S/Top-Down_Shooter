@@ -29,15 +29,15 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
     return 1;
   }
 
-  /* Qual a funcionalidade disto?? */
+  
   //timer_reg é semelhante a port em timer_get_conf, tem o port do timer
   //timer_sel é para selecionar o timer com control word que se passa ao sys_outb
   uint8_t timer_reg = TIMER_0 | timer;
   uint8_t timer_sel = (timer << 6);
 
   //Bits 0 a 3 ficam com valor que tinham anteriormente, 
-  //bits 4 e 5 a 1 por causa de TIMER_LSB_MSB
-  //bits 6 e 7 dependem de timer_sel
+  //Bits 4 e 5 a 1 por causa de TIMER_LSB_MSB
+  //Bits 6 e 7 dependem de timer_sel
   control_word = (control_word & 0x0F) | TIMER_LSB_MSB | timer_sel;
 
   if(sys_outb(TIMER_CTRL, control_word) ||
@@ -46,7 +46,7 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
     return 1;
   }
   
-  return 0;
+  return SUCCESS;
 }
 
 
@@ -90,9 +90,6 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
 
 int (timer_display_conf)(uint8_t timer, uint8_t st,
                         enum timer_status_field field) {
-  /* To be implemented by the students */
-  
-
   uint8_t aux = 0x30;
   uint8_t init_mode;
   union timer_status_field_val conf;
@@ -135,6 +132,6 @@ int (timer_display_conf)(uint8_t timer, uint8_t st,
 
   if(timer_print_config(timer, field, conf)) return 1;
 
-  return 0;
+  return SUCCESS;
   
 }
