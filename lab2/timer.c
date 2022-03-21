@@ -8,9 +8,13 @@
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   
-  if(freq > TIMER_FREQ || freq <= 0) {
+  if(freq > TIMER_FREQ || freq < TIMER_MIN_FREQ) {
     printf("Frequency out of range\n");
     return FREQ_ERROR;
+  }
+  if(timer < 0 || timer > 2) {
+    printf("Timer out of range\n");
+    return TIMER_ERROR;
   }
   
   uint8_t lsb;
