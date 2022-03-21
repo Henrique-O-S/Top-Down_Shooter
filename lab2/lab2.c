@@ -48,9 +48,36 @@ int(timer_test_time_base)(uint8_t timer, uint32_t freq) {
 }
 
 int(timer_test_int)(uint8_t time) {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  const int freq = 60; /* Recommended frequency */
+  message msg;
+  int ipc_status, r;
+  uint8_t timer_id = 0;
+  if(timer_subscribe_int(&timer_id)) return 1;
+
+
+  while (1) {
+    /* Get a request message. */
+    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+      printf("driver_receive failed with %d", r);
+      continue;
+    }
+    if (is_ipc_notify(ipc_status)) { /* received notification */
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE: /* hardware interrupt notification */
+          if (msg.m_notify.interrupts & irq_set) { /* subscribed interrupt */
+            
+          }
+          break;
+        default:
+          break; /* no other notifications expected: do nothing */
+      }
+    } else { /* received standart message, not a notification */
+            /* no standart message expected: do nothing */
+      }
+    }
+
   
+
 
   return 1;
 }
