@@ -60,6 +60,7 @@ int(timer_test_int)(uint8_t time) {
   
   no_interrupts = 0;
   while (time > 0) {
+    
     /* Get a request message. */
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
       printf("driver_receive failed with %d", r);
@@ -83,9 +84,7 @@ int(timer_test_int)(uint8_t time) {
             /* no standart message expected: do nothing */
       }
     }
+  if(timer_unsubscribe_int()) return 1;
 
-  
-
-
-  return 1;
+  return 0;
 }
