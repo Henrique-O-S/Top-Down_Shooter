@@ -6,6 +6,7 @@
 
 #include "lcom/timer.h"
 
+extern uint32_t no_interrupts;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -58,7 +59,8 @@ int(timer_test_int)(uint8_t time) {
   int irq_set = BIT(timer_id);
   
   no_interrupts = 0;
-  while (1) {
+  while (time > 0) {
+    
     /* Get a request message. */
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
       printf("driver_receive failed with %d", r);
@@ -82,9 +84,7 @@ int(timer_test_int)(uint8_t time) {
             /* no standart message expected: do nothing */
       }
     }
+  if(timer_unsubscribe_int()) return 1;
 
-  
-
-
-  return 1;
+  return 0;
 }
