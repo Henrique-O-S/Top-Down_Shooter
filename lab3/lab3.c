@@ -5,6 +5,8 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+#include "kbd.h"
+
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
   lcf_set_language("EN-US");
@@ -30,8 +32,31 @@ int main(int argc, char *argv[]) {
 }
 
 int(kbd_test_scan)() {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  int r, ipc_status;
+  message msg;
+  uint8_t kbc_irq_bit = 1;
+  uint8_t kbc_id;
+  int kbc_irq = BIT(kbc_irq_bit);
+
+  if(kbd_subscribe_int(kbc_id)) return 1;
+
+
+  int processing = 1;
+  while(processing) {
+    switch (_ENDPOINT_P(msg.m_source)) {
+      case HARDWARE: /* hardware interrupt notification */
+        if (msg.m_notify.interrupts & kbc_irq_bit) { // KBD int?
+          kbc_ih();
+
+          /* process KBD interrupt request */
+        }
+        break;
+      default:
+        break; /* no other notifications expected: do nothing */
+    }
+  }
+  
+  if(kbd_unsubscribe_int()) return 1;
 
   return 1;
 }
