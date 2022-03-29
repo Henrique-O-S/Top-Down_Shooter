@@ -35,28 +35,28 @@ int(kbd_test_scan)() {
   int r, ipc_status;
   message msg;
   uint8_t kbc_irq_bit = 1;
-  uint8_t kbc_id;
-  int kbc_irq = BIT(kbc_irq_bit);
 
-  if(kbd_subscribe_int(kbc_id)) return 1;
+  if(kbd_subscribe_int(kbc_irq_bit)) return 1;
+
+  int kbc_irq = BIT(kbc_irq_bit);
 
 
   int processing = 1;
   while(processing) {
     switch (_ENDPOINT_P(msg.m_source)) {
       case HARDWARE: /* hardware interrupt notification */
-        if (msg.m_notify.interrupts & kbc_irq_bit) { // KBD int?
+        if (msg.m_notify.interrupts & kbc_irq) { // KBD int?
           kbc_ih();
-
-          /* process KBD interrupt request */
         }
         break;
       default:
-        break; /* no other notifications expected: do nothing */
+        break; 
     }
   }
   
   if(kbd_unsubscribe_int()) return 1;
+
+  //kbd_print_no_sysinb(sys_inb_no)
 
   return 1;
 }
