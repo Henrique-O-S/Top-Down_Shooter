@@ -6,6 +6,10 @@
 #include <stdint.h>
 
 #include "kbd.h"
+#include "i8042.h"
+
+extern uint8_t keycode;
+extern uint32_t sys_inb_counter;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -43,22 +47,39 @@ int(kbd_test_scan)() {
 
   int processing = 1;
   while(processing) {
-    switch (_ENDPOINT_P(msg.m_source)) {
-      case HARDWARE: /* hardware interrupt notification */
-        if (msg.m_notify.interrupts & kbc_irq) { // KBD int?
-          kbc_ih();
-        }
-        break;
-      default:
-        break; 
+    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+            printf("driver_receive failed with %d", r);
+            continue;
+    }
+        
+    if (is_ipc_notify(ipc_status)) { /* received notification */
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE: /* hardware interrupt notification */
+          if (msg.m_notify.interrupts & kbc_irq) { //KBD int?
+            kbc_ih();
+            if(keyboard_done){
+              kbd_print_scancode(!(scancode[scancode_sz - 1] & BREAK_CODE_BIT), scancode_sz, scancode);
+            }
+            if (keycode == ESC_BREAK_CODE) { 
+              processing = 0;
+            }
+          }
+          break;
+        default:
+          break; /* no other notifications expected: do nothing */
+      }
+    }
+    else { /* received standart message, not a notification */
+            /* no standart message expected: do nothing */
     }
   }
   
+  
   if(kbd_unsubscribe_int()) return 1;
 
-  //kbd_print_no_sysinb(sys_inb_no)
+  kbd_print_no_sysinb(sys_inb_counter);
 
-  return 1;
+  return 0;
 }
 
 int(kbd_test_poll)() {
