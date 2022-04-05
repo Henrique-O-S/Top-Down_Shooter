@@ -11,5 +11,6 @@ int (kbd_unsubscribe_int)(int *interrupt_id) {
 }
 
 int (kbc_restore_keyboard)(){
-    
+
+    return 0;
 }

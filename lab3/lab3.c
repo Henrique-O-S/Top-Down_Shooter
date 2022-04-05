@@ -8,10 +8,12 @@
 #include "kbd.h"
 #include "kbc.h"
 #include "i8042.h"
+#include "timer.h"
 
 extern uint8_t scancode[2];
 extern uint8_t keycode;
 extern uint32_t sys_inb_counter;
+extern uint32_t no_interrupts;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -43,6 +45,7 @@ int(kbd_test_scan)() {
   uint8_t kbc_irq_bit = 1;
   int kbc_id = 0;
   int kbc_irq = BIT(kbc_irq_bit);
+
   if(kbd_subscribe_int(kbc_irq_bit,&kbc_id)) return 1;
 
 
@@ -65,6 +68,7 @@ int(kbd_test_scan)() {
             }
           }
           break;
+          
         default:
           break; /* no other notifications expected: do nothing */
             /* no standart message expected: do nothing */
@@ -81,29 +85,82 @@ int(kbd_test_scan)() {
 }
 
 int(kbd_test_poll)(){
-  return 1;
-  /*
+  
   while(!(scancode_sz == 1 && scancode[0] == ESC_BREAK_CODE)){
-
-    if(kbc_restore_keyboard()) return 1;
-int r, ipc_status;
-  message msg;
-  uint8_t kbc_irq_bit = 1;
-  uint8_t time _ir1_bit = 0;
-
-  ;
+    
+    if(scancode[scancode_sz - 1] & BREAK_CODE_BIT){
+            kbd_print_scancode(false, scancode_sz, scancode);
+    }
+    else return 1;
     
   }
   
-  printf("%s is not yet implemented!\n", __func__);
+  if(kbc_restore_keyboard()) return 1;
+
+  if(kbd_print_no_sysinb(sys_inb_counter)) return 1;
 
   return 1;
-  */
+  
 }
 
 int(kbd_test_timed_scan)(uint8_t n) {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  int r, ipc_status;
+  message msg;
+  uint8_t kbc_irq_bit = 1;  
+  int kbc_id = 1;
+  int kbc_irq = BIT(kbc_irq_bit);
 
-  return 1;
+  if(kbd_subscribe_int(kbc_irq_bit, &kbc_id)) return 1;
+
+  uint8_t timer_id = 0;
+  int seconds_passed = 0;
+  uint8_t timer_irq = BIT(timer_id);
+
+  if(timer_subscribe_int(&timer_id)) return 1;
+
+  int processing = 1;
+
+  while(processing) {
+    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+            printf("driver_receive failed with %d", r);
+            continue;
+    }
+        
+    if (is_ipc_notify(ipc_status)) { /* received notification */
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE: /* hardware interrupt notification */
+          if(msg.m_notify.interrupts & timer_irq){
+            timer_int_handler();
+
+            if(no_interrupts % 60 == 0){
+              seconds_passed++;
+            }
+          }
+
+          if (msg.m_notify.interrupts & kbc_irq) { //KBD int?
+            kbc_ih();
+
+            seconds_passed = 0;
+            no_interrupts = 0;
+
+            if (keycode == ESC_BREAK_CODE) { 
+              processing = 0;
+            }
+          }
+          break;
+
+        default:
+          break; /* no other notifications expected: do nothing */
+            /* no standart message expected: do nothing */
+      }
+    }
+  }
+  
+  if(kbd_unsubscribe_int(&kbc_id)) return 1;
+
+  if(timer_unsubscribe_int()) return 1;
+
+  if(kbd_print_no_sysinb(sys_inb_counter)) return 1;
+
+  return 0;
 }

@@ -50,3 +50,16 @@ void (kbc_ih)() {
     }
     
 }
+
+int(keyboard_poll)(uint8_t bytes[], uint8_t *size) {
+    return 1;
+
+
+    if(bytes == NULL || size == NULL) return NULL_PTR;
+    uint8_t c;
+    
+
+
+
+    return SUCCESS;
+}
