@@ -6,8 +6,14 @@
 #include "i8254.h"
 #include "i8042.h"
 
-int (kbd_subscribe_int)(uint8_t *bit_no);
+uint8_t scancode[2];
+uint8_t keycode;
+int keyboard_done;
+int kb_error;
+int scancode_sz;
 
-int (kbd_unsubscribe_int)();
+int (kbd_subscribe_int)(uint8_t int_bit, int *interrupt_id);
+int keyboard_done;
+int scancode_sz;
 
 void (kbd_ih)();

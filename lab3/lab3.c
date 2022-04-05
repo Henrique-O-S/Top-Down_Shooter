@@ -6,8 +6,10 @@
 #include <stdint.h>
 
 #include "kbd.h"
+#include "kbc.h"
 #include "i8042.h"
 
+extern uint8_t scancode[2];
 extern uint8_t keycode;
 extern uint32_t sys_inb_counter;
 
@@ -39,10 +41,10 @@ int(kbd_test_scan)() {
   int r, ipc_status;
   message msg;
   uint8_t kbc_irq_bit = 1;
-
-  if(kbd_subscribe_int(kbc_irq_bit)) return 1;
-
+  int kbc_id = 0;
   int kbc_irq = BIT(kbc_irq_bit);
+  if(kbd_subscribe_int(kbc_irq_bit,&kbc_id)) return 1;
+
 
 
   int processing = 1;
@@ -57,9 +59,7 @@ int(kbd_test_scan)() {
         case HARDWARE: /* hardware interrupt notification */
           if (msg.m_notify.interrupts & kbc_irq) { //KBD int?
             kbc_ih();
-            if(keyboard_done){
-              kbd_print_scancode(!(scancode[scancode_sz - 1] & BREAK_CODE_BIT), scancode_sz, scancode);
-            }
+
             if (keycode == ESC_BREAK_CODE) { 
               processing = 0;
             }
@@ -67,26 +67,38 @@ int(kbd_test_scan)() {
           break;
         default:
           break; /* no other notifications expected: do nothing */
-      }
-    }
-    else { /* received standart message, not a notification */
             /* no standart message expected: do nothing */
+      }
     }
   }
   
   
-  if(kbd_unsubscribe_int()) return 1;
+  if(kbd_unsubscribe_int(&kbc_id)) return 1;
 
-  kbd_print_no_sysinb(sys_inb_counter);
+  if(kbd_print_no_sysinb(sys_inb_counter)) return 1;
 
   return 0;
 }
 
-int(kbd_test_poll)() {
-  /* To be completed by the students */
+int(kbd_test_poll)(){
+  return 1;
+  /*
+  while(!(scancode_sz == 1 && scancode[0] == ESC_BREAK_CODE)){
+
+    if(kbc_restore_keyboard()) return 1;
+int r, ipc_status;
+  message msg;
+  uint8_t kbc_irq_bit = 1;
+  uint8_t time _ir1_bit = 0;
+
+  ;
+    
+  }
+  
   printf("%s is not yet implemented!\n", __func__);
 
   return 1;
+  */
 }
 
 int(kbd_test_timed_scan)(uint8_t n) {
