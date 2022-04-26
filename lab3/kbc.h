@@ -3,8 +3,9 @@
  * actually also manages the mouse)
  */
 
-#ifndef KEYBOARD_CONTROLLER_H_INCLUDED
-#define KEYBOARD_CONTROLLER_H_INCLUDED
+#ifndef KBC_H_INCLUDED
+#define KBC_H_INCLUDED
+
 
 /**
  * @brief Unsubcribes Interrupts
@@ -12,7 +13,7 @@
  * @see subscribe_kbc_interrupt, subscribe_timer_interrupt
  * @return Whether operation was sucessful or not
  */
-int (unsubscribe_interrupt)(int *interrupt_id);
+int (kbd_unsubscribe_int)(int *interrupt_id);
 
 /**
  * @brief High-level function that reads the command byte of the KBC
@@ -60,4 +61,4 @@ int (kbc_issue_arg)(uint8_t arg);
  */
 int (kbc_read_byte)(uint8_t *byte);
 
-#endif //KEYBOARD_CONTROLLER_H_INCLUDED
+#endif //KBC_H_INCLUDED
