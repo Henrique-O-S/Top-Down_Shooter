@@ -6,6 +6,9 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#include "video_gr.h"
+#include "timer.h"
+
 // Any header files included below this line should have been created by you
 
 int main(int argc, char *argv[]) {
@@ -35,11 +38,9 @@ int main(int argc, char *argv[]) {
 int(video_test_init)(uint16_t mode, uint8_t delay) {
   if(delay < 0)
     return 0;
-  printf("%s(0x%03x, %u): under construction\n", __func__, mode, delay);
 
-  vg_init(mode);
-
-  if(timer_sleep(delay) != OK) {
+  if(vg_init(mode) == NULL) return 1;
+  if(_timer_sleep_(delay) != 0) {
       printf("Error while delaying the new graphics\n");
   }
 
@@ -53,6 +54,10 @@ int(video_test_init)(uint16_t mode, uint8_t delay) {
 
 int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y,
                           uint16_t width, uint16_t height, uint32_t color) {
+  if(vg_init(mode) == NULL) return 1;
+
+  if (vg_draw_rectangle(x, y, width, height, color)) return 1;
+  
   /* To be completed */
   printf("%s(0x%03X, %u, %u, %u, %u, 0x%08x): under construction\n",
          __func__, mode, x, y, width, height, color);

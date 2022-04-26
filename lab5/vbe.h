@@ -1,10 +1,8 @@
-#pragma once
   
  #include <stdint.h>
   
  #include <minix/type.h>
   
- #pragma pack(1)
   
  typedef struct {
    /*  Mandatory information for all VBE revisions */
