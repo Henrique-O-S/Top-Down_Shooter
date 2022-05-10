@@ -1,7 +1,6 @@
 #include <lcom/lcf.h>
 
 #include "video_gr.h"
-#include "vbe.h"
 
 reg86_t reg86;
 
@@ -78,7 +77,7 @@ void* (vg_init)(uint16_t mode){
 
 
 int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t  width, uint16_t	height, uint32_t color){
-    for(int yn = y; yn - y < height, yn++){
+    for(int yn = y; yn - y < height; yn++){
         if(vg_draw_hline(x, yn, width, color)) {
             printf("failed to draw hline");
             return 1;
@@ -103,7 +102,7 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color){
     if(color_depth <= 8){
         uint8_t* pixel_address = (uint8_t*)video_memory + (x + y*hres); 
         *pixel_address = color;
-        return 0;   
+        return 0;
     }
     else if(color_depth <= 16) {
         uint16_t* pixel_address = (uint16_t*)video_memory + (x + y*hres)*2;
@@ -120,7 +119,7 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color){
         return 0;
     }
     else if(color_depth <= 32){
-        uint32_t* pixel_address = (uint16_t*)video_memory + (x + y*hres)*4;
+        uint32_t* pixel_address = (uint32_t*)video_memory + (x + y*hres)*4;
         *pixel_address = color;
          return 0;
     }   

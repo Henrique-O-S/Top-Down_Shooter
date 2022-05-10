@@ -6,7 +6,7 @@
 #include "utils.h"
 #include "errors.h"
 
-int (unsubscribe_interrupt)(int *interrupt_id) {
+int (unsubscribe_kbc_interrupt)(int *interrupt_id) {
     if (interrupt_id == NULL) return NULL_PTR;
     if(sys_irqrmpolicy(interrupt_id)) return UNSBCR_ERROR;
     return SUCCESS;

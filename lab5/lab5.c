@@ -8,6 +8,13 @@
 
 #include "video_gr.h"
 #include "timer.h"
+#include "keyboard.h"
+#include "kbc.h"
+#include "kbc_macros.h"
+
+uint8_t kbc_interupt_bit = 1;
+extern uint8_t scancode[2];
+extern int sz;
 
 // Any header files included below this line should have been created by you
 
@@ -56,13 +63,56 @@ int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y,
                           uint16_t width, uint16_t height, uint32_t color) {
   if(vg_init(mode) == NULL) return 1;
 
-  if (vg_draw_rectangle(x, y, width, height, color)) return 1;
-  
-  /* To be completed */
-  printf("%s(0x%03X, %u, %u, %u, %u, 0x%08x): under construction\n",
-         __func__, mode, x, y, width, height, color);
+  if (vg_draw_rectangle(x, y, width, height, color)) {
+    vg_exit();
+    return 1;
+  }
 
-  return 1;
+  int ipc_status, r;
+  message msg;
+  int kbc_irq;
+
+  if(subscribe_kbc_interrupt(kbc_interupt_bit, &kbc_irq)){
+    vg_exit();
+    return 1;
+  }
+
+  int finished = 0;
+  while(!finished){
+    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+            printf("driver_receive failed with %d", r);
+            continue;
+    }
+        
+    if (is_ipc_notify(ipc_status)) { /* received notification */
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE: /* hardware interrupt notification */
+          if (msg.m_notify.interrupts & kbc_irq) { //KBD int?
+            kbc_ih();
+
+            if (scancode[sz - 1] == ESC_BREAK_CODE) { 
+              finished = 1;
+            }
+          }
+          break;
+          
+        default:
+          break; /* no other notifications expected: do nothing */
+            /* no standart message expected: do nothing */
+      }
+    }
+  }
+
+  if(unsubscribe_kbc_interrupt(&kbc_irq)){
+    vg_exit();
+    return 1;
+  }
+
+  if(vg_exit()){
+    return 1;
+  }
+
+  return 0;
 }
 
 int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step) {

@@ -4,7 +4,7 @@
 #include <stdint.h>
 
 #include "i8254.h"
-#include "i8042.h"
+#include "kbc_macros.h"
 
 uint8_t scancode[2];
 uint8_t keycode;
