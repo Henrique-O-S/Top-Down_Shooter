@@ -1,13 +1,13 @@
-#ifndef __TIMER_H
-#define __TIMER_H
+#ifndef TIMER_H_INCLUDED
+#define TIMER_H_INCLUDED
 
 //Subscribe timer interrupts
-int timer_subscribe_int(void );
+int (timer_subscribe_int___)();
 
 //Unsubscribe timer interrupts
-int timer_unsubscribe_int();
+int (timer_unsubscribe_int)();
 
 //Uses timer to sleep for "time" seconds
-int timer_sleep(int time);
+int (_timer_sleep_)(int time);
 
 #endif /* __TIMER_H */

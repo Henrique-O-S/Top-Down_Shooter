@@ -6,6 +6,16 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#include "video_gr.h"
+#include "timer.h"
+#include "keyboard.h"
+#include "kbc.h"
+#include "kbc_macros.h"
+
+uint8_t kbc_interupt_bit = 1;
+extern uint8_t scancode[2];
+extern int sz;
+
 // Any header files included below this line should have been created by you
 
 int main(int argc, char *argv[]) {
@@ -35,11 +45,9 @@ int main(int argc, char *argv[]) {
 int(video_test_init)(uint16_t mode, uint8_t delay) {
   if(delay < 0)
     return 0;
-  printf("%s(0x%03x, %u): under construction\n", __func__, mode, delay);
 
-  vg_init(mode);
-
-  if(timer_sleep(delay) != OK) {
+  if(vg_init(mode) == NULL) return 1;
+  if(_timer_sleep_(delay) != 0) {
       printf("Error while delaying the new graphics\n");
   }
 
@@ -53,11 +61,58 @@ int(video_test_init)(uint16_t mode, uint8_t delay) {
 
 int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y,
                           uint16_t width, uint16_t height, uint32_t color) {
-  /* To be completed */
-  printf("%s(0x%03X, %u, %u, %u, %u, 0x%08x): under construction\n",
-         __func__, mode, x, y, width, height, color);
+  if(vg_init(mode) == NULL) return 1;
 
-  return 1;
+  if (vg_draw_rectangle(x, y, width, height, color)) {
+    vg_exit();
+    return 1;
+  }
+
+  int ipc_status, r;
+  message msg;
+  int kbc_irq;
+
+  if(subscribe_kbc_interrupt(kbc_interupt_bit, &kbc_irq)){
+    vg_exit();
+    return 1;
+  }
+
+  int finished = 0;
+  while(!finished){
+    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+            printf("driver_receive failed with %d", r);
+            continue;
+    }
+        
+    if (is_ipc_notify(ipc_status)) { /* received notification */
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE: /* hardware interrupt notification */
+          if (msg.m_notify.interrupts & kbc_irq) { //KBD int?
+            kbc_ih();
+
+            if (scancode[sz - 1] == ESC_BREAK_CODE) { 
+              finished = 1;
+            }
+          }
+          break;
+          
+        default:
+          break; /* no other notifications expected: do nothing */
+            /* no standart message expected: do nothing */
+      }
+    }
+  }
+
+  if(unsubscribe_kbc_interrupt(&kbc_irq)){
+    vg_exit();
+    return 1;
+  }
+
+  if(vg_exit()){
+    return 1;
+  }
+
+  return 0;
 }
 
 int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step) {
