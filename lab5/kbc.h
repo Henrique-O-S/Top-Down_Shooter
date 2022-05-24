@@ -12,7 +12,7 @@
  * @see subscribe_kbc_interrupt, subscribe_timer_interrupt
  * @return Whether operation was sucessful or not
  */
-int (unsubscribe_kbc_interrupt)(int *interrupt_id);
+int (unsubscribe_interrupt)(int *interrupt_id);
 
 /**
  * @brief High-level function that reads the command byte of the KBC
