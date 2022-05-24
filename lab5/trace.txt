@@ -1,0 +1,25 @@
+@lcflib.a:2019, lcf_start
+  video_test_controller()
+  @graphics.c:78, vbe_get_controller_information
+    lm_alloc(sizeof(VbeInfoBlock), &controller_map)
+  < lm_alloc(512, addr: 0xeffff640 [phys: 0x0008e000, virt: 0xefb8b000, size: 512 bytes]) -> (ret: 0xefb8b000)
+  @graphics.c:94, vbe_get_controller_information
+    sys_int86(&reg_86)
+  > sys_int86(addr: 0xeffff618 [AX: 4f00, BX: 0000, CX: 0000, DX: 0000, ES: 8000, DI: e000])
+  < sys_int86(addr: 0xeffff618 [AX: 004f, BX: 0000, CX: 0000, DX: 0000, ES: 8000, DI: e000]) -> (ret: 0)
+  @graphics.c:108, vbe_get_controller_information
+    util_get_LSB(virtual_addr->VbeVersion, &lsb)
+  > util_get_LSB(0x0200, addr: 0xeffff617)
+  < util_get_LSB(0x0200, addr: 0xeffff617 [0x00]) -> (ret: 0)
+  @graphics.c:109, vbe_get_controller_information
+    util_get_MSB(virtual_addr->VbeVersion, &msb)
+  > util_get_MSB(0x0200, addr: 0xeffff616)
+  < util_get_MSB(0x0200, addr: 0xeffff616 [0x02]) -> (ret: 0)
+  @graphics.c:137, vbe_get_controller_information
+    lm_free(&controller_map)
+  < lm_free(addr: 0xeffff640 [phys: 0x0008e000, virt: 0xefb8b000, size: 512 bytes]) -> (ret: 1)
+  @lab5.c:596, video_test_controller
+    vg_display_vbe_contr_info(&cntrl_info)
+  > vg_display_vbe_contr_info(addr: 0xeffff680)
+  < vg_display_vbe_contr_info(addr: 0xeffff680) -> (ret: 0)
+< video_test_controller() -> (ret: 0)

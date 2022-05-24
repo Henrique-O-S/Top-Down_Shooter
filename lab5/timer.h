@@ -1,13 +1,14 @@
+/**
+ * This file concerns everything related to the timer
+ */
+
 #ifndef TIMER_H_INCLUDED
 #define TIMER_H_INCLUDED
 
-//Subscribe timer interrupts
-int (timer_subscribe_int___)();
+#include <stdint.h>
 
-//Unsubscribe timer interrupts
-int (timer_unsubscribe_int)();
+int (subscribe_timer_interrupt)(uint8_t interrupt_bit, int *interrupt_id);
 
-//Uses timer to sleep for "time" seconds
-int (_timer_sleep_)(int time);
+uint32_t no_interrupts;
 
-#endif /* __TIMER_H */
+#endif //TIMER_H_INCLUDED

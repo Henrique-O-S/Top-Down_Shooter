@@ -1,7 +1,6 @@
 #include <lcom/lcf.h>
 
 #include "sprite.h"
-
 #include "graphics.h"
 
 struct sprite{
@@ -31,15 +30,26 @@ void sprite_dtor(sprite_t *p){
     free(p);
 }
 
-void sprite_set_x(sprite_t *p, int x){ p->x = x; }
-void sprite_set_y(sprite_t *p, int y){ p->y = y; }
-void sprite_set_pos(sprite_t *p, int x, int y){
+void sprite_set_x(sprite_t *p, int x) { 
+    p->x = x; 
+}
+
+void sprite_set_y(sprite_t *p, int y) { 
+    p->y = y; 
+}
+
+void sprite_set_pos(sprite_t *p, int x, int y) {
     sprite_set_x(p, x);
     sprite_set_y(p, y);
 }
 
-int sprite_get_w(const sprite_t *p){ return p->w; }
-int sprite_get_h(const sprite_t *p){ return p->h; }
+int sprite_get_w(const sprite_t *p) { 
+    return p->w; 
+}
+
+int sprite_get_h(const sprite_t *p) { 
+    return p->h; 
+}
 
 void sprite_draw(const sprite_t *p){
     for (int i = 0; i < p->w; i++) {
