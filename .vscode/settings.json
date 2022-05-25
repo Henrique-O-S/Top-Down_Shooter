@@ -3,6 +3,7 @@
         "stdint.h": "c",
         "timer.h": "c",
         "cstddef": "c",
-        "errors.h": "c"
+        "errors.h": "c",
+        "mouse.h": "c"
     }
 }

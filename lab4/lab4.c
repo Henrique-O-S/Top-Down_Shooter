@@ -3,7 +3,11 @@
 #include <stdint.h>
 #include <stdio.h>
 
-// Any header files included below this line should have been created by you
+#include "mouse.h"
+#include "mouse_macros.h"
+
+extern int bytes_counter;
+extern uint8_t packet_mouse[3];
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -31,9 +35,47 @@ int main(int argc, char *argv[]) {
 
 
 int (mouse_test_packet)(uint32_t cnt) {
-    /* To be completed */
-    printf("%s(%u): under construction\n", __func__, cnt);
-    return 1;
+    int r, ipc_status;
+    message msg;
+    uint8_t mouse_irq_bit = 2;
+    int mouse_id = 2;
+    
+    if(mouse_subscribe_int(mouse_irq_bit, &mouse_id)) return 1;
+    
+    mouse_enable_data_reporting();
+    
+    while(cnt > 0){
+      if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+        printf("driver_receive failed with %d", r);
+        continue;
+      }
+        
+      if (is_ipc_notify(ipc_status)) { /* received notification */
+        switch (_ENDPOINT_P(msg.m_source)) {
+          case HARDWARE: /* hardware interrupt notification */
+            if (msg.m_notify.interrupts & BIT(mouse_irq_bit)) {
+              mouse_ih();
+
+              if(bytes_counter == 3){
+                cnt--;
+                struct packet p = mouse_parse_packet(packet_mouse);
+                mouse_print_packet(&p);
+              }
+            }
+            break;
+            
+          default:
+            break; /* no other notifications expected: do nothing */
+              /* no standart message expected: do nothing */
+        }
+      }
+    }
+
+    
+
+    if(mouse_unsubscribe_int(&mouse_id)) return 1;
+    
+    return 0;
 }
 
 int (mouse_test_async)(uint8_t idle_time) {
@@ -42,14 +84,8 @@ int (mouse_test_async)(uint8_t idle_time) {
     return 1;
 }
 
-int (mouse_test_gesture)() {
+int (mouse_test_gesture)(uint8_t x_len, uint8_t tolerance) {
     /* To be completed */
     printf("%s: under construction\n", __func__);
-    return 1;
-}
-
-int (mouse_test_remote)(uint16_t period, uint8_t cnt) {
-    /* This year you need not implement this. */
-    printf("%s(%u, %u): under construction\n", __func__, period, cnt);
     return 1;
 }
