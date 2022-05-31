@@ -4,6 +4,13 @@
         "timer.h": "c",
         "cstddef": "c",
         "errors.h": "c",
-        "mouse.h": "c"
+        "mouse.h": "c",
+        "graphics.h": "c",
+        "kbc_macros.h": "c",
+        "kbd.h": "c",
+        "utils.h": "c",
+        "lcf.h": "c",
+        "kbc.h": "c",
+        "sprite.h": "c"
     }
 }
