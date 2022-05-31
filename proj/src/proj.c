@@ -1,9 +1,12 @@
 // IMPORTANT: you must include the following line in all your C files
 #include <lcom/lcf.h>
+
 #include "libraries/graphics/include/graphics.h"
-#include "libraries/keyboard/include/kbc_macros.h"
-#include "libraries/keyboard/include/kbd.h"
-#include "libraries/keyboard/include/kbc.h"
+#include "libraries/kbc/include/kbc_macros.h"
+#include "libraries/kbc/include/kbd.h"
+#include "libraries/kbc/include/kbc.h"
+
+#include "player.h"
 
 // Any header files included below this line should have been created by you
 
