@@ -1,9 +1,9 @@
 // IMPORTANT: you must include the following line in all your C files
 #include <lcom/lcf.h>
-#include "graphics.h"
-#include "kbc_macros.h"
-#include "kbd.h"
-#include "kbc.h"
+#include "libraries/graphics/include/graphics.h"
+#include "libraries/keyboard/include/kbc_macros.h"
+#include "libraries/keyboard/include/kbd.h"
+#include "libraries/keyboard/include/kbc.h"
 
 // Any header files included below this line should have been created by you
 
@@ -61,98 +61,99 @@ int(proj_main_loop)(int argc, char* argv[]) {
     }
     
     return 1;
-  };
+  }
 
   uint16_t w = (x + width > get_XRes()) ? (get_XRes() - x) : (width);
   uint16_t h = (y + height > get_YRes()) ? (get_YRes() - y) : (height);
 
-    if (x < get_XRes() && y < get_YRes()) {
-        if (vg_draw_rectangle(x, y, w, h, color)) {
+  if (x < get_XRes() && y < get_YRes()) {
+    if (vg_draw_rectangle(x, y, w, h, color)) {
 
-            if (vg_exit()) {
-                printf("%s: vg_exit failed to exit to text mode.\n", __func__);
-            }
+      if (vg_exit()) {
+        printf("%s: vg_exit failed to exit to text mode.\n", __func__);
+      }
 
-            if (free_memory_map()) {
-                printf("%s: lm_free failed\n", __func__);
-            }
+      if (free_memory_map()) {
+        printf("%s: lm_free failed\n", __func__);
+      }
 
-            return 1;
-        }
+      return 1;
     }
+  }
 
 
-    /// loop stuff
-    int r;
-    int ipc_status;
-    message msg;
-    /// Keyboard interrupt handling
-    uint8_t kbc_irq_bit = KBC_IRQ;
-    int kbc_id = 0;
-    int kbc_irq = BIT(kbc_irq_bit);
+  /// loop stuff
+  int r;
+  int ipc_status;
+  message msg;
+  /// Keyboard interrupt handling
+  uint8_t kbc_irq_bit = KBC_IRQ;
+  int kbc_id = 0;
+  int kbc_irq = BIT(kbc_irq_bit);
 
-    if (subscribe_kbc_interrupt(kbc_irq_bit, &kbc_id)) {
+  if (subscribe_kbc_interrupt(kbc_irq_bit, &kbc_id)) {
       
-        if (vg_exit()) {
-            printf("%s: vg_exit failed to exit to text mode.\n", __func__);
-        }
-        
-        if (free_memory_map()) {
-            printf("%s: lm_free failed\n", __func__);
-        }
-        
-        return 1;
+    if (vg_exit()) {
+      printf("%s: vg_exit failed to exit to text mode.\n", __func__);
     }
-    /// cycle
-    int good = 1;
-    while (good) {
-        /* Get a request message. */
-        if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
-            printf("driver_receive failed with %d", r);
-            continue;
-        }
+        
+    if (free_memory_map()) {
+      printf("%s: lm_free failed\n", __func__);
+    }
+        
+    return 1;
+  }
 
-        if (is_ipc_notify(ipc_status)) { /* received notification */
-            switch (_ENDPOINT_P(msg.m_source)) {
-                case HARDWARE: /* hardware interrupt notification */
-                    if (msg.m_notify.interrupts & kbc_irq) { /* subscribed interrupt */
-                        kbc_ih();
+  /// cycle
+  int good = 1;
+  while (good) {
+  /* Get a request message. */
+    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+      printf("driver_receive failed with %d", r);
+      continue;
+    }
+
+    if (is_ipc_notify(ipc_status)) { /* received notification */
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE: /* hardware interrupt notification */
+          if (msg.m_notify.interrupts & kbc_irq) { /* subscribed interrupt */
+            kbc_ih();
                         
-                        if (scancode[0] == ESC_BREAK_CODE) 
-                          good = 0;
-                    }
-                    break;
-
-                default:
-                    break; /* no other notifications expected: do nothing */
+            if (get_scancode(0) == ESC_BREAK_CODE) 
+              good = 0;
             }
-        } else { /* received standart message, not a notification */
+            break;
+
+        default:
+          break; /* no other notifications expected: do nothing */
+      }
+    } else { /* received standart message, not a notification */
             /* no standart message expected: do nothing */
-        }
+    }
+  }
+
+  if (unsubscribe_interrupt(&kbc_id)) {
+    if (vg_exit()) {
+      printf("%s: vg_exit failed to exit to text mode.\n", __func__);
     }
 
-    if (unsubscribe_interrupt(&kbc_id)) {
-        if (vg_exit()) {
-            printf("%s: vg_exit failed to exit to text mode.\n", __func__);
-        }
-        if (free_memory_map()) {
-            printf("%s: lm_free failed\n", __func__);
-        }
-        return 1;
-    };
+    if (free_memory_map()) {
+      printf("%s: lm_free failed\n", __func__);
+    }
+    return 1;
+  }
 
 
   if (vg_exit()) {
-      printf("%s: vg_exit failed to exit to text mode.\n", __func__);
+    printf("%s: vg_exit failed to exit to text mode.\n", __func__);
       if (free_memory_map()) printf("%s: lm_free failed\n", __func__);
       return 1;
   }
 
   if (free_memory_map()) {
-      printf("%s: lm_free failed\n", __func__);
-      return 1;
+    printf("%s: lm_free failed\n", __func__);
+    return 1;
   }
-
 
   return 0;
 }
