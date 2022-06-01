@@ -8,8 +8,8 @@
 
 uint32_t no_interrupts;
 
-int (timer_subscribe_int)(uint8_t *bit_no);
-int (timer_unsubscribe_int);
-void (timer_int_handler);
+int (subscribe_timer_interrupt)(int *bit_no);
+int (timer_unsubscribe_int)();
+void (timer_int_handler)();
 
 #endif //TIMER_H_INCLUDED

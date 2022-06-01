@@ -1,5 +1,4 @@
 #include <lcom/lcf.h>
-#include <lcom/timer.h>
 
 #include <stdint.h>
 
@@ -8,7 +7,7 @@
 
 static int hook_id;
 
-int (timer_subscribe_int)(uint8_t *bit_no) {
+int (subscribe_timer_interrupt)(int *bit_no) {
     if(bit_no == NULL) return NULL_PTR;
     hook_id = 2;
     *bit_no = hook_id;
