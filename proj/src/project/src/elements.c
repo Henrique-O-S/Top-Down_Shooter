@@ -1,11 +1,37 @@
 #include <lcom/lcf.h>
 
+#include "elements.h"
 #include <stdio.h>
 #include <math.h>
 
-#include "libraries/graphics/include/graphics.h"
-#include "libraries/graphics/include/sprite.h"
-#include "monster.h"
+//Player
+
+int build_player(int start_x, int start_y, xpm_map_t sprite){
+    p.x = start_x;
+    p.y = start_y;
+    p.xspeed = 0;
+    p.yspeed = 0;
+    xpm_image_t img;
+    xpm_load(sprite, XPM_8_8_8, &img);
+    p.img = img;
+    p.player_sprite = sprite_ctor(sprite);
+
+    return 0; 
+}
+
+void draw_player(){
+
+}
+
+void update_player_pos(){
+    
+}
+
+int collision_player_wall(){
+    return 0;
+}
+
+//Monster
 
 int n_monsters = 10;
 
@@ -68,6 +94,8 @@ int (collision_monster_wall)(struct map map, struct monster monster) {
     }
     return 0;
 }
+
+//Wall
 
 int (wall_collision)(struct map map, int x, int y){
     const int w = sprite_get_w(map.background), h = sprite_get_h(map.background);

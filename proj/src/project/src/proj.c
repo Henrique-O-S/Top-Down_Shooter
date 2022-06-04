@@ -1,9 +1,7 @@
 // IMPORTANT: you must include the following line in all your C files
 #include <lcom/lcf.h>
 
-#include "libraries.h"
-#include "player.h"
-#include "interrupts.h"
+#include "proj.h"
 
 // Any header files included below this line should have been created by you
 

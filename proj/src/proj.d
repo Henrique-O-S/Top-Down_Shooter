@@ -46,11 +46,12 @@ proj.o: /home/lcom/labs/proj/src/project/src/proj.c \
   /usr/include/lcom/pixmap.h /usr/include/lcom/xpm.h \
   /usr/include/lcom/vbe.h /usr/include/lcom/video_gr.h \
   /usr/include/lcom/proj.h /usr/include/lcom/types.h \
-  libraries/libraries.h libraries/graphics/include/graphics.h \
+  project/include/proj.h libraries/libraries.h \
+  libraries/graphics/include/graphics.h \
   libraries/graphics/include/graphics_macros.h \
   libraries/graphics/include/sprite.h libraries/kbc/include/kbc.h \
   libraries/kbc/include/kbd.h libraries/kbc/include/kbc_macros.h \
   libraries/kbc/include/mouse.h libraries/kbc/include/mouse_macros.h \
   libraries/timer/include/timer.h libraries/timer/include/i8254.h \
-  libraries/utils/include/utils.h project/include/player.h \
+  libraries/utils/include/utils.h project/include/elements.h \
   project/include/interrupts.h
