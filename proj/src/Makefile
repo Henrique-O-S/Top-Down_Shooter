@@ -8,7 +8,7 @@ PROG=proj
 .PATH: ${.CURDIR}/libraries/utils/src
 
 # source code files to be compiled
-SRCS = proj.c player.c interrupts.c graphics.c kbc.c kbd.c utils.c timer.c mouse.c monster.c
+SRCS = proj.c player.c monster.c interrupts.c graphics.c kbc.c kbd.c utils.c timer.c mouse.c sprite.c
 IPATHS= -I./project/include -I./libraries -I./libraries/graphics/include -I./libraries/kbc/include -I./libraries/timer/include -I./libraries/utils/include
 
 # additional compilation flags
