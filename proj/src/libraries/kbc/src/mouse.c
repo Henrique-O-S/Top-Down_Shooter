@@ -50,19 +50,19 @@ void (mouse_ih)(void) {
     }
 }
 
-struct packet (mouse_parse_packet)(const uint8_t *packet_bytes){
+int (mouse_parse_packet)(struct packet *packet){
   struct packet p;
-    p.bytes[0] = packet_bytes[0];
-    p.bytes[1] = packet_bytes[1];
-    p.bytes[2] = packet_bytes[2];
+    p.bytes[0] = packet->bytes[0];
+    p.bytes[1] = packet->bytes[1];
+    p.bytes[2] = packet->bytes[2];
     p.rb = p.bytes[0] & RIGHT_BUTTON;
     p.mb = p.bytes[0] & MIDDLE_BUTTON;
     p.lb = p.bytes[0] & LEFT_BUTTON;
-    p.delta_x = sign_extend_byte((packet_bytes[0] & MSB_X_DELTA) != 0, p.bytes[1]);
-    p.delta_y = sign_extend_byte((packet_bytes[0] & MSB_Y_DELTA) != 0, p.bytes[2]);
+    p.delta_x = sign_extend_byte((packet->bytes[0] & MSB_X_DELTA) != 0, p.bytes[1]);
+    p.delta_y = sign_extend_byte((packet->bytes[0] & MSB_Y_DELTA) != 0, p.bytes[2]);
     p.x_ov = p.bytes[0] & X_OVERFLOW;
     p.y_ov = p.bytes[0] & Y_OVERFLOW;
-    return p;
+    return 0;
 }
 
 int16_t (sign_extend_byte)(uint8_t sign_bit, uint8_t byte){

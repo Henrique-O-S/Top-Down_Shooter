@@ -6,6 +6,7 @@
 struct sprite{
     int x, y;
     int w, h;
+    int xspeed, yspeed;
     uint8_t *map;
 };
 
@@ -43,12 +44,24 @@ void sprite_set_pos(sprite_t *p, int x, int y) {
     sprite_set_y(p, y);
 }
 
+void(sprite_set_speed)(sprite_t *p, int vx, int vy){
+  p->xspeed = vx; p->yspeed = vy;
+}
+
 int sprite_get_w(const sprite_t *p) { 
     return p->w; 
 }
 
 int sprite_get_h(const sprite_t *p) { 
     return p->h; 
+}
+
+int (sprite_get_xspeed)(sprite_t *p){
+  return p->xspeed;
+}
+
+int (sprite_get_yspeed)(sprite_t *p){
+  return p->yspeed;
 }
 
 void sprite_draw(const sprite_t *p){

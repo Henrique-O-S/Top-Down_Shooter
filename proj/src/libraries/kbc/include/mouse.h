@@ -12,7 +12,7 @@ int (mouse_unsubscribe_int)(int *interrupt_id);
 
 void (mouse_ih)();
 
-struct packet (mouse_parse_packet)(const uint8_t *packet_bytes);
+int (mouse_parse_packet)(struct packet *packet);
 
 int16_t (sign_extend_byte)(uint8_t sign_bit, uint8_t byte);
 

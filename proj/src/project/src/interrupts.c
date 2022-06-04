@@ -88,3 +88,7 @@ int (unsubscribe_all)(void) {
 
     return 0;
 }
+
+int (get_irq)(uint8_t id){
+    return BIT(id);
+}
