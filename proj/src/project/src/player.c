@@ -4,7 +4,7 @@
 #include "libraries/graphics/include/sprite.h"
 #include "player.h"
 
-static player p;
+struct player p;
 
 int build_player(int start_x, int start_y, xpm_map_t sprite){
     p.x = start_x;

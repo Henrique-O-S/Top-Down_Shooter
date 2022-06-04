@@ -3,12 +3,11 @@
 #include <stdint.h>
 
 #include "i8254.h"
-#include "error.h"
 
 static int hook_id;
 
 int (subscribe_timer_interrupt)(int *bit_no) {
-    if(bit_no == NULL) return NULL_PTR;
+    if(bit_no == NULL) return 1;
     hook_id = 2;
     *bit_no = hook_id;
     return sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id);

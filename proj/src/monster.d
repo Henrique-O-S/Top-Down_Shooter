@@ -1,4 +1,4 @@
-interrupts.o: /home/lcom/labs/proj/src/project/src/interrupts.c \
+monster.o: /home/lcom/labs/proj/src/project/src/monster.c \
   /usr/include/lcom/lcf.h /usr/include/stdbool.h /usr/include/stdio.h \
   /usr/include/sys/cdefs.h /usr/include/machine/cdefs.h \
   /usr/include/sys/cdefs_elf.h /usr/include/sys/featuretest.h \
@@ -45,12 +45,8 @@ interrupts.o: /home/lcom/labs/proj/src/project/src/interrupts.c \
   /usr/include/lcom/lab4.h /usr/include/lcom/lab5.h \
   /usr/include/lcom/pixmap.h /usr/include/lcom/xpm.h \
   /usr/include/lcom/vbe.h /usr/include/lcom/video_gr.h \
-  /usr/include/lcom/proj.h /usr/include/lcom/types.h \
-  project/include/interrupts.h libraries/libraries.h \
+  /usr/include/lcom/proj.h /usr/include/lcom/types.h /usr/include/math.h \
+  /usr/include/machine/math.h /usr/include/x86/math.h \
   libraries/graphics/include/graphics.h \
   libraries/graphics/include/graphics_macros.h \
-  libraries/graphics/include/sprite.h libraries/kbc/include/kbc.h \
-  libraries/kbc/include/kbd.h libraries/kbc/include/kbc_macros.h \
-  libraries/kbc/include/mouse.h libraries/kbc/include/mouse_macros.h \
-  libraries/timer/include/timer.h libraries/timer/include/i8254.h \
-  libraries/utils/include/utils.h
+  libraries/graphics/include/sprite.h project/include/monster.h

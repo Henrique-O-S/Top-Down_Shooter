@@ -2,7 +2,7 @@
 
 #include "mouse.h"
 #include "mouse_macros.h"
-#include "i8042.h"
+#include "kbc_macros.h"
 
 int mouse_subscribe_int(uint8_t interrupt_bit, int *interrupt_id){
     if (interrupt_id == NULL) return 1;

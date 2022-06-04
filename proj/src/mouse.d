@@ -1,4 +1,4 @@
-interrupts.o: /home/lcom/labs/proj/src/project/src/interrupts.c \
+mouse.o: /home/lcom/labs/proj/src/libraries/kbc/src/mouse.c \
   /usr/include/lcom/lcf.h /usr/include/stdbool.h /usr/include/stdio.h \
   /usr/include/sys/cdefs.h /usr/include/machine/cdefs.h \
   /usr/include/sys/cdefs_elf.h /usr/include/sys/featuretest.h \
@@ -46,11 +46,5 @@ interrupts.o: /home/lcom/labs/proj/src/project/src/interrupts.c \
   /usr/include/lcom/pixmap.h /usr/include/lcom/xpm.h \
   /usr/include/lcom/vbe.h /usr/include/lcom/video_gr.h \
   /usr/include/lcom/proj.h /usr/include/lcom/types.h \
-  project/include/interrupts.h libraries/libraries.h \
-  libraries/graphics/include/graphics.h \
-  libraries/graphics/include/graphics_macros.h \
-  libraries/graphics/include/sprite.h libraries/kbc/include/kbc.h \
-  libraries/kbc/include/kbd.h libraries/kbc/include/kbc_macros.h \
   libraries/kbc/include/mouse.h libraries/kbc/include/mouse_macros.h \
-  libraries/timer/include/timer.h libraries/timer/include/i8254.h \
-  libraries/utils/include/utils.h
+  libraries/kbc/include/kbc_macros.h

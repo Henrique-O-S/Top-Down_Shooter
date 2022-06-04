@@ -11,6 +11,8 @@
         "utils.h": "c",
         "lcf.h": "c",
         "kbc.h": "c",
-        "sprite.h": "c"
+        "sprite.h": "c",
+        "__tree": "c",
+        "map": "c"
     }
 }
