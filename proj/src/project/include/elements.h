@@ -11,6 +11,7 @@ struct player{
     int y;
     int xspeed;
     int yspeed;
+    int alive;
     xpm_image_t img;
 
 };

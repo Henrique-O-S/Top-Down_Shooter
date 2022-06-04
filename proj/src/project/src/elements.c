@@ -11,6 +11,7 @@ int build_player(int start_x, int start_y, xpm_map_t sprite){
     p.y = start_y;
     p.xspeed = 0;
     p.yspeed = 0;
+    p.alive = 1;
     xpm_image_t img;
     xpm_load(sprite, XPM_8_8_8, &img);
     p.img = img;
@@ -20,14 +21,25 @@ int build_player(int start_x, int start_y, xpm_map_t sprite){
 }
 
 void draw_player(){
-
+    if(p.alive){
+        sprite_set_pos(p.player_sprite, p.x, p.y);
+        sprite_draw(p.player_sprite);
+    }
 }
 
 void update_player_pos(){
-    
+    if(p.alive){
+        
+    }
 }
 
-int collision_player_wall(){
+int collision_player_wall(struct map map, struct player player){
+    double radius = fmax(sprite_get_w(player.player_sprite), sprite_get_h(player.player_sprite))/2.0;
+    for (double x = -radius; x <= radius; x += 1) {
+        double y_pos = sqrt(radius*radius - x*x);
+        double y_neg = -y_pos;
+        if (wall_collision(map, player.x + x, player.y + y_pos) || wall_collision(map, player.x + x, player.y + y_neg)) return 1;
+    }
     return 0;
 }
 
