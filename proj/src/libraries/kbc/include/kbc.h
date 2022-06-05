@@ -7,14 +7,6 @@
 #define KBC_H_INCLUDED
 
 /**
- * @brief Unsubcribes Interrupts
- * @param interrupt_id Interrupt ID, value via arguments on subscription of the interrupt_id
- * @see subscribe_kbc_interrupt, subscribe_timer_interrupt
- * @return Whether operation was sucessful or not
- */
-int (unsubscribe_interrupt)(int *interrupt_id);
-
-/**
  * @brief High-level function that reads the command byte of the KBC
  * @param cmd Pointer to variable where command byte read from KBC will be stored
  * @return 0 if operation was successful, 1 otherwise

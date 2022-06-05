@@ -6,7 +6,7 @@
 
 //Player
 
-int build_player(int start_x, int start_y, xpm_map_t sprite){
+int (build_player)(int start_x, int start_y, xpm_map_t sprite){
     p.x = start_x;
     p.y = start_y;
     p.xspeed = 0;
@@ -20,20 +20,20 @@ int build_player(int start_x, int start_y, xpm_map_t sprite){
     return 0; 
 }
 
-void draw_player(){
+void (draw_player)(){
     if(p.alive){
         sprite_set_pos(p.player_sprite, p.x, p.y);
         sprite_draw(p.player_sprite);
     }
 }
 
-void update_player_pos(){
+void (update_player_pos)(){
     if(p.alive){
         
     }
 }
 
-int collision_player_wall(struct map map, struct player player){
+int (collision_player_wall)(struct map map, struct player player){
     double radius = fmax(sprite_get_w(player.player_sprite), sprite_get_h(player.player_sprite))/2.0;
     for (double x = -radius; x <= radius; x += 1) {
         double y_pos = sqrt(radius*radius - x*x);
@@ -47,7 +47,7 @@ int collision_player_wall(struct map map, struct player player){
 
 int n_monsters = 10;
 
-int build_monsters(int start_x, int start_y, xpm_map_t sprite){
+int (build_monsters)(int start_x, int start_y, xpm_map_t sprite){
     for(int i = 0; i < n_monsters; i++){
         struct monster m;
         monsters[i] = m;
@@ -65,20 +65,19 @@ int build_monsters(int start_x, int start_y, xpm_map_t sprite){
     return 0; 
 }
 
-void draw_monsters(){
-    for(int i = 0; i< n_monsters; i++){
+void (draw_monsters)(){
+    for(int i = 0; i < n_monsters; i++){
         struct monster monster = monsters[i];
         if(monster.alive){
-            //sprite_t *m = sprite_ctor(monsters[i].img);
-            sprite_set_pos(monster.monster_sprite, monsters[i].x, monsters[i].y);
+            sprite_set_pos(monster.monster_sprite, monster.x, monster.y);
             sprite_draw(monster.monster_sprite);
         }
     }
 
 }
 
-void update_monster_pos(struct map map){
-    for(int i = 0; i< n_monsters; i++){
+void (update_monster_pos)(struct map map){
+    for(int i = 0; i < n_monsters; i++){
         struct monster monster = monsters[i];
         if(monster.alive){
             int rand_x = rand() % 3;
@@ -90,8 +89,16 @@ void update_monster_pos(struct map map){
             monster.x = monster.x + monster.xspeed * rand() % 3;
             monster.y = monster.y + monster.yspeed * rand() % 3;
             if(collision_monster_wall(map, monster)){
-                monsters[i].x = x;
-                monsters[i].y = y;
+                monster.x = x;
+                monster.y = y;
+            }
+            for(int j = 0; j < n_bullets; i++){
+                struct bullet bullet = bullets[j];
+                if(bullet.fired && collision_bullet_monster(monster, bullet)){
+                    bullet.fired = 0;
+                    monster.alive = 0;
+                    break;
+                }
             }
         }
     }
@@ -107,12 +114,90 @@ int (collision_monster_wall)(struct map map, struct monster monster) {
     return 0;
 }
 
+//Bullet
+
+int n_bullets = 10;
+
+int (build_bullets)(int start_x, int start_y, xpm_map_t sprite){
+    for(int i = 0; i < n_bullets; i++){
+        struct bullet b;
+        bullets[i] = b;
+        b.id = i;
+        b.x = start_x;
+        b.y = start_y;
+        b.xspeed = 0;
+        b.yspeed = 0;
+        b.fired = 0;
+        xpm_image_t img;
+        xpm_load(sprite, XPM_8_8_8, &img);
+        b.img = img;
+        b.bullet_sprite = sprite_ctor(sprite);
+    }
+    return 0; 
+}
+
+void (draw_bullets)(){
+    for(int i = 0; i < n_bullets; i++){
+        struct bullet bullet = bullets[i];
+        if(bullet.fired){
+            sprite_set_pos(bullet.bullet_sprite, bullet.x, bullet.y);
+            sprite_draw(bullet.bullet_sprite);
+        }
+    }
+
+}
+
+void (update_bullet_pos)(struct map map){
+    for(int i = 0; i < n_bullets; i++){
+        struct bullet bullet = bullets[i];
+        if(bullet.fired){
+            //bullet direction should be worked out here
+            int x = bullet.x;
+            int y = bullet.y;
+            bullet.x = bullet.x + bullet.xspeed; // * angle, probably
+            bullet.y = bullet.y + bullet.yspeed; // * angle, probably
+            if(collision_bullet_wall(map, bullet)){
+                bullet.x = x;
+                bullet.y = y;
+                bullet.fired = 0;
+            }
+            for(int j = 0; j < n_monsters; i++){
+                struct monster monster = monsters[j];
+                if(monster.alive && collision_bullet_monster(monster, bullet)){
+                    bullet.fired = 0;
+                    monster.alive = 0;
+                    break;
+                }
+            }
+        }
+    }
+}
+
+int (collision_bullet_wall)(struct map map, struct bullet bullet) {
+    double radius = fmax(sprite_get_w(bullet.bullet_sprite), sprite_get_h(bullet.bullet_sprite))/2.0;
+    for (double x = -radius; x <= radius; x += 1) {
+        double y_pos = sqrt(radius*radius - x*x);
+        double y_neg = -y_pos;
+        if (wall_collision(map, bullet.x + x, bullet.y + y_pos) || wall_collision(map, bullet.x + x, bullet.y + y_neg)) return 1;
+    }
+    return 0;
+}
+
+int (collision_bullet_monster)(struct monster monster, struct bullet bullet) {
+    double bullet_radius = fmax(sprite_get_w(bullet.bullet_sprite), sprite_get_h(bullet.bullet_sprite))/2.0;
+    double monster_radius = fmax(sprite_get_w(monster.monster_sprite), sprite_get_h(monster.monster_sprite))/2.0;
+    double distance_x = monster.x - bullet.x;
+    double distance_y = monster.y - bullet.y;
+    double distance = sqrt(distance_x * distance_x + distance_y * distance_y);
+    return distance <= monster_radius + bullet_radius;
+}
+
 //Wall
 
 int (wall_collision)(struct map map, int x, int y){
     const int w = sprite_get_w(map.background), h = sprite_get_h(map.background);
     if(x < 0 || w <= x || y < 0 || h <= y) return 0;
     int32_t pos = x + y * w;
-    if(0 <= pos && pos < w * h) return 1;
+    if(0 <= pos && pos < w * h) return map.walls[pos];
     else return 0;
 }

@@ -54,6 +54,6 @@ int (keyboard_poll)(uint8_t bytes[], uint8_t *size){
     return 0;
 }
 
-uint8_t get_scancode(int i){
-    return scancode[i];
+const uint8_t* get_scancode(){
+    return scancode;
 }

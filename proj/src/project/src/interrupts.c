@@ -2,16 +2,16 @@
 
 #include "interrupts.h"
 
-static int timer_subscription = 0, timer_id;
+static int timer_subscription = 0;
 
-static int keyboard_subscription = 0, kbc_id;
+static int keyboard_subscription = 0;
 
-static int mouse_subscription = 0, mouse_id;
+static int mouse_subscription = 0;
 
 int (subscribe_all)(void) {
 
     timer_id = 0;
-    if(subscribe_timer_interrupt(&timer_id)) {
+    if(subscribe_timer_interrupt(TIMER0_IRQ, &timer_id)) {
         printf("%s: failed to subscribe timer interrupts.\n", __func__);
         return 1;
     }
@@ -89,6 +89,6 @@ int (unsubscribe_all)(void) {
     return 0;
 }
 
-int (get_irq)(uint8_t id){
+int (get_irq)(int id){
     return BIT(id);
 }

@@ -30,8 +30,17 @@ int main(int argc, char *argv[]) {
 }
 
 int(proj_main_loop)(int argc, char* argv[]) {
+  (void)argc; (void)argv;
 
   if (subscribe_all()) return 1;
+
+  uint16_t mode = INDEXED_1024_768;
+
+  if(vbe_get_mode_information(mode)) return 1;
+
+  if(map_vram()) return 1;
+
+  //if(set_vbe_mode(mode)) return 1;
 
   int ipc_status, r;
   message msg;
@@ -46,33 +55,34 @@ int(proj_main_loop)(int argc, char* argv[]) {
      if (is_ipc_notify(ipc_status)) { /* received notification */
          switch (_ENDPOINT_P(msg.m_source)) {
              case HARDWARE: /* hardware interrupt notification */       
-                 if(msg.m_notify.interrupts & get_irq(timer_id)){
+                 if(msg.m_notify.interrupts & get_irq(TIMER0_IRQ)){
+                    printf("got to timer\n");
                     timer_int_handler();
-                    if((no_interrupts * 60) % 60 == 0){ // the second 60 corresponds to the refresh rate
-                      clear_screen();
-                      draw_player();
-                      draw_monsters();
-                      //draw mouse here
-                      no_interrupts = 0;
-                    }
+                    //clear_screen();
+                    //menu switch case here
+                    //menu draw here
                  }
-                 if(msg.m_notify.interrupts & get_irq(kbc_id)){
+                 if(msg.m_notify.interrupts & get_irq(KBC_IRQ)){
+                    printf("got to keyboard\n");
                     kbc_ih();
                     if(got_error_keyboard == 1){
                       good = 0;
                     }
                     //calls to key processing functions here, functions to be implemented in kbd
-                    if(get_scancode(0) == 0x81){ //ESC scancode, can probably done in key process in kbd
+                    if(get_scancode()[0] == 0x81){ //ESC scancode, can probably done in key process in kbd
                       good = 0;
                     }
 
                  }
-                 if(msg.m_notify.interrupts & get_irq(mouse_id)){
+                 if(msg.m_notify.interrupts & get_irq(MOUSE_IRQ)){
+                   printf("got to mouse\n");
                     mouse_ih();
-                    struct packet pp;
-                    mouse_parse_packet(&pp);
-                    if(pp.lb){
-                      good = 0;
+                    if(bytes_counter == 3){
+                      struct packet pp;
+                      mouse_parse_packet(&pp);
+                      if(pp.lb){
+                        good = 0;
+                      }
                     }
                     //mouse function calls here
                  }
@@ -89,6 +99,10 @@ int(proj_main_loop)(int argc, char* argv[]) {
     printf("%s: failed to unsubscribe drivers.\n", __func__);
     return 1;
   }
+
+  if(vg_exit()) return 1;
+
+  if (free_memory_map()) return 1;
 
   return 0;
 }

@@ -18,6 +18,6 @@ int (subscribe_all)(void);
  */
 int (unsubscribe_all)(void);
 
-int (get_irq)(uint8_t id);
+int (get_irq)(int id);
 
 #endif //INTERRUPTS_H_INCLUDED

@@ -4,12 +4,6 @@
 #include "../include/kbc_macros.h"
 #include "../include/utils.h"
 
-int (unsubscribe_interrupt)(int *interrupt_id) {
-    if (interrupt_id == NULL) return 1;
-    if(sys_irqrmpolicy(interrupt_id)) return 1;
-    return 0;
-}
-
 int (kbc_read_cmd)(uint8_t *cmd){
     int ret = 0;
     if((ret = kbc_issue_cmd(READ_KBC_CMD))) return ret;

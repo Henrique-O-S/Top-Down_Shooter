@@ -2,6 +2,14 @@
 #define UTILS_H_INCLUDED
 
 /**
+ * @brief Unsubcribes Interrupts
+ * @param interrupt_id Interrupt ID, value via arguments on subscription of the interrupt_id
+ * @see subscribe_kbc_interrupt, subscribe_timer_interrupt
+ * @return Whether operation was sucessful or not
+ */
+int (unsubscribe_interrupt)(int *interrupt_id);
+
+/**
  * @brief Gets the least significant byte of a 16-bit variable
  * @param val 16-bit variable
  * @param lsb Pointer to a 8-bit variable to store the value of the LSB
