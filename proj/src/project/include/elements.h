@@ -66,6 +66,8 @@ void (draw_player)();
 
 void (update_player_pos)();
 
+int (collision_player_monster)(struct monster monster, struct player player);
+
 int (collision_player_wall)(struct map map, struct player player);
 
 //Monsters

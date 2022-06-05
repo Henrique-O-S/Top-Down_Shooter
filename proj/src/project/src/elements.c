@@ -27,10 +27,35 @@ void (draw_player)(){
     }
 }
 
-void (update_player_pos)(){
+void (update_player_pos)(struct map map){
     if(p.alive){
-        
+        //player inputs
+        int x = p.x;
+        int y = p.y;
+        p.x = p.x + p.xspeed; // * angle, probably
+        p.y = p.y + p.yspeed; // * angle, probably
+        if(collision_player_wall(map, p)){
+            p.x = x;
+            p.y = y;
+        }
+        for(int j = 0; j < n_monsters; j++){
+            struct monster monster = monsters[j];
+            if(monster.alive && collision_player_monster(monster, p)){
+                p.alive = 0;
+                break;
+            }
+        }
     }
+        
+}
+
+int (collision_player_monster)(struct monster monster, struct player player) {
+    double player_radius = fmax(sprite_get_w(player.player_sprite), sprite_get_h(player.player_sprite))/2.0;
+    double monster_radius = fmax(sprite_get_w(monster.monster_sprite), sprite_get_h(monster.monster_sprite))/2.0;
+    double distance_x = monster.x - player.x;
+    double distance_y = monster.y - player.y;
+    double distance = sqrt(distance_x * distance_x + distance_y * distance_y);
+    return distance <= monster_radius + player_radius;
 }
 
 int (collision_player_wall)(struct map map, struct player player){
