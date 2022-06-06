@@ -2,6 +2,13 @@
 #define UTILS_H_INCLUDED
 
 /**
+ * @defgroup utils utils
+ * @ingroup libraries
+ *
+ * @{
+ */
+
+/**
  * @brief Unsubcribes Interrupts
  * @param interrupt_id Interrupt ID, value via arguments on subscription of the interrupt_id
  * @see subscribe_kbc_interrupt, subscribe_timer_interrupt
@@ -40,5 +47,6 @@ int (util_sys_inb)(int port, uint8_t *value);
 int16_t min(int16_t a, int16_t b);
 int16_t max(int16_t a, int16_t b);
 
+/**@}*/
 
 #endif //UTILS_H_INCLUDED

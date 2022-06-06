@@ -1,0 +1,6 @@
+<map id="unsubscribe_interrupt" name="unsubscribe_interrupt">
+<area shape="rect" id="node1" title="Unsubcribes Interrupts." alt="" coords="469,5,616,32"/>
+<area shape="rect" id="node2" href="$group__interrupts.html#gadd6f2c43bcf6aa436d16dd18edbeea81" title="Unsubscribes all subscribed interrupts." alt="" coords="309,5,421,32"/>
+<area shape="rect" id="node3" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,115,32"/>
+<area shape="rect" id="node4" href="$group__interrupts.html#gaa47d951ed5ee7678663adf66785022f4" title="Subscribes all drivers used (timer&#45;&gt;keyboard&#45;&gt;mouse)" alt="" coords="163,31,261,57"/>
+</map>

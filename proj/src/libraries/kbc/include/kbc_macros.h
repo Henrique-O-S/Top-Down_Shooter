@@ -1,6 +1,13 @@
 #ifndef KBC_MACROS_H_INCLUDED
 #define KBC_MACROS_H_INCLUDED
 
+/** @defgroup kbc_macros kbc_macros
+ * @ingroup libraries
+ * @{
+ *
+ * Constants for programming the KBC.
+ */
+
 /* KBC IRQ Line */
 
 #define KBC_IRQ     1   /* @brief KBC Controller IRQ Line */
@@ -52,5 +59,7 @@
 #define INT_MOU         BIT(1)  /* @brief Enable Mouse Interrupts */
 #define DIS_KBD         BIT(4)  /* @brief Disable Keyboard */
 #define DIS_MOU         BIT(5)  /* @brief Disable Mouse */
+
+/**@}*/
 
 #endif //KBC_MACROS_H_INCLUDED

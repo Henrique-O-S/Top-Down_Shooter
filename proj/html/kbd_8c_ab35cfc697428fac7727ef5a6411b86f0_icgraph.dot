@@ -1,0 +1,12 @@
+digraph "subscribe_kbc_interrupt"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="subscribe_kbc_interrupt",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="subscribe_all",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interrupts_8c.html#aa47d951ed5ee7678663adf66785022f4",tooltip="Subscribes all drivers used (timer->keyboard->mouse)"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="proj_main_loop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b",tooltip=" "];
+}

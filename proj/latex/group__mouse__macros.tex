@@ -1,0 +1,218 @@
+\hypertarget{group__mouse__macros}{}\doxysection{mouse\+\_\+macros}
+\label{group__mouse__macros}\index{mouse\_macros@{mouse\_macros}}
+Collaboration diagram for mouse\+\_\+macros\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{group__mouse__macros}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_ga85964cb90343bb1a029b1d1b4229f910}{MOUSE\+\_\+\+IRQ}}~12
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_gabbc8382ae4ea521f03c119a14478b759}{LEFT\+\_\+\+BUTTON}}~BIT(0) /$\ast$ @brief Left button click event$\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_gaeb17351958162535ab6af2cd6b030955}{RIGHT\+\_\+\+BUTTON}}~BIT(1) /$\ast$ @brief Right button click event $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_gaea4935ff922fa4fbbc0f03fc250e268b}{MIDDLE\+\_\+\+BUTTON}}~BIT(2) /$\ast$ @brief Middle button click event $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_gacf8440b3511e95097baf55d14b9a51c3}{FIRST\+\_\+\+BYTE\+\_\+\+ID}}~BIT(3) /$\ast$ @brief Identifier of first byte of packet CAREFUL\+: Not 100\% accurate $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_gab3682a7593eea6b3a98269c3105714b1}{MSB\+\_\+\+X\+\_\+\+DELTA}}~BIT(4) /$\ast$ @brief Most significant bit of X delta $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_ga73e7f39e782c9d57707ff7a518d031a6}{MSB\+\_\+\+Y\+\_\+\+DELTA}}~BIT(5) /$\ast$ @brief Most significant bit of Y delta $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_ga82dc3ac9577dabd19733ada75d2822d0}{X\+\_\+\+OVERFLOW}}~BIT(6) /$\ast$ @brief X delta overflowed $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_gacd54c5569c84fd2d1710cccd190e138a}{Y\+\_\+\+OVERFLOW}}~BIT(7) /$\ast$ @brief Y delta overflowed $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_gab702106cf3b3e96750b6845ded4e0299}{RESET}}~0x\+FF /$\ast$ @brief Reset mouse $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_ga92f67631ef5a97e4a266c15bc710776d}{RESEND}}~0x\+FE /$\ast$ @brief Resend command $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_ga3da44afeba217135a680a7477b5e3ce3}{DEFAULT}}~0x\+F6 /$\ast$ @brief Set default values $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_ga1c84607e844d7b3736a1a3491c18e872}{DIS\+\_\+\+DATA\+\_\+\+REP}}~0x\+F5 /$\ast$ @brief Disable Data Reporting $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_ga0be5107de1323fcc692f8a2e6002e41e}{ENABLE\+\_\+\+DATA\+\_\+\+REP}}~0x\+F4 /$\ast$ @brief Enable Data Reporting $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_ga076c7f5a0419fcfa0a19450553fc1ead}{SET\+\_\+\+SAMPLE\+\_\+\+RT}}~0x\+F3 /$\ast$ @brief Sets state sampling rate $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_ga463c9603333b416642d46869016cd05a}{SET\+\_\+\+REMOTE\+\_\+\+MD}}~0x\+F0 /$\ast$ @brief Sets Mouse on Remote Mode, data on request $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_ga8d406d5aff787991429e62cfd9bac721}{READ\+\_\+\+DATA}}~0x\+EB /$\ast$ @brief Sends data packet request $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_ga36decadeba3a7e6eeee64beeb1e01a5a}{SET\+\_\+\+STREAM\+\_\+\+MD}}~0x\+EA /$\ast$ @brief Sets mouse on Stream Mode, data on events $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_gab74d8cf9ec50650fee5058cb33a9160e}{STATUS\+\_\+\+REQUEST}}~0x\+E9 /$\ast$ @brief Get mouse configuration $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_ga34d57709215034b82f6887fec2af1b02}{SET\+\_\+\+RESOLUTION}}~0x\+E8 /$\ast$ @brief Sets resolution for mouse movement $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_ga75b5104e1efee7f0cbbb874aab25c840}{SCALING\+\_\+\+ACC\+\_\+\+MD}}~0x\+E7 /$\ast$ @brief Sets scaling on acceleration mode $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_gadaea74a3865e718fcb985122015528f1}{SCALING\+\_\+\+LIN\+\_\+\+MD}}~0x\+E6 /$\ast$ @brief Sets scaling on linear mode $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_ga4dc7574681861c30957f3ffc1fe84f41}{ACK\+\_\+\+OK}}~0x\+FA /$\ast$ @brief Operation sucessful $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_gad6d6032121d8482ec2e6d5c21c3dfd8a}{ACK\+\_\+\+INVALID}}~0x\+FE /$\ast$ @brief Invalid Byte, first occurence $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__mouse__macros_gacd6ac9f5064297a742e115eadca475e6}{ACK\+\_\+\+ERROR}}~0x\+FC /$\ast$ @brief Invalid Byte on resend $\ast$/
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Constants for programming the Mouse. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__mouse__macros_gacd6ac9f5064297a742e115eadca475e6}\label{group__mouse__macros_gacd6ac9f5064297a742e115eadca475e6}} 
+\index{mouse\_macros@{mouse\_macros}!ACK\_ERROR@{ACK\_ERROR}}
+\index{ACK\_ERROR@{ACK\_ERROR}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{ACK\_ERROR}{ACK\_ERROR}}
+{\footnotesize\ttfamily \#define ACK\+\_\+\+ERROR~0x\+FC /$\ast$ @brief Invalid Byte on resend $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_gad6d6032121d8482ec2e6d5c21c3dfd8a}\label{group__mouse__macros_gad6d6032121d8482ec2e6d5c21c3dfd8a}} 
+\index{mouse\_macros@{mouse\_macros}!ACK\_INVALID@{ACK\_INVALID}}
+\index{ACK\_INVALID@{ACK\_INVALID}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{ACK\_INVALID}{ACK\_INVALID}}
+{\footnotesize\ttfamily \#define ACK\+\_\+\+INVALID~0x\+FE /$\ast$ @brief Invalid Byte, first occurence $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_ga4dc7574681861c30957f3ffc1fe84f41}\label{group__mouse__macros_ga4dc7574681861c30957f3ffc1fe84f41}} 
+\index{mouse\_macros@{mouse\_macros}!ACK\_OK@{ACK\_OK}}
+\index{ACK\_OK@{ACK\_OK}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{ACK\_OK}{ACK\_OK}}
+{\footnotesize\ttfamily \#define ACK\+\_\+\+OK~0x\+FA /$\ast$ @brief Operation sucessful $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_ga3da44afeba217135a680a7477b5e3ce3}\label{group__mouse__macros_ga3da44afeba217135a680a7477b5e3ce3}} 
+\index{mouse\_macros@{mouse\_macros}!DEFAULT@{DEFAULT}}
+\index{DEFAULT@{DEFAULT}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{DEFAULT}{DEFAULT}}
+{\footnotesize\ttfamily \#define DEFAULT~0x\+F6 /$\ast$ @brief Set default values $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_ga1c84607e844d7b3736a1a3491c18e872}\label{group__mouse__macros_ga1c84607e844d7b3736a1a3491c18e872}} 
+\index{mouse\_macros@{mouse\_macros}!DIS\_DATA\_REP@{DIS\_DATA\_REP}}
+\index{DIS\_DATA\_REP@{DIS\_DATA\_REP}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{DIS\_DATA\_REP}{DIS\_DATA\_REP}}
+{\footnotesize\ttfamily \#define DIS\+\_\+\+DATA\+\_\+\+REP~0x\+F5 /$\ast$ @brief Disable Data Reporting $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_ga0be5107de1323fcc692f8a2e6002e41e}\label{group__mouse__macros_ga0be5107de1323fcc692f8a2e6002e41e}} 
+\index{mouse\_macros@{mouse\_macros}!ENABLE\_DATA\_REP@{ENABLE\_DATA\_REP}}
+\index{ENABLE\_DATA\_REP@{ENABLE\_DATA\_REP}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{ENABLE\_DATA\_REP}{ENABLE\_DATA\_REP}}
+{\footnotesize\ttfamily \#define ENABLE\+\_\+\+DATA\+\_\+\+REP~0x\+F4 /$\ast$ @brief Enable Data Reporting $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_gacf8440b3511e95097baf55d14b9a51c3}\label{group__mouse__macros_gacf8440b3511e95097baf55d14b9a51c3}} 
+\index{mouse\_macros@{mouse\_macros}!FIRST\_BYTE\_ID@{FIRST\_BYTE\_ID}}
+\index{FIRST\_BYTE\_ID@{FIRST\_BYTE\_ID}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{FIRST\_BYTE\_ID}{FIRST\_BYTE\_ID}}
+{\footnotesize\ttfamily \#define FIRST\+\_\+\+BYTE\+\_\+\+ID~BIT(3) /$\ast$ @brief Identifier of first byte of packet CAREFUL\+: Not 100\% accurate $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_gabbc8382ae4ea521f03c119a14478b759}\label{group__mouse__macros_gabbc8382ae4ea521f03c119a14478b759}} 
+\index{mouse\_macros@{mouse\_macros}!LEFT\_BUTTON@{LEFT\_BUTTON}}
+\index{LEFT\_BUTTON@{LEFT\_BUTTON}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{LEFT\_BUTTON}{LEFT\_BUTTON}}
+{\footnotesize\ttfamily \#define LEFT\+\_\+\+BUTTON~BIT(0) /$\ast$ @brief Left button click event$\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_gaea4935ff922fa4fbbc0f03fc250e268b}\label{group__mouse__macros_gaea4935ff922fa4fbbc0f03fc250e268b}} 
+\index{mouse\_macros@{mouse\_macros}!MIDDLE\_BUTTON@{MIDDLE\_BUTTON}}
+\index{MIDDLE\_BUTTON@{MIDDLE\_BUTTON}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{MIDDLE\_BUTTON}{MIDDLE\_BUTTON}}
+{\footnotesize\ttfamily \#define MIDDLE\+\_\+\+BUTTON~BIT(2) /$\ast$ @brief Middle button click event $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_ga85964cb90343bb1a029b1d1b4229f910}\label{group__mouse__macros_ga85964cb90343bb1a029b1d1b4229f910}} 
+\index{mouse\_macros@{mouse\_macros}!MOUSE\_IRQ@{MOUSE\_IRQ}}
+\index{MOUSE\_IRQ@{MOUSE\_IRQ}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{MOUSE\_IRQ}{MOUSE\_IRQ}}
+{\footnotesize\ttfamily \#define MOUSE\+\_\+\+IRQ~12}
+
+\mbox{\Hypertarget{group__mouse__macros_gab3682a7593eea6b3a98269c3105714b1}\label{group__mouse__macros_gab3682a7593eea6b3a98269c3105714b1}} 
+\index{mouse\_macros@{mouse\_macros}!MSB\_X\_DELTA@{MSB\_X\_DELTA}}
+\index{MSB\_X\_DELTA@{MSB\_X\_DELTA}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{MSB\_X\_DELTA}{MSB\_X\_DELTA}}
+{\footnotesize\ttfamily \#define MSB\+\_\+\+X\+\_\+\+DELTA~BIT(4) /$\ast$ @brief Most significant bit of X delta $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_ga73e7f39e782c9d57707ff7a518d031a6}\label{group__mouse__macros_ga73e7f39e782c9d57707ff7a518d031a6}} 
+\index{mouse\_macros@{mouse\_macros}!MSB\_Y\_DELTA@{MSB\_Y\_DELTA}}
+\index{MSB\_Y\_DELTA@{MSB\_Y\_DELTA}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{MSB\_Y\_DELTA}{MSB\_Y\_DELTA}}
+{\footnotesize\ttfamily \#define MSB\+\_\+\+Y\+\_\+\+DELTA~BIT(5) /$\ast$ @brief Most significant bit of Y delta $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_ga8d406d5aff787991429e62cfd9bac721}\label{group__mouse__macros_ga8d406d5aff787991429e62cfd9bac721}} 
+\index{mouse\_macros@{mouse\_macros}!READ\_DATA@{READ\_DATA}}
+\index{READ\_DATA@{READ\_DATA}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{READ\_DATA}{READ\_DATA}}
+{\footnotesize\ttfamily \#define READ\+\_\+\+DATA~0x\+EB /$\ast$ @brief Sends data packet request $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_ga92f67631ef5a97e4a266c15bc710776d}\label{group__mouse__macros_ga92f67631ef5a97e4a266c15bc710776d}} 
+\index{mouse\_macros@{mouse\_macros}!RESEND@{RESEND}}
+\index{RESEND@{RESEND}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{RESEND}{RESEND}}
+{\footnotesize\ttfamily \#define RESEND~0x\+FE /$\ast$ @brief Resend command $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_gab702106cf3b3e96750b6845ded4e0299}\label{group__mouse__macros_gab702106cf3b3e96750b6845ded4e0299}} 
+\index{mouse\_macros@{mouse\_macros}!RESET@{RESET}}
+\index{RESET@{RESET}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{RESET}{RESET}}
+{\footnotesize\ttfamily \#define RESET~0x\+FF /$\ast$ @brief Reset mouse $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_gaeb17351958162535ab6af2cd6b030955}\label{group__mouse__macros_gaeb17351958162535ab6af2cd6b030955}} 
+\index{mouse\_macros@{mouse\_macros}!RIGHT\_BUTTON@{RIGHT\_BUTTON}}
+\index{RIGHT\_BUTTON@{RIGHT\_BUTTON}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{RIGHT\_BUTTON}{RIGHT\_BUTTON}}
+{\footnotesize\ttfamily \#define RIGHT\+\_\+\+BUTTON~BIT(1) /$\ast$ @brief Right button click event $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_ga75b5104e1efee7f0cbbb874aab25c840}\label{group__mouse__macros_ga75b5104e1efee7f0cbbb874aab25c840}} 
+\index{mouse\_macros@{mouse\_macros}!SCALING\_ACC\_MD@{SCALING\_ACC\_MD}}
+\index{SCALING\_ACC\_MD@{SCALING\_ACC\_MD}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{SCALING\_ACC\_MD}{SCALING\_ACC\_MD}}
+{\footnotesize\ttfamily \#define SCALING\+\_\+\+ACC\+\_\+\+MD~0x\+E7 /$\ast$ @brief Sets scaling on acceleration mode $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_gadaea74a3865e718fcb985122015528f1}\label{group__mouse__macros_gadaea74a3865e718fcb985122015528f1}} 
+\index{mouse\_macros@{mouse\_macros}!SCALING\_LIN\_MD@{SCALING\_LIN\_MD}}
+\index{SCALING\_LIN\_MD@{SCALING\_LIN\_MD}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{SCALING\_LIN\_MD}{SCALING\_LIN\_MD}}
+{\footnotesize\ttfamily \#define SCALING\+\_\+\+LIN\+\_\+\+MD~0x\+E6 /$\ast$ @brief Sets scaling on linear mode $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_ga463c9603333b416642d46869016cd05a}\label{group__mouse__macros_ga463c9603333b416642d46869016cd05a}} 
+\index{mouse\_macros@{mouse\_macros}!SET\_REMOTE\_MD@{SET\_REMOTE\_MD}}
+\index{SET\_REMOTE\_MD@{SET\_REMOTE\_MD}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{SET\_REMOTE\_MD}{SET\_REMOTE\_MD}}
+{\footnotesize\ttfamily \#define SET\+\_\+\+REMOTE\+\_\+\+MD~0x\+F0 /$\ast$ @brief Sets Mouse on Remote Mode, data on request $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_ga34d57709215034b82f6887fec2af1b02}\label{group__mouse__macros_ga34d57709215034b82f6887fec2af1b02}} 
+\index{mouse\_macros@{mouse\_macros}!SET\_RESOLUTION@{SET\_RESOLUTION}}
+\index{SET\_RESOLUTION@{SET\_RESOLUTION}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{SET\_RESOLUTION}{SET\_RESOLUTION}}
+{\footnotesize\ttfamily \#define SET\+\_\+\+RESOLUTION~0x\+E8 /$\ast$ @brief Sets resolution for mouse movement $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_ga076c7f5a0419fcfa0a19450553fc1ead}\label{group__mouse__macros_ga076c7f5a0419fcfa0a19450553fc1ead}} 
+\index{mouse\_macros@{mouse\_macros}!SET\_SAMPLE\_RT@{SET\_SAMPLE\_RT}}
+\index{SET\_SAMPLE\_RT@{SET\_SAMPLE\_RT}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{SET\_SAMPLE\_RT}{SET\_SAMPLE\_RT}}
+{\footnotesize\ttfamily \#define SET\+\_\+\+SAMPLE\+\_\+\+RT~0x\+F3 /$\ast$ @brief Sets state sampling rate $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_ga36decadeba3a7e6eeee64beeb1e01a5a}\label{group__mouse__macros_ga36decadeba3a7e6eeee64beeb1e01a5a}} 
+\index{mouse\_macros@{mouse\_macros}!SET\_STREAM\_MD@{SET\_STREAM\_MD}}
+\index{SET\_STREAM\_MD@{SET\_STREAM\_MD}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{SET\_STREAM\_MD}{SET\_STREAM\_MD}}
+{\footnotesize\ttfamily \#define SET\+\_\+\+STREAM\+\_\+\+MD~0x\+EA /$\ast$ @brief Sets mouse on Stream Mode, data on events $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_gab74d8cf9ec50650fee5058cb33a9160e}\label{group__mouse__macros_gab74d8cf9ec50650fee5058cb33a9160e}} 
+\index{mouse\_macros@{mouse\_macros}!STATUS\_REQUEST@{STATUS\_REQUEST}}
+\index{STATUS\_REQUEST@{STATUS\_REQUEST}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{STATUS\_REQUEST}{STATUS\_REQUEST}}
+{\footnotesize\ttfamily \#define STATUS\+\_\+\+REQUEST~0x\+E9 /$\ast$ @brief Get mouse configuration $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_ga82dc3ac9577dabd19733ada75d2822d0}\label{group__mouse__macros_ga82dc3ac9577dabd19733ada75d2822d0}} 
+\index{mouse\_macros@{mouse\_macros}!X\_OVERFLOW@{X\_OVERFLOW}}
+\index{X\_OVERFLOW@{X\_OVERFLOW}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{X\_OVERFLOW}{X\_OVERFLOW}}
+{\footnotesize\ttfamily \#define X\+\_\+\+OVERFLOW~BIT(6) /$\ast$ @brief X delta overflowed $\ast$/}
+
+\mbox{\Hypertarget{group__mouse__macros_gacd54c5569c84fd2d1710cccd190e138a}\label{group__mouse__macros_gacd54c5569c84fd2d1710cccd190e138a}} 
+\index{mouse\_macros@{mouse\_macros}!Y\_OVERFLOW@{Y\_OVERFLOW}}
+\index{Y\_OVERFLOW@{Y\_OVERFLOW}!mouse\_macros@{mouse\_macros}}
+\doxysubsubsection{\texorpdfstring{Y\_OVERFLOW}{Y\_OVERFLOW}}
+{\footnotesize\ttfamily \#define Y\+\_\+\+OVERFLOW~BIT(7) /$\ast$ @brief Y delta overflowed $\ast$/}
+

@@ -1,0 +1,11 @@
+<map id="draw_player" name="draw_player">
+<area shape="rect" id="node1" title=" " alt="" coords="5,132,96,159"/>
+<area shape="rect" id="node2" href="$group__sprite.html#ga0d85a9d10803dfbda6b848b690b617c6" title=" " alt="" coords="153,81,241,108"/>
+<area shape="rect" id="node7" href="$group__sprite.html#ga3b4d4650099c6fefa3515801dca0d1d9" title=" " alt="" coords="144,157,251,184"/>
+<area shape="rect" id="node3" href="$group__graphics.html#ga1e78ad9ed25b03687bc0b0d06b3957e4" title=" " alt="" coords="307,5,384,32"/>
+<area shape="rect" id="node4" href="$group__graphics.html#gaff98c1ed5146900037a3747de30f6a79" title=" " alt="" coords="306,56,385,83"/>
+<area shape="rect" id="node5" href="$group__graphics.html#gab202e9acd2a0826e183d01a13930d5d6" title=" " alt="" coords="308,107,383,133"/>
+<area shape="rect" id="node6" href="$group__graphics.html#gafa7636d40c82e2b1a63585e2ad8138ff" title=" " alt="" coords="440,107,553,133"/>
+<area shape="rect" id="node8" href="$group__sprite.html#ga6f33be11bbc3cecba4c80ecbf357dc7c" title=" " alt="" coords="299,157,392,184"/>
+<area shape="rect" id="node9" href="$group__sprite.html#ga4dcfb6a33cfc54e46795ce5d1f914bd1" title=" " alt="" coords="299,208,392,235"/>
+</map>

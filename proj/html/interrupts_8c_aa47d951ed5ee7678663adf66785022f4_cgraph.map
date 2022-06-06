@@ -1,0 +1,9 @@
+<map id="subscribe_all" name="subscribe_all">
+<area shape="rect" id="node1" title="Subscribes all drivers used (timer&#45;&gt;keyboard&#45;&gt;mouse)" alt="" coords="5,81,104,108"/>
+<area shape="rect" id="node2" href="$group__mouse.html#ga7ff28e5ab0e59a20c7a8ccec987a71d1" title=" " alt="" coords="163,5,309,32"/>
+<area shape="rect" id="node3" href="$group__kbd.html#gab35cfc697428fac7727ef5a6411b86f0" title=" " alt="" coords="156,56,316,83"/>
+<area shape="rect" id="node4" href="$group__timer.html#ga11445809a6c9be6a3ed5ffb185bf88c3" title=" " alt="" coords="152,107,320,133"/>
+<area shape="rect" id="node5" href="$interrupts_8c.html#add6f2c43bcf6aa436d16dd18edbeea81" title="Unsubscribes all subscribed interrupts." alt="" coords="180,157,292,184"/>
+<area shape="rect" id="node6" href="$group__mouse.html#ga3781238807e9bdcdb58e541f279ccec1" title=" " alt="" coords="368,132,527,159"/>
+<area shape="rect" id="node7" href="$group__utils.html#gaadc49a62c6faf07bd5a25495ed4fa813" title="Unsubcribes Interrupts." alt="" coords="374,183,521,209"/>
+</map>

@@ -1,6 +1,13 @@
 #ifndef ELEMENTS_H_INCLUDED
 #define ELEMENTS_H_INCLUDED
 
+/**
+ * @defgroup elements elements
+ * @ingroup proj
+ *
+ * @{
+ */
+
 #include "libraries.h"
 
 //structs
@@ -95,5 +102,9 @@ int (collision_bullet_monster)(struct monster monster, struct bullet bullet);
 //Walls
 
 int (wall_collision)(struct map map, int x, int y);
+
+/**
+ * @}
+ */
 
 #endif //ELEMENTS_H_INCLUDED

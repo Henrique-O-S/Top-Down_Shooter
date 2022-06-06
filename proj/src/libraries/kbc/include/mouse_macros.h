@@ -1,6 +1,12 @@
-
 #ifndef MOUSE_MACROS_H_INCLUDED
 #define MOUSE_MACROS_H_INCLUDED
+
+/** @defgroup mouse_macros mouse_macros
+ * @ingroup libraries
+ * @{
+ *
+ * Constants for programming the Mouse.
+ */
 
 #define MOUSE_IRQ 12
 
@@ -36,5 +42,7 @@
 #define ACK_OK      0xFA /* @brief Operation sucessful */
 #define ACK_INVALID 0xFE /* @brief Invalid Byte, first occurence */
 #define ACK_ERROR   0xFC /* @brief Invalid Byte on resend */
+
+/**@}*/
 
 #endif // MOUSE_MACROS_H_INCLUDED

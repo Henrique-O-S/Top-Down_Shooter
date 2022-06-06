@@ -1,6 +1,13 @@
 #ifndef LIBRARIES_H_INCLUDED
 #define LIBRARIES_H_INCLUDED
 
+/**
+ * @defgroup libraries libraries
+ * @ingroup libraries
+ *
+ * @{
+ */
+
 #include "graphics/include/graphics.h"
 #include "graphics/include/graphics_macros.h"
 #include "graphics/include/sprite.h"
@@ -12,5 +19,7 @@
 #include "timer/include/timer.h"
 #include "timer/include/i8254.h"
 #include "utils/include/utils.h"
+
+/**@}*/
 
 #endif //LIBRARIES_H_INCLUDED

@@ -1,6 +1,13 @@
 #ifndef MOUSE_H_INCLUDED
 #define MOUSE_H_INCLUDED
 
+/**
+ * @defgroup mouse mouse
+ * @ingroup libraries
+ *
+ * @{
+ */
+
 #include <stdint.h>
 
 int bytes_counter;
@@ -15,5 +22,7 @@ void (mouse_ih)();
 int (mouse_parse_packet)(struct packet *packet);
 
 int16_t (sign_extend_byte)(uint8_t sign_bit, uint8_t byte);
+
+/**@}*/
 
 #endif //MOUSE_H_INCLUDED

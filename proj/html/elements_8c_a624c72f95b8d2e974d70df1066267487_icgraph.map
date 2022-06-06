@@ -1,0 +1,4 @@
+<map id="collision_monster_wall" name="collision_monster_wall">
+<area shape="rect" id="node1" title=" " alt="" coords="196,5,348,32"/>
+<area shape="rect" id="node2" href="$elements_8c.html#a5f7b99d83f9b033ad69c25a76eb1d43b" title=" " alt="" coords="5,5,148,32"/>
+</map>

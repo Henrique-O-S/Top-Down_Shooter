@@ -1,0 +1,6 @@
+<map id="kbc_read_byte" name="kbc_read_byte">
+<area shape="rect" id="node1" title="Low&#45;level function for reading byte from keyboard Low&#45;level function for reading byte from keyboard...." alt="" coords="327,31,433,57"/>
+<area shape="rect" id="node2" href="$group__kbc.html#ga4d01b87977dde6d295c19c982e5426ea" title="High&#45;level function that reads the command byte of the KBC." alt="" coords="172,5,279,32"/>
+<area shape="rect" id="node4" href="$group__kbd.html#gac83c39ace6f539167f5cc34f6c689cd2" title=" " alt="" coords="174,56,277,83"/>
+<area shape="rect" id="node3" href="$kbc_8c.html#ad23a7f1edcc0f9b1d46b073a198f9f88" title=" " alt="" coords="5,5,124,32"/>
+</map>

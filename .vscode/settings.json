@@ -14,6 +14,8 @@
         "sprite.h": "c",
         "__tree": "c",
         "map": "c",
-        "aux_functions.h": "c"
+        "aux_functions.h": "c",
+        "libraries.h": "c",
+        "graphics_macros.h": "c"
     }
 }

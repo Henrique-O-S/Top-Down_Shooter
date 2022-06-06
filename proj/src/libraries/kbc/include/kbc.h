@@ -1,10 +1,12 @@
-/**
- * This file concerns everything related to the KBC (KeyBoard Controller, which
- * actually also manages the mouse)
- */
-
 #ifndef KBC_H_INCLUDED
 #define KBC_H_INCLUDED
+
+/**
+ * @defgroup kbc kbc
+ * @ingroup libraries
+ *
+ * @{
+ */
 
 /**
  * @brief High-level function that reads the command byte of the KBC
@@ -51,5 +53,7 @@ int (kbc_issue_arg)(uint8_t arg);
  * @return 0 if operation was successful, 1 otherwise
  */
 int (kbc_read_byte)(uint8_t *byte);
+
+/**@}*/
 
 #endif //KBC_H_INCLUDED

@@ -1,13 +1,14 @@
 #ifndef _LCOM_I8254_H_
 #define _LCOM_I8254_H_
 
-#include <lcom/lcf.h>
-
 /** @defgroup i8254 i8254
+ * @ingroup libraries
  * @{
  *
  * Constants for programming the i8254 Timer.
  */
+
+#include <lcom/lcf.h>
 
 #define TIMER_FREQ 1193182 /**< @brief clock frequency for timer in PC and AT */
 #define TIMER_MIN_FREQ (TIMER_FREQ / UINT16_MAX) + ((TIMER_FREQ % UINT16_MAX) ? 1 : 0) /**< @brief minimum clock frequency for timer in PC and AT */

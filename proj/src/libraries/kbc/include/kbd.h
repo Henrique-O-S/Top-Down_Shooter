@@ -1,10 +1,14 @@
-/**
- * This file concerns everything related to the keyboard
- */
-#include <lcom/lcf.h>
-
 #ifndef KBD_H_INCLUDED
 #define KBD_H_INCLUDED
+
+/**
+ * @defgroup kbd kbd
+ * @ingroup libraries
+ *
+ * @{
+ */
+
+#include <lcom/lcf.h>
 
 int (subscribe_kbc_interrupt)(uint8_t interrupt_bit, int *interrupt_id);
 
@@ -18,5 +22,7 @@ void (kbc_ih)(void);
 int (keyboard_poll)(uint8_t bytes[], uint8_t *size);
 
 const uint8_t* (get_scancode)();
+
+/**@}*/
 
 #endif //KBD_H_INCLUDED

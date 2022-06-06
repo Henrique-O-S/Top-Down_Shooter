@@ -1,0 +1,44 @@
+\hypertarget{kbc_8c}{}\doxysection{src/libraries/kbc/src/kbc.c File Reference}
+\label{kbc_8c}\index{src/libraries/kbc/src/kbc.c@{src/libraries/kbc/src/kbc.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/kbc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/kbc\+\_\+macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/utils.\+h\char`\"{}}\newline
+Include dependency graph for kbc.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__kbc_ga4d01b87977dde6d295c19c982e5426ea}{kbc\+\_\+read\+\_\+cmd}} (uint8\+\_\+t $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em High-\/level function that reads the command byte of the KBC. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbc_ga979788590a8e65eb1d5259ee6faa37a5}{kbc\+\_\+change\+\_\+cmd}} (uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em High-\/level function that changes the command byte of the KBC. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{kbc_8c_ad23a7f1edcc0f9b1d46b073a198f9f88}{kbc\+\_\+restore\+\_\+kbd}} ()
+\item 
+int() \mbox{\hyperlink{group__kbc_gabf6e77da648ded62b65bdb3f9a437424}{kbc\+\_\+issue\+\_\+cmd}} (uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em Low-\/level function to issue a command to keyboard. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbc_ga081c509c47a33f55ca8756f2d8a21fa6}{kbc\+\_\+issue\+\_\+arg}} (uint8\+\_\+t arg)
+\begin{DoxyCompactList}\small\item\em Low-\/level function to issue an argument of a command. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbc_ga0653674ee39394a08915bb1599ae67f9}{kbc\+\_\+read\+\_\+byte}} (uint8\+\_\+t $\ast$byte)
+\begin{DoxyCompactList}\small\item\em Low-\/level function for reading byte from keyboard Low-\/level function for reading byte from keyboard. Waits until output buffer is full. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{kbc_8c_ad23a7f1edcc0f9b1d46b073a198f9f88}\label{kbc_8c_ad23a7f1edcc0f9b1d46b073a198f9f88}} 
+\index{kbc.c@{kbc.c}!kbc\_restore\_kbd@{kbc\_restore\_kbd}}
+\index{kbc\_restore\_kbd@{kbc\_restore\_kbd}!kbc.c@{kbc.c}}
+\doxysubsubsection{\texorpdfstring{kbc\_restore\_kbd()}{kbc\_restore\_kbd()}}
+{\footnotesize\ttfamily int() kbc\+\_\+restore\+\_\+kbd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8c_ad23a7f1edcc0f9b1d46b073a198f9f88_cgraph}
+\end{center}
+\end{figure}

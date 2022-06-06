@@ -1,0 +1,105 @@
+\hypertarget{elements_8h_source}{}\doxysection{elements.\+h}
+\label{elements_8h_source}\index{src/project/include/elements.h@{src/project/include/elements.h}}
+\mbox{\hyperlink{elements_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef ELEMENTS\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define ELEMENTS\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{libraries_8h}{libraries.h}}"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{//structs}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{struct }\mbox{\hyperlink{structplayer}{player}}\{}
+\DoxyCodeLine{16     \mbox{\hyperlink{structsprite}{sprite\_t}} *\mbox{\hyperlink{structplayer_a607e3ed912dde4dcb78ea5f843533416}{player\_sprite}};}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} \mbox{\hyperlink{structplayer_a2ee7d18d25bfcab15206b51e270e83e4}{x}};}
+\DoxyCodeLine{18     \textcolor{keywordtype}{int} \mbox{\hyperlink{structplayer_ab1da25240a30a5563d4e0714dade1575}{y}};}
+\DoxyCodeLine{19     \textcolor{keywordtype}{int} \mbox{\hyperlink{structplayer_ab3d5c111cdc819dbda5ac63352b6bf9b}{xspeed}};}
+\DoxyCodeLine{20     \textcolor{keywordtype}{int} \mbox{\hyperlink{structplayer_a8274204d9a304224f29837bb8a0894e3}{yspeed}};}
+\DoxyCodeLine{21     \textcolor{keywordtype}{int} \mbox{\hyperlink{structplayer_a963feae1270f4a121de83d538c9d9d80}{alive}};}
+\DoxyCodeLine{22     xpm\_image\_t \mbox{\hyperlink{structplayer_a52058876f3f8b1783859e6229f91bb2c}{img}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{struct }\mbox{\hyperlink{structplayer}{player}} \mbox{\hyperlink{group__elements_gabb6b8d5fcd639dcc5326cd8faa875316}{p}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{struct }\mbox{\hyperlink{structmonster}{monster}}\{}
+\DoxyCodeLine{29     \textcolor{keywordtype}{int} \mbox{\hyperlink{structmonster_a18fb0aa137bb03a705184bf858f4edcb}{id}};}
+\DoxyCodeLine{30     \mbox{\hyperlink{structsprite}{sprite\_t}} *\mbox{\hyperlink{structmonster_a40ea9c8fc79893588aea30517914cd53}{monster\_sprite}};}
+\DoxyCodeLine{31     \textcolor{keywordtype}{int} \mbox{\hyperlink{structmonster_ab3366fe21e72335d60b2107a2a64e242}{x}};}
+\DoxyCodeLine{32     \textcolor{keywordtype}{int} \mbox{\hyperlink{structmonster_a27794f21cfd56304fe7d85ea921b03ec}{y}};}
+\DoxyCodeLine{33     \textcolor{keywordtype}{int} \mbox{\hyperlink{structmonster_aaa11e468783a43f6f52985a0b81cdf2b}{xspeed}};}
+\DoxyCodeLine{34     \textcolor{keywordtype}{int} \mbox{\hyperlink{structmonster_afa97e6bc9194a8404b38e387c5f83e37}{yspeed}};}
+\DoxyCodeLine{35     \textcolor{keywordtype}{int} \mbox{\hyperlink{structmonster_a9af3c489d4ee8b990d8be4fe8ed7d11f}{alive}};}
+\DoxyCodeLine{36     xpm\_image\_t \mbox{\hyperlink{structmonster_afa47d8c4bc02e67a2ce8012367a2d5ae}{img}};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__elements_ga88e3a0097679445acafb9acbe2177b93}{n\_monsters}};}
+\DoxyCodeLine{41 \textcolor{keyword}{struct }\mbox{\hyperlink{structmonster}{monster}} \mbox{\hyperlink{group__elements_ga87edb1adbdf6be1ca95ff33593904ef8}{monsters}}[10]; \textcolor{comment}{//monsters size got to be equal to n\_monsters}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{struct }\mbox{\hyperlink{structbullet}{bullet}}\{}
+\DoxyCodeLine{44     \textcolor{keywordtype}{int} \mbox{\hyperlink{structbullet_a07313a2a11ad417535ec8aa6c4ac8b24}{id}};}
+\DoxyCodeLine{45     \mbox{\hyperlink{structsprite}{sprite\_t}} *\mbox{\hyperlink{structbullet_a8e08b86b4d999c2f85532c45fbea9519}{bullet\_sprite}};}
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} \mbox{\hyperlink{structbullet_a8aa2473ae3eecca4edc2456b0682314b}{x}};}
+\DoxyCodeLine{47     \textcolor{keywordtype}{int} \mbox{\hyperlink{structbullet_a4ae297548b93d952fc700f9d9761b794}{y}};}
+\DoxyCodeLine{48     \textcolor{keywordtype}{int} \mbox{\hyperlink{structbullet_ae47b10f86107dc365dd262a9a9b62d2c}{xspeed}};}
+\DoxyCodeLine{49     \textcolor{keywordtype}{int} \mbox{\hyperlink{structbullet_a28563229d7277f1079a2399ae6ad27a6}{yspeed}};}
+\DoxyCodeLine{50     \textcolor{keywordtype}{int} \mbox{\hyperlink{structbullet_aaeb6feb08b947abe77f28601b8b4b500}{fired}};}
+\DoxyCodeLine{51     xpm\_image\_t \mbox{\hyperlink{structbullet_a361b326c28159e9a1295c8272f7ccbce}{img}};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__elements_gaba491a8e216507a1e9286e8bd652d8c8}{n\_bullets}};}
+\DoxyCodeLine{56 \textcolor{keyword}{struct }\mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{group__elements_ga93de49daff1fef2426b63b9436b7e7bb}{bullets}}[1]; \textcolor{comment}{//bullets size got to be equal to n\_bullets}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{comment}{//is in single bullet mode which means only one bullet can be shot at a time}}
+\DoxyCodeLine{59 \textcolor{comment}{//bullet limits can be changed by increasing n\_bullets}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{struct }\mbox{\hyperlink{structmap}{map}}\{}
+\DoxyCodeLine{62     \mbox{\hyperlink{structsprite}{sprite\_t}} *\mbox{\hyperlink{structmap_a10ea5cb7621d9f84f88632dd978dbc45}{background}};}
+\DoxyCodeLine{63     uint8\_t *\mbox{\hyperlink{structmap_aea319a449bd4be280a1426c1dec2bf79}{walls}};}
+\DoxyCodeLine{64 \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{comment}{//Elements functions}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{comment}{//Player}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 int (\mbox{\hyperlink{group__elements_gaed776ff8325698f693955f8717977438}{build\_player}})(\textcolor{keywordtype}{int} start\_x, \textcolor{keywordtype}{int} start\_y, xpm\_map\_t \mbox{\hyperlink{structsprite}{sprite}});}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 void (\mbox{\hyperlink{group__elements_gabd47ce64b64a5dcb39f1129a92eaad3b}{draw\_player}})();}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 void (\mbox{\hyperlink{group__elements_ga2dcbae50a90d8664f409cacb03aef5f0}{update\_player\_pos}})();}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 int (\mbox{\hyperlink{group__elements_ga4e0464bbee168a97c81eb8563e0f5bca}{collision\_player\_monster}})(\textcolor{keyword}{struct }\mbox{\hyperlink{structmonster}{monster}} \mbox{\hyperlink{structmonster}{monster}}, struct \mbox{\hyperlink{structplayer}{player}} \mbox{\hyperlink{structplayer}{player}});}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 int (\mbox{\hyperlink{group__elements_gafdc84cfca8a98585433ff3b1ed0385bd}{collision\_player\_wall}})(\textcolor{keyword}{struct }\mbox{\hyperlink{structmap}{map}} \mbox{\hyperlink{structmap}{map}}, struct \mbox{\hyperlink{structplayer}{player}} \mbox{\hyperlink{structplayer}{player}});}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{comment}{//Monsters}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 int (\mbox{\hyperlink{group__elements_gae0318f96509ae8c442de6c03cce8acd4}{build\_monsters}})(\textcolor{keywordtype}{int} start\_x, \textcolor{keywordtype}{int} start\_y, xpm\_map\_t \mbox{\hyperlink{structsprite}{sprite}});}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 void (\mbox{\hyperlink{group__elements_gac9400e53b03f0a41c76afc7af50e57ad}{draw\_monsters}})();}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 void (\mbox{\hyperlink{group__elements_ga2ce64ea1e3c3db107b58d139d7b2b27c}{update\_monster\_pos}})();}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 int (\mbox{\hyperlink{group__elements_ga624c72f95b8d2e974d70df1066267487}{collision\_monster\_wall}})(\textcolor{keyword}{struct }\mbox{\hyperlink{structmap}{map}} \mbox{\hyperlink{structmap}{map}}, struct \mbox{\hyperlink{structmonster}{monster}} \mbox{\hyperlink{structmonster}{monster}});}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{comment}{//Bullet}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 int (\mbox{\hyperlink{group__elements_gada4509b3b9ac2eb37b17e7b824275d34}{build\_bullets}})(\textcolor{keywordtype}{int} startx, \textcolor{keywordtype}{int} starty, xpm\_map\_t \mbox{\hyperlink{structsprite}{sprite}});}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 void (\mbox{\hyperlink{group__elements_ga284ddfc73c5ee0be160e0bb766d231e4}{draw\_bullets}})();}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 void (\mbox{\hyperlink{group__elements_gab1f4d04853abc689afcf236a444fa5e0}{update\_bullet\_pos}})();}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 int (\mbox{\hyperlink{group__elements_gae2d15848c30d1808124b8ef3ab8a475f}{collision\_bullet\_wall}})(\textcolor{keyword}{struct }\mbox{\hyperlink{structmap}{map}} \mbox{\hyperlink{structmap}{map}}, struct \mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{structbullet}{bullet}});}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 int (\mbox{\hyperlink{group__elements_ga0a1e7d8c08cd85d691155ee384c9ea47}{collision\_bullet\_monster}})(\textcolor{keyword}{struct }\mbox{\hyperlink{structmonster}{monster}} \mbox{\hyperlink{structmonster}{monster}}, struct \mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{structbullet}{bullet}});}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{comment}{//Walls}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 int (\mbox{\hyperlink{group__elements_gaf36a0e3094a37f31c083a5035ed949a6}{wall\_collision}})(\textcolor{keyword}{struct }\mbox{\hyperlink{structmap}{map}} \mbox{\hyperlink{structmap}{map}}, int x, int y);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//ELEMENTS\_H\_INCLUDED}}
+
+\end{DoxyCode}

@@ -1,0 +1,24 @@
+\hypertarget{kbc_8h}{}\doxysection{src/libraries/kbc/include/kbc.h File Reference}
+\label{kbc_8h}\index{src/libraries/kbc/include/kbc.h@{src/libraries/kbc/include/kbc.h}}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbc_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__kbc_ga4d01b87977dde6d295c19c982e5426ea}{kbc\+\_\+read\+\_\+cmd}} (uint8\+\_\+t $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em High-\/level function that reads the command byte of the KBC. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbc_ga979788590a8e65eb1d5259ee6faa37a5}{kbc\+\_\+change\+\_\+cmd}} (uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em High-\/level function that changes the command byte of the KBC. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbc_ga907b855125b02f8935bf4bb698a35b9a}{kbc\+\_\+restore\+\_\+keyboard}} ()
+\begin{DoxyCompactList}\small\item\em High-\/level function that restores KBC to normal state High-\/level function that restores KBC to normal state, because lcf\+\_\+start changes the command byte of KBC. If this function is not used, there is a chance that the keyboard and keyboard interrupts remain disabled. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbc_gabf6e77da648ded62b65bdb3f9a437424}{kbc\+\_\+issue\+\_\+cmd}} (uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em Low-\/level function to issue a command to keyboard. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbc_ga081c509c47a33f55ca8756f2d8a21fa6}{kbc\+\_\+issue\+\_\+arg}} (uint8\+\_\+t arg)
+\begin{DoxyCompactList}\small\item\em Low-\/level function to issue an argument of a command. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbc_ga0653674ee39394a08915bb1599ae67f9}{kbc\+\_\+read\+\_\+byte}} (uint8\+\_\+t $\ast$byte)
+\begin{DoxyCompactList}\small\item\em Low-\/level function for reading byte from keyboard Low-\/level function for reading byte from keyboard. Waits until output buffer is full. \end{DoxyCompactList}\end{DoxyCompactItemize}

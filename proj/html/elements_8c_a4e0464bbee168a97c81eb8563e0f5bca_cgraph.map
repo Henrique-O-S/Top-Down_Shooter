@@ -1,0 +1,5 @@
+<map id="collision_player_monster" name="collision_player_monster">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,171,57"/>
+<area shape="rect" id="node2" href="$group__sprite.html#ga2b4b41ff37cef4adbe548fe8e5a1acf9" title=" " alt="" coords="219,5,313,32"/>
+<area shape="rect" id="node3" href="$group__sprite.html#ga8035fb7ea046ad73b3eac53b9c0170eb" title=" " alt="" coords="219,56,313,83"/>
+</map>

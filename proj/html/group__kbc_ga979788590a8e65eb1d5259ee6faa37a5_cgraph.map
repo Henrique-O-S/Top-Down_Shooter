@@ -1,0 +1,6 @@
+<map id="kbc_change_cmd" name="kbc_change_cmd">
+<area shape="rect" id="node1" title="High&#45;level function that changes the command byte of the KBC." alt="" coords="5,31,129,57"/>
+<area shape="rect" id="node2" href="$group__kbc.html#ga081c509c47a33f55ca8756f2d8a21fa6" title="Low&#45;level function to issue an argument of a command." alt="" coords="181,5,287,32"/>
+<area shape="rect" id="node4" href="$group__kbc.html#gabf6e77da648ded62b65bdb3f9a437424" title="Low&#45;level function to issue a command to keyboard." alt="" coords="177,56,291,83"/>
+<area shape="rect" id="node3" href="$group__utils.html#ga79a031a8611f5b2d6afa4158e92b0fb4" title="sys_inb wrapper" alt="" coords="339,31,429,57"/>
+</map>

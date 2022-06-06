@@ -1,0 +1,265 @@
+\hypertarget{group__elements}{}\doxysection{elements}
+\label{group__elements}\index{elements@{elements}}
+Collaboration diagram for elements\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{group__elements}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structplayer}{player}}
+\item 
+struct \mbox{\hyperlink{structmonster}{monster}}
+\item 
+struct \mbox{\hyperlink{structbullet}{bullet}}
+\item 
+struct \mbox{\hyperlink{structmap}{map}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__elements_gaed776ff8325698f693955f8717977438}{build\+\_\+player}} (int start\+\_\+x, int start\+\_\+y, xpm\+\_\+map\+\_\+t \mbox{\hyperlink{structsprite}{sprite}})
+\item 
+void() \mbox{\hyperlink{group__elements_gabd47ce64b64a5dcb39f1129a92eaad3b}{draw\+\_\+player}} ()
+\item 
+void() \mbox{\hyperlink{group__elements_ga2dcbae50a90d8664f409cacb03aef5f0}{update\+\_\+player\+\_\+pos}} ()
+\item 
+int() \mbox{\hyperlink{group__elements_ga4e0464bbee168a97c81eb8563e0f5bca}{collision\+\_\+player\+\_\+monster}} (struct \mbox{\hyperlink{structmonster}{monster}} \mbox{\hyperlink{structmonster}{monster}}, struct \mbox{\hyperlink{structplayer}{player}} \mbox{\hyperlink{structplayer}{player}})
+\item 
+int() \mbox{\hyperlink{group__elements_gafdc84cfca8a98585433ff3b1ed0385bd}{collision\+\_\+player\+\_\+wall}} (struct \mbox{\hyperlink{structmap}{map}} \mbox{\hyperlink{structmap}{map}}, struct \mbox{\hyperlink{structplayer}{player}} \mbox{\hyperlink{structplayer}{player}})
+\item 
+int() \mbox{\hyperlink{group__elements_gae0318f96509ae8c442de6c03cce8acd4}{build\+\_\+monsters}} (int start\+\_\+x, int start\+\_\+y, xpm\+\_\+map\+\_\+t \mbox{\hyperlink{structsprite}{sprite}})
+\item 
+void() \mbox{\hyperlink{group__elements_gac9400e53b03f0a41c76afc7af50e57ad}{draw\+\_\+monsters}} ()
+\item 
+void() \mbox{\hyperlink{group__elements_ga2ce64ea1e3c3db107b58d139d7b2b27c}{update\+\_\+monster\+\_\+pos}} ()
+\item 
+int() \mbox{\hyperlink{group__elements_ga624c72f95b8d2e974d70df1066267487}{collision\+\_\+monster\+\_\+wall}} (struct \mbox{\hyperlink{structmap}{map}} \mbox{\hyperlink{structmap}{map}}, struct \mbox{\hyperlink{structmonster}{monster}} \mbox{\hyperlink{structmonster}{monster}})
+\item 
+int() \mbox{\hyperlink{group__elements_gada4509b3b9ac2eb37b17e7b824275d34}{build\+\_\+bullets}} (int startx, int starty, xpm\+\_\+map\+\_\+t \mbox{\hyperlink{structsprite}{sprite}})
+\item 
+void() \mbox{\hyperlink{group__elements_ga284ddfc73c5ee0be160e0bb766d231e4}{draw\+\_\+bullets}} ()
+\item 
+void() \mbox{\hyperlink{group__elements_gab1f4d04853abc689afcf236a444fa5e0}{update\+\_\+bullet\+\_\+pos}} ()
+\item 
+int() \mbox{\hyperlink{group__elements_gae2d15848c30d1808124b8ef3ab8a475f}{collision\+\_\+bullet\+\_\+wall}} (struct \mbox{\hyperlink{structmap}{map}} \mbox{\hyperlink{structmap}{map}}, struct \mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{structbullet}{bullet}})
+\item 
+int() \mbox{\hyperlink{group__elements_ga0a1e7d8c08cd85d691155ee384c9ea47}{collision\+\_\+bullet\+\_\+monster}} (struct \mbox{\hyperlink{structmonster}{monster}} \mbox{\hyperlink{structmonster}{monster}}, struct \mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{structbullet}{bullet}})
+\item 
+int() \mbox{\hyperlink{group__elements_gaf36a0e3094a37f31c083a5035ed949a6}{wall\+\_\+collision}} (struct \mbox{\hyperlink{structmap}{map}} \mbox{\hyperlink{structmap}{map}}, int x, int y)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structplayer}{player}} \mbox{\hyperlink{group__elements_gabb6b8d5fcd639dcc5326cd8faa875316}{p}}
+\item 
+int \mbox{\hyperlink{group__elements_ga88e3a0097679445acafb9acbe2177b93}{n\+\_\+monsters}}
+\item 
+struct \mbox{\hyperlink{structmonster}{monster}} \mbox{\hyperlink{group__elements_ga87edb1adbdf6be1ca95ff33593904ef8}{monsters}} \mbox{[}10\mbox{]}
+\item 
+int \mbox{\hyperlink{group__elements_gaba491a8e216507a1e9286e8bd652d8c8}{n\+\_\+bullets}}
+\item 
+struct \mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{group__elements_ga93de49daff1fef2426b63b9436b7e7bb}{bullets}} \mbox{[}1\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__elements_gada4509b3b9ac2eb37b17e7b824275d34}\label{group__elements_gada4509b3b9ac2eb37b17e7b824275d34}} 
+\index{elements@{elements}!build\_bullets@{build\_bullets}}
+\index{build\_bullets@{build\_bullets}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{build\_bullets()}{build\_bullets()}}
+{\footnotesize\ttfamily int() build\+\_\+bullets (\begin{DoxyParamCaption}\item[{int}]{startx,  }\item[{int}]{starty,  }\item[{xpm\+\_\+map\+\_\+t}]{sprite }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{group__elements_gada4509b3b9ac2eb37b17e7b824275d34_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gae0318f96509ae8c442de6c03cce8acd4}\label{group__elements_gae0318f96509ae8c442de6c03cce8acd4}} 
+\index{elements@{elements}!build\_monsters@{build\_monsters}}
+\index{build\_monsters@{build\_monsters}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{build\_monsters()}{build\_monsters()}}
+{\footnotesize\ttfamily int() build\+\_\+monsters (\begin{DoxyParamCaption}\item[{int}]{start\+\_\+x,  }\item[{int}]{start\+\_\+y,  }\item[{xpm\+\_\+map\+\_\+t}]{sprite }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{group__elements_gae0318f96509ae8c442de6c03cce8acd4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gaed776ff8325698f693955f8717977438}\label{group__elements_gaed776ff8325698f693955f8717977438}} 
+\index{elements@{elements}!build\_player@{build\_player}}
+\index{build\_player@{build\_player}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{build\_player()}{build\_player()}}
+{\footnotesize\ttfamily int() build\+\_\+player (\begin{DoxyParamCaption}\item[{int}]{start\+\_\+x,  }\item[{int}]{start\+\_\+y,  }\item[{xpm\+\_\+map\+\_\+t}]{sprite }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{group__elements_gaed776ff8325698f693955f8717977438_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_ga0a1e7d8c08cd85d691155ee384c9ea47}\label{group__elements_ga0a1e7d8c08cd85d691155ee384c9ea47}} 
+\index{elements@{elements}!collision\_bullet\_monster@{collision\_bullet\_monster}}
+\index{collision\_bullet\_monster@{collision\_bullet\_monster}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{collision\_bullet\_monster()}{collision\_bullet\_monster()}}
+{\footnotesize\ttfamily int() collision\+\_\+bullet\+\_\+monster (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structmonster}{monster}}}]{monster,  }\item[{struct \mbox{\hyperlink{structbullet}{bullet}}}]{bullet }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__elements_gae2d15848c30d1808124b8ef3ab8a475f}\label{group__elements_gae2d15848c30d1808124b8ef3ab8a475f}} 
+\index{elements@{elements}!collision\_bullet\_wall@{collision\_bullet\_wall}}
+\index{collision\_bullet\_wall@{collision\_bullet\_wall}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{collision\_bullet\_wall()}{collision\_bullet\_wall()}}
+{\footnotesize\ttfamily int() collision\+\_\+bullet\+\_\+wall (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structmap}{map}}}]{map,  }\item[{struct \mbox{\hyperlink{structbullet}{bullet}}}]{bullet }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__elements_ga624c72f95b8d2e974d70df1066267487}\label{group__elements_ga624c72f95b8d2e974d70df1066267487}} 
+\index{elements@{elements}!collision\_monster\_wall@{collision\_monster\_wall}}
+\index{collision\_monster\_wall@{collision\_monster\_wall}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{collision\_monster\_wall()}{collision\_monster\_wall()}}
+{\footnotesize\ttfamily int() collision\+\_\+monster\+\_\+wall (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structmap}{map}}}]{map,  }\item[{struct \mbox{\hyperlink{structmonster}{monster}}}]{monster }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__elements_ga4e0464bbee168a97c81eb8563e0f5bca}\label{group__elements_ga4e0464bbee168a97c81eb8563e0f5bca}} 
+\index{elements@{elements}!collision\_player\_monster@{collision\_player\_monster}}
+\index{collision\_player\_monster@{collision\_player\_monster}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{collision\_player\_monster()}{collision\_player\_monster()}}
+{\footnotesize\ttfamily int() collision\+\_\+player\+\_\+monster (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structmonster}{monster}}}]{monster,  }\item[{struct \mbox{\hyperlink{structplayer}{player}}}]{player }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__elements_gafdc84cfca8a98585433ff3b1ed0385bd}\label{group__elements_gafdc84cfca8a98585433ff3b1ed0385bd}} 
+\index{elements@{elements}!collision\_player\_wall@{collision\_player\_wall}}
+\index{collision\_player\_wall@{collision\_player\_wall}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{collision\_player\_wall()}{collision\_player\_wall()}}
+{\footnotesize\ttfamily int() collision\+\_\+player\+\_\+wall (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structmap}{map}}}]{map,  }\item[{struct \mbox{\hyperlink{structplayer}{player}}}]{player }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__elements_ga284ddfc73c5ee0be160e0bb766d231e4}\label{group__elements_ga284ddfc73c5ee0be160e0bb766d231e4}} 
+\index{elements@{elements}!draw\_bullets@{draw\_bullets}}
+\index{draw\_bullets@{draw\_bullets}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{draw\_bullets()}{draw\_bullets()}}
+{\footnotesize\ttfamily void() draw\+\_\+bullets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga284ddfc73c5ee0be160e0bb766d231e4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gac9400e53b03f0a41c76afc7af50e57ad}\label{group__elements_gac9400e53b03f0a41c76afc7af50e57ad}} 
+\index{elements@{elements}!draw\_monsters@{draw\_monsters}}
+\index{draw\_monsters@{draw\_monsters}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{draw\_monsters()}{draw\_monsters()}}
+{\footnotesize\ttfamily void() draw\+\_\+monsters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gac9400e53b03f0a41c76afc7af50e57ad_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{group__elements_gac9400e53b03f0a41c76afc7af50e57ad_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gabd47ce64b64a5dcb39f1129a92eaad3b}\label{group__elements_gabd47ce64b64a5dcb39f1129a92eaad3b}} 
+\index{elements@{elements}!draw\_player@{draw\_player}}
+\index{draw\_player@{draw\_player}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{draw\_player()}{draw\_player()}}
+{\footnotesize\ttfamily void() draw\+\_\+player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gabd47ce64b64a5dcb39f1129a92eaad3b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{group__elements_gabd47ce64b64a5dcb39f1129a92eaad3b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gab1f4d04853abc689afcf236a444fa5e0}\label{group__elements_gab1f4d04853abc689afcf236a444fa5e0}} 
+\index{elements@{elements}!update\_bullet\_pos@{update\_bullet\_pos}}
+\index{update\_bullet\_pos@{update\_bullet\_pos}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{update\_bullet\_pos()}{update\_bullet\_pos()}}
+{\footnotesize\ttfamily void() update\+\_\+bullet\+\_\+pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__elements_ga2ce64ea1e3c3db107b58d139d7b2b27c}\label{group__elements_ga2ce64ea1e3c3db107b58d139d7b2b27c}} 
+\index{elements@{elements}!update\_monster\_pos@{update\_monster\_pos}}
+\index{update\_monster\_pos@{update\_monster\_pos}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{update\_monster\_pos()}{update\_monster\_pos()}}
+{\footnotesize\ttfamily void() update\+\_\+monster\+\_\+pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__elements_ga2dcbae50a90d8664f409cacb03aef5f0}\label{group__elements_ga2dcbae50a90d8664f409cacb03aef5f0}} 
+\index{elements@{elements}!update\_player\_pos@{update\_player\_pos}}
+\index{update\_player\_pos@{update\_player\_pos}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{update\_player\_pos()}{update\_player\_pos()}}
+{\footnotesize\ttfamily void() update\+\_\+player\+\_\+pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__elements_gaf36a0e3094a37f31c083a5035ed949a6}\label{group__elements_gaf36a0e3094a37f31c083a5035ed949a6}} 
+\index{elements@{elements}!wall\_collision@{wall\_collision}}
+\index{wall\_collision@{wall\_collision}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{wall\_collision()}{wall\_collision()}}
+{\footnotesize\ttfamily int() wall\+\_\+collision (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structmap}{map}}}]{map,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{group__elements_gaf36a0e3094a37f31c083a5035ed949a6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gaf36a0e3094a37f31c083a5035ed949a6_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group__elements_ga93de49daff1fef2426b63b9436b7e7bb}\label{group__elements_ga93de49daff1fef2426b63b9436b7e7bb}} 
+\index{elements@{elements}!bullets@{bullets}}
+\index{bullets@{bullets}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{bullets}{bullets}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structbullet}{bullet}} bullets\mbox{[}1\mbox{]}}
+
+\mbox{\Hypertarget{group__elements_ga87edb1adbdf6be1ca95ff33593904ef8}\label{group__elements_ga87edb1adbdf6be1ca95ff33593904ef8}} 
+\index{elements@{elements}!monsters@{monsters}}
+\index{monsters@{monsters}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{monsters}{monsters}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structmonster}{monster}} monsters\mbox{[}10\mbox{]}}
+
+\mbox{\Hypertarget{group__elements_gaba491a8e216507a1e9286e8bd652d8c8}\label{group__elements_gaba491a8e216507a1e9286e8bd652d8c8}} 
+\index{elements@{elements}!n\_bullets@{n\_bullets}}
+\index{n\_bullets@{n\_bullets}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{n\_bullets}{n\_bullets}}
+{\footnotesize\ttfamily int n\+\_\+bullets}
+
+\mbox{\Hypertarget{group__elements_ga88e3a0097679445acafb9acbe2177b93}\label{group__elements_ga88e3a0097679445acafb9acbe2177b93}} 
+\index{elements@{elements}!n\_monsters@{n\_monsters}}
+\index{n\_monsters@{n\_monsters}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{n\_monsters}{n\_monsters}}
+{\footnotesize\ttfamily int n\+\_\+monsters}
+
+\mbox{\Hypertarget{group__elements_gabb6b8d5fcd639dcc5326cd8faa875316}\label{group__elements_gabb6b8d5fcd639dcc5326cd8faa875316}} 
+\index{elements@{elements}!p@{p}}
+\index{p@{p}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structplayer}{player}} p}
+

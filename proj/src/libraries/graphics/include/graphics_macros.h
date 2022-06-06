@@ -1,6 +1,13 @@
 #ifndef GRAPHICS_MACROS_H_INCLUDED
 #define GRAPHICS_MACROS_H_INCLUDED
 
+/** @defgroup graphics_macros graphics_macros
+ * @ingroup libraries
+ * @{
+ *
+ * Constants for programming the Mouse.
+ */
+
 // Bios Services/Calls
 
 #define VC_BIOS_SERV  0x10 /** @brief Video Card interrupt vector */
@@ -29,5 +36,6 @@
 #define PLAY_COLOR 0x02
 #define EXIT_COLOR 0x02
 
+/**@}*/
 
 #endif /* end of include guard: GRAPHICS_MACROS_H_INCLUDED */

@@ -1,0 +1,4 @@
+<map id="collision_bullet_wall" name="collision_bullet_wall">
+<area shape="rect" id="node1" title=" " alt="" coords="180,5,316,32"/>
+<area shape="rect" id="node2" href="$elements_8c.html#af6562f481cf612f465e12e0d9167c774" title=" " alt="" coords="5,5,132,32"/>
+</map>

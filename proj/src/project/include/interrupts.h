@@ -1,6 +1,13 @@
 #ifndef INTERRUPTS_H_INCLUDED
 #define INTERRUPTS_H_INCLUDED
 
+/**
+ * @defgroup interrupts interrupts
+ * @ingroup proj
+ *
+ * @{
+ */
+
 #include "libraries.h"
 
 static int timer_id, kbc_id, mouse_id;
@@ -19,5 +26,9 @@ int (subscribe_all)(void);
 int (unsubscribe_all)(void);
 
 int (get_irq)(int id);
+
+/**
+ * @}
+ */
 
 #endif //INTERRUPTS_H_INCLUDED

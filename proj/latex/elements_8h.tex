@@ -1,0 +1,74 @@
+\hypertarget{elements_8h}{}\doxysection{src/project/include/elements.h File Reference}
+\label{elements_8h}\index{src/project/include/elements.h@{src/project/include/elements.h}}
+{\ttfamily \#include \char`\"{}libraries.\+h\char`\"{}}\newline
+Include dependency graph for elements.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{elements_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{elements_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structplayer}{player}}
+\item 
+struct \mbox{\hyperlink{structmonster}{monster}}
+\item 
+struct \mbox{\hyperlink{structbullet}{bullet}}
+\item 
+struct \mbox{\hyperlink{structmap}{map}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__elements_gaed776ff8325698f693955f8717977438}{build\+\_\+player}} (int start\+\_\+x, int start\+\_\+y, xpm\+\_\+map\+\_\+t \mbox{\hyperlink{structsprite}{sprite}})
+\item 
+void() \mbox{\hyperlink{group__elements_gabd47ce64b64a5dcb39f1129a92eaad3b}{draw\+\_\+player}} ()
+\item 
+void() \mbox{\hyperlink{group__elements_ga2dcbae50a90d8664f409cacb03aef5f0}{update\+\_\+player\+\_\+pos}} ()
+\item 
+int() \mbox{\hyperlink{group__elements_ga4e0464bbee168a97c81eb8563e0f5bca}{collision\+\_\+player\+\_\+monster}} (struct \mbox{\hyperlink{structmonster}{monster}} \mbox{\hyperlink{structmonster}{monster}}, struct \mbox{\hyperlink{structplayer}{player}} \mbox{\hyperlink{structplayer}{player}})
+\item 
+int() \mbox{\hyperlink{group__elements_gafdc84cfca8a98585433ff3b1ed0385bd}{collision\+\_\+player\+\_\+wall}} (struct \mbox{\hyperlink{structmap}{map}} \mbox{\hyperlink{structmap}{map}}, struct \mbox{\hyperlink{structplayer}{player}} \mbox{\hyperlink{structplayer}{player}})
+\item 
+int() \mbox{\hyperlink{group__elements_gae0318f96509ae8c442de6c03cce8acd4}{build\+\_\+monsters}} (int start\+\_\+x, int start\+\_\+y, xpm\+\_\+map\+\_\+t \mbox{\hyperlink{structsprite}{sprite}})
+\item 
+void() \mbox{\hyperlink{group__elements_gac9400e53b03f0a41c76afc7af50e57ad}{draw\+\_\+monsters}} ()
+\item 
+void() \mbox{\hyperlink{group__elements_ga2ce64ea1e3c3db107b58d139d7b2b27c}{update\+\_\+monster\+\_\+pos}} ()
+\item 
+int() \mbox{\hyperlink{group__elements_ga624c72f95b8d2e974d70df1066267487}{collision\+\_\+monster\+\_\+wall}} (struct \mbox{\hyperlink{structmap}{map}} \mbox{\hyperlink{structmap}{map}}, struct \mbox{\hyperlink{structmonster}{monster}} \mbox{\hyperlink{structmonster}{monster}})
+\item 
+int() \mbox{\hyperlink{group__elements_gada4509b3b9ac2eb37b17e7b824275d34}{build\+\_\+bullets}} (int startx, int starty, xpm\+\_\+map\+\_\+t \mbox{\hyperlink{structsprite}{sprite}})
+\item 
+void() \mbox{\hyperlink{group__elements_ga284ddfc73c5ee0be160e0bb766d231e4}{draw\+\_\+bullets}} ()
+\item 
+void() \mbox{\hyperlink{group__elements_gab1f4d04853abc689afcf236a444fa5e0}{update\+\_\+bullet\+\_\+pos}} ()
+\item 
+int() \mbox{\hyperlink{group__elements_gae2d15848c30d1808124b8ef3ab8a475f}{collision\+\_\+bullet\+\_\+wall}} (struct \mbox{\hyperlink{structmap}{map}} \mbox{\hyperlink{structmap}{map}}, struct \mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{structbullet}{bullet}})
+\item 
+int() \mbox{\hyperlink{group__elements_ga0a1e7d8c08cd85d691155ee384c9ea47}{collision\+\_\+bullet\+\_\+monster}} (struct \mbox{\hyperlink{structmonster}{monster}} \mbox{\hyperlink{structmonster}{monster}}, struct \mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{structbullet}{bullet}})
+\item 
+int() \mbox{\hyperlink{group__elements_gaf36a0e3094a37f31c083a5035ed949a6}{wall\+\_\+collision}} (struct \mbox{\hyperlink{structmap}{map}} \mbox{\hyperlink{structmap}{map}}, int x, int y)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structplayer}{player}} \mbox{\hyperlink{group__elements_gabb6b8d5fcd639dcc5326cd8faa875316}{p}}
+\item 
+int \mbox{\hyperlink{group__elements_ga88e3a0097679445acafb9acbe2177b93}{n\+\_\+monsters}}
+\item 
+struct \mbox{\hyperlink{structmonster}{monster}} \mbox{\hyperlink{group__elements_ga87edb1adbdf6be1ca95ff33593904ef8}{monsters}} \mbox{[}10\mbox{]}
+\item 
+int \mbox{\hyperlink{group__elements_gaba491a8e216507a1e9286e8bd652d8c8}{n\+\_\+bullets}}
+\item 
+struct \mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{group__elements_ga93de49daff1fef2426b63b9436b7e7bb}{bullets}} \mbox{[}1\mbox{]}
+\end{DoxyCompactItemize}

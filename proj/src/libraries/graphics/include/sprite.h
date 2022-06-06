@@ -1,6 +1,13 @@
 #ifndef SPRITE_H_INCLUDED
 #define SPRITE_H_INCLUDED
 
+/**
+ * @defgroup sprite sprite
+ * @ingroup libraries
+ *
+ * @{
+ */
+
 struct sprite;
 typedef struct sprite sprite_t;
 
@@ -18,5 +25,7 @@ int (sprite_get_xspeed)(sprite_t *p);
 int (sprite_get_yspeed)(sprite_t *p);
 
 void sprite_draw(const sprite_t *p);
+
+/**@}*/
 
 #endif //SPRITE_H_INCLUDED
