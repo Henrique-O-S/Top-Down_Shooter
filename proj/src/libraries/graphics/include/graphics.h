@@ -4,6 +4,7 @@
 #include <lcom/lcf.h>
 #include <stdint.h>
 #include "graphics_macros.h"
+#include "pixmap.h"
 
 #define GET_RED(n)          (0xFF & ((n) >> 16))
 #define GET_GRE(n)          (0xFF & ((n) >>  8))
@@ -13,6 +14,8 @@
 #define SET_BLU(n)          (((n)&0xFF)      )
 #define SET_COLOR(r,g,b)    (SET_RED(r) | SET_GRE(g) | SET_BLU(b))
 #define FAR2PHYS(n)         ((((n)>>12) & 0xFFFFFFF0) + ((n) & 0x0000FFFF))
+
+enum pixmap{PLAY, EXIT};
 
 int (set_vbe_mode)(uint16_t mode);
 
@@ -53,5 +56,7 @@ unsigned int get_vram_size(void);
 int paint_screen(uint32_t color);
 
 int clear_screen();
+
+int (pixmap_drawer)(uint16_t x, uint16_t y, enum pixmap pixmap);
 
 #endif /* end of include guard: GRAPHICS_H_INCLUDED */

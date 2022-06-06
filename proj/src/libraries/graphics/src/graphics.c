@@ -156,3 +156,27 @@ int paint_screen(uint32_t color){
 int clear_screen(){
     return paint_screen(BLACK);
 }
+
+int (pixmap_drawer)(uint16_t x, uint16_t y, enum pixmap pixmap){
+    unsigned int height = 0, width = 0;
+
+    if (pixmap == PLAY || pixmap == EXIT) height = 37;
+    if (pixmap == PLAY) width = 271;
+    if (pixmap == EXIT) width = 207;
+    
+    for (unsigned int i = 0; i < height; i++){
+        for (unsigned int j = 0; j < width; j++){
+            if (pixmap == PLAY){
+                if (play[i][j] == '0') set_pixel(x + j, y + i, PLAY_COLOR);
+                else if(play[i][j] == '1') set_pixel(x + j, y + i, MENU_BACKGROUND_COLOR);
+            }
+
+            if (pixmap == EXIT){
+                if (exitPix[i][j] == '0') set_pixel(x + j, y + i,EXIT_COLOR);
+                else if(exitPix[i][j] == '1') set_pixel(x + j, y + i, MENU_BACKGROUND_COLOR);
+            }
+        }
+    }
+
+    return 0;
+}

@@ -24,6 +24,10 @@
 // Color
 
 #define BLACK 0x00000000
+#define MENU_BACKGROUND_COLOR 0x03
+#define MENU_OPTION_COLOR 0x04
+#define PLAY_COLOR 0x02
+#define EXIT_COLOR 0x02
 
 
 #endif /* end of include guard: GRAPHICS_MACROS_H_INCLUDED */

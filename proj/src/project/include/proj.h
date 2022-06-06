@@ -4,5 +4,6 @@
 #include "libraries.h"
 #include "elements.h"
 #include "interrupts.h"
+#include "aux_functions.h"
 
 #endif //PROJ_H_INCLUDED

@@ -40,7 +40,9 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
   if(map_vram()) return 1;
 
-  //if(set_vbe_mode(mode)) return 1;
+  if(set_vbe_mode(mode)) return 1;
+
+  if(menu_init()) return 1;
 
   int ipc_status, r;
   message msg;
@@ -56,26 +58,25 @@ int(proj_main_loop)(int argc, char* argv[]) {
          switch (_ENDPOINT_P(msg.m_source)) {
              case HARDWARE: /* hardware interrupt notification */       
                  if(msg.m_notify.interrupts & get_irq(TIMER0_IRQ)){
-                    printf("got to timer\n");
+                    //printf("got to timer\n");
                     timer_int_handler();
                     //clear_screen();
                     //menu switch case here
-                    //menu draw here
+                    //menu update here
                  }
                  if(msg.m_notify.interrupts & get_irq(KBC_IRQ)){
-                    printf("got to keyboard\n");
+                    //printf("got to keyboard\n");
                     kbc_ih();
                     if(got_error_keyboard == 1){
                       good = 0;
                     }
-                    //calls to key processing functions here, functions to be implemented in kbd
                     if(get_scancode()[0] == 0x81){ //ESC scancode, can probably done in key process in kbd
                       good = 0;
                     }
 
                  }
                  if(msg.m_notify.interrupts & get_irq(MOUSE_IRQ)){
-                   printf("got to mouse\n");
+                   //printf("got to mouse\n");
                     mouse_ih();
                     if(bytes_counter == 3){
                       struct packet pp;

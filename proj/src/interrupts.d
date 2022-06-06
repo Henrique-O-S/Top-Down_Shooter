@@ -49,6 +49,7 @@ interrupts.o: /home/lcom/labs/proj/src/project/src/interrupts.c \
   project/include/interrupts.h libraries/libraries.h \
   libraries/graphics/include/graphics.h \
   libraries/graphics/include/graphics_macros.h \
+  libraries/graphics/include/pixmap.h \
   libraries/graphics/include/sprite.h libraries/kbc/include/kbc.h \
   libraries/kbc/include/kbd.h libraries/kbc/include/kbc_macros.h \
   libraries/kbc/include/mouse.h libraries/kbc/include/mouse_macros.h \

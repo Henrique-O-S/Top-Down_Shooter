@@ -47,4 +47,5 @@ graphics.o: /home/lcom/labs/proj/src/libraries/graphics/src/graphics.c \
   /usr/include/lcom/pixmap.h /usr/include/lcom/xpm.h \
   /usr/include/lcom/vbe.h /usr/include/lcom/video_gr.h \
   /usr/include/lcom/proj.h /usr/include/lcom/types.h \
-  libraries/graphics/include/graphics_macros.h
+  libraries/graphics/include/graphics_macros.h \
+  libraries/graphics/include/pixmap.h

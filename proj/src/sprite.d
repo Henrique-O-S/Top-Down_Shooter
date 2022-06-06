@@ -48,4 +48,5 @@ sprite.o: /home/lcom/labs/proj/src/libraries/graphics/src/sprite.c \
   /usr/include/lcom/proj.h /usr/include/lcom/types.h \
   libraries/graphics/include/sprite.h \
   libraries/graphics/include/graphics.h \
-  libraries/graphics/include/graphics_macros.h
+  libraries/graphics/include/graphics_macros.h \
+  libraries/graphics/include/pixmap.h

@@ -13,6 +13,7 @@
         "kbc.h": "c",
         "sprite.h": "c",
         "__tree": "c",
-        "map": "c"
+        "map": "c",
+        "aux_functions.h": "c"
     }
 }
