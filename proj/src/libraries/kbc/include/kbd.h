@@ -17,6 +17,6 @@ void (kbc_ih)(void);
 
 int (keyboard_poll)(uint8_t bytes[], uint8_t *size);
 
-uint8_t (get_scancode)(int i);
+const uint8_t* (get_scancode)();
 
 #endif //KBD_H_INCLUDED
