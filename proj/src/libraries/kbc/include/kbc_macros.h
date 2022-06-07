@@ -59,6 +59,8 @@
 #define S_BREAK         0x9F    /* @brief S Break Code */
 #define D_MAKE          0x20    /* @brief D Make Code */
 #define D_BREAK         0xA0    /* @brief D Break Code */
+#define SPACEBAR_MAKE   0x39    /* @brief Spacebar Make Code */
+#define SPACEBAR_MAKE   0xB9    /* @brief Spacebar Break Code */
 
 /* Scancode Constants */
 

@@ -6,12 +6,13 @@
 
 //Player
 
-int (build_player)(int start_x, int start_y, int speed, const basic_sprite_t *sprite){
+int (build_player)(int start_x, int start_y, int speed, float shot_cooldown, const basic_sprite_t *sprite){
     p.x = start_x;
     p.y = start_y;
     p.xMov = 0;
     p.yMov = 0;
     p.speed = speed;
+    p.shot_cooldown = shot_cooldown;
     p.alive = 1;
     p.player_sprite = sprite_ctor(sprite);
 
@@ -60,6 +61,12 @@ void (update_dir)(int val, int dir){
         default:
             break;
     }
+}
+
+void (shoot)(){
+    //load bullet image
+    basic_sprite_t bullet_sprite;
+    build_bullets(p.x, p.y, bullet_sprite);
 }
 
 int (collision_player_monster)(struct monster monster, struct player player) {

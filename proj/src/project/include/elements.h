@@ -19,6 +19,7 @@ struct player{
     int xMov; //can be -1, 0 or 1
     int yMov; //can be -1, 0 or 1
     int speed;
+    float shot_cooldown;
     int alive;
 };
 
@@ -62,13 +63,15 @@ struct map{
 
 //Player
 
-int (build_player)(int start_x, int start_y, int speed, const basic_sprite_t *sprite);
+int (build_player)(int start_x, int start_y, int speed, float shot_cooldown, const basic_sprite_t *sprite);
 
 void (draw_player)();
 
 void (update_player_pos)(struct map map);
 
 void (update_dir)(int val, int dir);
+
+void (shoot)();
 
 int (collision_player_monster)(struct monster monster, struct player player);
 

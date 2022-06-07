@@ -98,6 +98,10 @@ int (process_key)(uint8_t* scancode){
   case S_BREAK:
     update_dir(-1, 1);
     break;
+
+  case SPACEBAR_MAKE:
+    shoot();
+    break;
   
   default:
     break;
