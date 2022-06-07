@@ -172,8 +172,8 @@ int (pixmap_drawer)(uint16_t x, uint16_t y, enum pixmap pixmap){
             }
 
             if (pixmap == EXIT){
-                if (exit[i][j] == '0') set_pixel(x + j, y + i,EXIT_COLOR);
-                else if(exit[i][j] == '1') set_pixel(x + j, y + i, MENU_BACKGROUND_COLOR);
+                if (exit_pixmap[i][j] == '0') set_pixel(x + j, y + i,EXIT_COLOR);
+                else if(exit_pixmap[i][j] == '1') set_pixel(x + j, y + i, MENU_BACKGROUND_COLOR);
             }
         }
     }
