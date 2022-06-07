@@ -48,11 +48,23 @@
 #define TIME_OUT_REC    BIT(6) /* @brief Time Out Error - Invalid Data */
 #define PARITY_ERROR    BIT(7) /* @brief Parity Error - Invalid Data */
 
-/* Scancode Constants */
+/* Keycodes */
 
 #define ESC_BREAK_CODE  0x81    /* @brief ESC Break Code */
+#define W_MAKE          0x11    /* @brief W Make Code */
+#define W_BREAK         0x91    /* @brief W Break Code */
+#define A_MAKE          0x1E    /* @brief A Make Code */
+#define A_BREAK         0x9E    /* @brief A Break Code */
+#define S_MAKE          0x1F    /* @brief S Make Code */
+#define S_BREAK         0x9F    /* @brief S Break Code */
+#define D_MAKE          0x20    /* @brief D Make Code */
+#define D_BREAK         0xA0    /* @brief D Break Code */
+
+/* Scancode Constants */
+
 #define TWO_BYTE_CODE   0xE0    /* @brief First byte of a two byte Scancode */
 #define BREAK_CODE_BIT  BIT(7)  /* @brief Bit to distinguish between Make code and Break code */
+
 
 /* Command byte masks */
 #define INT_KBD         BIT(0)  /* @brief Enable Keyboard Interrupts */
