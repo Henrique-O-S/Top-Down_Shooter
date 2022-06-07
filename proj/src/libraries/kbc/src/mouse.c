@@ -68,8 +68,8 @@ void (update_mouse)(struct packet *p) {
 
     //key_presses.lb_pressed = p->lb;
 }
-int16_t* get_mouse_X(void) { return &mouse_x; }
-int16_t* get_mouse_Y(void) { return &mouse_y; }
+int16_t get_mouse_X(void) { return mouse_x; }
+int16_t get_mouse_Y(void) { return mouse_y; }
 
 int (mouse_parse_packet)(struct packet *p){
     p->bytes[0] = packet_mouse[0];
@@ -105,7 +105,6 @@ int (mouse_issue_cmd)(uint8_t cmd) {
         if (ack == ACK_ERROR) return 1;
         tickdelay(micros_to_ticks(DELAY));
     }
->>>>>>> feature/drawCrosshair
     return 0;
 }
 

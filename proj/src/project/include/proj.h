@@ -16,6 +16,9 @@
 basic_sprite_t *bsp_player;
 sprite_t *sp_player;
 
+basic_sprite_t *bsp_crosshair;
+sprite_t *sp_crosshair;
+
 /**
  * @}
  */

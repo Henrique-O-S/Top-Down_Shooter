@@ -3,6 +3,7 @@
 
 #include "proj.h"
 #include "player.h"
+#include "crosshair.h"
 
 // Any header files included below this line should have been created by you
 
@@ -35,7 +36,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
   if (subscribe_all()) return 1;
 
-  uint16_t mode = DIRECT_1024_768_888;
+  uint16_t mode = 0x118;
 
   if(vbe_get_mode_information(mode)) return 1;
 
@@ -49,8 +50,10 @@ int(proj_main_loop)(int argc, char* argv[]) {
   /// SPRITES
   bsp_player = get_player(); if(bsp_player == NULL) printf("failed to get player\n");
   sp_player = sprite_ctor(bsp_player);
-  sprite_set_pos(sp_player, 270, 100);
-  sprite_draw(sp_player);
+  bsp_crosshair = get_crosshair(); if(bsp_crosshair == NULL) printf("failed to get player\n");
+  sp_crosshair = sprite_ctor(bsp_crosshair);
+  sprite_set_pos(sp_crosshair, 270, 100);
+  sprite_draw(sp_crosshair);
 
   int ipc_status, r;
   message msg;
@@ -68,19 +71,20 @@ int(proj_main_loop)(int argc, char* argv[]) {
              case HARDWARE: /* hardware interrupt notification */       
                  if(msg.m_notify.interrupts & get_irq(TIMER0_IRQ)){
                     timer_int_handler();
-                    if(no_interrupts %3 == 0){ // the second 60 corresponds to the refresh rate
-                      //printf("got to timer\n");
+                    if(no_interrupts % 3 == 0){ // the second 60 corresponds to the refresh rate
+                      //swapBuffer();
                       clear_screen();
-                      //menu_init();
+                      menu_init();
+                    
                       //menu switch case here
                       //menu update here
-                      sprite_set_pos(sp_player, *get_mouse_X(), *get_mouse_Y());
-                      sprite_draw(sp_player);
-                      no_interrupts = 0;
+                      sprite_set_pos(sp_crosshair, get_mouse_X(), get_mouse_Y());
+                      sprite_draw(sp_crosshair);
+                      draw_double_buffer();
+                      no_interrupts = 1;
                     }
                  }
                  if(msg.m_notify.interrupts & get_irq(KBC_IRQ)){
-                    //printf("got to keyboard\n");
                     kbc_ih();
                     if(got_error_keyboard == 1){
                       good = 0;
@@ -91,7 +95,6 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
                  }
                  if(msg.m_notify.interrupts & get_irq(MOUSE_IRQ)){
-                    printf("got to mouse\n");
                     mouse_ih();
                     if(get_mouse_ih_counter() >= 3){
                       x++;

@@ -25,9 +25,9 @@ int (mouse_parse_packet)(struct packet *packet);
 
 void (update_mouse)(struct packet *p);
 
-int16_t* get_mouse_X(void);
+int16_t get_mouse_X(void);
 
-int16_t* get_mouse_Y(void);
+int16_t get_mouse_Y(void);
 
 int16_t (sign_extend_byte)(uint8_t sign_bit, uint8_t byte);
 
