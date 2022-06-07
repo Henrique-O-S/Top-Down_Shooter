@@ -6,14 +6,19 @@
 
 //Player
 
-int (build_player)(int start_x, int start_y, const basic_sprite_t *sprite){
+int (build_player)(int start_x, int start_y, int speed, xpm_map_t sprite){
     p.x = start_x;
     p.y = start_y;
-    p.xspeed = 0;
-    p.yspeed = 0;
+    p.xMov = 0;
+    p.yMov = 0;
+    p.speed = speed;
     p.alive = 1;
+    xpm_image_t img;
+    xpm_load(sprite, XPM_8_8_8, &img);
+    p.img = img;
     p.player_sprite = sprite_ctor(sprite);
-    return 0; 
+
+    return p; 
 }
 
 void (draw_player)(){
@@ -28,8 +33,8 @@ void (update_player_pos)(struct map map){
         //player inputs
         int x = p.x;
         int y = p.y;
-        p.x = p.x + p.xspeed; // * angle, probably
-        p.y = p.y + p.yspeed; // * angle, probably
+        p.x = p.x + (p.speed * p.xMov);
+        p.y = p.y + (p.speed * p.yMov);
         if(collision_player_wall(map, p)){
             p.x = x;
             p.y = y;
@@ -41,8 +46,23 @@ void (update_player_pos)(struct map map){
                 break;
             }
         }
+    }   
+}
+
+//Dir is 0 if horizontal and 1 if vertical
+void (update_dir)(int val, int dir){
+    switch (dir){
+        case 0:
+            p.xMov += val;
+            break;
+
+        case 1:
+            p.yMov += val;
+            break;
+
+        default:
+            break;
     }
-        
 }
 
 int (collision_player_monster)(struct monster monster, struct player player) {
