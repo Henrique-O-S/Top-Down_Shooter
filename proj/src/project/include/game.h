@@ -14,7 +14,7 @@
 
 int (gameLoop)();
 
-int (process_key)(uint8_t* scancode);
+int (process_key)(const uint8_t* scancode);
 
 /**
  * @}

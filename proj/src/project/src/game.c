@@ -34,10 +34,10 @@ int ipc_status, r;
                       finished = true;
                     }
                     //calls to key processing functions here, functions to be implemented in kbd
-                    if(get_scancode()[0] == 0x81){ //ESC scancode, can probably done in key process in kbd
+                    if(process_key(get_scancode())){
                       finished = true;
                     }
-
+                    update_player_pos();
                  }
                  if(msg.m_notify.interrupts & get_irq(mouse_id)){
                     mouse_ih();
@@ -60,7 +60,7 @@ int ipc_status, r;
     return 0;
 }
 
-int (process_key)(uint8_t* scancode){
+int (process_key)(const uint8_t* scancode){
   switch (scancode[0])
   {
   case ESC_BREAK_CODE:
