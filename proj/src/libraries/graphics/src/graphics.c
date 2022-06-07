@@ -7,6 +7,7 @@
 #include "utils.h"
 
 static uint8_t *video_mem; /** @brief Frame-buffer VM address */
+static uint8_t *double_buffer; /** @brief Frame-buffer VM address */
 static vbe_mode_info_t vbe_mem_info;
 static mmap_t mem_map;
 
@@ -113,6 +114,7 @@ int (map_vram)(void) {
         panic("%s: couldn't map video memory.", __func__);
     }
 
+    double_buffer = malloc(vram_size);
     return 0;
 }
 
@@ -122,7 +124,7 @@ int (set_pixel)(uint16_t x, uint16_t y, uint32_t color) {
         return 1;
     }
     unsigned int pos = (x + y * vbe_mem_info.XResolution) * get_bytes_pixel();
-    memcpy((void*)((unsigned int)video_mem + pos), &color, get_bytes_pixel());
+    memcpy((void*)((unsigned int)double_buffer + pos), &color, get_bytes_pixel());
     return 0;
 }
 
@@ -153,13 +155,21 @@ int(free_memory_map)(void) {
     return !lm_free(&mem_map);
 }
 
+void (draw_double_buffer)(void) {
+    memcpy(video_mem, double_buffer, get_YRes()*get_XRes()*get_bytes_pixel());
+}
+
 int paint_screen(uint32_t color){
     return draw_rectangle(0,0,get_XRes(),get_YRes(),color);
 }
 
 int clear_screen(){
-    memset(video_mem, 0, get_vram_size());
+    memset(double_buffer, 0, get_vram_size());
     return 0;
+}
+
+void (swapBuffer()) {
+    memcpy(double_buffer, video_mem, get_YRes()*get_XRes()*get_bytes_pixel());
 }
 
 int (pixmap_drawer)(uint16_t x, uint16_t y, enum pixmap pixmap){
@@ -327,7 +337,7 @@ void (sprite_draw)(const sprite_t *p){
     }
     const uint16_t bytes_pixel = 3;
     for(int16_t u, v, y = ymin; y < ymax; ++y){
-        uint8_t *place = video_mem + (xmin + y*get_XRes())*bytes_pixel;
+        uint8_t *place = double_buffer + (xmin + y*get_XRes())*bytes_pixel;
         for(int16_t x = xmin; x < xmax; ++x, place += bytes_pixel){
             sprite_src2sbuf(p, x, y, &u, &v);
             if(0 <= u && u < sw && 0 <= v && v < sh){

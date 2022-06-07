@@ -33,7 +33,11 @@ int (vbe_get_mode_information)(uint16_t mode);
 
 int (free_memory_map)(void);
 
+void (draw_double_buffer)(void);
+
 int (map_vram)(void);
+
+void (swapBuffer());
 
 uint16_t get_bits_pixel(void);
 
