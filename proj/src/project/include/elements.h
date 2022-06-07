@@ -20,8 +20,6 @@ struct player{
     int yMov; //can be -1, 0 or 1
     int speed;
     int alive;
-    xpm_image_t img;
-
 };
 
 struct player p;
@@ -64,7 +62,7 @@ struct map{
 
 //Player
 
-int (build_player)(int start_x, int start_y, int speed, xpm_map_t sprite);
+int (build_player)(int start_x, int start_y, int speed, const basic_sprite_t *sprite);
 
 void (draw_player)();
 

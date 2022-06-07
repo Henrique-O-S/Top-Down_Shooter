@@ -6,19 +6,16 @@
 
 //Player
 
-int (build_player)(int start_x, int start_y, int speed, xpm_map_t sprite){
+int (build_player)(int start_x, int start_y, int speed, const basic_sprite_t *sprite){
     p.x = start_x;
     p.y = start_y;
     p.xMov = 0;
     p.yMov = 0;
     p.speed = speed;
     p.alive = 1;
-    xpm_image_t img;
-    xpm_load(sprite, XPM_8_8_8, &img);
-    p.img = img;
     p.player_sprite = sprite_ctor(sprite);
 
-    return p; 
+    return 0; 
 }
 
 void (draw_player)(){
