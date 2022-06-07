@@ -2,7 +2,11 @@
 #include <lcom/lcf.h>
 
 #include "proj.h"
-#include "player.h"
+#include "player0.h"
+#include "player1.h"
+#include "player2.h"
+#include "player3.h"
+#include "player4.h"
 #include "crosshair.h"
 
 // Any header files included below this line should have been created by you
@@ -48,17 +52,29 @@ int(proj_main_loop)(int argc, char* argv[]) {
   if(menu_init()) return 1;
 
   /// SPRITES
-  bsp_player = get_player(); if(bsp_player == NULL) printf("failed to get player\n");
-  sp_player = sprite_ctor(bsp_player);
+  bsp_player0 = get_player0(); if(bsp_player0 == NULL) printf("failed to get player\n");
+  sp_player0 = sprite_ctor(bsp_player0);
+  bsp_player1 = get_player1(); if(bsp_player1 == NULL) printf("failed to get player\n");
+  sp_player1 = sprite_ctor(bsp_player1);
+  bsp_player2 = get_player2(); if(bsp_player2 == NULL) printf("failed to get player\n");
+  sp_player2 = sprite_ctor(bsp_player2);
+  bsp_player3 = get_player3(); if(bsp_player3 == NULL) printf("failed to get player\n");
+  sp_player3 = sprite_ctor(bsp_player3);
+  bsp_player4 = get_player4(); if(bsp_player4 == NULL) printf("failed to get player\n");
+  sp_player4 = sprite_ctor(bsp_player4);
   bsp_crosshair = get_crosshair(); if(bsp_crosshair == NULL) printf("failed to get player\n");
   sp_crosshair = sprite_ctor(bsp_crosshair);
-  sprite_set_pos(sp_crosshair, 270, 100);
-  sprite_draw(sp_crosshair);
+
+  sprite_set_pos(sp_player0, 50, 50);
+  sprite_set_pos(sp_player1, 50, 50);
+  sprite_set_pos(sp_player2, 50, 50);
+  sprite_set_pos(sp_player3, 50, 50);
+  sprite_set_pos(sp_player4, 50, 50);
 
   int ipc_status, r;
   message msg;
   int good = true;
-  int x = 0, y = 0;
+  int x = 0, y =0;
 
 
   while(good) { /* You may want to use a different condition */
@@ -76,6 +92,20 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       //swapBuffer();
                       clear_screen();
                       menu_init();
+                      
+                      switch (x)
+                      {
+                      case 0: sprite_draw(sp_player0); break;
+                      case 1: sprite_draw(sp_player1); break;
+                      case 2: sprite_draw(sp_player2); break;
+                      case 3: sprite_draw(sp_player3); break;
+                      case 4: sprite_draw(sp_player4); break;
+                      default:
+                        break;
+                      }
+                      if(y%3 == 0) x++;
+                      y++;
+                      if(x > 4) x = 0;
                     
                       //menu switch case here
                       //menu update here
@@ -99,8 +129,6 @@ int(proj_main_loop)(int argc, char* argv[]) {
                  if(msg.m_notify.interrupts & get_irq(MOUSE_IRQ)){
                     mouse_ih();
                     if(get_mouse_ih_counter() >= 3){
-                      x++;
-                      y++;
                       struct packet pp;
                       mouse_parse_packet(&pp);
                       update_mouse(&pp);
