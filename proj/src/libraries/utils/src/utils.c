@@ -11,12 +11,6 @@ int (unsubscribe_interrupt)(int *interrupt_id) {
     return 0;
 }
 
-int (unsubscribe_interrupt)(int *interrupt_id) {
-    if (interrupt_id == NULL) return 1;
-    if(sys_irqrmpolicy(interrupt_id)) return 1;
-    return 0;
-}
-
 int(util_get_LSB)(uint16_t val, uint8_t *lsb) {
     if (lsb == NULL) return 1;
     *lsb = val;

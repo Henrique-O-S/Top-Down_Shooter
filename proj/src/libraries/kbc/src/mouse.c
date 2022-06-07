@@ -105,7 +105,6 @@ int (mouse_issue_cmd)(uint8_t cmd) {
         if (ack == ACK_ERROR) return 1;
         tickdelay(micros_to_ticks(DELAY));
     }
->>>>>>> feature/drawCrosshair
     return 0;
 }
 
