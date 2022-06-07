@@ -2,6 +2,7 @@
 #include <lcom/lcf.h>
 
 #include "proj.h"
+#include "player.h"
 
 // Any header files included below this line should have been created by you
 
@@ -34,7 +35,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
   if (subscribe_all()) return 1;
 
-  uint16_t mode = INDEXED_1024_768;
+  uint16_t mode = DIRECT_1024_768_888;
 
   if(vbe_get_mode_information(mode)) return 1;
 
@@ -42,11 +43,19 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
   if(set_vbe_mode(mode)) return 1;
 
+  /// MENU
   if(menu_init()) return 1;
+
+  /// SPRITES
+  bsp_player = get_player(); if(bsp_player == NULL) printf("failed to get player\n");
+  sp_player = sprite_ctor(bsp_player);
+  sprite_set_pos(sp_player, 270, 100);
+  sprite_draw(sp_player);
 
   int ipc_status, r;
   message msg;
   int good = true;
+  int x = 0, y = 0;
 
   while(good) { /* You may want to use a different condition */
      /* Get a request message. */
@@ -58,11 +67,17 @@ int(proj_main_loop)(int argc, char* argv[]) {
          switch (_ENDPOINT_P(msg.m_source)) {
              case HARDWARE: /* hardware interrupt notification */       
                  if(msg.m_notify.interrupts & get_irq(TIMER0_IRQ)){
-                    //printf("got to timer\n");
                     timer_int_handler();
-                    //clear_screen();
-                    //menu switch case here
-                    //menu update here
+                    if(no_interrupts %3 == 0){ // the second 60 corresponds to the refresh rate
+                      //printf("got to timer\n");
+                      clear_screen();
+                      //menu_init();
+                      //menu switch case here
+                      //menu update here
+                      sprite_set_pos(sp_player, *get_mouse_X(), *get_mouse_Y());
+                      sprite_draw(sp_player);
+                      no_interrupts = 0;
+                    }
                  }
                  if(msg.m_notify.interrupts & get_irq(KBC_IRQ)){
                     //printf("got to keyboard\n");
@@ -76,14 +91,14 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
                  }
                  if(msg.m_notify.interrupts & get_irq(MOUSE_IRQ)){
-                   //printf("got to mouse\n");
+                    printf("got to mouse\n");
                     mouse_ih();
-                    if(bytes_counter == 3){
+                    if(get_mouse_ih_counter() >= 3){
+                      x++;
+                      y++;
                       struct packet pp;
                       mouse_parse_packet(&pp);
-                      if(pp.lb){
-                        good = 0;
-                      }
+                      update_mouse(&pp);
                     }
                     //mouse function calls here
                  }
@@ -97,11 +112,16 @@ int(proj_main_loop)(int argc, char* argv[]) {
   }
 
   if (unsubscribe_all()){
+    vg_exit();
+    free_memory_map();
     printf("%s: failed to unsubscribe drivers.\n", __func__);
     return 1;
   }
 
-  if(vg_exit()) return 1;
+  if(vg_exit()) {
+    free_memory_map();
+    return 1;
+  }
 
   if (free_memory_map()) return 1;
 

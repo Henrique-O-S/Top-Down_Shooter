@@ -24,6 +24,7 @@
 #define INDEXED_1024_768        0x105
 #define DIRECT_640_480          0x110
 #define DIRECT_800_600          0x115
+#define DIRECT_1024_768_888     0x118
 #define DIRECT_1280_1024_565    0x11A
 #define DIRECT_1280_1024_888    0x11B
 #define LINEAR_FRAME_BUFFER_MD  BIT(14)
@@ -31,10 +32,10 @@
 // Color
 
 #define BLACK 0x00000000
-#define MENU_BACKGROUND_COLOR 0x03
-#define MENU_OPTION_COLOR 0x04
-#define PLAY_COLOR 0x02
-#define EXIT_COLOR 0x02
+#define MENU_BACKGROUND_COLOR 0x0ABAB5
+#define MENU_OPTION_COLOR 0xFF0000
+#define PLAY_COLOR 0x93c47d
+#define EXIT_COLOR 0x93c47d
 
 /**@}*/
 

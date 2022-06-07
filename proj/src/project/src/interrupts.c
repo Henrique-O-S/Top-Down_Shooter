@@ -1,6 +1,7 @@
 #include <lcom/lcf.h>
 
 #include "interrupts.h"
+#include "mouse.h"
 
 static int timer_subscription = 0;
 
@@ -41,6 +42,13 @@ int (subscribe_all)(void) {
             printf("%s: failed to unsubcribe interrupts\n", __func__); 
         return 1;
     }
+
+    if(mouse_set_data_report(1)) {
+        printf("%s: failed to enable mouse data report.\n", __func__);
+        if (unsubscribe_all())
+            printf("%s: failed to unsubcribe interrupts\n", __func__); 
+        return 1;
+    }
     
     if (sys_irqenable(&mouse_id)) {
         printf("%s: failed to enable mouse interrupts.\n", __func__);
@@ -73,6 +81,10 @@ int (unsubscribe_all)(void) {
     if (mouse_subscription) {
         if (sys_irqdisable(&mouse_id)) {
             printf("%s: failed to disable mouse interrupts.\n", __func__);
+            return 1;
+        }
+        if(mouse_set_data_report(0)) {
+            printf("%s: failed to enable mouse data report.\n", __func__);
             return 1;
         }
         if (sys_irqenable(&mouse_id)) {

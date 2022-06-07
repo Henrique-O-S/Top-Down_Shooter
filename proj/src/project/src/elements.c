@@ -6,17 +6,13 @@
 
 //Player
 
-int (build_player)(int start_x, int start_y, xpm_map_t sprite){
+int (build_player)(int start_x, int start_y, const basic_sprite_t *sprite){
     p.x = start_x;
     p.y = start_y;
     p.xspeed = 0;
     p.yspeed = 0;
     p.alive = 1;
-    xpm_image_t img;
-    xpm_load(sprite, XPM_8_8_8, &img);
-    p.img = img;
     p.player_sprite = sprite_ctor(sprite);
-
     return 0; 
 }
 
@@ -72,7 +68,7 @@ int (collision_player_wall)(struct map map, struct player player){
 
 int n_monsters = 10;
 
-int (build_monsters)(int start_x, int start_y, xpm_map_t sprite){
+int (build_monsters)(int start_x, int start_y, const basic_sprite_t *sprite){
     for(int i = 0; i < n_monsters; i++){
         struct monster m;
         monsters[i] = m;
@@ -82,9 +78,6 @@ int (build_monsters)(int start_x, int start_y, xpm_map_t sprite){
         m.xspeed = 0;
         m.yspeed = 0;
         m.alive = 1;
-        xpm_image_t img;
-        xpm_load(sprite, XPM_8_8_8, &img);
-        m.img = img;
         m.monster_sprite = sprite_ctor(sprite);
     }
     return 0; 
@@ -143,7 +136,7 @@ int (collision_monster_wall)(struct map map, struct monster monster) {
 
 int n_bullets = 10;
 
-int (build_bullets)(int start_x, int start_y, xpm_map_t sprite){
+int (build_bullets)(int start_x, int start_y, const basic_sprite_t *sprite){
     for(int i = 0; i < n_bullets; i++){
         struct bullet b;
         bullets[i] = b;
@@ -153,9 +146,6 @@ int (build_bullets)(int start_x, int start_y, xpm_map_t sprite){
         b.xspeed = 0;
         b.yspeed = 0;
         b.fired = 0;
-        xpm_image_t img;
-        xpm_load(sprite, XPM_8_8_8, &img);
-        b.img = img;
         b.bullet_sprite = sprite_ctor(sprite);
     }
     return 0; 

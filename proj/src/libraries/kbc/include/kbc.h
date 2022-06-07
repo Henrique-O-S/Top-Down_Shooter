@@ -2,6 +2,7 @@
 #define KBC_H_INCLUDED
 
 /**
+<<<<<<< HEAD
  * @defgroup kbc kbc
  * @ingroup libraries
  *
@@ -9,6 +10,7 @@
  */
 
 /**
+
  * @brief High-level function that reads the command byte of the KBC
  * @param cmd Pointer to variable where command byte read from KBC will be stored
  * @return 0 if operation was successful, 1 otherwise

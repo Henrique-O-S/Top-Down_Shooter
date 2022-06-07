@@ -47,6 +47,9 @@ int (util_sys_inb)(int port, uint8_t *value);
 int16_t min(int16_t a, int16_t b);
 int16_t max(int16_t a, int16_t b);
 
+double fm_sin(double x);
+double fm_cos(double x);
+
 /**@}*/
 
 #endif //UTILS_H_INCLUDED

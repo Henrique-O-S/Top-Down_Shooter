@@ -19,8 +19,6 @@ struct player{
     int xspeed;
     int yspeed;
     int alive;
-    xpm_image_t img;
-
 };
 
 struct player p;
@@ -33,8 +31,6 @@ struct monster{
     int xspeed;
     int yspeed;
     int alive;
-    xpm_image_t img;
-
 };
 
 int n_monsters;
@@ -48,8 +44,6 @@ struct bullet{
     int xspeed;
     int yspeed;
     int fired;
-    xpm_image_t img;
-
 };
 
 int n_bullets;
@@ -67,7 +61,7 @@ struct map{
 
 //Player
 
-int (build_player)(int start_x, int start_y, xpm_map_t sprite);
+int (build_player)(int start_x, int start_y, const basic_sprite_t *sprite);
 
 void (draw_player)();
 
@@ -79,7 +73,7 @@ int (collision_player_wall)(struct map map, struct player player);
 
 //Monsters
 
-int (build_monsters)(int start_x, int start_y, xpm_map_t sprite);
+int (build_monsters)(int start_x, int start_y, const basic_sprite_t *sprite);
 
 void (draw_monsters)();
 
@@ -89,7 +83,7 @@ int (collision_monster_wall)(struct map map, struct monster monster);
 
 //Bullet
 
-int (build_bullets)(int startx, int starty, xpm_map_t sprite);
+int (build_bullets)(int startx, int starty, const basic_sprite_t *sprite);
 
 void (draw_bullets)();
 
