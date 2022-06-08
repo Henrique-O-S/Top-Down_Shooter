@@ -1,11 +1,13 @@
 #include <lcom/lcf.h>
 
+#include <math.h>
 #include "mouse.h"
 #include "mouse_macros.h"
 #include "kbc_macros.h"
 #include "kbc.h"
 #include "graphics.h"
 #include "utils.h"
+#include "sprite.h"
 
 int mouse_subscribe_int(uint8_t interrupt_bit, int *interrupt_id){
     if (interrupt_id == NULL) return 1;
@@ -68,8 +70,16 @@ void (update_mouse)(struct packet *p) {
 
     //key_presses.lb_pressed = p->lb;
 }
-int16_t get_mouse_X(void) { return mouse_x; }
-int16_t get_mouse_Y(void) { return mouse_y; }
+int16_t get_mouse_X(void) { 
+    return mouse_x; 
+}
+int16_t get_mouse_Y(void) { 
+    return mouse_y;
+}
+
+double get_mouse_angle(const sprite_t *p) {
+    return atan2(sprite_get_Y(p) - mouse_y, mouse_x - sprite_get_X(p));
+}
 
 int (mouse_parse_packet)(struct packet *p){
     p->bytes[0] = packet_mouse[0];

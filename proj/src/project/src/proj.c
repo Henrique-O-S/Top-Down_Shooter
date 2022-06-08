@@ -65,7 +65,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
   bsp_crosshair = get_crosshair(); if(bsp_crosshair == NULL) printf("failed to get player\n");
   sp_crosshair = sprite_ctor(bsp_crosshair);
 
-  sprite_set_pos(sp_player0, 50, 50);
+  sprite_set_pos(sp_player0, 450, 450);
   sprite_set_pos(sp_player1, 50, 50);
   sprite_set_pos(sp_player2, 50, 50);
   sprite_set_pos(sp_player3, 50, 50);
@@ -93,7 +93,10 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       clear_screen();
                       menu_init();
                       
-                      switch (x)
+                      //sprite_set_pos(sp_player0, get_mouse_X(), get_mouse_Y());
+                      sprite_set_angle(sp_player0, get_mouse_angle(sp_player0));
+                      sprite_draw(sp_player0);
+                      /* switch (x)
                       {
                       case 0: sprite_draw(sp_player0); break;
                       case 1: sprite_draw(sp_player1); break;
@@ -102,7 +105,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       case 4: sprite_draw(sp_player4); break;
                       default:
                         break;
-                      }
+                      } */
                       if(y%3 == 0) x++;
                       y++;
                       if(x > 4) x = 0;

@@ -40,6 +40,10 @@ uint16_t (sprite_get_w)(const sprite_t *p);
 
 uint16_t (sprite_get_h)(const sprite_t *p);
 
+uint16_t (sprite_get_X)(const sprite_t *p);
+
+uint16_t (sprite_get_Y)(const sprite_t *p);
+
 void (sprite_draw)(const sprite_t *p);
 
 #endif //SPRITE_H_INCLUDED

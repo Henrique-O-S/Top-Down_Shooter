@@ -292,9 +292,21 @@ void (sprite_set_scale) (sprite_t *p, double scale          ){
 
 double   (sprite_get_angle)(const sprite_t *p){ return p->theta; }
 
-uint16_t (sprite_get_w)(const sprite_t *p){ return basic_sprite_get_w(p->bsp); }
+uint16_t (sprite_get_w)(const sprite_t *p){ 
+    return basic_sprite_get_w(p->bsp); 
+}
 
-uint16_t (sprite_get_h)(const sprite_t *p){ return basic_sprite_get_h(p->bsp); }
+uint16_t (sprite_get_h)(const sprite_t *p){ 
+    return basic_sprite_get_h(p->bsp); 
+}
+
+uint16_t (sprite_get_X)(const sprite_t *p) {
+    return p->x;
+}
+
+uint16_t (sprite_get_Y)(const sprite_t *p) {
+    return p->y;
+}
 
 static void (sprite_src2sbuf)(const sprite_t *p, int16_t x, int16_t y, int16_t *u, int16_t *v){
     if(p->theta == 0.0){
