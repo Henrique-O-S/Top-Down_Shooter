@@ -16,6 +16,7 @@
         "map": "c",
         "aux_functions.h": "c",
         "libraries.h": "c",
-        "graphics_macros.h": "c"
+        "graphics_macros.h": "c",
+        "liblm.h": "c"
     }
 }

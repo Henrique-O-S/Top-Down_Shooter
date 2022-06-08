@@ -53,6 +53,7 @@ proj.o: /home/lcom/labs/proj/src/project/src/proj.c \
   libraries/graphics/include/sprite.h libraries/kbc/include/kbc.h \
   libraries/kbc/include/kbd.h libraries/kbc/include/kbc_macros.h \
   libraries/kbc/include/mouse.h libraries/kbc/include/mouse_macros.h \
+  libraries/rtc/include/rtc.h libraries/rtc/include/rtc_macros.h \
   libraries/timer/include/timer.h libraries/timer/include/i8254.h \
   libraries/utils/include/utils.h project/include/elements.h \
   project/include/interrupts.h project/include/aux_functions.h \

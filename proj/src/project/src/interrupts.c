@@ -9,6 +9,8 @@ static int keyboard_subscription = 0;
 
 static int mouse_subscription = 0;
 
+static int rtc_subscription = 0;
+
 int (subscribe_all)(void) {
 
     timer_id = 0;
@@ -57,6 +59,16 @@ int (subscribe_all)(void) {
         return 1;
     }
 
+    rtc_id = 0;
+    if (subscribe_rtc_interrupt(RTC_IRQ, &rtc_id)){
+        printf("%s: failed to enable rtc interrupts.\n", __func__);
+        if (unsubscribe_all())
+            printf("%s: failed to unsubcribe driver, unexpected behaviour is expected.\n", __func__);
+        return 1;
+    }
+    rtc_subscription = 1;
+    rtc_set_updates(1);
+
     return 0;
 }
 
@@ -96,6 +108,14 @@ int (unsubscribe_all)(void) {
             return 1;
         }
         mouse_subscription = 0;
+    }
+
+    if (rtc_subscription) {
+        if (unsubscribe_interrupt(&rtc_id)) {
+            printf("%s: failed to unsubcribe RTC interrupts.\n", __func__);
+            return 1;
+        }
+        rtc_subscription = 0;
     }
 
     return 0;

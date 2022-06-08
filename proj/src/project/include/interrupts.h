@@ -10,8 +10,8 @@
 
 #include "libraries.h"
 
-static int timer_id, kbc_id, mouse_id;
-static int timer_subscription, keyboard_subscription, mouse_subscription;
+static int timer_id, kbc_id, mouse_id, rtc_id;
+static int timer_subscription, keyboard_subscription, mouse_subscription, rtc_subscription;
 
 /**
  * @brief Subscribes all drivers used (timer->keyboard->mouse)
