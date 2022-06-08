@@ -5,6 +5,7 @@
 #include "player.h"
 #include "crosshair.h"
 #include "aux_functions.h"
+#include "game.h"
 
 // Any header files included below this line should have been created by you
 
@@ -102,7 +103,13 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       y++;
                       struct packet pp;
                       mouse_parse_packet(&pp);
-                      process_mouse(&pp);
+                      int option = process_mouse(&pp);
+                      if(option == 1){
+                        if(game_loop()) good = 0;
+                      }
+                      else if(option == 2){
+                        good = 0;
+                      }
                       update_mouse(&pp);
                     }
                     //mouse function calls here

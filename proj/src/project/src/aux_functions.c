@@ -42,11 +42,7 @@ uint16_t (mouse_in_box)(){
 int (process_mouse)(struct packet *p){
   uint16_t selected = mouse_in_box();
   if(p->lb){
-    if (selected == 1){
-      //play game function();
-    }else if (selected == 2){
-      //exit game function();
-    }
+    return selected;
   }
   return 0;
 }

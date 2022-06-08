@@ -12,6 +12,10 @@
 
 int (menu_init)();
 
+uint16_t (mouse_in_box)();
+
+int (process_mouse)(struct packet *p);
+
 /**
  * @}
  */
