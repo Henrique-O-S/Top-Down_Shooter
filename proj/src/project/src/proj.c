@@ -4,6 +4,7 @@
 #include "proj.h"
 #include "player.h"
 #include "crosshair.h"
+#include "aux_functions.h"
 
 // Any header files included below this line should have been created by you
 
@@ -75,7 +76,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       //swapBuffer();
                       clear_screen();
                       menu_init();
-                    
+                      
                       //menu switch case here
                       //menu update here
                       sprite_set_pos(sp_crosshair, get_mouse_X(), get_mouse_Y());
@@ -101,6 +102,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       y++;
                       struct packet pp;
                       mouse_parse_packet(&pp);
+                      process_mouse(&pp);
                       update_mouse(&pp);
                     }
                     //mouse function calls here
