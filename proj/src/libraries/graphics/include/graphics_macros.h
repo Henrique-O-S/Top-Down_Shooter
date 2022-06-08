@@ -36,6 +36,7 @@
 #define MENU_OPTION_COLOR 0xFF0000
 #define PLAY_COLOR 0x93c47d
 #define EXIT_COLOR 0x93c47d
+#define SELECTED_COLOR 0xffff00
 
 /**@}*/
 
