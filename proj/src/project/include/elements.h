@@ -10,6 +10,12 @@
 
 #include "libraries.h"
 
+//game macros
+#define PLAYER_SPEED    5;
+#define MONSTER_SPEED   3;
+#define BULLET_SPEED    10;
+#define SHOT_COOLDOWN   0.25;
+
 //structs
 
 struct player{
@@ -59,15 +65,17 @@ struct map{
     uint8_t *walls;
 };
 
+struct map map;
+
 //Elements functions
 
 //Player
 
-int (build_player)(int start_x, int start_y, int speed, float shot_cooldown, const basic_sprite_t *sprite);
+int (build_player)(int start_x, int start_y, const basic_sprite_t *sprite);
 
 void (draw_player)();
 
-void (update_player_pos)(struct map map);
+void (update_player_pos)();
 
 void (update_dir)(int val, int dir);
 
@@ -75,7 +83,7 @@ void (shoot)();
 
 int (collision_player_monster)(struct monster monster, struct player player);
 
-int (collision_player_wall)(struct map map, struct player player);
+int (collision_player_wall)(struct player player);
 
 //Monsters
 
@@ -85,7 +93,7 @@ void (draw_monsters)();
 
 void (update_monster_pos)();
 
-int (collision_monster_wall)(struct map map, struct monster monster);
+int (collision_monster_wall)(struct monster monster);
 
 //Bullet
 
@@ -95,13 +103,13 @@ void (draw_bullets)();
 
 void (update_bullet_pos)();
 
-int (collision_bullet_wall)(struct map map, struct bullet bullet);
+int (collision_bullet_wall)(struct bullet bullet);
 
 int (collision_bullet_monster)(struct monster monster, struct bullet bullet);
 
 //Walls
 
-int (wall_collision)(struct map map, int x, int y);
+int (wall_collision)(int x, int y);
 
 /**
  * @}

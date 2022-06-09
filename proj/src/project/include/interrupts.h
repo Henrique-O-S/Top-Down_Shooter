@@ -10,7 +10,6 @@
 
 #include "libraries.h"
 
-static int timer_id, kbc_id, mouse_id;
 static int timer_subscription, keyboard_subscription, mouse_subscription;
 
 /**
@@ -26,6 +25,14 @@ int (subscribe_all)(void);
 int (unsubscribe_all)(void);
 
 int (get_irq)(int id);
+
+int (get_timer_id)();
+
+int (get_kbc_id)();
+
+int (get_mouse_id)();
+
+int (get_rtc_id)();
 
 /**
  * @}

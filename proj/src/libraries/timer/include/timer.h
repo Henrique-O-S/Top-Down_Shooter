@@ -13,7 +13,12 @@
 uint32_t no_interrupts;
 
 int (subscribe_timer_interrupt)(uint8_t interrupt_bit, int *interrupt_id);
+
 void (timer_int_handler)();
+
+uint32_t get_no_interrupts();
+
+void set_no_interrupts(uint32_t n);
 
 /**@}*/
 

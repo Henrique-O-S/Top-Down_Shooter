@@ -5,7 +5,7 @@
 #include "player.h"
 #include "crosshair.h"
 
-// Any header files included below this line should have been created by you
+int finished = false;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -31,6 +31,14 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
+int process_key(const uint8_t* scancode){
+  if(scancode[0] == ESC_BREAK_CODE){
+    finished = true;
+  }
+
+  return 0;
+}
+
 int(proj_main_loop)(int argc, char* argv[]) {
   (void)argc; (void)argv;
 
@@ -44,75 +52,19 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
   if(set_vbe_mode(mode)) return 1;
 
-  /// MENU
-  if(menu_init()) return 1;
-
   /// SPRITES
-  bsp_player = get_player(); if(bsp_player == NULL) printf("failed to get player\n");
+  bsp_player = get_player(); 
+  if(bsp_player == NULL) printf("failed to get player\n");
   sp_player = sprite_ctor(bsp_player);
-  bsp_crosshair = get_crosshair(); if(bsp_crosshair == NULL) printf("failed to get player\n");
+
+  bsp_crosshair = get_crosshair(); 
+  if(bsp_crosshair == NULL) printf("failed to get player\n");
   sp_crosshair = sprite_ctor(bsp_crosshair);
-  sprite_set_pos(sp_crosshair, 270, 100);
-  sprite_draw(sp_crosshair);
 
-  int ipc_status, r;
-  message msg;
-  int good = true;
-  int x = 0, y = 0;
+  //Menu loop disabled for testing
+  //menu_loop();
 
-  while(good) { /* You may want to use a different condition */
-     /* Get a request message. */
-     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
-         printf("driver_receive failed with: %d", r);
-         continue;
-     }
-     if (is_ipc_notify(ipc_status)) { /* received notification */
-         switch (_ENDPOINT_P(msg.m_source)) {
-             case HARDWARE: /* hardware interrupt notification */       
-                 if(msg.m_notify.interrupts & get_irq(TIMER0_IRQ)){
-                    timer_int_handler();
-                    if(no_interrupts % 3 == 0){ // the second 60 corresponds to the refresh rate
-                      //swapBuffer();
-                      clear_screen();
-                      menu_init();
-                    
-                      //menu switch case here
-                      //menu update here
-                      sprite_set_pos(sp_crosshair, get_mouse_X(), get_mouse_Y());
-                      sprite_draw(sp_crosshair);
-                      draw_double_buffer();
-                      no_interrupts = 1;
-                    }
-                 }
-                 if(msg.m_notify.interrupts & get_irq(KBC_IRQ)){
-                    kbc_ih();
-                    if(got_error_keyboard == 1){
-                      good = 0;
-                    }
-                    if(get_scancode()[0] == 0x81){ //ESC scancode, can probably done in key process in kbd
-                      good = 0;
-                    }
-
-                 }
-                 if(msg.m_notify.interrupts & get_irq(MOUSE_IRQ)){
-                    mouse_ih();
-                    if(get_mouse_ih_counter() >= 3){
-                      x++;
-                      y++;
-                      struct packet pp;
-                      mouse_parse_packet(&pp);
-                      update_mouse(&pp);
-                    }
-                    //mouse function calls here
-                 }
-                 break;
-             default:
-                 break; /* no other notifications expected: do nothing */ 
-         }
-     } else { /* received a standard message, not a notification */
-         /* no standard messages expected: do nothing */
-     }
-  }
+  game_loop();
 
   if (unsubscribe_all()){
     vg_exit();
@@ -127,6 +79,79 @@ int(proj_main_loop)(int argc, char* argv[]) {
   }
 
   if (free_memory_map()) return 1;
+
+  return 0;
+}
+
+int menu_loop(){
+
+  /// MENU
+  if(menu_draw()) return 1;
+  sprite_set_pos(sp_crosshair, 270, 100);
+  sprite_draw(sp_crosshair);
+
+  int ipc_status, r;
+  message msg;
+  int x = 0, y = 0;
+
+  while(!finished) { /* You may want to use a different condition */
+     /* Get a request message. */
+     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
+         printf("driver_receive failed with: %d", r);
+         continue;
+     }
+     if (is_ipc_notify(ipc_status)) { /* received notification */
+         switch (_ENDPOINT_P(msg.m_source)) {
+             case HARDWARE: /* hardware interrupt notification */       
+                 if(msg.m_notify.interrupts & get_irq(TIMER0_IRQ)){
+                    timer_int_handler();
+                    if(get_no_interrupts() % 3 == 0){ // the second 60 corresponds to the refresh rate
+                      //swapBuffer();
+                      clear_screen();
+                      menu_draw();
+                      
+                      //menu switch case here
+                      //menu update here
+                      sprite_set_pos(sp_crosshair, get_mouse_X(), get_mouse_Y());
+                      sprite_draw(sp_crosshair);
+                      draw_double_buffer();
+                      set_no_interrupts(1);
+                    }
+                 }
+                 if(msg.m_notify.interrupts & get_irq(KBC_IRQ)){
+                    kbc_ih();
+                    if(get_error_keyboard() == 1){
+                      finished = true;
+                    }
+
+                    process_key(get_scancode());
+                 }
+                 if(msg.m_notify.interrupts & get_irq(MOUSE_IRQ)){
+                    mouse_ih();
+                    if(get_mouse_ih_counter() >= 3){
+                      x++;
+                      y++;
+                      struct packet pp;
+                      mouse_parse_packet(&pp);
+                      int option = process_mouse(&pp);
+                      if(option == 1){
+                        if(game_loop()) finished = true;
+                      }
+                      else if(option == 2){
+                        finished = true;
+                      }
+                      update_mouse(&pp);
+                    }
+                    //mouse function calls here
+                 }
+                 break;
+             default:
+                 break; /* no other notifications expected: do nothing */ 
+         }
+     } else { /* received a standard message, not a notification */
+         /* no standard messages expected: do nothing */
+     }
+  }
 
   return 0;
 }

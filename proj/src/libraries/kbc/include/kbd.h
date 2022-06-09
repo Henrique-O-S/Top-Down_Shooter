@@ -23,6 +23,8 @@ int (keyboard_poll)(uint8_t bytes[], uint8_t *size);
 
 const uint8_t* (get_scancode)();
 
+int get_error_keyboard();
+
 /**@}*/
 
 #endif //KBD_H_INCLUDED

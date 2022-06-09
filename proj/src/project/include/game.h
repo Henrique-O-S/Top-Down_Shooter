@@ -12,9 +12,9 @@
 #include "elements.h"
 #include "interrupts.h"
 
-int (gameLoop)();
+int (game_loop)();
 
-int (process_key)(uint8_t* scancode);
+int (process_key_game)(const uint8_t* scancode);
 
 /**
  * @}

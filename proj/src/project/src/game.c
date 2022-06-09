@@ -5,8 +5,9 @@
 int finished = false;
 
 int (game_loop)(){
-
-int ipc_status, r;
+  
+  clear_screen();
+  int ipc_status, r;
   message msg;
 
   while(!finished) { /* You may want to use a different condition */
@@ -18,31 +19,30 @@ int ipc_status, r;
      if (is_ipc_notify(ipc_status)) { /* received notification */
          switch (_ENDPOINT_P(msg.m_source)) {
              case HARDWARE: /* hardware interrupt notification */       
-                 if(msg.m_notify.interrupts & get_irq(timer_id)){
+                 if(msg.m_notify.interrupts & get_irq(get_timer_id())){
                     timer_int_handler();
-                    if((no_interrupts * 60) % 60 == 0){ // the second 60 corresponds to the refresh rate
+                    if((get_no_interrupts() * 60) % 60 == 0){ // the second 60 corresponds to the refresh rate
                       clear_screen();
                       draw_player();
                       draw_monsters();
                       //draw mouse here
-                      no_interrupts = 0;
+                      set_no_interrupts(0);
                     }
                  }
-                 if(msg.m_notify.interrupts & get_irq(kbc_id)){
+                 if(msg.m_notify.interrupts & get_irq(get_kbc_id())){
                     kbc_ih();
-                    if(got_error_keyboard == 1){
+                    if(get_error_keyboard() == 1){
                       finished = true;
                     }
                     //calls to key processing functions here, functions to be implemented in kbd
-                    if(get_scancode()[0] == 0x81){ //ESC scancode, can probably done in key process in kbd
-                      finished = true;
-                    }
-
+                    process_key_game(get_scancode());
+                    update_player_pos();
                  }
-                 if(msg.m_notify.interrupts & get_irq(mouse_id)){
+                 if(msg.m_notify.interrupts & get_irq(get_mouse_id())){
                     mouse_ih();
                     struct packet pp;
                     mouse_parse_packet(&pp);
+                    
                     if(pp.lb){
                       finished = true;
                     }
@@ -60,7 +60,7 @@ int ipc_status, r;
     return 0;
 }
 
-int (process_key)(uint8_t* scancode){
+int (process_key_game)(const uint8_t* scancode){
   switch (scancode[0])
   {
   case ESC_BREAK_CODE:

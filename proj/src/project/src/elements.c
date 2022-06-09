@@ -6,13 +6,13 @@
 
 //Player
 
-int (build_player)(int start_x, int start_y, int speed, float shot_cooldown, const basic_sprite_t *sprite){
+int (build_player)(int start_x, int start_y, const basic_sprite_t *sprite){
     p.x = start_x;
     p.y = start_y;
     p.xMov = 0;
     p.yMov = 0;
-    p.speed = speed;
-    p.shot_cooldown = shot_cooldown;
+    p.speed = PLAYER_SPEED;
+    p.shot_cooldown = SHOT_COOLDOWN;
     p.alive = 1;
     p.player_sprite = sprite_ctor(sprite);
 
@@ -26,14 +26,14 @@ void (draw_player)(){
     }
 }
 
-void (update_player_pos)(struct map map){
+void (update_player_pos)(){
     if(p.alive){
         //player inputs
         int x = p.x;
         int y = p.y;
         p.x = p.x + (p.speed * p.xMov);
         p.y = p.y + (p.speed * p.yMov);
-        if(collision_player_wall(map, p)){
+        if(collision_player_wall(p)){
             p.x = x;
             p.y = y;
         }
@@ -78,12 +78,12 @@ int (collision_player_monster)(struct monster monster, struct player player) {
     return distance <= monster_radius + player_radius;
 }
 
-int (collision_player_wall)(struct map map, struct player player){
+int (collision_player_wall)(struct player player){
     double radius = fmax(sprite_get_w(player.player_sprite), sprite_get_h(player.player_sprite))/2.0;
     for (double x = -radius; x <= radius; x += 1) {
         double y_pos = sqrt(radius*radius - x*x);
         double y_neg = -y_pos;
-        if (wall_collision(map, player.x + x, player.y + y_pos) || wall_collision(map, player.x + x, player.y + y_neg)) return 1;
+        if (wall_collision(player.x + x, player.y + y_pos) || wall_collision(player.x + x, player.y + y_neg)) return 1;
     }
     return 0;
 }
@@ -104,7 +104,7 @@ int (build_monsters)(int start_x, int start_y, const basic_sprite_t *sprite){
         m.alive = 1;
         m.monster_sprite = sprite_ctor(sprite);
     }
-    return 0; 
+    return 0;
 }
 
 void (draw_monsters)(){
@@ -118,7 +118,7 @@ void (draw_monsters)(){
 
 }
 
-void (update_monster_pos)(struct map map){
+void (update_monster_pos)(){
     for(int i = 0; i < n_monsters; i++){
         struct monster monster = monsters[i];
         if(monster.alive){
@@ -130,7 +130,7 @@ void (update_monster_pos)(struct map map){
             int y = monster.y;
             monster.x = monster.x + monster.xspeed * rand() % 3;
             monster.y = monster.y + monster.yspeed * rand() % 3;
-            if(collision_monster_wall(map, monster)){
+            if(collision_monster_wall(monster)){
                 monster.x = x;
                 monster.y = y;
             }
@@ -146,12 +146,12 @@ void (update_monster_pos)(struct map map){
     }
 }
 
-int (collision_monster_wall)(struct map map, struct monster monster) {
+int (collision_monster_wall)(struct monster monster) {
     double radius = fmax(sprite_get_w(monster.monster_sprite), sprite_get_h(monster.monster_sprite))/2.0;
     for (double x = -radius; x <= radius; x += 1) {
         double y_pos = sqrt(radius*radius - x*x);
         double y_neg = -y_pos;
-        if (wall_collision(map, monster.x + x, monster.y + y_pos) || wall_collision(map, monster.x + x, monster.y + y_neg)) return 1;
+        if (wall_collision(monster.x + x, monster.y + y_pos) || wall_collision(monster.x + x, monster.y + y_neg)) return 1;
     }
     return 0;
 }
@@ -186,7 +186,7 @@ void (draw_bullets)(){
 
 }
 
-void (update_bullet_pos)(struct map map){
+void (update_bullet_pos)(){
     for(int i = 0; i < n_bullets; i++){
         struct bullet bullet = bullets[i];
         if(bullet.fired){
@@ -195,7 +195,7 @@ void (update_bullet_pos)(struct map map){
             int y = bullet.y;
             bullet.x = bullet.x + bullet.xspeed; // * angle, probably
             bullet.y = bullet.y + bullet.yspeed; // * angle, probably
-            if(collision_bullet_wall(map, bullet)){
+            if(collision_bullet_wall(bullet)){
                 bullet.x = x;
                 bullet.y = y;
                 bullet.fired = 0;
@@ -212,12 +212,12 @@ void (update_bullet_pos)(struct map map){
     }
 }
 
-int (collision_bullet_wall)(struct map map, struct bullet bullet) {
+int (collision_bullet_wall)(struct bullet bullet) {
     double radius = fmax(sprite_get_w(bullet.bullet_sprite), sprite_get_h(bullet.bullet_sprite))/2.0;
     for (double x = -radius; x <= radius; x += 1) {
         double y_pos = sqrt(radius*radius - x*x);
         double y_neg = -y_pos;
-        if (wall_collision(map, bullet.x + x, bullet.y + y_pos) || wall_collision(map, bullet.x + x, bullet.y + y_neg)) return 1;
+        if (wall_collision(bullet.x + x, bullet.y + y_pos) || wall_collision(bullet.x + x, bullet.y + y_neg)) return 1;
     }
     return 0;
 }
@@ -233,7 +233,7 @@ int (collision_bullet_monster)(struct monster monster, struct bullet bullet) {
 
 //Wall
 
-int (wall_collision)(struct map map, int x, int y){
+int (wall_collision)(int x, int y){
     const int w = sprite_get_w(map.background), h = sprite_get_h(map.background);
     if(x < 0 || w <= x || y < 0 || h <= y) return 0;
     int32_t pos = x + y * w;
