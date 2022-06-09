@@ -12,6 +12,7 @@
 #include "elements.h"
 #include "interrupts.h"
 #include "aux_functions.h"
+#include "game.h"
 
 basic_sprite_t *bsp_player;
 sprite_t *sp_player;

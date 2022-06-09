@@ -57,5 +57,5 @@ proj.o: /home/lcom/labs/proj/src/project/src/proj.c \
   libraries/timer/include/timer.h libraries/timer/include/i8254.h \
   libraries/utils/include/utils.h project/include/elements.h \
   project/include/interrupts.h project/include/aux_functions.h \
-  media/player.h media/survivor-move_rifle_0.xpm media/player.xpm \
-  media/crosshair.h media/crosshair.xpm project/include/game.h
+  project/include/game.h media/player.h media/survivor-move_rifle_0.xpm \
+  media/player.xpm media/crosshair.h media/crosshair.xpm

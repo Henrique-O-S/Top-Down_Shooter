@@ -4,8 +4,6 @@
 #include "proj.h"
 #include "player.h"
 #include "crosshair.h"
-#include "aux_functions.h"
-#include "game.h"
 
 // Any header files included below this line should have been created by you
 
@@ -94,7 +92,6 @@ int(proj_main_loop)(int argc, char* argv[]) {
                     if(get_scancode()[0] == 0x81){ //ESC scancode, can probably done in key process in kbd
                       good = 0;
                     }
-
                  }
                  if(msg.m_notify.interrupts & get_irq(MOUSE_IRQ)){
                     mouse_ih();

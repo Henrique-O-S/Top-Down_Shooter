@@ -17,6 +17,8 @@
         "aux_functions.h": "c",
         "libraries.h": "c",
         "graphics_macros.h": "c",
-        "liblm.h": "c"
+        "liblm.h": "c",
+        "player.h": "c",
+        "*.xpm": "c"
     }
 }

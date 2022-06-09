@@ -5,8 +5,9 @@
 int finished = false;
 
 int (game_loop)(){
-
-int ipc_status, r;
+  
+  clear_screen();
+  int ipc_status, r;
   message msg;
 
   while(!finished) { /* You may want to use a different condition */
