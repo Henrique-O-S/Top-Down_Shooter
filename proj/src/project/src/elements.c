@@ -149,7 +149,7 @@ int (build_bullets)(int start_x, int start_y, basic_sprite_t **sprite){
         b.xspeed = 0;
         b.yspeed = 0;
         b.fired = 0;
-        b.bullet_sprite = sprite_ctor(sprite, 1);
+        b.bullet_sprite = sprite_ctor(sprite, 3);
         bullets[i] = b;
     }
     return 0; 
@@ -158,7 +158,7 @@ int (build_bullets)(int start_x, int start_y, basic_sprite_t **sprite){
 void (draw_bullets)(){
     for(int i = 0; i < n_bullets; i++){
         struct bullet bullet = bullets[i];
-        if(bullet.fired){
+        if(bullet.fired != -1){
             sprite_set_pos(bullet.bullet_sprite, bullet.x, bullet.y);
             sprite_draw(bullet.bullet_sprite);
             sprite_update_animation(bullet.bullet_sprite);

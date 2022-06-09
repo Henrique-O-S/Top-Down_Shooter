@@ -5,6 +5,8 @@
 #include "player0.h"
 #include "enemy.h"
 #include "crosshair.h"
+#include "bullet.h"
+#include "map.h"
 #include "game.h"
 
 // Any header files included below this line should have been created by you
@@ -70,11 +72,15 @@ int(proj_main_loop)(int argc, char* argv[]) {
   bsp_enemy_idle = get_enemy();
   bsp_enemy_attacking = get_enemy();
 
-  bsp_bullet = get_enemy();
+  bsp_bullet = get_bullet();
+
+  bsp_map = get_map();
+  sp_map = sprite_ctor(bsp_map, 1);
+  sprite_set_pos(sp_map, 0, 75);
 
   build_player(100, 100, bsp_player_idle, bsp_player_shooting); 
   build_monsters(500, 500, bsp_enemy_idle, bsp_enemy_attacking);
-  build_bullets(250, 250, bsp_bullet);
+  build_bullets(170, 80, bsp_bullet);
 
   //bsp_enemy = get_enemy(); if(bsp_enemy == NULL) printf("failed to get player\n");
   //sp_enemy = sprite_ctor(bsp_enemy, 15);
@@ -108,7 +114,8 @@ int(proj_main_loop)(int argc, char* argv[]) {
                     if(no_interrupts % 3 == 0){ // the second 60 corresponds to the refresh rate
                     
                       clear_screen();
-                      if(menu_init()) good = 0;
+                      //if(menu_init()) good = 0;
+                      sprite_draw(sp_map);
                       /*
                       sprite_set_angle(sp_player, get_mouse_angle(sp_player));
                       sprite_set_angle(sp_enemy, sprite_angle_of_two(sp_player, sp_enemy));
