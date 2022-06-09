@@ -3,11 +3,9 @@
 
 #include "proj.h"
 #include "player0.h"
-#include "player1.h"
-#include "player2.h"
-#include "player3.h"
-#include "player4.h"
+#include "enemy.h"
 #include "crosshair.h"
+#include "game.h"
 
 // Any header files included below this line should have been created by you
 
@@ -42,40 +40,59 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
   uint16_t mode = 0x118;
 
-  if(vbe_get_mode_information(mode)) return 1;
+  if(vbe_get_mode_information(mode))  {
+    unsubscribe_all();
+    return 1;
+  }
 
-  if(map_vram()) return 1;
+  if(map_vram()) {
+    unsubscribe_all();
+    return 1;
+  }
 
-  if(set_vbe_mode(mode)) return 1;
+  if(set_vbe_mode(mode)) {
+    unsubscribe_all();
+    free_memory_map();
+    return 1;
+  }
 
   /// MENU
-  if(menu_init()) return 1;
+  //if(menu_init()) return 1;
 
   /// SPRITES
-  bsp_player0 = get_player0(); if(bsp_player0 == NULL) printf("failed to get player\n");
-  sp_player0 = sprite_ctor(bsp_player0);
-  bsp_player1 = get_player1(); if(bsp_player1 == NULL) printf("failed to get player\n");
-  sp_player1 = sprite_ctor(bsp_player1);
-  bsp_player2 = get_player2(); if(bsp_player2 == NULL) printf("failed to get player\n");
-  sp_player2 = sprite_ctor(bsp_player2);
-  bsp_player3 = get_player3(); if(bsp_player3 == NULL) printf("failed to get player\n");
-  sp_player3 = sprite_ctor(bsp_player3);
-  bsp_player4 = get_player4(); if(bsp_player4 == NULL) printf("failed to get player\n");
-  sp_player4 = sprite_ctor(bsp_player4);
-  bsp_crosshair = get_crosshair(); if(bsp_crosshair == NULL) printf("failed to get player\n");
-  sp_crosshair = sprite_ctor(bsp_crosshair);
 
-  sprite_set_pos(sp_player0, 450, 450);
-  sprite_set_pos(sp_player1, 50, 50);
-  sprite_set_pos(sp_player2, 50, 50);
-  sprite_set_pos(sp_player3, 50, 50);
-  sprite_set_pos(sp_player4, 50, 50);
+  //bsp_player = get_player(); if(bsp_player == NULL) printf("failed to get player\n");
+  //sp_player = sprite_ctor(bsp_player, 20);
+
+  bsp_player_idle = get_player();
+  bsp_player_shooting = get_player();
+
+  bsp_enemy_idle = get_enemy();
+  bsp_enemy_attacking = get_enemy();
+
+  bsp_bullet = get_enemy();
+
+  build_player(100, 100, bsp_player_idle, bsp_player_shooting); 
+  build_monsters(500, 500, bsp_enemy_idle, bsp_enemy_attacking);
+  build_bullets(250, 250, bsp_bullet);
+
+  //bsp_enemy = get_enemy(); if(bsp_enemy == NULL) printf("failed to get player\n");
+  //sp_enemy = sprite_ctor(bsp_enemy, 15);
+  printf("got enemy\n");
+
+
+  bsp_crosshair = get_crosshair(); if(bsp_crosshair == NULL) printf("failed to get crosshair\n");
+    printf("got crosshair\n");
+  sp_crosshair = sprite_ctor(bsp_crosshair, 1);
+
+
+
+  //sprite_set_pos(sp_player, 450, 450);
+  //sprite_set_pos(sp_enemy, 150, 150);
 
   int ipc_status, r;
   message msg;
   int good = true;
-  int x = 0, y =0;
-
 
   while(good) { /* You may want to use a different condition */
      /* Get a request message. */
@@ -89,33 +106,29 @@ int(proj_main_loop)(int argc, char* argv[]) {
                  if(msg.m_notify.interrupts & get_irq(TIMER0_IRQ)){
                     timer_int_handler();
                     if(no_interrupts % 3 == 0){ // the second 60 corresponds to the refresh rate
-                      //swapBuffer();
-                      clear_screen();
-                      menu_init();
-                      
-                      //sprite_set_pos(sp_player0, get_mouse_X(), get_mouse_Y());
-                      sprite_set_angle(sp_player0, get_mouse_angle(sp_player0));
-                      sprite_draw(sp_player0);
-                      /* switch (x)
-                      {
-                      case 0: sprite_draw(sp_player0); break;
-                      case 1: sprite_draw(sp_player1); break;
-                      case 2: sprite_draw(sp_player2); break;
-                      case 3: sprite_draw(sp_player3); break;
-                      case 4: sprite_draw(sp_player4); break;
-                      default:
-                        break;
-                      } */
-                      if(y%3 == 0) x++;
-                      y++;
-                      if(x > 4) x = 0;
                     
+                      clear_screen();
+                      if(menu_init()) good = 0;
+                      /*
+                      sprite_set_angle(sp_player, get_mouse_angle(sp_player));
+                      sprite_set_angle(sp_enemy, sprite_angle_of_two(sp_player, sp_enemy));
+                      sprite_draw(sp_player);
+                      sprite_draw(sp_enemy);
+                      */
                       //menu switch case here
                       //menu update here
+
+                      draw_player();
+                      draw_monsters();
+                      draw_bullets();
+                      
+
                       sprite_set_pos(sp_crosshair, get_mouse_X(), get_mouse_Y());
                       sprite_draw(sp_crosshair);
+                      //sprite_update_animation(sp_player);
+                      //sprite_update_animation(sp_enemy);
                       draw_double_buffer();
-                      no_interrupts = 1;
+                      //no_interrupts = 1;
                     }
                  }
                  if(msg.m_notify.interrupts & get_irq(KBC_IRQ)){
@@ -135,6 +148,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       struct packet pp;
                       mouse_parse_packet(&pp);
                       update_mouse(&pp);
+                    
                     }
                     //mouse function calls here
                  }

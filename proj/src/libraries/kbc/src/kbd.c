@@ -57,3 +57,15 @@ int (keyboard_poll)(uint8_t bytes[], uint8_t *size){
 const uint8_t* get_scancode(){
     return scancode;
 }
+
+int keyboard_get_done(void){ 
+    return done; 
+}
+
+int keyboard_get_size(void){ 
+    return sz;
+}
+
+int keyboard_get_error(void){
+    return got_error_keyboard; 
+}

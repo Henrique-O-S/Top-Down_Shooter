@@ -16,3 +16,9 @@ int (menu_init)(){
 
   return 0;
 }
+
+int (map1_init)() {
+  vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MENU_BACKGROUND_COLOR);
+
+  return 0;
+}

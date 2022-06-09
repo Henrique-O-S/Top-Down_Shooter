@@ -206,7 +206,8 @@ struct basic_sprite{
     int16_t u0, v0;
 };
 struct sprite{
-    const basic_sprite_t *bsp;
+    basic_sprite_t **bsp;
+    uint8_t current_animation, animation, current_wait, wait;
     int16_t x, y; //position in screen
     int16_t su0, sv0;
     double theta, s, c;
@@ -247,10 +248,18 @@ int16_t        (basic_sprite_get_u0) (const basic_sprite_t *p){ return p->u0 ; }
 
 int16_t        (basic_sprite_get_v0) (const basic_sprite_t *p){ return p->v0 ; }
 
-sprite_t* (sprite_ctor)(const basic_sprite_t *bsp){
+sprite_t* (sprite_ctor)(basic_sprite_t **bsp, uint8_t animation){
     sprite_t *ret = malloc(sizeof(sprite_t));
     if(ret == NULL) return NULL;
-    ret->bsp = bsp;
+    ret->animation = animation;
+    ret->current_animation = 0;
+    ret->current_wait = 0;
+    ret->wait = 0;
+    ret->bsp =(basic_sprite_t**)malloc(sizeof(basic_sprite_t*)* animation);
+    printf("sprite_ctor\n");
+    for(int i = 0; i < animation; i++) {
+        ret->bsp[i] = bsp[i];
+    }
     ret->sbuf = NULL;
     ret->x = 0;
     ret->y = 0;
@@ -269,18 +278,18 @@ void (sprite_set_pos)   (sprite_t *p, int16_t x , int16_t y ){ p->x = x; p->y = 
 
 void (sprite_set_angle) (sprite_t *p, double angle          ){ p->theta = angle; p->c = fm_cos(p->theta); p->s = fm_sin(p->theta); }
 
-void (sprite_set_scale) (sprite_t *p, double scale          ){
+void (sprite_set_scale) (sprite_t *p, double scale){
     //if(eq_d(p->scale, scale)) return;
     p->scale = scale;
 
-    p->su0 = (int16_t)(p->bsp->u0*p->scale);
-    p->sv0 = (int16_t)(p->bsp->u0*p->scale);
+    p->su0 = (int16_t)(p->bsp[0]->u0*p->scale);
+    p->sv0 = (int16_t)(p->bsp[0]->u0*p->scale);
 
-    const uint16_t W = basic_sprite_get_w(p->bsp),
-                   H = basic_sprite_get_h(p->bsp);
+    const uint16_t W = basic_sprite_get_w(p->bsp[0]),
+                   H = basic_sprite_get_h(p->bsp[0]);
     uint16_t sW = (uint16_t)(W*scale), sH = (uint16_t)(H*scale);
     p->sbuf = realloc(p->sbuf, sW*sH*4);
-    const uint8_t *map = basic_sprite_get_map(p->bsp);
+    const uint8_t *map = basic_sprite_get_map(p->bsp[0]);
     for(uint16_t sx = 0; sx < sW; ++sx){
         for(uint16_t sy = 0; sy < sH; ++sy){
             uint16_t x = (uint16_t)(sx/scale), y = (uint16_t)(sy/scale);
@@ -293,11 +302,11 @@ void (sprite_set_scale) (sprite_t *p, double scale          ){
 double   (sprite_get_angle)(const sprite_t *p){ return p->theta; }
 
 uint16_t (sprite_get_w)(const sprite_t *p){ 
-    return basic_sprite_get_w(p->bsp); 
+    return basic_sprite_get_w(p->bsp[0]); 
 }
 
 uint16_t (sprite_get_h)(const sprite_t *p){ 
-    return basic_sprite_get_h(p->bsp); 
+    return basic_sprite_get_h(p->bsp[0]); 
 }
 
 uint16_t (sprite_get_X)(const sprite_t *p) {
@@ -306,6 +315,10 @@ uint16_t (sprite_get_X)(const sprite_t *p) {
 
 uint16_t (sprite_get_Y)(const sprite_t *p) {
     return p->y;
+}
+
+double (sprite_angle_of_two)(const sprite_t *p, const sprite_t *p1) {
+    return atan2(sprite_get_Y(p1) - sprite_get_Y(p), sprite_get_X(p) - sprite_get_X(p1));
 }
 
 static void (sprite_src2sbuf)(const sprite_t *p, int16_t x, int16_t y, int16_t *u, int16_t *v){
@@ -332,8 +345,9 @@ static void (sprite_sbuf2src)(const sprite_t *p, int16_t u, int16_t v, int16_t *
 }
 
 void (sprite_draw)(const sprite_t *p){
-    const uint16_t sw = (uint16_t)(p->scale*basic_sprite_get_w(p->bsp));
-    const uint16_t sh = (uint16_t)(p->scale*basic_sprite_get_h(p->bsp));
+    int animation = p->current_animation;
+    const uint16_t sw = (uint16_t)(p->scale*basic_sprite_get_w(p->bsp[0]));
+    const uint16_t sh = (uint16_t)(p->scale*basic_sprite_get_h(p->bsp[0]));
     int16_t xmin, xmax, ymin, ymax; {
         int16_t x, y;
         sprite_sbuf2src(p, 0, 0, &x, &y);
@@ -353,11 +367,20 @@ void (sprite_draw)(const sprite_t *p){
         for(int16_t x = xmin; x < xmax; ++x, place += bytes_pixel){
             sprite_src2sbuf(p, x, y, &u, &v);
             if(0 <= u && u < sw && 0 <= v && v < sh){
-                const uint8_t *c_p = p->sbuf+(v*sw+u)*4;
+                const uint8_t *c_p = basic_sprite_get_map(p->bsp[animation])+(v*sw+u)*4;
                 if(*(c_p+3) < ALPHA_THRESHOLD){ //alpha
                     memcpy(place, c_p, bytes_pixel);
                 }
             }
         }
+    }
+}
+
+void (sprite_update_animation) (sprite_t *p) {
+    p->current_wait++;
+    if(p->current_wait >= p->wait) {
+        p->current_wait = 0;
+        p->current_animation++;
+        if(p->current_animation >= p->animation) p->current_animation = 0;
     }
 }

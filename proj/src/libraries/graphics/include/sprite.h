@@ -24,7 +24,7 @@ int16_t        (basic_sprite_get_v0) (const basic_sprite_t *p);
 
 /// SPRITE
 
-sprite_t* (sprite_ctor)(const basic_sprite_t *bsp);
+sprite_t* (sprite_ctor)(basic_sprite_t **bsp, uint8_t animation);
 
 void (sprite_dtor)(sprite_t *p);
 
@@ -44,6 +44,10 @@ uint16_t (sprite_get_X)(const sprite_t *p);
 
 uint16_t (sprite_get_Y)(const sprite_t *p);
 
+double (sprite_angle_of_two)(const sprite_t *p, const sprite_t *p1);
+
 void (sprite_draw)(const sprite_t *p);
+
+void (sprite_update_animation) (sprite_t *p);
 
 #endif //SPRITE_H_INCLUDED
