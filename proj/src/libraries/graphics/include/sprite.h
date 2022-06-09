@@ -8,9 +8,28 @@
  * @{
  */
 
+
+#include <stdint.h>
+
+
 #define ALPHA_THRESHOLD 0x7F
 
+struct basic_sprite{
+    uint8_t *map;
+    uint16_t w, h;
+    int16_t u0, v0;
+};
 typedef struct basic_sprite basic_sprite_t;
+
+struct sprite{
+    basic_sprite_t **bsp;
+    uint8_t current_animation, animation, current_wait, wait;
+    int16_t x, y, x_offset, y_offset; //position in screen
+    int16_t su0, sv0;
+    double theta, s, c;
+};
+
+
 typedef struct sprite sprite_t;
 
 /// BASIC SPRITE
@@ -39,8 +58,6 @@ void (sprite_set_pos)   (sprite_t *p, int16_t x, int16_t y);
 
 void (sprite_set_angle) (sprite_t *p, double angle);
 
-void (sprite_set_scale) (sprite_t *p, double scale);
-
 double   (sprite_get_angle)(const sprite_t *p);
 
 uint16_t (sprite_get_w)(const sprite_t *p);
@@ -56,5 +73,9 @@ double (sprite_angle_of_two)(const sprite_t *p, const sprite_t *p1);
 void (sprite_draw)(const sprite_t *p);
 
 void (sprite_update_animation) (sprite_t *p);
+
+/**
+ * @}
+ */
 
 #endif //SPRITE_H_INCLUDED

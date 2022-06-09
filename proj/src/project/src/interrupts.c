@@ -9,7 +9,7 @@ static int keyboard_subscription = 0;
 
 static int mouse_subscription = 0;
 
-static int rtc_subscription = 0;
+//static int rtc_subscription = 0;
 
 int (subscribe_all)(void) {
 
@@ -60,6 +60,7 @@ int (subscribe_all)(void) {
     }
 
     rtc_id = 0;
+    /*
     if (subscribe_rtc_interrupt(RTC_IRQ, &rtc_id)){
         printf("%s: failed to enable rtc interrupts.\n", __func__);
         if (unsubscribe_all())
@@ -68,6 +69,7 @@ int (subscribe_all)(void) {
     }
     rtc_subscription = 1;
     rtc_set_updates(1);
+    */
 
     return 0;
 }
@@ -110,6 +112,7 @@ int (unsubscribe_all)(void) {
         mouse_subscription = 0;
     }
 
+    /*
     if (rtc_subscription) {
         if (unsubscribe_interrupt(&rtc_id)) {
             printf("%s: failed to unsubcribe RTC interrupts.\n", __func__);
@@ -117,6 +120,7 @@ int (unsubscribe_all)(void) {
         }
         rtc_subscription = 0;
     }
+    */
 
     return 0;
 }

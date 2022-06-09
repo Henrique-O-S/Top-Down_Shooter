@@ -9,6 +9,7 @@
  */
 
 #include "libraries.h"
+#include "sprite.h"
 #include "elements.h"
 #include "interrupts.h"
 #include "aux_functions.h"

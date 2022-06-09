@@ -24,11 +24,11 @@ uint16_t (mouse_in_box)(){
   uint16_t mouse_x = get_mouse_X();
   uint16_t mouse_y = get_mouse_Y();
 
-  uint16_t x_box = get_XRes() / 2 - (350 / 2) - 15;
+  uint16_t x_box = get_XRes() / 2 - (350 / 2);
   uint16_t x1_box = x_box + 350;
   uint16_t y_box =  (get_YRes() / 6) - 15;
   uint16_t y1_box =  y_box + get_YRes() / 7;
-  uint16_t y_box_exit =  3 * (get_YRes() / 6) - 15;
+  uint16_t y_box_exit =  3 * (get_YRes() / 6);
   uint16_t y1_box_exit = y_box_exit + get_YRes() / 7;
 
   if(mouse_x >= x_box && mouse_x <= x1_box && mouse_y >= y_box && mouse_y <= y1_box){

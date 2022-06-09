@@ -113,13 +113,11 @@ int(proj_main_loop)(int argc, char* argv[]) {
                  if(msg.m_notify.interrupts & get_irq(TIMER0_IRQ)){
                     timer_int_handler();
                     if(no_interrupts % 3 == 0){ // the second 60 corresponds to the refresh rate
-                    
                       clear_screen();
-                      if(menu_init()) good = 0;
-                      // map1_background();
-                      // sprite_draw(sp_map);
+                      //if(menu_init()) good = 0;
+                      map1_background();
+                      sprite_draw(sp_map);
                       
-
                       draw_player();
                       draw_monsters();
                       draw_bullets();
@@ -149,7 +147,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       mouse_parse_packet(&pp);
                       int option = process_mouse(&pp);
                       if(option == 1){
-                        if(game_loop()) good = 0;
+                        //if(game_loop()) good = 0;
                       }
                       else if(option == 2){
                         good = 0;

@@ -203,22 +203,6 @@ int (pixmap_drawer)(uint16_t x, uint16_t y, enum pixmap pixmap){
 
 /******* SPRITE *******/
 
-
-struct basic_sprite{
-    uint8_t *map;
-    uint16_t w, h;
-    int16_t u0, v0;
-};
-struct sprite{
-    basic_sprite_t **bsp;
-    uint8_t current_animation, animation, current_wait, wait;
-    int16_t x, y; //position in screen
-    int16_t su0, sv0;
-    double theta, s, c;
-    double scale;
-    uint8_t *sbuf;
-};
-
 basic_sprite_t* (basic_sprite_ctor)(const char *const *xpm, int16_t u0, int16_t v0){
     basic_sprite_t *ret = malloc(sizeof(basic_sprite_t));
     if(ret == NULL) return NULL;
@@ -260,48 +244,27 @@ sprite_t* (sprite_ctor)(basic_sprite_t **bsp, uint8_t animation){
     ret->current_wait = 0;
     ret->wait = 0;
     ret->bsp =(basic_sprite_t**)malloc(sizeof(basic_sprite_t*)* animation);
-    printf("sprite_ctor\n");
     for(int i = 0; i < animation; i++) {
         ret->bsp[i] = bsp[i];
     }
-    ret->sbuf = NULL;
     ret->x = 0;
     ret->y = 0;
+    ret->su0 = (int16_t)(ret->bsp[0]->u0);
+    ret->sv0 = (int16_t)(ret->bsp[0]->v0);
+
     sprite_set_angle(ret, 0.0);
-    sprite_set_scale(ret, 1.0);
+
     return ret;
 }
 
 void (sprite_dtor)(sprite_t *p){
     if(p == NULL) return;
-    free(p->sbuf);
     free(p);
 }
 
 void (sprite_set_pos)   (sprite_t *p, int16_t x , int16_t y ){ p->x = x; p->y = y; }
 
 void (sprite_set_angle) (sprite_t *p, double angle          ){ p->theta = angle; p->c = fm_cos(p->theta); p->s = fm_sin(p->theta); }
-
-void (sprite_set_scale) (sprite_t *p, double scale){
-    //if(eq_d(p->scale, scale)) return;
-    p->scale = scale;
-
-    p->su0 = (int16_t)(p->bsp[0]->u0*p->scale);
-    p->sv0 = (int16_t)(p->bsp[0]->u0*p->scale);
-
-    const uint16_t W = basic_sprite_get_w(p->bsp[0]),
-                   H = basic_sprite_get_h(p->bsp[0]);
-    uint16_t sW = (uint16_t)(W*scale), sH = (uint16_t)(H*scale);
-    p->sbuf = realloc(p->sbuf, sW*sH*4);
-    const uint8_t *map = basic_sprite_get_map(p->bsp[0]);
-    for(uint16_t sx = 0; sx < sW; ++sx){
-        for(uint16_t sy = 0; sy < sH; ++sy){
-            uint16_t x = (uint16_t)(sx/scale), y = (uint16_t)(sy/scale);
-            if(x > W || y > H) continue;
-            memcpy(p->sbuf+4*(sx+sy*sW), map+4*(x+y*W), 4);
-        }
-    }
-}
 
 double   (sprite_get_angle)(const sprite_t *p){ return p->theta; }
 
@@ -350,8 +313,8 @@ static void (sprite_sbuf2src)(const sprite_t *p, int16_t u, int16_t v, int16_t *
 
 void (sprite_draw)(const sprite_t *p){
     int animation = p->current_animation;
-    const uint16_t sw = (uint16_t)(p->scale*basic_sprite_get_w(p->bsp[0]));
-    const uint16_t sh = (uint16_t)(p->scale*basic_sprite_get_h(p->bsp[0]));
+    const uint16_t sw = (uint16_t)(basic_sprite_get_w(p->bsp[0]));
+    const uint16_t sh = (uint16_t)(basic_sprite_get_h(p->bsp[0]));
     int16_t xmin, xmax, ymin, ymax; {
         int16_t x, y;
         sprite_sbuf2src(p, 0, 0, &x, &y);

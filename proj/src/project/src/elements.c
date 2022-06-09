@@ -21,6 +21,7 @@ int (build_player)(int start_x, int start_y,  basic_sprite_t **idle,  basic_spri
 void (draw_player)(){
     if(p.alive){
         sprite_set_pos(p.player_idle, p.x, p.y);
+        sprite_set_angle(p.player_idle, get_mouse_angle(p.player_idle));
         sprite_draw(p.player_idle);
         sprite_update_animation(p.player_idle);
     }
@@ -38,7 +39,7 @@ void (update_player_pos)(){
             p.y = y;
         }
         for(int j = 0; j < n_enemies; j++){
-            struct enemy enemy = enemies[j];
+            enemy_t enemy = enemies[j];
             if(enemy.alive && collision_player_monster(enemy, p)){
                 p.alive = 0;
                 break;
@@ -63,7 +64,7 @@ void (update_dir)(int val, int dir){
     }
 }
 
-int (collision_player_monster)(struct enemy enemy, struct player player) {
+int (collision_player_monster)(enemy_t enemy, struct player player) {
     double player_radius = fmax(sprite_get_w(player.player_idle), sprite_get_h(player.player_idle))/2.0;
     double monster_radius = fmax(sprite_get_w(enemy.enemy_idle), sprite_get_h(enemy.enemy_idle))/2.0;
     double distance_x = enemy.x - player.x;
@@ -88,7 +89,7 @@ int n_enemies = 4;
 
 int (build_monsters)(int start_x, int start_y,  basic_sprite_t **idle,  basic_sprite_t **attacking) {
     for(int i = 0; i < n_enemies; i++){
-        struct enemy m;
+        enemy_t m;
         m.id = i;
         m.x = start_x;
         m.y = start_y;
@@ -96,27 +97,32 @@ int (build_monsters)(int start_x, int start_y,  basic_sprite_t **idle,  basic_sp
         m.yspeed = 0;
         m.alive = 1;
         m.enemy_idle = sprite_ctor(idle, 20);
-        m.enemy_idle = sprite_ctor(attacking, 15);
+        m.enemy_attacking = sprite_ctor(attacking, 15);
         enemies[i] = m;
     }
     return 0; 
 }
 
-void (draw_monsters)(){
+void (draw_monsters)() {
     for(int i = 0; i < n_enemies; i++){
-        struct enemy enemy = enemies[i];
+        enemy_t enemy = enemies[i];
         if(enemy.alive){
+            sprite_set_pos(enemy.enemy_attacking, enemy.x + i* 100+100, enemy.y);
+            sprite_set_angle(enemy.enemy_attacking, sprite_angle_of_two(p.player_idle, enemy.enemy_attacking));
             sprite_set_pos(enemy.enemy_idle, enemy.x + i, enemy.y+i*100);
+            sprite_set_angle(enemy.enemy_idle, get_mouse_angle(enemy.enemy_idle));
+            sprite_set_angle(enemy.enemy_idle, sprite_angle_of_two(p.player_idle, enemy.enemy_idle));
             sprite_draw(enemy.enemy_idle);
+            sprite_draw(enemy.enemy_attacking);
             sprite_update_animation(enemy.enemy_idle);
+            sprite_update_animation(enemy.enemy_attacking);
         }
     }
-
 }
 
 void (update_monster_pos)(struct map map){
     for(int i = 0; i < n_enemies; i++){
-        struct enemy enemy = enemies[i];
+        enemy_t enemy = enemies[i];
         if(enemy.alive){
             int rand_x = rand() % 3;
             int rand_y = rand() % 3;
@@ -142,7 +148,7 @@ void (update_monster_pos)(struct map map){
     }
 }
 
-int (collision_monster_wall)( struct enemy enemy) {
+int (collision_monster_wall)( enemy_t enemy) {
     double radius = fmax(sprite_get_w(enemy.enemy_idle), sprite_get_h(enemy.enemy_idle))/2.0;
     for (double x = -radius; x <= radius; x += 1) {
         double y_pos = sqrt(radius*radius - x*x);
@@ -198,7 +204,7 @@ void (update_bullet_pos)(){
                 bullet.fired = 0;
             }
             for(int j = 0; j < n_enemies; i++){
-                struct enemy enemy = enemies[j];
+                enemy_t enemy = enemies[j];
                 if(enemy.alive && collision_bullet_monster(enemy, bullet)){
                     bullet.fired = 0;
                     enemy.alive = 0;
@@ -219,7 +225,7 @@ int (collision_bullet_wall)(struct bullet bullet) {
     return 0;
 }
 
-int (collision_bullet_monster)(struct enemy enemy, struct bullet bullet) {
+int (collision_bullet_monster)(enemy_t enemy, struct bullet bullet) {
     double bullet_radius = fmax(sprite_get_w(bullet.bullet_sprite), sprite_get_h(bullet.bullet_sprite))/2.0;
     double monster_radius = fmax(sprite_get_w(enemy.enemy_idle), sprite_get_h(enemy.enemy_idle))/2.0;
     double distance_x = enemy.x - bullet.x;
