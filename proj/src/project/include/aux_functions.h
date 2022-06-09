@@ -19,5 +19,8 @@ int (process_mouse)(struct packet *p);
 /**
  * @}
  */
+int (map1_init)();
+
+void (map1_background)(void);
 
 #endif //AUX_FUNCTIONS_H_INCLUDED

@@ -11,13 +11,16 @@
 #include "libraries.h"
 #include "elements.h"
 #include "interrupts.h"
-
-int (game_loop)();
-
-int (process_key)(const uint8_t* scancode);
+#include "aux_functions.h"
 
 /**
  * @}
  */
+int (game_loop)();
+
+/**
+ * @}
+ */
+int (process_key)(const uint8_t* scancode);
 
 #endif //GAME_H_INCLUDED

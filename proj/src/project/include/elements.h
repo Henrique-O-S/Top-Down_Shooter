@@ -18,7 +18,8 @@
 //structs
 
 struct player{
-    sprite_t *player_sprite;
+    sprite_t *player_idle;
+    sprite_t *player_shooting;
     int x;
     int y;
     int xMov; //can be -1, 0 or 1
@@ -27,11 +28,17 @@ struct player{
     int alive;
 };
 
-struct player p;
+/**
+ * @brief Player.
+ */
+typedef struct player player_t;
 
-struct monster{
+player_t p;
+
+struct enemy{
     int id;
-    sprite_t *monster_sprite;
+    sprite_t *enemy_idle;
+    sprite_t *enemy_attacking;
     int x;
     int y;
     int xspeed;
@@ -39,8 +46,13 @@ struct monster{
     int alive;
 };
 
-int n_monsters;
-struct monster monsters[10]; //monsters size got to be equal to n_monsters
+/**
+ * @brief Enemy.
+ */
+typedef struct enemy enemy_t;
+
+int n_enemies;
+struct enemy enemies[10]; //enemy size got to be equal to n_enemies
 
 struct bullet{
     int id;
@@ -51,6 +63,11 @@ struct bullet{
     int yspeed;
     int fired;
 };
+
+/**
+ * @brief Bullet.
+ */
+typedef struct bullet bullet_t;
 
 int n_bullets;
 struct bullet bullets[1]; //bullets size got to be equal to n_bullets
@@ -69,7 +86,7 @@ struct map map;
 
 //Player
 
-int (build_player)(int start_x, int start_y, const basic_sprite_t *sprite);
+int (build_player)(int start_x, int start_y,  basic_sprite_t **idle,  basic_sprite_t **shooting);
 
 void (draw_player)();
 
@@ -77,23 +94,23 @@ void (update_player_pos)();
 
 void (update_dir)(int val, int dir);
 
-int (collision_player_monster)(struct monster monster, struct player player);
+int (collision_player_monster)(struct enemy enemy, struct player player);
 
 int (collision_player_wall)(struct player player);
 
 //Monsters
 
-int (build_monsters)(int start_x, int start_y, const basic_sprite_t *sprite);
+int (build_monsters)(int start_x, int start_y,  basic_sprite_t **idle,  basic_sprite_t **attacking);
 
 void (draw_monsters)();
 
 void (update_monster_pos)();
 
-int (collision_monster_wall)(struct monster monster);
+int (collision_monster_wall)(struct enemy enemy);
 
 //Bullet
 
-int (build_bullets)(int startx, int starty, const basic_sprite_t *sprite);
+int (build_bullets)(int startx, int starty,  basic_sprite_t **sprite);
 
 void (draw_bullets)();
 
@@ -101,7 +118,7 @@ void (update_bullet_pos)();
 
 int (collision_bullet_wall)(struct bullet bullet);
 
-int (collision_bullet_monster)(struct monster monster, struct bullet bullet);
+int (collision_bullet_monster)(struct enemy enemy, struct bullet bullet);
 
 //Walls
 
@@ -110,5 +127,7 @@ int (wall_collision)(int x, int y);
 /**
  * @}
  */
+
+
 
 #endif //ELEMENTS_H_INCLUDED

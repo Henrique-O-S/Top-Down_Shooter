@@ -9,8 +9,9 @@ PROG=proj
 .PATH: ${.CURDIR}/libraries/utils/src
 
 # source code files to be compiled
+
 SRCS = proj.c aux_functions.c game.c elements.c interrupts.c graphics.c kbc.c kbd.c rtc.c utils.c timer.c mouse.c
-IPATHS= -I./project/include -I./libraries -I./libraries/graphics/include -I./libraries/kbc/include -I./libraries/rtc/include -I./libraries/timer/include -I./libraries/utils/include -I./media
+IPATHS= -I./project/include -I./libraries -I./libraries/graphics/include -I./libraries/kbc/include -I./libraries/timer/include -I./libraries/utils/include -I./media -I./media/player -I./media/enemy -I./libraries/rtc/include 
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set

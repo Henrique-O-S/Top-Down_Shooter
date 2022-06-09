@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "sprite.h"
+
 int bytes_counter;
 uint8_t packet_mouse[3];
 
@@ -28,6 +30,8 @@ void (update_mouse)(struct packet *p);
 int16_t get_mouse_X(void);
 
 int16_t get_mouse_Y(void);
+
+double get_mouse_angle(const sprite_t *p);
 
 int16_t (sign_extend_byte)(uint8_t sign_bit, uint8_t byte);
 

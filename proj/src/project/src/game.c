@@ -1,12 +1,16 @@
 #include <lcom/lcf.h>
 
 #include "game.h"
+#include "proj.h"
 
 int finished = false;
 
 int (game_loop)(){
+
+  build_player(100, 100, bsp_player_idle, bsp_player_shooting); 
+  build_monsters(500, 500, bsp_enemy_idle, bsp_enemy_attacking);
+  build_bullets(250, 250, bsp_bullet);
   
-  clear_screen();
   int ipc_status, r;
   message msg;
 
@@ -19,16 +23,20 @@ int (game_loop)(){
      if (is_ipc_notify(ipc_status)) { /* received notification */
          switch (_ENDPOINT_P(msg.m_source)) {
              case HARDWARE: /* hardware interrupt notification */       
-                 if(msg.m_notify.interrupts & get_irq(timer_id)){
-                    timer_int_handler();
-                    if((no_interrupts * 60) % 60 == 0){ // the second 60 corresponds to the refresh rate
-                      clear_screen();
-                      draw_player();
-                      draw_monsters();
-                      //draw mouse here
-                      no_interrupts = 0;
-                    }
-                 }
+                  if(msg.m_notify.interrupts & get_irq(timer_id)){
+                      timer_int_handler();
+                      if(no_interrupts % 3 == 0){ // the second 60 corresponds to the refresh rate
+                        clear_screen();
+                    
+                        map1_init();
+
+                        sprite_set_pos(sp_crosshair, get_mouse_X(), get_mouse_Y());
+                        sprite_draw(sp_crosshair);
+
+                        draw_double_buffer();
+                        no_interrupts = 0;
+                      }
+                  }
                  if(msg.m_notify.interrupts & get_irq(kbc_id)){
                     kbc_ih();
                     if(got_error_keyboard == 1){
@@ -57,7 +65,6 @@ int (game_loop)(){
          /* no standard messages expected: do nothing */
      }
   }
-
     return 0;
 }
 
