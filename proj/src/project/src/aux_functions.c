@@ -22,3 +22,26 @@ int (map1_init)() {
 
   return 0;
 }
+
+void (map1_background)(void) {
+
+
+  switch (no_interrupts/(60)) // each 5 secs changes color
+  {
+  case 0: vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MAP_COL0); break;
+  case 1: vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MAP_COL1); break;
+  case 2: vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MAP_COL2); break;
+  case 3: vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MAP_COL3); break;
+  case 4: vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MAP_COL4); break;
+  case 5: vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MAP_COL5); break;
+  case 6: vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MAP_COL6); break;
+  case 7: vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MAP_COL7); break;
+  case 8: vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MAP_COL8); break;
+  case 9: vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MAP_COL9); break;
+  case 10: vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MAP_COL10); break;
+  case 11: vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MAP_COL11); break;
+  case 12: vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MAP_COL12); break;
+  default: vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MAP_COL13); break;
+  }
+  
+}

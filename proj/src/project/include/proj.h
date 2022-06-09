@@ -16,7 +16,6 @@ basic_sprite_t **bsp_bullet;
 basic_sprite_t **bsp_map;
 sprite_t *sp_map;
 
-
 //basic_sprite_t **bsp_player;
 //basic_sprite_t **bsp_enemy;
 

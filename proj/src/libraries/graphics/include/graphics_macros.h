@@ -30,5 +30,20 @@
 #define PLAY_COLOR 0x93c47d
 #define EXIT_COLOR 0x93c47d
 
+#define MAP_COL0 0x1b2901
+#define MAP_COL1 0x1b3a01
+#define MAP_COL2 0x1b4a01
+#define MAP_COL3 0x1b5901
+#define MAP_COL4 0x1b6801
+#define MAP_COL5 0x1b7701
+#define MAP_COL6 0x1b8801
+#define MAP_COL7 0x1b9801
+#define MAP_COL8 0x1ba901
+#define MAP_COL9 0x6aa900
+#define MAP_COL10 0x6ab900
+#define MAP_COL11 0x9cb901
+#define MAP_COL12 0xb9d503
+#define MAP_COL13 0xb9fa03
+
 
 #endif /* end of include guard: GRAPHICS_MACROS_H_INCLUDED */

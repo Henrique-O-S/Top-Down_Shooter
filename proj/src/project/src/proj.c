@@ -66,11 +66,11 @@ int(proj_main_loop)(int argc, char* argv[]) {
   //bsp_player = get_player(); if(bsp_player == NULL) printf("failed to get player\n");
   //sp_player = sprite_ctor(bsp_player, 20);
 
-  bsp_player_idle = get_player();
-  bsp_player_shooting = get_player();
+  bsp_player_idle = get_player_idle();
+  bsp_player_shooting = get_player_shooting();
 
-  bsp_enemy_idle = get_enemy();
-  bsp_enemy_attacking = get_enemy();
+  bsp_enemy_idle = get_enemy_idle();
+  bsp_enemy_attacking = get_enemy_attacking();
 
   bsp_bullet = get_bullet();
 
@@ -79,7 +79,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
   sprite_set_pos(sp_map, 0, 75);
 
   build_player(100, 100, bsp_player_idle, bsp_player_shooting); 
-  build_monsters(500, 500, bsp_enemy_idle, bsp_enemy_attacking);
+  build_monsters(300, 150, bsp_enemy_idle, bsp_enemy_attacking);
   build_bullets(170, 80, bsp_bullet);
 
   //bsp_enemy = get_enemy(); if(bsp_enemy == NULL) printf("failed to get player\n");
@@ -90,6 +90,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
   bsp_crosshair = get_crosshair(); if(bsp_crosshair == NULL) printf("failed to get crosshair\n");
     printf("got crosshair\n");
   sp_crosshair = sprite_ctor(bsp_crosshair, 1);
+  printf("after crosshair\n");
 
 
 
@@ -115,6 +116,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
                     
                       clear_screen();
                       //if(menu_init()) good = 0;
+                      map1_background();
                       sprite_draw(sp_map);
                       /*
                       sprite_set_angle(sp_player, get_mouse_angle(sp_player));

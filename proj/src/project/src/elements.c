@@ -13,7 +13,7 @@ int (build_player)(int start_x, int start_y,  basic_sprite_t **idle,  basic_spri
     p.yspeed = 0;
     p.alive = 1;
     p.player_idle = sprite_ctor(idle, 20);
-    p.player_shooting = sprite_ctor(shooting, 5);
+    p.player_shooting = sprite_ctor(shooting, 3);
     return 0; 
 }
 
@@ -68,7 +68,7 @@ int (collision_player_wall)(struct map map, struct player player){
 
 //Enemy
 
-int n_enemies = 10;
+int n_enemies = 4;
 
 int (build_monsters)(int start_x, int start_y,  basic_sprite_t **idle,  basic_sprite_t **attacking) {
     for(int i = 0; i < n_enemies; i++){
@@ -79,8 +79,8 @@ int (build_monsters)(int start_x, int start_y,  basic_sprite_t **idle,  basic_sp
         m.xspeed = 0;
         m.yspeed = 0;
         m.alive = 1;
-        m.enemy_idle = sprite_ctor(idle, 5);
-        m.enemy_idle = sprite_ctor(attacking, 5);
+        m.enemy_idle = sprite_ctor(idle, 20);
+        m.enemy_idle = sprite_ctor(attacking, 15);
         enemies[i] = m;
     }
     return 0; 
@@ -90,7 +90,7 @@ void (draw_monsters)(){
     for(int i = 0; i < n_enemies; i++){
         struct enemy enemy = enemies[i];
         if(enemy.alive){
-            sprite_set_pos(enemy.enemy_idle, enemy.x + i*10, enemy.y+i*10);
+            sprite_set_pos(enemy.enemy_idle, enemy.x + i*100, enemy.y+i*100);
             sprite_draw(enemy.enemy_idle);
             sprite_update_animation(enemy.enemy_idle);
         }
