@@ -9,6 +9,7 @@
  */
 
 #include "libraries.h"
+#include "aux_functions.h"
 
 //game macros
 #define PLAYER_SPEED    5;
@@ -52,7 +53,7 @@ struct enemy{
 typedef struct enemy enemy_t;
 
 int n_enemies;
-struct enemy enemies[10]; //enemy size got to be equal to n_enemies
+enemy_t enemies[10]; //enemy size got to be equal to n_enemies
 
 struct bullet{
     int id;
@@ -90,13 +91,13 @@ int (build_player)(int start_x, int start_y,  basic_sprite_t **idle,  basic_spri
 
 void (draw_player)();
 
+void (set_player_pos)(keys_t *keys);
+
 void (update_player_pos)();
 
-void (update_dir)(int val, int dir);
+int (collision_player_monster)(enemy_t enemy, player_t player);
 
-int (collision_player_monster)(struct enemy enemy, struct player player);
-
-int (collision_player_wall)(struct player player);
+int (collision_player_wall)(player_t player);
 
 //Monsters
 
@@ -106,7 +107,7 @@ void (draw_monsters)();
 
 void (update_monster_pos)();
 
-int (collision_monster_wall)(struct enemy enemy);
+int (collision_monster_wall)(enemy_t enemy);
 
 //Bullet
 
@@ -118,7 +119,7 @@ void (update_bullet_pos)();
 
 int (collision_bullet_wall)(struct bullet bullet);
 
-int (collision_bullet_monster)(struct enemy enemy, struct bullet bullet);
+int (collision_bullet_monster)(enemy_t enemy, struct bullet bullet);
 
 //Walls
 

@@ -3,6 +3,29 @@
 #include "aux_functions.h"
 #include "mouse.h"
 
+static keys_t key;
+
+void update_key_press(void) {
+  if(keyboard_get_size() == 1) {
+    switch (get_scancode()[0]) {
+      case W_MAKE: key.w_pressed = 1; break;
+      case W_BREAK: key.w_pressed = 0; break;
+      case A_MAKE: key.a_pressed = 1; break;
+      case A_BREAK: key.a_pressed = 0; break;
+      case S_MAKE: key.s_pressed = 1; break;
+      case S_BREAK: key.s_pressed = 0; break;
+      case D_MAKE: key.d_pressed = 1; break;
+      case D_BREAK: key.d_pressed = 0; break;
+    default:
+      break;
+    }
+  }
+}
+
+keys_t* (get_key_press)(void) {
+    return &key;
+}
+
 int (menu_init)(){
   vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MENU_BACKGROUND_COLOR);
 

@@ -25,7 +25,7 @@ int (game_loop)(){
              case HARDWARE: /* hardware interrupt notification */       
                   if(msg.m_notify.interrupts & get_irq(timer_id)){
                       timer_int_handler();
-                      if(no_interrupts % 3 == 0){ // the second 60 corresponds to the refresh rate
+                      if(no_interrupts  == 0){ // the second 60 corresponds to the refresh rate
                         clear_screen();
                     
                         map1_init();
@@ -43,7 +43,7 @@ int (game_loop)(){
                       finished = true;
                     }
                     //calls to key processing functions here, functions to be implemented in kbd
-                    if(process_key(get_scancode())){
+                    if(get_scancode()[0] == ESC_BREAK_CODE){
                       finished = true;
                     }
                     update_player_pos();
@@ -66,50 +66,4 @@ int (game_loop)(){
      }
   }
     return 0;
-}
-
-int (process_key)(const uint8_t* scancode){
-  switch (scancode[0])
-  {
-  case ESC_BREAK_CODE:
-    finished = true;
-    break;
-
-  case A_MAKE:
-    update_dir(-1, 0);
-    break;
-
-  case A_BREAK:
-    update_dir(1, 0);
-    break;
-
-  case D_MAKE:
-    update_dir(1, 0);
-    break;
-
-  case D_BREAK:
-    update_dir(-1, 0);
-    break;
-
-  case W_MAKE:
-    update_dir(-1, 1);
-    break;
-  
-  case W_BREAK:
-    update_dir(1, 1);
-    break;
-
-  case S_MAKE:
-    update_dir(1, 1);
-    break;
-
-  case S_BREAK:
-    update_dir(-1, 1);
-    break;
-  
-  default:
-    break;
-  }
-
-  return 0;
 }

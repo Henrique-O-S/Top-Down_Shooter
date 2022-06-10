@@ -10,6 +10,21 @@
 
 #include "libraries.h"
 
+struct keys {
+    int w_pressed;
+    int a_pressed;
+    int s_pressed;
+    int d_pressed;
+};
+
+typedef struct keys keys_t;
+
+
+
+void update_key_press(void);
+
+keys_t* (get_key_press)(void);
+
 int (menu_init)();
 
 uint16_t (mouse_in_box)();

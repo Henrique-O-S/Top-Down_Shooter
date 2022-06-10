@@ -92,6 +92,8 @@ int(proj_main_loop)(int argc, char* argv[]) {
   sp_crosshair = sprite_ctor(bsp_crosshair, 1);
   printf("after crosshair\n");
 
+  keys_t *keys = get_key_press();
+
 
 
   //sprite_set_pos(sp_player, 450, 450);
@@ -117,6 +119,8 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       //if(menu_init()) good = 0;
                       map1_background();
                       sprite_draw(sp_map);
+
+                      set_player_pos(keys);
                       
                       draw_player();
                       draw_monsters();

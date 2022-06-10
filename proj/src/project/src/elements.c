@@ -27,13 +27,20 @@ void (draw_player)(){
     }
 }
 
+void (set_player_pos)(keys_t *keys) {
+    p.yMov = keys->s_pressed - keys->w_pressed;
+    p.xMov = keys->d_pressed - keys->a_pressed;
+    update_player_pos();
+}
+
 void (update_player_pos)(){
     if(p.alive){
         //player inputs
-        int x = p.x;
-        int y = p.y;
+        //int x = p.x;
+        //int y = p.y;
         p.x = p.x + (p.speed * p.xMov);
         p.y = p.y + (p.speed * p.yMov);
+        /*
         if(collision_player_wall(p)){
             p.x = x;
             p.y = y;
@@ -44,27 +51,11 @@ void (update_player_pos)(){
                 p.alive = 0;
                 break;
             }
-        }
+        } */
     }   
 }
 
-//Dir is 0 if horizontal and 1 if vertical
-void (update_dir)(int val, int dir){
-    switch (dir){
-        case 0:
-            p.xMov += val;
-            break;
-
-        case 1:
-            p.yMov += val;
-            break;
-
-        default:
-            break;
-    }
-}
-
-int (collision_player_monster)(enemy_t enemy, struct player player) {
+int (collision_player_monster)(enemy_t enemy, player_t player) {
     double player_radius = fmax(sprite_get_w(player.player_idle), sprite_get_h(player.player_idle))/2.0;
     double monster_radius = fmax(sprite_get_w(enemy.enemy_idle), sprite_get_h(enemy.enemy_idle))/2.0;
     double distance_x = enemy.x - player.x;
@@ -73,7 +64,7 @@ int (collision_player_monster)(enemy_t enemy, struct player player) {
     return distance <= monster_radius + player_radius;
 }
 
-int (collision_player_wall)(struct player player){
+int (collision_player_wall)(player_t player){
     double radius = fmax(sprite_get_w(player.player_idle), sprite_get_h(player.player_idle))/2.0;
     for (double x = -radius; x <= radius; x += 1) {
         double y_pos = sqrt(radius*radius - x*x);
