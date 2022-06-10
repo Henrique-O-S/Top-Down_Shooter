@@ -78,8 +78,8 @@ int(proj_main_loop)(int argc, char* argv[]) {
   sp_map = sprite_ctor(bsp_map, 1);
   sprite_set_pos(sp_map, 0, 75);
 
-  build_player(100, 100, bsp_player_idle, bsp_player_shooting); 
-  build_monsters(300, 150, bsp_enemy_idle, bsp_enemy_attacking);
+  build_player(500, 500, bsp_player_idle, bsp_player_shooting); 
+  build_monsters(0, 0, bsp_enemy_idle, bsp_enemy_attacking);
   build_bullets(170, 80, bsp_bullet);
 
   //bsp_enemy = get_enemy(); if(bsp_enemy == NULL) printf("failed to get player\n");
@@ -93,6 +93,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
   printf("after crosshair\n");
 
   keys_t *keys = get_key_press();
+  spawn_monsters();
 
 
 
@@ -119,6 +120,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       //if(menu_init()) good = 0;
                       map1_background();
                       sprite_draw(sp_map);
+                      update_monster_pos();
 
                       set_player_pos(keys);
                       

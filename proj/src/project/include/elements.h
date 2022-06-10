@@ -12,11 +12,19 @@
 #include "aux_functions.h"
 
 //game macros
-#define PLAYER_SPEED    5;
-#define MONSTER_SPEED   3;
-#define BULLET_SPEED    10;
-
+#define PLAYER_SPEED    5
+#define MONSTER_SPEED   3
+#define BULLET_SPEED    10
+#define BORDER_OFFSET   25
+#define DISTANCE_THRESHOLD   175
 //structs
+
+struct ret_pair{
+    int x;
+    int y;
+};
+
+typedef struct ret_pair ret_pair_t;
 
 struct player{
     sprite_t *player_idle;
@@ -45,6 +53,7 @@ struct enemy{
     int xspeed;
     int yspeed;
     int alive;
+    int wait, wait_threshold;
 };
 
 /**
@@ -95,15 +104,23 @@ void (set_player_pos)(keys_t *keys);
 
 void (update_player_pos)();
 
+ret_pair_t (is_border)(int x, int y);
+
+ret_pair_t (path_to_take)(int x, int y);
+
 int (collision_player_monster)(enemy_t enemy, player_t player);
 
 int (collision_player_wall)(player_t player);
+
+int (in_range_of_player)(enemy_t enemy);
 
 //Monsters
 
 int (build_monsters)(int start_x, int start_y,  basic_sprite_t **idle,  basic_sprite_t **attacking);
 
 void (draw_monsters)();
+
+void (spawn_monsters)(void);
 
 void (update_monster_pos)();
 
