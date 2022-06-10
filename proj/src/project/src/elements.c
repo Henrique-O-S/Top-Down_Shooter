@@ -55,6 +55,10 @@ void (update_player_pos)(){
     }   
 }
 
+void (shoot)(){
+    spawn_bullet(p.x, p.y, get_mouse_angle(p.player_idle));
+}
+
 int (collision_player_monster)(enemy_t enemy, player_t player) {
     double player_radius = fmax(sprite_get_w(player.player_idle), sprite_get_h(player.player_idle))/2.0;
     double monster_radius = fmax(sprite_get_w(enemy.enemy_idle), sprite_get_h(enemy.enemy_idle))/2.0;
@@ -151,14 +155,16 @@ int (collision_monster_wall)( enemy_t enemy) {
 
 //Bullet
 
-int n_bullets = 1;
+int n_bullets = 10;
+int current_bullet = 0;
 
-int (build_bullets)(int start_x, int start_y, basic_sprite_t **sprite){
+int (build_bullets)(basic_sprite_t **sprite){
     for(int i = 0; i < n_bullets; i++){
         struct bullet b;
         b.id = i;
-        b.x = start_x;
-        b.y = start_y;
+        b.x = 0;
+        b.y = 0;
+        b.angle = 0;
         b.xspeed = 0;
         b.yspeed = 0;
         b.fired = 0;
@@ -168,16 +174,35 @@ int (build_bullets)(int start_x, int start_y, basic_sprite_t **sprite){
     return 0; 
 }
 
+void (spawn_bullet)(int x, int y, double angle){
+    struct bullet bullet = bullets[current_bullet];
+
+    if(!bullet.fired){
+        bullet.x = x;
+        bullet.y = y;
+        bullet.angle = angle;
+        bullet.xspeed = BULLET_SPEED * fm_cos(angle);
+        bullet.yspeed = BULLET_SPEED * fm_sin(angle);
+        bullet.fired = true;
+    }
+
+    current_bullet++;
+
+    if(current_bullet >= n_bullets){
+        current_bullet = 0;
+    }
+}
+
 void (draw_bullets)(){
     for(int i = 0; i < n_bullets; i++){
         struct bullet bullet = bullets[i];
-        if(bullet.fired != -1){
+        if(bullet.fired){
             sprite_set_pos(bullet.bullet_sprite, bullet.x, bullet.y);
+            sprite_set_angle(bullet.bullet_sprite, bullet.angle);
             sprite_draw(bullet.bullet_sprite);
             sprite_update_animation(bullet.bullet_sprite);
         }
     }
-
 }
 
 void (update_bullet_pos)(){
@@ -211,7 +236,9 @@ int (collision_bullet_wall)(struct bullet bullet) {
     for (double x = -radius; x <= radius; x += 1) {
         double y_pos = sqrt(radius*radius - x*x);
         double y_neg = -y_pos;
-        if (wall_collision(bullet.x + x, bullet.y + y_pos) || wall_collision(bullet.x + x, bullet.y + y_neg)) return 1;
+        if (wall_collision(bullet.x + x, bullet.y + y_pos) || wall_collision(bullet.x + x, bullet.y + y_neg)) {
+            return 1;
+        }
     }
     return 0;
 }
@@ -222,7 +249,12 @@ int (collision_bullet_monster)(enemy_t enemy, struct bullet bullet) {
     double distance_x = enemy.x - bullet.x;
     double distance_y = enemy.y - bullet.y;
     double distance = sqrt(distance_x * distance_x + distance_y * distance_y);
-    return distance <= monster_radius + bullet_radius;
+
+    if(distance <= monster_radius + bullet_radius){
+        return 1;
+    }
+    
+    return 0;
 }
 
 //Wall
@@ -234,4 +266,3 @@ int (wall_collision)(int x, int y){
     if(0 <= pos && pos < w * h) return map.walls[pos];
     else return 0;
 }
-

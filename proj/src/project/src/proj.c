@@ -80,7 +80,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
   build_player(100, 100, bsp_player_idle, bsp_player_shooting); 
   build_monsters(300, 150, bsp_enemy_idle, bsp_enemy_attacking);
-  build_bullets(170, 80, bsp_bullet);
+  build_bullets(bsp_bullet);
 
   //bsp_enemy = get_enemy(); if(bsp_enemy == NULL) printf("failed to get player\n");
   //sp_enemy = sprite_ctor(bsp_enemy, 15);
@@ -121,11 +121,17 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       sprite_draw(sp_map);
 
                       set_player_pos(keys);
+
+                      //Using spacebar for now
+                      if(keys->shoot_pressed){
+                        shoot();
+                      }
+
+                      update_bullet_pos();
                       
                       draw_player();
                       draw_monsters();
                       draw_bullets();
-                      
 
                       sprite_set_pos(sp_crosshair, get_mouse_X(), get_mouse_Y());
                       sprite_draw(sp_crosshair);

@@ -12,9 +12,9 @@
 #include "aux_functions.h"
 
 //game macros
-#define PLAYER_SPEED    5;
-#define MONSTER_SPEED   3;
-#define BULLET_SPEED    10;
+#define PLAYER_SPEED    5
+#define MONSTER_SPEED   3
+#define BULLET_SPEED    20
 
 //structs
 
@@ -60,6 +60,7 @@ struct bullet{
     sprite_t *bullet_sprite;
     int x;
     int y;
+    double angle;
     int xspeed;
     int yspeed;
     int fired;
@@ -71,7 +72,7 @@ struct bullet{
 typedef struct bullet bullet_t;
 
 int n_bullets;
-struct bullet bullets[1]; //bullets size got to be equal to n_bullets
+struct bullet bullets[10]; //bullets size got to be equal to n_bullets
 
 //is in single bullet mode which means only one bullet can be shot at a time
 //bullet limits can be changed by increasing n_bullets
@@ -99,6 +100,8 @@ int (collision_player_monster)(enemy_t enemy, player_t player);
 
 int (collision_player_wall)(player_t player);
 
+void (shoot)();
+
 //Monsters
 
 int (build_monsters)(int start_x, int start_y,  basic_sprite_t **idle,  basic_sprite_t **attacking);
@@ -111,7 +114,9 @@ int (collision_monster_wall)(enemy_t enemy);
 
 //Bullet
 
-int (build_bullets)(int startx, int starty,  basic_sprite_t **sprite);
+int (build_bullets)(basic_sprite_t **sprite);
+
+void (spawn_bullet)(int x, int y, double angle);
 
 void (draw_bullets)();
 
@@ -128,7 +133,5 @@ int (wall_collision)(int x, int y);
 /**
  * @}
  */
-
-
 
 #endif //ELEMENTS_H_INCLUDED

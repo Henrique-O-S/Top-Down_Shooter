@@ -15,6 +15,8 @@ struct keys {
     int a_pressed;
     int s_pressed;
     int d_pressed;
+    //Generic name so it can signal spacebar or mouse click depending on controls
+    int shoot_pressed;
 };
 
 typedef struct keys keys_t;

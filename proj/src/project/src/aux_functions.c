@@ -16,6 +16,8 @@ void update_key_press(void) {
       case S_BREAK: key.s_pressed = 0; break;
       case D_MAKE: key.d_pressed = 1; break;
       case D_BREAK: key.d_pressed = 0; break;
+      case SPACEBAR_MAKE: key.shoot_pressed = 1; break;
+      case SPACEBAR_BREAK: key.shoot_pressed = 0; break;
     default:
       break;
     }

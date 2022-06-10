@@ -9,7 +9,7 @@ int (game_loop)(){
 
   build_player(100, 100, bsp_player_idle, bsp_player_shooting); 
   build_monsters(500, 500, bsp_enemy_idle, bsp_enemy_attacking);
-  build_bullets(250, 250, bsp_bullet);
+  build_bullets(bsp_bullet);
   
   int ipc_status, r;
   message msg;
