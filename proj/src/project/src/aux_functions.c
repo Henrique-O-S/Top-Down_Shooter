@@ -16,8 +16,8 @@ void update_key_press(void) {
       case S_BREAK: key.s_pressed = 0; break;
       case D_MAKE: key.d_pressed = 1; break;
       case D_BREAK: key.d_pressed = 0; break;
-      case SPACEBAR_MAKE: key.shoot_pressed = 1; break;
-      case SPACEBAR_BREAK: key.shoot_pressed = 0; break;
+      /*case SPACEBAR_MAKE: key.shoot_pressed = 1; break; Uncomment to use spacebar to shoot
+      case SPACEBAR_BREAK: key.shoot_pressed = 0; break;*/
     default:
       break;
     }
@@ -67,8 +67,13 @@ uint16_t (mouse_in_box)(){
 int (process_mouse)(struct packet *p){
   uint16_t selected = mouse_in_box();
   if(p->lb){
+    key.shoot_pressed = true;
     return selected;
   }
+  else{
+    key.shoot_pressed = false;
+  }
+
   return 0;
 }
   

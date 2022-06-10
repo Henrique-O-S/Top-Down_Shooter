@@ -122,7 +122,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
                       set_player_pos(keys);
 
-                      //Using spacebar for now
+                      //Now uses mouse left button
                       if(keys->shoot_pressed){
                         shoot();
                       }
