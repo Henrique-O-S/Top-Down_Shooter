@@ -1,8 +1,30 @@
 #include <lcom/lcf.h>
 
 #include "elements.h"
+#include "walls.h"
+#include "map.h"
 #include <stdio.h>
 #include <math.h>
+
+
+void (build_map)() {
+    map.background = sprite_ctor(get_map(), 1);
+    uint16_t w = sprite_get_w(map.background), h = sprite_get_h(map.background);
+    map.walls = malloc(sizeof(uint8_t) * w * h);
+
+    basic_sprite_t *aux = get_wall();
+    const uint8_t *m = basic_sprite_get_map(aux);
+
+    for(int i = 0; i < w*h; i++) {
+        map.walls[i] =  (m[4*i+3] < ALPHA_THRESHOLD ? 1 : 0);
+    }
+    basic_sprite_dtor(aux);
+    sprite_set_pos(map.background, 0, 75);
+}
+
+void (draw_map)() {
+    sprite_draw(map.background);
+}
 
 //Player
 
@@ -13,6 +35,7 @@ int (build_player)(int start_x, int start_y,  basic_sprite_t **idle,  basic_spri
     p.yMov = 0;
     p.speed = PLAYER_SPEED;
     p.alive = 1;
+    p.health = 3;
     p.player_idle = sprite_ctor(idle, 20);
     p.player_shooting = sprite_ctor(shooting, 3);
     return 0; 
@@ -36,33 +59,48 @@ void (set_player_pos)(keys_t *keys) {
 void (update_player_pos)(){
     if(p.alive){
         //player inputs
+        int x0 = p.x, y0 = p.y;
         int x = p.x + (p.speed * p.xMov);
         int y = p.y + (p.speed * p.yMov);
-        if(x <= BORDER_OFFSET || x >= ((int)get_XRes() - BORDER_OFFSET)) {
-            ;
-        }
-        else {
-            p.x = x;
-        }
-        if(y <= BORDER_OFFSET || y >= ((int)get_YRes() - BORDER_OFFSET)) {
-            ;
-        }
-        else {
-            p.y = y;
-        }
-        /*
-        if(collision_player_wall(p)){
+        if(collision_player_wall(p, 0)){
             p.x = x;
             p.y = y;
-        }
-        for(int j = 0; j < n_enemies; j++){
-            enemy_t enemy = enemies[j];
-            if(enemy.alive && collision_player_monster(enemy, p)){
-                p.alive = 0;
-                break;
+            if(collision_player_wall(p, -PLAYER_SPEED)) {
+                p.x = x0;
+                p.y = y0;
             }
-        } */
+            
+        } 
+        
+        else {
+            if(x <= BORDER_OFFSET || x >= ((int)get_XRes() - BORDER_OFFSET)) {
+                ;
+            }
+            else {
+                p.x = x;
+            }
+            if(y <= BORDER_OFFSET || y >= ((int)get_YRes() - BORDER_OFFSET)) {
+                ;
+            }
+            else {
+                p.y = y;
+            }
+        } 
+        
+    
+        
+        for(int i = 0; i < n_enemies; i++){
+            if(enemies[i].alive && collision_player_monster(enemies[i], p) && enemies[i].wait == 7){
+                p.health--;
+                if (!p.health)
+                    p.alive = 0;
+            }
+        } 
     }   
+}
+
+int (get_player_status)() {
+    return p.alive;
 }
 
 int (collision_player_monster)(enemy_t enemy, player_t player) {
@@ -74,8 +112,9 @@ int (collision_player_monster)(enemy_t enemy, player_t player) {
     return distance <= monster_radius + player_radius;
 }
 
-int (collision_player_wall)(player_t player){
-    double radius = fmax(sprite_get_w(player.player_idle), sprite_get_h(player.player_idle))/2.0;
+int (collision_player_wall)(player_t player, int threshold){
+    double radius = fmax(sprite_get_w(player.player_idle), sprite_get_h(player.player_idle))/6.0;
+    radius += threshold;
     for (double x = -radius; x <= radius; x += 1) {
         double y_pos = sqrt(radius*radius - x*x);
         double y_neg = -y_pos;

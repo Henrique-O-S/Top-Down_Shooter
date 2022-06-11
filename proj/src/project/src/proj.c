@@ -78,6 +78,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
   sp_map = sprite_ctor(bsp_map, 1);
   sprite_set_pos(sp_map, 0, 75);
 
+  build_map();
   build_player(500, 500, bsp_player_idle, bsp_player_shooting); 
   build_monsters(0, 0, bsp_enemy_idle, bsp_enemy_attacking);
   build_bullets(170, 80, bsp_bullet);
@@ -119,7 +120,8 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       clear_screen();
                       //if(menu_init()) good = 0;
                       map1_background();
-                      sprite_draw(sp_map);
+                      //sprite_draw(sp_map);
+                      draw_map();
                       update_monster_pos();
 
                       set_player_pos(keys);
@@ -134,6 +136,8 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       //sprite_update_animation(sp_player);
                       //sprite_update_animation(sp_enemy);
                       draw_double_buffer();
+
+                      if(!get_player_status()) good = 0;
                       //no_interrupts = 1;
                     }
                  }

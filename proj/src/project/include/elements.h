@@ -34,7 +34,7 @@ struct player{
     int xMov; //can be -1, 0 or 1
     int yMov; //can be -1, 0 or 1
     int speed;
-    int alive;
+    int alive, health;
 };
 
 /**
@@ -92,7 +92,17 @@ struct map{
 
 struct map map;
 
+//Aux functions
+
+ret_pair_t (is_border)(int x, int y);
+
+ret_pair_t (path_to_take)(int x, int y);
+
 //Elements functions
+
+void (build_map)();
+
+void (draw_map)();
 
 //Player
 
@@ -104,13 +114,11 @@ void (set_player_pos)(keys_t *keys);
 
 void (update_player_pos)();
 
-ret_pair_t (is_border)(int x, int y);
-
-ret_pair_t (path_to_take)(int x, int y);
+int (get_player_status)();
 
 int (collision_player_monster)(enemy_t enemy, player_t player);
 
-int (collision_player_wall)(player_t player);
+int (collision_player_wall)(player_t player, int threshold);
 
 int (in_range_of_player)(enemy_t enemy);
 
