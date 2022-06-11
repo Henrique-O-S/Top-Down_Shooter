@@ -72,7 +72,7 @@ double (sprite_angle_of_two)(const sprite_t *p, const sprite_t *p1);
 
 void (sprite_draw)(const sprite_t *p);
 
-void (sprite_update_animation) (sprite_t *p);
+void (sprite_update_animation) (sprite_t *p, int reset);
 
 /**
  * @}

@@ -122,12 +122,15 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       map1_background();
                       //sprite_draw(sp_map);
                       draw_map();
+                      spawn_monsters();
                       update_monster_pos();
 
                       set_player_pos(keys);
                       
                       draw_player();
                       draw_monsters();
+
+                      update_bullet_pos();
                       draw_bullets();
                       
 
@@ -155,12 +158,13 @@ int(proj_main_loop)(int argc, char* argv[]) {
                     if(get_mouse_ih_counter() >= 3){
                       struct packet pp;
                       mouse_parse_packet(&pp);
+                      update_mouse_press(pp);
                       int option = process_mouse(&pp);
                       if(option == 1){
-                        //if(game_loop()) good = 0;
+                        // if(game_loop()) good = 0;
                       }
                       else if(option == 2){
-                        good = 0;
+                        // good = 0;
                       }
                       update_mouse(&pp);
                     

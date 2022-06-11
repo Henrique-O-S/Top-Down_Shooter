@@ -15,13 +15,14 @@ struct keys {
     int a_pressed;
     int s_pressed;
     int d_pressed;
+    int lb_pressed;
 };
 
 typedef struct keys keys_t;
 
-
-
 void update_key_press(void);
+
+void update_mouse_press(struct packet pp);
 
 keys_t* (get_key_press)(void);
 

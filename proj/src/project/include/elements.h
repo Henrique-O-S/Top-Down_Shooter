@@ -14,10 +14,13 @@
 //game macros
 #define PLAYER_SPEED    5
 #define MONSTER_SPEED   3
-#define BULLET_SPEED    10
+#define BULLET_SPEED    30
 #define BORDER_OFFSET   25
-#define DISTANCE_THRESHOLD   175
+#define DISTANCE_THRESHOLD   375
+#define ATTACK_THRESHOLD   175
 //structs
+
+
 
 struct ret_pair{
     int x;
@@ -35,6 +38,7 @@ struct player{
     int yMov; //can be -1, 0 or 1
     int speed;
     int alive, health;
+    int wait, wait_threshold;
 };
 
 /**
@@ -46,6 +50,7 @@ player_t p;
 
 struct enemy{
     int id;
+    int spawn_point;
     sprite_t *enemy_idle;
     sprite_t *enemy_attacking;
     int x;
@@ -67,11 +72,12 @@ enemy_t enemies[10]; //enemy size got to be equal to n_enemies
 struct bullet{
     int id;
     sprite_t *bullet_sprite;
-    int x;
-    int y;
-    int xspeed;
-    int yspeed;
+    double x, y;
+    double speed;
+    double c, s;
+    double angle;
     int fired;
+    int wait, wait_threshold;
 };
 
 /**
@@ -80,7 +86,7 @@ struct bullet{
 typedef struct bullet bullet_t;
 
 int n_bullets;
-struct bullet bullets[1]; //bullets size got to be equal to n_bullets
+bullet_t bullets[4]; //bullets size got to be equal to n_bullets
 
 //is in single bullet mode which means only one bullet can be shot at a time
 //bullet limits can be changed by increasing n_bullets
@@ -132,11 +138,15 @@ void (spawn_monsters)(void);
 
 void (update_monster_pos)();
 
-int (collision_monster_wall)(enemy_t enemy);
+void (enemy_reset)(enemy_t *enemy);
+
+int (collision_monster_wall)(enemy_t enemy, int threshold);
 
 //Bullet
 
 int (build_bullets)(int startx, int starty,  basic_sprite_t **sprite);
+
+void (spawn_bullets)();
 
 void (draw_bullets)();
 

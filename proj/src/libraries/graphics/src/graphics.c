@@ -343,7 +343,12 @@ void (sprite_draw)(const sprite_t *p){
     }
 }
 
-void (sprite_update_animation) (sprite_t *p) {
+void (sprite_update_animation) (sprite_t *p, int reset) {
+    if(reset) {
+        p->current_wait = 0;
+        p->current_animation = 0;
+        return;
+    }
     p->current_wait++;
     if(p->current_wait >= p->wait) {
         p->current_wait = 0;

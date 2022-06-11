@@ -7,6 +7,9 @@
 #include <math.h>
 
 
+static int spawn_coordinate_x[4] = {90,50,950,950};
+static int spawn_coordinate_y[4] = {100,500,50,600};
+
 void (build_map)() {
     map.background = sprite_ctor(get_map(), 1);
     uint16_t w = sprite_get_w(map.background), h = sprite_get_h(map.background);
@@ -38,15 +41,26 @@ int (build_player)(int start_x, int start_y,  basic_sprite_t **idle,  basic_spri
     p.health = 3;
     p.player_idle = sprite_ctor(idle, 20);
     p.player_shooting = sprite_ctor(shooting, 3);
+    p.wait = 0;
+    p.wait_threshold = 3;
     return 0; 
 }
 
 void (draw_player)(){
     if(p.alive){
-        sprite_set_pos(p.player_idle, p.x, p.y);
-        sprite_set_angle(p.player_idle, get_mouse_angle(p.player_idle));
-        sprite_draw(p.player_idle);
-        sprite_update_animation(p.player_idle);
+        if(p.wait > 0) {
+            p.wait--;
+            sprite_set_pos(p.player_shooting, p.x, p.y);
+            sprite_set_angle(p.player_shooting, get_mouse_angle(p.player_shooting));
+            sprite_draw(p.player_shooting);
+            sprite_update_animation(p.player_shooting, 0);
+        }
+        else {
+            sprite_set_pos(p.player_idle, p.x, p.y);
+            sprite_set_angle(p.player_idle, get_mouse_angle(p.player_idle));
+            sprite_draw(p.player_idle);
+            sprite_update_animation(p.player_idle, 0);
+        }
     }
 }
 
@@ -54,6 +68,10 @@ void (set_player_pos)(keys_t *keys) {
     p.yMov = keys->s_pressed - keys->w_pressed;
     p.xMov = keys->d_pressed - keys->a_pressed;
     update_player_pos();
+    if(keys->lb_pressed) {
+        p.wait = p.wait_threshold;
+        spawn_bullets();
+    }
 }
 
 void (update_player_pos)(){
@@ -91,9 +109,13 @@ void (update_player_pos)(){
         
         for(int i = 0; i < n_enemies; i++){
             if(enemies[i].alive && collision_player_monster(enemies[i], p) && enemies[i].wait == 7){
+                enemies[i].alive = 0; //for test
+                enemy_reset(&enemies[i]); // for test
+                /*
                 p.health--;
                 if (!p.health)
                     p.alive = 0;
+                    */
             }
         } 
     }   
@@ -154,8 +176,7 @@ int (in_range_of_player)(enemy_t enemy) {
     int x = abs(enemy.x - p.x);
     int y = abs(enemy.y - p.y);
 
-    int ret = sqrt(x*x +y*y);
-    return (ret < DISTANCE_THRESHOLD);
+    return sqrt(x*x +y*y);
 }
 
 //Enemy
@@ -166,11 +187,12 @@ int (build_monsters)(int start_x, int start_y,  basic_sprite_t **idle,  basic_sp
     for(int i = 0; i < n_enemies; i++){
         enemy_t m;
         m.id = i;
+        m.spawn_point = i;
         m.x = start_x;
         m.y = start_y;
         m.xspeed = 2;
         m.yspeed = 2;
-        m.alive = 1;
+        m.alive = 0;
         m.enemy_idle = sprite_ctor(idle, 20);
         m.enemy_attacking = sprite_ctor(attacking, 15);
         m.wait = 0;
@@ -191,13 +213,13 @@ void (draw_monsters)() {
                 sprite_set_pos(enemies[i].enemy_attacking, enemies[i].x, enemies[i].y);
                 sprite_set_angle(enemies[i].enemy_attacking, sprite_angle_of_two(p.player_idle, enemies[i].enemy_attacking));
                 sprite_draw(enemies[i].enemy_attacking);
-                sprite_update_animation(enemies[i].enemy_attacking);
+                sprite_update_animation(enemies[i].enemy_attacking, 0);
             }
             else {
                 sprite_set_pos(enemies[i].enemy_idle, enemies[i].x, enemies[i].y);
                 sprite_set_angle(enemies[i].enemy_idle, sprite_angle_of_two(p.player_idle, enemies[i].enemy_idle));
                 sprite_draw(enemies[i].enemy_idle);
-                sprite_update_animation(enemies[i].enemy_idle);
+                sprite_update_animation(enemies[i].enemy_idle, 0);
             }
             
         }
@@ -205,21 +227,28 @@ void (draw_monsters)() {
 }
 
 void (spawn_monsters)(void) {
-    enemies[0].x = 90;
-    enemies[0].y = 100;
-    enemies[1].x = 50;
-    enemies[1].y = 500;
-    enemies[2].x = 950;
-    enemies[2].y = 50;
-    enemies[3].x = 950;
-    enemies[3].y = 600;
+    for(int i = 0; i < n_enemies; i++){
+        if(!enemies[i].alive) {
+            enemies[i].alive = 1;
+            enemies[i].x = spawn_coordinate_x[enemies[i].spawn_point];
+            enemies[i].y = spawn_coordinate_y[enemies[i].spawn_point];
+        }
+    }
 }
+
+void (enemy_reset)(enemy_t *enemy) {
+    sprite_update_animation(enemy->enemy_attacking, 1);
+    enemy->wait = 0;
+}
+
 
 void (update_monster_pos)(){
     for(int i = 0; i < n_enemies; i++){
         if(enemies[i].alive){
-
-            if(in_range_of_player(enemies[i])) {
+            int x0 = enemies[i].x;
+            int y0 = enemies[i].y;
+            int range =in_range_of_player(enemies[i]);
+            if(range < DISTANCE_THRESHOLD) {
                 
                 ret_pair_t r = path_to_take(enemies[i].x, enemies[i].y);
                 int x = enemies[i].x + enemies[i].xspeed*r.x;
@@ -229,11 +258,11 @@ void (update_monster_pos)(){
                 if(r2.y) enemies[i].y = y;
 
                 // for animation
-                if(!enemies[i].wait) enemies[i].wait = enemies[i].wait_threshold;
+                if(!enemies[i].wait && range < ATTACK_THRESHOLD) enemies[i].wait = enemies[i].wait_threshold;
             }
             else {
-                int rand_x = rand() % 3 -1;
-                int rand_y = rand() % 3 -1;
+                int rand_x = rand() % 100 -50;
+                int rand_y = rand() % 100 -50;
                 int x = enemies[i].x + enemies[i].xspeed*rand_x;
                 int y = enemies[i].y + enemies[i].yspeed*rand_y;
                 ret_pair_t r = is_border(x, y);
@@ -241,16 +270,20 @@ void (update_monster_pos)(){
                 if(r.y) enemies[i].y = y;
             }
 
-            /*
-            if(collision_monster_wall(enemy)){
-                enemy.x = x;
-                enemy.y = y;
+            
+            if(collision_monster_wall(enemies[i], 0)){
+                enemies[i].x = x0;
+                enemies[i].y = y0;
             }
+
+            /*
+            
             for(int j = 0; j < n_bullets; i++){
                 struct bullet bullet = bullets[j];
-                if(bullet.fired && collision_bullet_monster(enemy, bullet)){
+                if(bullet.fired && collision_bullet_monster(enemies[i], bullet)){
                     bullet.fired = 0;
-                    enemy.alive = 0;
+                    enemies[i].alive = 0;
+                    enemy_reset(&enemies[i]);
                     break;
                 }
             } */
@@ -258,8 +291,9 @@ void (update_monster_pos)(){
     }
 }
 
-int (collision_monster_wall)( enemy_t enemy) {
-    double radius = fmax(sprite_get_w(enemy.enemy_idle), sprite_get_h(enemy.enemy_idle))/2.0;
+int (collision_monster_wall)( enemy_t enemy, int threshold) {
+    double radius = fmax(sprite_get_w(enemy.enemy_idle), sprite_get_h(enemy.enemy_idle))/7.0;
+    radius += threshold;
     for (double x = -radius; x <= radius; x += 1) {
         double y_pos = sqrt(radius*radius - x*x);
         double y_neg = -y_pos;
@@ -274,26 +308,45 @@ int n_bullets = 1;
 
 int (build_bullets)(int start_x, int start_y, basic_sprite_t **sprite){
     for(int i = 0; i < n_bullets; i++){
-        struct bullet b;
+        bullet_t b;
         b.id = i;
         b.x = start_x;
         b.y = start_y;
-        b.xspeed = 0;
-        b.yspeed = 0;
+        b.angle = 0.0;
         b.fired = 0;
+        b.speed = BULLET_SPEED;
+        b.wait = 0;
+        b.wait_threshold =3;
+        b.c = 0.0; b.s = 0.0;
         b.bullet_sprite = sprite_ctor(sprite, 3);
         bullets[i] = b;
     }
     return 0; 
 }
 
+void (spawn_bullets)(void) {
+
+     for(int i = 0; i < n_bullets; i++){
+        if(!bullets[i].fired) {
+            bullets[i].fired = 1;
+            bullets[i].angle = get_mouse_angle(p.player_idle);
+            bullets[i].c = fm_cos(bullets[i].angle); 
+            bullets[i].s = -fm_sin(bullets[i].angle);
+            bullets[i].x = p.x;
+            bullets[i].y = p.y;
+            sprite_set_angle(bullets[0].bullet_sprite, bullets[0].angle);
+        }
+     }
+    
+}
+
 void (draw_bullets)(){
     for(int i = 0; i < n_bullets; i++){
-        struct bullet bullet = bullets[i];
-        if(bullet.fired != -1){
-            sprite_set_pos(bullet.bullet_sprite, bullet.x, bullet.y);
-            sprite_draw(bullet.bullet_sprite);
-            sprite_update_animation(bullet.bullet_sprite);
+        bullets[i].wait++;
+        if(bullets[i].fired && bullets[i].wait > bullets[i].wait_threshold){
+            sprite_set_pos(bullets[i].bullet_sprite, (int)bullets[i].x, (int)bullets[i].y);
+            sprite_draw(bullets[i].bullet_sprite);
+            sprite_update_animation(bullets[i].bullet_sprite, 0);
         }
     }
 
@@ -301,31 +354,38 @@ void (draw_bullets)(){
 
 void (update_bullet_pos)(){
     for(int i = 0; i < n_bullets; i++){
-        struct bullet bullet = bullets[i];
-        if(bullet.fired){
+        if(bullets[i].fired){
             //bullet direction should be worked out here
-            int x = bullet.x;
-            int y = bullet.y;
-            bullet.x = bullet.x + bullet.xspeed; // * angle, probably
-            bullet.y = bullet.y + bullet.yspeed; // * angle, probably
-            if(collision_bullet_wall(bullet)){
-                bullet.x = x;
-                bullet.y = y;
-                bullet.fired = 0;
+            bullets[i].x += (bullets[i].c * bullets[i].speed);
+            bullets[i].y += (bullets[i].s * bullets[i].speed);
+
+            ret_pair_t r = is_border(bullets[i].x, bullets[i].y);
+            if(!r.x || !r.y) {
+                bullets[i].fired = 0;
+                bullets[i].wait = 0;
             }
-            for(int j = 0; j < n_enemies; i++){
-                enemy_t enemy = enemies[j];
-                if(enemy.alive && collision_bullet_monster(enemy, bullet)){
-                    bullet.fired = 0;
-                    enemy.alive = 0;
-                    break;
-                }
+
+            
+            if(collision_bullet_wall(bullets[i])){
+                bullets[i].fired = 0;
+                bullets[i].wait = 0;
+            }
+             //NEEDS TO BE FIXED
+            for(int j = 0; j < n_enemies; j++){
+                if(enemies[j].alive){
+                    if(collision_bullet_monster(enemies[j], bullets[i])) {
+                        bullets[i].fired = 0;
+                        bullets[i].wait = 0;
+                        enemies[j].alive = 0;
+                        break;
+                    } 
+                } 
             }
         }
     }
 }
 
-int (collision_bullet_wall)(struct bullet bullet) {
+int (collision_bullet_wall)(bullet_t bullet) {
     double radius = fmax(sprite_get_w(bullet.bullet_sprite), sprite_get_h(bullet.bullet_sprite))/2.0;
     for (double x = -radius; x <= radius; x += 1) {
         double y_pos = sqrt(radius*radius - x*x);
@@ -335,13 +395,13 @@ int (collision_bullet_wall)(struct bullet bullet) {
     return 0;
 }
 
-int (collision_bullet_monster)(enemy_t enemy, struct bullet bullet) {
+int (collision_bullet_monster)(enemy_t enemy, bullet_t bullet) {
     double bullet_radius = fmax(sprite_get_w(bullet.bullet_sprite), sprite_get_h(bullet.bullet_sprite))/2.0;
-    double monster_radius = fmax(sprite_get_w(enemy.enemy_idle), sprite_get_h(enemy.enemy_idle))/2.0;
-    double distance_x = enemy.x - bullet.x;
-    double distance_y = enemy.y - bullet.y;
-    double distance = sqrt(distance_x * distance_x + distance_y * distance_y);
-    return distance <= monster_radius + bullet_radius;
+    double monster_radius = fmax(sprite_get_w(enemy.enemy_idle), sprite_get_h(enemy.enemy_idle))/4.0;
+    double distance_x = (double)enemy.x - bullet.x;
+    double distance_y = (double)enemy.y - bullet.y;
+    double radius = sqrt(distance_x * distance_x + distance_y * distance_y);
+    return radius <= monster_radius + bullet_radius;
 }
 
 //Wall

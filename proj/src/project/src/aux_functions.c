@@ -22,6 +22,13 @@ void update_key_press(void) {
   }
 }
 
+void update_mouse_press(struct packet pp) {
+  if(pp.lb) {
+    key.lb_pressed = 1;
+  }
+  else key.lb_pressed = 0;
+}
+
 keys_t* (get_key_press)(void) {
     return &key;
 }
