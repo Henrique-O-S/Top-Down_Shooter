@@ -30,7 +30,7 @@ int (menu_draw)();
 
 uint16_t (mouse_in_box)();
 
-int (process_mouse)(struct packet *p);
+int (process_mouse)(struct packet *p, int in_game);
 
 /**
  * @}

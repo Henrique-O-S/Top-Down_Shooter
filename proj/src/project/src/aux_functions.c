@@ -69,8 +69,14 @@ uint16_t (mouse_in_box)(){
   return select;
 }
 
-int (process_mouse)(struct packet *p){
-  uint16_t selected = mouse_in_box();
+int (process_mouse)(struct packet *p, int in_game){
+
+  uint16_t selected = 0;
+
+  if(!in_game){
+    selected = mouse_in_box();
+  }
+
   if(p->lb){
     return selected;
   }

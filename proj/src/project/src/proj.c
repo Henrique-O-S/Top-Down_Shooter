@@ -2,6 +2,10 @@
 #include <lcom/lcf.h>
 
 #include "proj.h"
+#include "player0.h"
+#include "enemy.h"
+#include "bullet.h"
+#include "map.h"
 #include "crosshair.h"
 #include "game.h"
 
@@ -54,8 +58,37 @@ int(proj_main_loop)(int argc, char* argv[]) {
     return 1;
   }
 
+  /// SPRITES
+
+  bsp_player_idle = get_player_idle();
+  bsp_player_shooting = get_player_shooting();
+
+  bsp_enemy_idle = get_enemy_idle();
+  bsp_enemy_attacking = get_enemy_attacking();
+
+  bsp_bullet = get_bullet();
+
+  bsp_map = get_map();
+  sp_map = sprite_ctor(bsp_map, 1);
+  sprite_set_pos(sp_map, 0, 75);
+
+  build_map();
+  build_player(500, 500, bsp_player_idle, bsp_player_shooting); 
+  build_monsters(0, 0, bsp_enemy_idle, bsp_enemy_attacking);
+  build_bullets(170, 80, bsp_bullet);
+
+  printf("got enemy\n");
+
+  build_player(100, 100, bsp_player_idle, bsp_player_shooting); 
+  build_monsters(500, 500, bsp_enemy_idle, bsp_enemy_attacking);
+  build_bullets(250, 250, bsp_bullet);
+
+  keys_t *keys = get_key_press();
+
   /// MENU
   if(menu_draw()) return 1;
+
+  spawn_monsters();
 
   bsp_crosshair = get_crosshair(); if(bsp_crosshair == NULL) printf("failed to get crosshair\n");
   printf("got crosshair\n");
@@ -82,14 +115,19 @@ int(proj_main_loop)(int argc, char* argv[]) {
                     if(get_no_interupts() % 3 == 0){ // the second 60 corresponds to the refresh rate
                       clear_screen();
 
-                      if(menu_draw()) finished = true;
+                      if(game_enter){
+                        if(game_display(keys)) finished = true;
+                      }
+                      else{
+                        if(menu_draw()) finished = true;
+                      }
 
                       sprite_set_pos(sp_crosshair, get_mouse_X(), get_mouse_Y());
                       sprite_draw(sp_crosshair);
                       
                       draw_double_buffer();
 
-                      //no_interrupts = 1;
+                      set_no_interupts(1);
                     }
                  }
                  if(msg.m_notify.interrupts & get_irq(KBC_IRQ)){
@@ -100,6 +138,10 @@ int(proj_main_loop)(int argc, char* argv[]) {
                     if(get_scancode()[0] == 0x81){ //ESC scancode, can probably done in key process in kbd
                       finished = true;
                     }
+
+                    if(game_enter){
+                      update_player_pos();
+                    }
                  }
                  if(msg.m_notify.interrupts & get_irq(MOUSE_IRQ)){
                     mouse_ih();
@@ -107,13 +149,12 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       struct packet pp;
                       mouse_parse_packet(&pp);
                       update_mouse_press(pp);
-                      int option = process_mouse(&pp);
+                      int option = process_mouse(&pp, game_enter);
 
                       if(option == 1){
-                        finished = true;
                         game_enter = true;
                       }
-                      
+
                       else if(option == 2){
                         finished = true;
                       }
@@ -129,11 +170,6 @@ int(proj_main_loop)(int argc, char* argv[]) {
      } else { /* received a standard message, not a notification */
          /* no standard messages expected: do nothing */
      }
-  }
-
-  if(game_enter){
-    printf("Entering game loop");
-    game_loop();
   }
 
   if (unsubscribe_all()){
