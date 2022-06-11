@@ -37,6 +37,8 @@ int (build_player)(int start_x, int start_y,  basic_sprite_t **idle,  basic_spri
     p.xMov = 0;
     p.yMov = 0;
     p.speed = PLAYER_SPEED;
+    p.shot_cooldown = SHOT_COOLDOWN;
+    p.cur_cooldown = 0;
     p.alive = 1;
     p.health = 3;
     p.player_idle = sprite_ctor(idle, 20);
@@ -68,9 +70,11 @@ void (set_player_pos)(keys_t *keys) {
     p.yMov = keys->s_pressed - keys->w_pressed;
     p.xMov = keys->d_pressed - keys->a_pressed;
     update_player_pos();
-    if(keys->lb_pressed) {
+
+    if(keys->lb_pressed && p.cur_cooldown == 0) {
         p.wait = p.wait_threshold;
         spawn_bullets();
+        p.cur_cooldown = p.shot_cooldown;
     }
 }
 
@@ -87,7 +91,6 @@ void (update_player_pos)(){
                 p.x = x0;
                 p.y = y0;
             }
-            
         } 
         
         else {
@@ -104,8 +107,6 @@ void (update_player_pos)(){
                 p.y = y;
             }
         } 
-        
-    
         
         for(int i = 0; i < n_enemies; i++){
             if(enemies[i].alive && collision_player_monster(enemies[i], p) && enemies[i].wait == 7){
@@ -177,6 +178,10 @@ int (in_range_of_player)(enemy_t enemy) {
     int y = abs(enemy.y - p.y);
 
     return sqrt(x*x +y*y);
+}
+
+void (tick_cooldown)(){
+    if(p.cur_cooldown > 0) p.cur_cooldown--;
 }
 
 //Enemy
@@ -304,7 +309,7 @@ int (collision_monster_wall)( enemy_t enemy, int threshold) {
 
 //Bullet
 
-int n_bullets = 1;
+int n_bullets = 10;
 
 int (build_bullets)(int start_x, int start_y, basic_sprite_t **sprite){
     for(int i = 0; i < n_bullets; i++){
@@ -313,7 +318,7 @@ int (build_bullets)(int start_x, int start_y, basic_sprite_t **sprite){
         b.x = start_x;
         b.y = start_y;
         b.angle = 0.0;
-        b.fired = 0;
+        b.fired = false;
         b.speed = BULLET_SPEED;
         b.wait = 0;
         b.wait_threshold =3;
@@ -328,7 +333,7 @@ void (spawn_bullets)(void) {
 
      for(int i = 0; i < n_bullets; i++){
         if(!bullets[i].fired) {
-            bullets[i].fired = 1;
+            bullets[i].fired = true;
             bullets[i].angle = get_mouse_angle(p.player_idle);
             bullets[i].c = fm_cos(bullets[i].angle); 
             bullets[i].s = -fm_sin(bullets[i].angle);

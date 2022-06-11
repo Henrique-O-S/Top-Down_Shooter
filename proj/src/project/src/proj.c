@@ -117,6 +117,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
                       if(game_enter){
                         if(game_display(keys)) finished = true;
+                        tick_cooldown();
                       }
                       else{
                         if(menu_draw()) finished = true;

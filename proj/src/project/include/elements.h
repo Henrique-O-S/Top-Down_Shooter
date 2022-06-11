@@ -15,6 +15,7 @@
 #define PLAYER_SPEED    5
 #define MONSTER_SPEED   3
 #define BULLET_SPEED    30
+#define SHOT_COOLDOWN   10
 #define BORDER_OFFSET   25
 #define DISTANCE_THRESHOLD   375
 #define ATTACK_THRESHOLD   175
@@ -37,6 +38,8 @@ struct player{
     int xMov; //can be -1, 0 or 1
     int yMov; //can be -1, 0 or 1
     int speed;
+    //Shot cooldown is number of frames between shooting and when the player can shoot again
+    int shot_cooldown, cur_cooldown;
     int alive, health;
     int wait, wait_threshold;
 };
@@ -86,7 +89,7 @@ struct bullet{
 typedef struct bullet bullet_t;
 
 int n_bullets;
-bullet_t bullets[4]; //bullets size got to be equal to n_bullets
+bullet_t bullets[10]; //bullets size got to be equal to n_bullets
 
 //is in single bullet mode which means only one bullet can be shot at a time
 //bullet limits can be changed by increasing n_bullets
@@ -128,6 +131,9 @@ int (collision_player_wall)(player_t player, int threshold);
 
 int (in_range_of_player)(enemy_t enemy);
 
+//Ticks the shot cooldown
+void (tick_cooldown)();
+
 //Monsters
 
 int (build_monsters)(int start_x, int start_y,  basic_sprite_t **idle,  basic_sprite_t **attacking);
@@ -163,7 +169,5 @@ int (wall_collision)(int x, int y);
 /**
  * @}
  */
-
-
 
 #endif //ELEMENTS_H_INCLUDED
