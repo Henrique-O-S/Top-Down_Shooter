@@ -6,6 +6,7 @@
 int finished = false;
 
 int(game_display)(keys_t *keys) {
+  tick_cooldown();
   map1_background();
   // sprite_draw(sp_map);
   draw_map();
@@ -28,4 +29,10 @@ int(game_display)(keys_t *keys) {
   if (!get_player_status()) return 1;
 
   return 0;
+}
+
+void(game_dispawn_everyting()) {
+  dispawn_monsters();
+  dispawn_player();
+  dispawn_bullets();
 }

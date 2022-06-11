@@ -77,18 +77,11 @@ int(proj_main_loop)(int argc, char* argv[]) {
   build_monsters(0, 0, bsp_enemy_idle, bsp_enemy_attacking);
   build_bullets(170, 80, bsp_bullet);
 
-  printf("got enemy\n");
-
-  build_player(100, 100, bsp_player_idle, bsp_player_shooting); 
-  build_monsters(500, 500, bsp_enemy_idle, bsp_enemy_attacking);
-  build_bullets(250, 250, bsp_bullet);
 
   keys_t *keys = get_key_press();
 
   /// MENU
   if(menu_draw()) return 1;
-
-  spawn_monsters();
 
   bsp_crosshair = get_crosshair(); if(bsp_crosshair == NULL) printf("failed to get crosshair\n");
   printf("got crosshair\n");
@@ -117,7 +110,6 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
                       if(game_enter){
                         if(game_display(keys)) finished = true;
-                        tick_cooldown();
                       }
                       else{
                         if(menu_draw()) finished = true;
@@ -137,7 +129,11 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       finished = true;
                     }
                     if(get_scancode()[0] == 0x81){ //ESC scancode, can probably done in key process in kbd
-                      finished = true;
+                      if(game_enter) {
+                        game_dispawn_everyting();
+                        game_enter = false;
+                      }
+                      else finished = true;
                     }
 
                     if(game_enter){

@@ -23,4 +23,10 @@ int (game_display)(keys_t *keys);
  */
 int (process_key)(const uint8_t* scancode);
 
+/**
+ * @}
+ */
+void(game_dispawn_everyting());
+
+
 #endif //GAME_H_INCLUDED

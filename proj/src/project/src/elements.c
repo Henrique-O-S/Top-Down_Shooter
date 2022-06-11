@@ -38,7 +38,7 @@ int (build_player)(int start_x, int start_y,  basic_sprite_t **idle,  basic_spri
     p.yMov = 0;
     p.speed = PLAYER_SPEED;
     p.shot_cooldown = SHOT_COOLDOWN;
-    p.cur_cooldown = 0;
+    p.cur_cooldown = 2;
     p.alive = 1;
     p.health = 3;
     p.player_idle = sprite_ctor(idle, 20);
@@ -46,6 +46,12 @@ int (build_player)(int start_x, int start_y,  basic_sprite_t **idle,  basic_spri
     p.wait = 0;
     p.wait_threshold = 3;
     return 0; 
+}
+
+void (dispawn_player)(void) {
+    p.x = PLAYER_SPAWN_X; p.y = PLAYER_SPAWN_Y;
+    p.health = 3;
+    p.cur_cooldown = 2;
 }
 
 void (draw_player)(){
@@ -241,6 +247,16 @@ void (spawn_monsters)(void) {
     }
 }
 
+void (dispawn_monsters)(void) {
+    for(int i = 0; i < n_enemies; i++){
+        if(enemies[i].alive) {
+            enemies[i].alive = 0;
+            enemies[i].x = spawn_coordinate_x[enemies[i].spawn_point];
+            enemies[i].y = spawn_coordinate_y[enemies[i].spawn_point];
+        }
+    }
+}
+
 void (enemy_reset)(enemy_t *enemy) {
     sprite_update_animation(enemy->enemy_attacking, 1);
     enemy->wait = 0;
@@ -275,23 +291,10 @@ void (update_monster_pos)(){
                 if(r.y) enemies[i].y = y;
             }
 
-            
             if(collision_monster_wall(enemies[i], 0)){
                 enemies[i].x = x0;
                 enemies[i].y = y0;
             }
-
-            /*
-            
-            for(int j = 0; j < n_bullets; i++){
-                struct bullet bullet = bullets[j];
-                if(bullet.fired && collision_bullet_monster(enemies[i], bullet)){
-                    bullet.fired = 0;
-                    enemies[i].alive = 0;
-                    enemy_reset(&enemies[i]);
-                    break;
-                }
-            } */
         }
     }
 }
@@ -309,7 +312,7 @@ int (collision_monster_wall)( enemy_t enemy, int threshold) {
 
 //Bullet
 
-int n_bullets = 10;
+int n_bullets = 5;
 
 int (build_bullets)(int start_x, int start_y, basic_sprite_t **sprite){
     for(int i = 0; i < n_bullets; i++){
@@ -339,10 +342,19 @@ void (spawn_bullets)(void) {
             bullets[i].s = -fm_sin(bullets[i].angle);
             bullets[i].x = p.x;
             bullets[i].y = p.y;
-            sprite_set_angle(bullets[0].bullet_sprite, bullets[0].angle);
+            sprite_set_angle(bullets[i].bullet_sprite, bullets[i].angle);
+            break;
         }
      }
     
+}
+
+void dispawn_bullets(void) {
+    for(int i = 0; i < n_bullets; i++){
+        if(bullets[i].fired) {
+            bullets[i].fired = 0;
+        }
+    }
 }
 
 void (draw_bullets)(){

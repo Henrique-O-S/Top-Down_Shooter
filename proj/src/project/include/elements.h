@@ -19,6 +19,8 @@
 #define BORDER_OFFSET   25
 #define DISTANCE_THRESHOLD   375
 #define ATTACK_THRESHOLD   175
+#define PLAYER_SPAWN_X   500
+#define PLAYER_SPAWN_Y   500
 //structs
 
 
@@ -89,7 +91,7 @@ struct bullet{
 typedef struct bullet bullet_t;
 
 int n_bullets;
-bullet_t bullets[10]; //bullets size got to be equal to n_bullets
+bullet_t bullets[5]; //bullets size got to be equal to n_bullets
 
 //is in single bullet mode which means only one bullet can be shot at a time
 //bullet limits can be changed by increasing n_bullets
@@ -117,6 +119,8 @@ void (draw_map)();
 
 int (build_player)(int start_x, int start_y,  basic_sprite_t **idle,  basic_sprite_t **shooting);
 
+void (dispawn_player)(void);
+
 void (draw_player)();
 
 void (set_player_pos)(keys_t *keys);
@@ -142,6 +146,8 @@ void (draw_monsters)();
 
 void (spawn_monsters)(void);
 
+void (dispawn_monsters)(void);
+
 void (update_monster_pos)();
 
 void (enemy_reset)(enemy_t *enemy);
@@ -153,6 +159,8 @@ int (collision_monster_wall)(enemy_t enemy, int threshold);
 int (build_bullets)(int startx, int starty,  basic_sprite_t **sprite);
 
 void (spawn_bullets)();
+
+void dispawn_bullets(void);
 
 void (draw_bullets)();
 
