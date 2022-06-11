@@ -26,7 +26,7 @@ void update_mouse_press(struct packet pp);
 
 keys_t* (get_key_press)(void);
 
-int (menu_init)();
+int (menu_draw)();
 
 uint16_t (mouse_in_box)();
 

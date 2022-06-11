@@ -16,3 +16,11 @@ uint32_t no_interrupts = 0;
 void (timer_int_handler)() {
   no_interrupts++;
 }
+
+uint32_t get_no_interupts(){
+  return no_interrupts;
+}
+
+void set_no_interupts(uint32_t n){
+  no_interrupts = n;
+}

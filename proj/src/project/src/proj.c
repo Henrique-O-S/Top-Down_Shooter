@@ -2,11 +2,7 @@
 #include <lcom/lcf.h>
 
 #include "proj.h"
-#include "player0.h"
-#include "enemy.h"
 #include "crosshair.h"
-#include "bullet.h"
-#include "map.h"
 #include "game.h"
 
 // Any header files included below this line should have been created by you
@@ -59,53 +55,20 @@ int(proj_main_loop)(int argc, char* argv[]) {
   }
 
   /// MENU
-  //if(menu_init()) return 1;
-
-  /// SPRITES
-
-  //bsp_player = get_player(); if(bsp_player == NULL) printf("failed to get player\n");
-  //sp_player = sprite_ctor(bsp_player, 20);
-
-  bsp_player_idle = get_player_idle();
-  bsp_player_shooting = get_player_shooting();
-
-  bsp_enemy_idle = get_enemy_idle();
-  bsp_enemy_attacking = get_enemy_attacking();
-
-  bsp_bullet = get_bullet();
-
-  bsp_map = get_map();
-  sp_map = sprite_ctor(bsp_map, 1);
-  sprite_set_pos(sp_map, 0, 75);
-
-  build_map();
-  build_player(500, 500, bsp_player_idle, bsp_player_shooting); 
-  build_monsters(0, 0, bsp_enemy_idle, bsp_enemy_attacking);
-  build_bullets(170, 80, bsp_bullet);
-
-  //bsp_enemy = get_enemy(); if(bsp_enemy == NULL) printf("failed to get player\n");
-  //sp_enemy = sprite_ctor(bsp_enemy, 15);
-  printf("got enemy\n");
-
+  if(menu_draw()) return 1;
 
   bsp_crosshair = get_crosshair(); if(bsp_crosshair == NULL) printf("failed to get crosshair\n");
-    printf("got crosshair\n");
+  printf("got crosshair\n");
   sp_crosshair = sprite_ctor(bsp_crosshair, 1);
   printf("after crosshair\n");
 
-  keys_t *keys = get_key_press();
-  spawn_monsters();
-
-
-
-  //sprite_set_pos(sp_player, 450, 450);
-  //sprite_set_pos(sp_enemy, 150, 150);
-
   int ipc_status, r;
   message msg;
-  int good = true;
+  int finished = false;
+  //For the program to know if the game_loop should be entered
+  int game_enter = false;
 
-  while(good) { /* You may want to use a different condition */
+  while(!finished) { /* You may want to use a different condition */
      /* Get a request message. */
      if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
          printf("driver_receive failed with: %d", r);
@@ -116,41 +79,26 @@ int(proj_main_loop)(int argc, char* argv[]) {
              case HARDWARE: /* hardware interrupt notification */       
                  if(msg.m_notify.interrupts & get_irq(TIMER0_IRQ)){
                     timer_int_handler();
-                    if(no_interrupts % 3 == 0){ // the second 60 corresponds to the refresh rate
+                    if(get_no_interupts() % 3 == 0){ // the second 60 corresponds to the refresh rate
                       clear_screen();
-                      //if(menu_init()) good = 0;
-                      map1_background();
-                      //sprite_draw(sp_map);
-                      draw_map();
-                      spawn_monsters();
-                      update_monster_pos();
 
-                      set_player_pos(keys);
-                      
-                      draw_player();
-                      draw_monsters();
-
-                      update_bullet_pos();
-                      draw_bullets();
-                      
+                      if(menu_draw()) finished = true;
 
                       sprite_set_pos(sp_crosshair, get_mouse_X(), get_mouse_Y());
                       sprite_draw(sp_crosshair);
-                      //sprite_update_animation(sp_player);
-                      //sprite_update_animation(sp_enemy);
+                      
                       draw_double_buffer();
 
-                      if(!get_player_status()) good = 0;
                       //no_interrupts = 1;
                     }
                  }
                  if(msg.m_notify.interrupts & get_irq(KBC_IRQ)){
                     kbc_ih();
                     if(got_error_keyboard == 1){
-                      good = 0;
+                      finished = true;
                     }
                     if(get_scancode()[0] == 0x81){ //ESC scancode, can probably done in key process in kbd
-                      good = 0;
+                      finished = true;
                     }
                  }
                  if(msg.m_notify.interrupts & get_irq(MOUSE_IRQ)){
@@ -160,11 +108,14 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       mouse_parse_packet(&pp);
                       update_mouse_press(pp);
                       int option = process_mouse(&pp);
+
                       if(option == 1){
-                        // if(game_loop()) good = 0;
+                        finished = true;
+                        game_enter = true;
                       }
+                      
                       else if(option == 2){
-                        // good = 0;
+                        finished = true;
                       }
                       update_mouse(&pp);
                     
@@ -178,6 +129,11 @@ int(proj_main_loop)(int argc, char* argv[]) {
      } else { /* received a standard message, not a notification */
          /* no standard messages expected: do nothing */
      }
+  }
+
+  if(game_enter){
+    printf("Entering game loop");
+    game_loop();
   }
 
   if (unsubscribe_all()){

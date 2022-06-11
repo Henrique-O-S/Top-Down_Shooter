@@ -33,7 +33,7 @@ keys_t* (get_key_press)(void) {
     return &key;
 }
 
-int (menu_init)(){
+int (menu_draw)(){
   vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MENU_BACKGROUND_COLOR);
 
   vg_draw_rectangle(get_XRes() / 2 - (350 / 2), 1 * (get_YRes() / 6) , 350, get_YRes() / 7 , MENU_OPTION_COLOR);
