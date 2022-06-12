@@ -19,6 +19,7 @@
         "graphics_macros.h": "c",
         "liblm.h": "c",
         "player.h": "c",
-        "*.xpm": "c"
+        "*.xpm": "c",
+        "cmath": "c"
     }
 }

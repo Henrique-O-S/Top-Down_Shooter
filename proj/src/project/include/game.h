@@ -16,6 +16,10 @@
 /**
  * @}
  */
+/**
+ * @brief Displays all in game elements (players, monsters, bullets, ...)
+ * @return Returns 0 if succeded, 1 other wise;
+ */
 int (game_display)(keys_t *keys);
 
 /**
@@ -25,6 +29,9 @@ int (process_key)(const uint8_t* scancode);
 
 /**
  * @}
+ */
+/**
+ * @brief Dispawns all in game elements
  */
 void(game_dispawn_everyting());
 

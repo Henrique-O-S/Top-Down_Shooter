@@ -24,7 +24,9 @@
 //structs
 
 
-
+/**
+ * @brief Calculates if given position is border
+ */
 struct ret_pair{
     int x;
     int y;
@@ -101,84 +103,196 @@ struct map{
 struct map map;
 
 //Aux functions
-
+/**
+ * @brief Calculates if given position is border
+ * @return Returns 1 if border, 0 other wise
+ */
 ret_pair_t (is_border)(int x, int y);
 
 ret_pair_t (path_to_take)(int x, int y);
 
+/**
+ * @brief Calculates angle of e's position from his entrance point
+ * @return Returns angle
+ */
 double get_angle(enemy_t e);
 
+/**
+ * @brief Calculates angle between to given points
+ * @return Returns angle
+ */
 double get_angle_two_points(int x, int y, int x1, int y1);
 
+/**
+ * @brief Calculates angle between enemy and player
+ * @return Returns angle
+ */
 double get_angle_to_player(enemy_t e);
 
+/**
+ * @brief Calculates distance from enemy to player
+ * @return Returns distance
+ */
 int get_distance(enemy_t e);
 
 //Elements functions
 
+/**
+ * @brief Builds map and its configurations
+ */
 void (build_map)();
 
+/**
+ * @brief Draws loaded map on screen
+ */
 void (draw_map)();
 
 //Player
 
+/**
+ * @brief Builds a plyer and his configurations
+ * @return Returns 0 if succeded, non 0 other wise;
+ */
 int (build_player)(int start_x, int start_y,  basic_sprite_t **idle,  basic_sprite_t **shooting);
 
+/**
+ * @brief Erases player
+ */
 void (dispawn_player)(void);
 
+/**
+ * @brief Draws previously loaded player
+ */
 void (draw_player)();
 
+/**
+ * @brief Sets player's position to given one
+ */
 void (set_player_pos)(keys_t *keys);
 
+/**
+ * @brief Visually updates player position
+ */
 void (update_player_pos)();
 
+/**
+ * @brief Checks if player is still alive
+ */
 int (get_player_status)();
 
+/**
+ * @brief Calculates distance from player radius to enemy radius to check for collisions
+ * @return Returns distance from enemy to player
+ */
 int (collision_player_monster)(enemy_t enemy, player_t player);
 
+/**
+ * @brief Calculates distance from player radius to wall to check for collisions
+ * @return Returns distance from wall to player
+ */
 int (collision_player_wall)(player_t player, int threshold);
 
+/**
+ * @brief Checks if player is in range of enemy
+ * @return Returns distance from enemy to player
+ */
 int (in_range_of_player)(enemy_t enemy);
 
-//Ticks the shot cooldown
+/**
+ * @brief Ticks the shot cooldown
+ */
 void (tick_cooldown)();
 
 //Monsters
 
+/**
+ * @brief Builds an enemy and his configurations
+ * @return Returns 0 if succeded, non 0 other wise;
+ */
 int (build_monsters)(basic_sprite_t **idle,  basic_sprite_t **attacking);
 
+/**
+ * @brief Draws the enemy on screen
+ */
 void (draw_monsters)();
 
+/**
+ * @brief Spawns the enemys
+ */
 void (spawn_monsters)(void);
 
+/**
+ * @brief Dispawns the enemys
+ */
 void (dispawn_monsters)(void);
 
+/**
+ * @brief Updates enemys positions
+ */
 void (update_monster_pos)();
 
+/**
+ * @brief Resets enemy's animation
+ */
 void (enemy_reset)(enemy_t *enemy);
 
+/**
+ * @brief Checks if enemy is able to atack player
+ * @return Returns 0 if succeded, non 0 other wise;
+ */
 int (in_sight_of_player)(enemy_t enemy);
 
+/**
+ * @brief Checks if enemy collides with wall
+ * @return Returns 0 if succeded, non 0 other wise;
+ */
 int (collision_monster_wall)(enemy_t enemy, int threshold);
 
 //Bullet
 
+/**
+ * @brief Builds a bullet and his configurations
+ * @return Returns 0 if succeded, non 0 other wise;
+ */
 int (build_bullets)(int startx, int starty,  basic_sprite_t **sprite);
 
+/**
+ * @brief Spawns bullets
+ */
 void (spawn_bullets)();
 
+/**
+ * @brief Dispawns the bullets
+ */
 void dispawn_bullets(void);
 
+/**
+ * @brief Draws the bullets on screen
+ */
 void (draw_bullets)();
 
+/**
+ * @brief Updates bullets positions
+ */
 void (update_bullet_pos)();
 
+/**
+ * @brief Checks if bullet collides with wall
+ * @return Returns 0 if succeded, non 0 other wise;
+ */
 int (collision_bullet_wall)(struct bullet bullet);
 
+/**
+ * @brief Checks if bullet collides with enemy
+ * @return Returns 0 if succeded, non 0 other wise;
+ */
 int (collision_bullet_monster)(enemy_t enemy, struct bullet bullet);
 
 //Walls
 
+/**
+ * @brief Checks for wall collisions
+ */
 int (wall_collision)(int x, int y);
 
 /**
