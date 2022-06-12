@@ -11,6 +11,7 @@ static int end_game_time;
 
 void(game_place_everything)() {
   set_hud();
+  start_highscore();
 }
 
 int(game_display)(keys_t *keys) {
@@ -48,6 +49,7 @@ void(game_dispawn_everyting()) {
   dispawn_monsters();
   dispawn_player();
   dispawn_bullets();
+  set_highscore(player_kills);
 }
 
 void(display_score)() {

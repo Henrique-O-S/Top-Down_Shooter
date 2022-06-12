@@ -96,9 +96,6 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
   keys_t *keys = get_key_press();
 
-  /// MENU
-  if(menu_draw()) return 1;
-
   bsp_crosshair = get_crosshair(); if(bsp_crosshair == NULL) printf("failed to get crosshair\n");
   printf("got crosshair\n");
   sp_crosshair = sprite_ctor(bsp_crosshair, 1);
@@ -141,6 +138,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       }
                       else if(highscore) {
                         sprite_draw(sp_highscore_menu);
+                        draw_highscore();
                       }
                       else{
                         draw_menu();

@@ -12,6 +12,7 @@
 #include "7.xpm"
 #include "8.xpm"
 #include "9.xpm"
+#include "slash.xpm"
 
 static basic_sprite_t** get_number(void) {
     basic_sprite_t** ret = (basic_sprite_t**)malloc(sizeof(basic_sprite_t*) * 10);
@@ -25,6 +26,13 @@ static basic_sprite_t** get_number(void) {
     ret[7] = basic_sprite_ctor((const char *const *)char7_xpm, 10, 10);
     ret[8] = basic_sprite_ctor((const char *const *)char8_xpm, 10, 10);
     ret[9] = basic_sprite_ctor((const char *const *)char9_xpm, 10, 10);
+
+    return ret;
+}
+
+static basic_sprite_t** get_slash(void) {
+    basic_sprite_t** ret = (basic_sprite_t**)malloc(sizeof(basic_sprite_t*) * 1);
+    ret[0] = basic_sprite_ctor((const char *const *)slash_xpm, 10, 10);
 
     return ret;
 }

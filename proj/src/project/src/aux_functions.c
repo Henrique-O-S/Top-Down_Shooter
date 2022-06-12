@@ -12,11 +12,8 @@ static keys_t key;
 text_t*(text_ctor)(int16_t x, int16_t y) {
   text_t *t = malloc(sizeof(text_t));
   t->numbers = NULL;
-  printf("here\n");
   t->numbers = sprite_ctor(get_number(), 10);
-  printf("here\n");
   sprite_set_pos(t->numbers,x, y);
-  printf("here\n");
   t->x = x;
   t->y = y;
   t->pos2 = 0;
@@ -32,10 +29,113 @@ void (text_set_number)(text_t *t, int16_t pos2, int16_t pos1, int16_t pos0) {
   t->pos0 = pos0;
 }
 
+date_t*(date_ctor)(int16_t x, int16_t y) {
+  date_t *t = malloc(sizeof(date_t));
+  t->numbers = NULL;
+  t->numbers = sprite_ctor(get_number(), 10);
+  t->slash = sprite_ctor(get_slash(), 1);
+  sprite_set_pos(t->numbers,x, y);
+  t->x = x;
+  t->y = y;
+  t->score = 0;
+  t->pos9 = 0;
+  t->pos8 = 0;
+  t->pos7 = 0;
+  t->pos6 = 0;
+  t->pos5 = 0;
+  t->pos4 = 0;
+  t->pos3 = 0;
+  t->pos2 = 0;
+  t->pos1 = 0;
+  t->pos0 = 0;
+  t->s_pos2 = 0;
+  t->s_pos1 = 0;
+  t->s_pos0 = 0;
+  return t;
+}
+
+void (date_set_number)(date_t *t,int16_t pos2,  int16_t pos1, int16_t pos0) {
+  t->s_pos2 = pos2;
+  t->s_pos1 = pos1;
+  t->s_pos0 = pos0;
+}
+
+void (date_draw)(date_t *t) {
+  sprite_set_pos(t->numbers, t->x , t->y + 50);
+  sprite_choose_animation(t->numbers, t->pos9);
+  sprite_draw(t->numbers);
+
+  sprite_set_pos(t->numbers, t->x + 20 , t->y + 50);
+  sprite_choose_animation(t->numbers, t->pos8);
+  sprite_draw(t->numbers);
+
+  sprite_set_pos(t->slash, t->x + 40, t->y + 50);
+  sprite_draw(t->slash);
+
+  sprite_set_pos(t->numbers, t->x + 60, t->y + 50);
+  sprite_choose_animation(t->numbers, t->pos6);
+  sprite_draw(t->numbers);
+
+  sprite_set_pos(t->numbers, t->x + 80 , t->y + 50);
+  sprite_choose_animation(t->numbers, t->pos5);
+  sprite_draw(t->numbers);
+
+  sprite_set_pos(t->slash, t->x + 100, t->y + 50);
+  sprite_draw(t->slash);
+
+  sprite_set_pos(t->numbers, t->x + 120, t->y + 50);
+  sprite_choose_animation(t->numbers, t->pos3);
+  sprite_draw(t->numbers);
+
+  sprite_set_pos(t->numbers, t->x + 140 , t->y + 50);
+  sprite_choose_animation(t->numbers, t->pos2);
+  sprite_draw(t->numbers);
+
+  sprite_set_pos(t->numbers, t->x + 160, t->y + 50);
+  sprite_choose_animation(t->numbers, t->pos1);
+  sprite_draw(t->numbers);
+
+  sprite_set_pos(t->numbers, t->x + 180 , t->y + 50);
+  sprite_choose_animation(t->numbers, t->pos0);
+  sprite_draw(t->numbers);
+
+  if(!t->s_pos2) {
+      if(!t->s_pos1) {
+        sprite_set_pos(t->numbers, t->x, t->y);
+        sprite_choose_animation(t->numbers, t->s_pos0);
+        sprite_draw(t->numbers);
+      }
+      else {
+        sprite_set_pos(t->numbers, t->x , t->y);
+        sprite_choose_animation(t->numbers, t->s_pos1);
+        sprite_draw(t->numbers);
+    
+        sprite_set_pos(t->numbers, t->x + 20, t->y);
+        sprite_choose_animation(t->numbers, t->s_pos0);
+        sprite_draw(t->numbers);
+      }
+    }
+    else {
+
+        sprite_set_pos(t->numbers, t->x , t->y);
+        sprite_choose_animation(t->numbers, t->s_pos2);
+        sprite_draw(t->numbers);
+
+        sprite_set_pos(t->numbers, t->x + 20 , t->y);
+        sprite_choose_animation(t->numbers, t->s_pos1);
+        sprite_draw(t->numbers);
+    
+        sprite_set_pos(t->numbers, t->x + 40, t->y);
+        sprite_choose_animation(t->numbers, t->s_pos0);
+        sprite_draw(t->numbers);
+    }
+
+    sprite_set_pos(t->numbers, t->x, t->y);
+}
+
 void (text_draw)(text_t *t) {
     int x = sprite_get_X(t->numbers);
     int y = sprite_get_Y(t->numbers);
-    //int pos1 = x + 20, pos0 = x + 40;
 
 
     if(!t->pos2) {
@@ -98,21 +198,6 @@ void update_mouse_press(struct packet pp) {
 
 keys_t* (get_key_press)(void) {
     return &key;
-}
-
-int (menu_draw)(){
-  vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MENU_BACKGROUND_COLOR);
-
-  vg_draw_rectangle(get_XRes() / 2 - (350 / 2), 1 * (get_YRes() / 6) , 350, get_YRes() / 7 , MENU_OPTION_COLOR);
-  vg_draw_rectangle(get_XRes() / 2 - (350 / 2), 3 * (get_YRes() / 6) , 350, get_YRes() / 7 , MENU_OPTION_COLOR);
-  
-  pixmap_drawer(get_XRes() / 2 - (350 / 2) + (350 / 7), 1 * (get_YRes() / 6) + ((get_YRes() / 7) / 4), PLAY);
-
-  pixmap_drawer(get_XRes() / 2 - (350 / 2) + (350 / 4), 3 * (get_YRes() / 6) + ((get_YRes() / 7) / 4), EXIT);
-
-  //Dimensions used should probably be macros
-
-  return 0;
 }
 
 uint16_t (mouse_in_box)(){
@@ -262,15 +347,89 @@ void(draw_hud)(int h, int k, int t) {
   text_draw(game_timer);
 }
 
-void (set_highscore){
-  
+void (start_highscore)() {
+  bsp_slash = get_slash();
+  sp_slash = sprite_ctor(bsp_slash, 1);
+  date1 = date_ctor(620, 270);
+  date2 = date_ctor(620, 385);
+  date3 = date_ctor(620, 500);
 
 }
 
-void (draw_highscore)(int year, int month, int day){
-  int pos0h, pos1h, pos2h, pos3h, pos4h, pos5h, pos6h, pos7h, pos8h, pos9h;
-  int pos0k, pos1k, pos2k, pos3k, pos4k, pos5k, pos6k, pos7k, pos8k, pos9k;
-  int pos0t, pos1t, pos2t, pos3t, pos4t, pos5t, pos6t, pos7t, pos8t, pos9t;
+void (set_highscore)(int k){
+  int l = k;
+  int16_t pos2k, pos1k, pos0k;
+  pos0k = k % 10;  k /=10;
+  if(!k) pos1k = 0;
+  else  pos1k = k % 10;  k /=10;
+  if(!k) pos2k = 0;
+  else  pos2k = k % 10;  k /=10;
+
+  uint8_t y, m, d;
+  getDate(&y, &m, &d);
+  int pos = 0;
+  if(date1->score <= date2->score && date1->score <= date3->score ) pos = 1;
+  else if(date2->score <= date1->score && date2->score <= date3->score ) pos = 2;
+  else pos = 3;
+
+  switch (pos)
+  {
+  case 1:
+    date1->score = l;
+    date1->pos8 = d%10;
+    d /= 10;
+    date1->pos9 = d%10;
+    date1->pos5 = m%10;
+    m /= 10;
+    date1->pos6 = m%10;
+    date1->pos0 = y%10;
+    y /= 10;
+    date1->pos1 = y%10;
+    date1->pos2 = 0;
+    date1->pos3 = 2;
+    date_set_number(date1, pos2k, pos1k, pos0k);
+    break;
+  case 2:
+    date2->score = l;
+    date2->pos8 = d%10;
+    d /= 10;
+    date2->pos9 = d%10;
+    date2->pos5 = m%10;
+    m /= 10;
+    date2->pos6 = m%10;
+    date2->pos0 = y%10;
+    y /= 10;
+    date2->pos1 = y%10;
+    date2->pos2 = 0;
+    date2->pos3 = 2;
+    date_set_number(date2, pos2k, pos1k, pos0k);
+    break;
+  case 3:
+    date3->score = l;
+    date3->pos8 = d%10;
+    d /= 10;
+    date3->pos9 = d%10;
+    date3->pos5 = m%10;
+    m /= 10;
+    date3->pos6 = m%10;
+    date3->pos0 = y%10;
+    y /= 10;
+    date3->pos1 = y%10;
+    date3->pos2 = 0;
+    date3->pos3 = 2;
+    date_set_number(date3, pos2k, pos1k, pos0k);
+    break;
+  
+  default:
+    break;
+  }
+
+}
+
+void (draw_highscore)(){
+  date_draw(date1);
+  date_draw(date2);
+  date_draw(date3);
 
 }
 
