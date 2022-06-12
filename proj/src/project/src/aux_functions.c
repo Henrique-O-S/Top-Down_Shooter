@@ -262,9 +262,17 @@ void(draw_hud)(int h, int k, int t) {
   text_draw(game_timer);
 }
 
-void (set_highscore){}
+void (set_highscore){
+  
 
-void (draw_highscore){}
+}
+
+void (draw_highscore)(int year, int month, int day){
+  int pos0h, pos1h, pos2h, pos3h, pos4h, pos5h, pos6h, pos7h, pos8h, pos9h;
+  int pos0k, pos1k, pos2k, pos3k, pos4k, pos5k, pos6k, pos7k, pos8k, pos9k;
+  int pos0t, pos1t, pos2t, pos3t, pos4t, pos5t, pos6t, pos7t, pos8t, pos9t;
+
+}
 
 void(draw_end_game)(int k, int t) {
 
