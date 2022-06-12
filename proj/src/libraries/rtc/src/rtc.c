@@ -72,9 +72,6 @@ void getDate(uint8_t *year, uint8_t *month, uint8_t *day){
     (*month) = BCDtoBin(month);
     (*day) = BCDtoBin(day);
   }
-
-  *year += MILLENIUM;
-
 }
 
 void getHour(uint8_t *hours, uint8_t *minutes, uint8_t *seconds){
