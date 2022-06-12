@@ -1,7 +1,6 @@
 #include <lcom/lcf.h>
 
 #include "interrupts.h"
-#include "mouse.h"
 
 static int timer_subscription = 0;
 
@@ -9,7 +8,7 @@ static int keyboard_subscription = 0;
 
 static int mouse_subscription = 0;
 
-//static int rtc_subscription = 0;
+static int rtc_subscription = 0;
 
 int (subscribe_all)(void) {
 
@@ -59,8 +58,8 @@ int (subscribe_all)(void) {
         return 1;
     }
 
-    rtc_id = 0;
     /*
+    rtc_id = 0;
     if (subscribe_rtc_interrupt(RTC_IRQ, &rtc_id)){
         printf("%s: failed to enable rtc interrupts.\n", __func__);
         if (unsubscribe_all())

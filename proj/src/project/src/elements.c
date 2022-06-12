@@ -128,7 +128,7 @@ void (update_player_pos)(){
                 // enemies[i].alive = 0; //for test
                 // enemy_reset(&enemies[i]); // for test
                 
-                //p.health--;
+                p.health--;
                 if (!p.health)
                     p.alive = 0;
                     
