@@ -1,0 +1,8 @@
+<map id="mouse_set_data_report" name="mouse_set_data_report">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,164,83"/>
+<area shape="rect" id="node2" href="$group__mouse.html#ga17f6a309e34b241931cc44259a3afda6" title=" " alt="" coords="212,56,343,83"/>
+<area shape="rect" id="node3" href="$group__kbc.html#ga081c509c47a33f55ca8756f2d8a21fa6" title="Low&#45;level function to issue an argument of a command." alt="" coords="400,5,507,32"/>
+<area shape="rect" id="node5" href="$group__kbc.html#gabf6e77da648ded62b65bdb3f9a437424" title="Low&#45;level function to issue a command to keyboard." alt="" coords="397,56,510,83"/>
+<area shape="rect" id="node6" href="$group__mouse.html#ga7c0b89b2552784fdc6cf5143d0fff378" title=" " alt="" coords="391,107,516,133"/>
+<area shape="rect" id="node4" href="$group__utils.html#ga79a031a8611f5b2d6afa4158e92b0fb4" title="sys_inb wrapper" alt="" coords="564,56,655,83"/>
+</map>

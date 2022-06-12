@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['id_0',['id',['../structmonster.html#a18fb0aa137bb03a705184bf858f4edcb',1,'monster::id()'],['../structbullet.html#a07313a2a11ad417535ec8aa6c4ac8b24',1,'bullet::id()']]],
-  ['img_1',['img',['../structplayer.html#a52058876f3f8b1783859e6229f91bb2c',1,'player::img()'],['../structmonster.html#afa47d8c4bc02e67a2ce8012367a2d5ae',1,'monster::img()'],['../structbullet.html#a361b326c28159e9a1295c8272f7ccbce',1,'bullet::img()']]]
+  ['h_0',['h',['../structbasic__sprite.html#aadf3a7cdca2d532cf1454f410a0fd213',1,'basic_sprite']]],
+  ['health_1',['health',['../structplayer.html#a46e908a72ca54baf54330861bbc56713',1,'player']]],
+  ['house_5fcoordinate_5fx_2',['house_coordinate_x',['../elements_8c.html#a42f929792cfa23da91c0b6c4170beffd',1,'elements.c']]],
+  ['house_5fcoordinate_5fx2_3',['house_coordinate_x2',['../elements_8c.html#a2746aefdcf8f843e2d333cf945789327',1,'elements.c']]],
+  ['house_5fcoordinate_5fy_4',['house_coordinate_y',['../elements_8c.html#aacb1bcde3b141c36a32c6b1c1fdbe2ef',1,'elements.c']]],
+  ['house_5fcoordinate_5fy2_5',['house_coordinate_y2',['../elements_8c.html#a6ed164393716379f0e0268ffad94c2a3',1,'elements.c']]]
 ];

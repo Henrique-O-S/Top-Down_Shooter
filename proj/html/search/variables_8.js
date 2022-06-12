@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['kbc_5fid_0',['kbc_id',['../group__interrupts.html#gabbcbf83119b95ef024b7095128a21fda',1,'interrupts.h']]],
-  ['keyboard_5fsubscription_1',['keyboard_subscription',['../group__interrupts.html#gaedf8670fc8b713d894942d40cf66a210',1,'keyboard_subscription():&#160;interrupts.h'],['../interrupts_8c.html#aedf8670fc8b713d894942d40cf66a210',1,'keyboard_subscription():&#160;interrupts.c']]]
+  ['id_0',['id',['../structenemy.html#abb35a08f9702a646b6c3f282d5540a8d',1,'enemy::id()'],['../structbullet.html#a07313a2a11ad417535ec8aa6c4ac8b24',1,'bullet::id()']]],
+  ['in_5fhouse_1',['in_house',['../structenemy.html#a18e4bfb094a1dd4c86f107bd26b495cc',1,'enemy']]],
+  ['in_5fhouse2_2',['in_house2',['../structenemy.html#a7e5a3b0708bb4d42f0b2b3d812ce4711',1,'enemy']]]
 ];

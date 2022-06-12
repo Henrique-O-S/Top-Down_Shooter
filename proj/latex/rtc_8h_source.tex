@@ -1,0 +1,34 @@
+\hypertarget{rtc_8h_source}{}\doxysection{rtc.\+h}
+\label{rtc_8h_source}\index{src/libraries/rtc/include/rtc.h@{src/libraries/rtc/include/rtc.h}}
+\mbox{\hyperlink{rtc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_RTC\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_RTC\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{rtc__macros_8h}{rtc\_macros.h}}"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{22 int (\mbox{\hyperlink{group__rtc_ga503bf713f0f23cab3ed4433dec1dad07}{subscribe\_rtc\_interrupt}})(uint8\_t interrupt\_bit, \textcolor{keywordtype}{int} *interrupt\_id);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{29 int (\mbox{\hyperlink{group__rtc_ga73e9cfc707b230abcda4e24cbac48d4d}{rtc\_set\_updates}})(\textcolor{keywordtype}{int} on);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{36 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__rtc_gaa2b091a9cf7dce22b896bb1f041b3e2f}{isRTCUpdating}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{44 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__rtc_gadc99d6e13380791f37d25254f382185b}{isBCD}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{54 uint8\_t \mbox{\hyperlink{group__rtc_ga58c3a42afd8690620a3c782ec1af889b}{BCDtoBin}}(uint8\_t* bcd);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{64 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__rtc_ga8ae99541946dea0035bfb5e8042f86f3}{getDate}}(uint8\_t *year, uint8\_t *month, uint8\_t *day);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{74 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__rtc_gadf7b4e16b962d458867ca804ef05d31e}{getHour}}(uint8\_t *hours, uint8\_t *minutes, uint8\_t *seconds);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RTC\_H\_INCLUDED}}
+
+\end{DoxyCode}

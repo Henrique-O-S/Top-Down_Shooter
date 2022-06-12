@@ -1,0 +1,4 @@
+<map id="enemy_reset" name="enemy_reset">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,103,32"/>
+<area shape="rect" id="node2" href="$group__sprite.html#ga1fd0069896123635d9d3a71cdb55f7b1" title=" " alt="" coords="151,5,313,32"/>
+</map>

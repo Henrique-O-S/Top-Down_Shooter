@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['vbe_5fmem_5finfo_0',['vbe_mem_info',['../graphics_8c.html#a5171ad871de01f3dd5360b7fa828c3e8',1,'graphics.c']]],
-  ['video_5fmem_1',['video_mem',['../graphics_8c.html#a5077a1a703b40b073dc6b5c1129ab0a1',1,'graphics.c']]]
+  ['rtc_5fid_0',['rtc_id',['../group__interrupts.html#ga32ef5092702c59ada428caef6c515382',1,'interrupts.h']]],
+  ['rtc_5fsubscription_1',['rtc_subscription',['../group__interrupts.html#gaf112b12f61d2a4e217d4d4b58661ca5b',1,'rtc_subscription():&#160;interrupts.h'],['../interrupts_8c.html#af112b12f61d2a4e217d4d4b58661ca5b',1,'rtc_subscription():&#160;interrupts.c']]]
 ];

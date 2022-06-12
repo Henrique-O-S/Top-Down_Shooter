@@ -37,4 +37,8 @@
 #define REG_A_UIP BIT(7)
 #define REG_B_BIN BIT(2)
 
+/**
+ * @}
+ */
+
 #endif //RTC_MACROS_H_INCLUDED

@@ -45,18 +45,30 @@
 \DoxyCodeLine{48 \textcolor{preprocessor}{\#define TIME\_OUT\_REC    BIT(6) }\textcolor{comment}{/* @brief Time Out Error -\/ Invalid Data */}\textcolor{preprocessor}{}}
 \DoxyCodeLine{49 \textcolor{preprocessor}{\#define PARITY\_ERROR    BIT(7) }\textcolor{comment}{/* @brief Parity Error -\/ Invalid Data */}\textcolor{preprocessor}{}}
 \DoxyCodeLine{50 }
-\DoxyCodeLine{51 \textcolor{comment}{/* Scancode Constants */}}
+\DoxyCodeLine{51 \textcolor{comment}{/* Keycodes */}}
 \DoxyCodeLine{52 }
 \DoxyCodeLine{53 \textcolor{preprocessor}{\#define ESC\_BREAK\_CODE  0x81    }\textcolor{comment}{/* @brief ESC Break Code */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{54 \textcolor{preprocessor}{\#define TWO\_BYTE\_CODE   0xE0    }\textcolor{comment}{/* @brief First byte of a two byte Scancode */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{55 \textcolor{preprocessor}{\#define BREAK\_CODE\_BIT  BIT(7)  }\textcolor{comment}{/* @brief Bit to distinguish between Make code and Break code */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{56 }
-\DoxyCodeLine{57 \textcolor{comment}{/* Command byte masks */}}
-\DoxyCodeLine{58 \textcolor{preprocessor}{\#define INT\_KBD         BIT(0)  }\textcolor{comment}{/* @brief Enable Keyboard Interrupts */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{59 \textcolor{preprocessor}{\#define INT\_MOU         BIT(1)  }\textcolor{comment}{/* @brief Enable Mouse Interrupts */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{60 \textcolor{preprocessor}{\#define DIS\_KBD         BIT(4)  }\textcolor{comment}{/* @brief Disable Keyboard */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{61 \textcolor{preprocessor}{\#define DIS\_MOU         BIT(5)  }\textcolor{comment}{/* @brief Disable Mouse */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define W\_MAKE          0x11    }\textcolor{comment}{/* @brief W Make Code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define W\_BREAK         0x91    }\textcolor{comment}{/* @brief W Break Code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define A\_MAKE          0x1E    }\textcolor{comment}{/* @brief A Make Code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define A\_BREAK         0x9E    }\textcolor{comment}{/* @brief A Break Code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define S\_MAKE          0x1F    }\textcolor{comment}{/* @brief S Make Code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define S\_BREAK         0x9F    }\textcolor{comment}{/* @brief S Break Code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define D\_MAKE          0x20    }\textcolor{comment}{/* @brief D Make Code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define D\_BREAK         0xA0    }\textcolor{comment}{/* @brief D Break Code */}\textcolor{preprocessor}{}}
 \DoxyCodeLine{62 }
-\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//KBC\_MACROS\_H\_INCLUDED}}
+\DoxyCodeLine{63 \textcolor{comment}{/* Scancode Constants */}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define TWO\_BYTE\_CODE   0xE0    }\textcolor{comment}{/* @brief First byte of a two byte Scancode */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define BREAK\_CODE\_BIT  BIT(7)  }\textcolor{comment}{/* @brief Bit to distinguish between Make code and Break code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{comment}{/* Command byte masks */}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define INT\_KBD         BIT(0)  }\textcolor{comment}{/* @brief Enable Keyboard Interrupts */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define INT\_MOU         BIT(1)  }\textcolor{comment}{/* @brief Enable Mouse Interrupts */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define DIS\_KBD         BIT(4)  }\textcolor{comment}{/* @brief Disable Keyboard */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define DIS\_MOU         BIT(5)  }\textcolor{comment}{/* @brief Disable Mouse */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//KBC\_MACROS\_H\_INCLUDED}}
 
 \end{DoxyCode}

@@ -1,0 +1,7 @@
+<map id="isBCD" name="isBCD">
+<area shape="rect" id="node1" title="Checks if the data read from RTC is in BCD." alt="" coords="363,31,421,57"/>
+<area shape="rect" id="node2" href="$group__rtc.html#ga8ae99541946dea0035bfb5e8042f86f3" title="Reads date from RTC." alt="" coords="248,5,315,32"/>
+<area shape="rect" id="node5" href="$group__rtc.html#gadf7b4e16b962d458867ca804ef05d31e" title="Reads time from RTC." alt="" coords="248,56,315,83"/>
+<area shape="rect" id="node3" href="$group__aux__functions.html#ga313878f42073bab6512b601c0466beca" title=" " alt="" coords="97,5,200,32"/>
+<area shape="rect" id="node4" href="$game_8c.html#a758b816bedb77d4bcca426c31a11a1a0" title=" " alt="" coords="5,5,49,32"/>
+</map>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['got_5ferror_5fkeyboard_0',['got_error_keyboard',['../group__kbd.html#ga6729a7041834743f389446708ab0b24d',1,'got_error_keyboard():&#160;kbd.h'],['../kbd_8c.html#a6729a7041834743f389446708ab0b24d',1,'got_error_keyboard():&#160;kbd.c']]]
+  ['finished_0',['finished',['../game_8c.html#a49c6e6c75d41d6360253beb518425934',1,'game.c']]],
+  ['fired_1',['fired',['../structbullet.html#aaeb6feb08b947abe77f28601b8b4b500',1,'bullet']]]
 ];

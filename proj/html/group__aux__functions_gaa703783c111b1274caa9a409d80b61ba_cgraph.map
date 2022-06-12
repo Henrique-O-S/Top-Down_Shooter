@@ -1,0 +1,11 @@
+<map id="set_hud" name="set_hud">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,73,108"/>
+<area shape="rect" id="node2" href="$hud_8h.html#a51ac7ef2f9f1019ea33bf3384ba70e5f" title=" " alt="" coords="124,5,192,32"/>
+<area shape="rect" id="node5" href="$numbers_8h.html#a6542c4889c1487982775da452ac7768c" title=" " alt="" coords="251,56,341,83"/>
+<area shape="rect" id="node6" href="$group__sprite.html#ga2e5a8273dd022cbf60439cbd657460dc" title="SPRITE." alt="" coords="255,157,337,184"/>
+<area shape="rect" id="node8" href="$group__aux__functions.html#ga390e100b1979862f65b90b1c550f92de" title=" " alt="" coords="121,107,195,133"/>
+<area shape="rect" id="node3" href="$group__sprite.html#ga7a482947d79a7c0abd375567bcd295e4" title="BASIC SPRITE." alt="" coords="397,31,519,57"/>
+<area shape="rect" id="node4" href="$group__sprite.html#gac271acdc4c1c774a4851b4a62560c723" title=" " alt="" coords="567,31,688,57"/>
+<area shape="rect" id="node7" href="$group__sprite.html#ga78a203f9e5ef0b66bb67eba0f9601d88" title=" " alt="" coords="399,157,517,184"/>
+<area shape="rect" id="node9" href="$group__sprite.html#ga147c19d6da7dc2d15fc1a4041f9e7ece" title=" " alt="" coords="243,107,349,133"/>
+</map>

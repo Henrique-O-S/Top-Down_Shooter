@@ -3,7 +3,7 @@
 
 /**
  * @defgroup elements elements
- * @ingroup proj
+ * @ingroup project
  *
  * @{
  */

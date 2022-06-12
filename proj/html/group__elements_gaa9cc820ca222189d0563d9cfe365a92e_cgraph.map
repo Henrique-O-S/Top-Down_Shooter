@@ -1,0 +1,15 @@
+<map id="build_map" name="build_map">
+<area shape="rect" id="node1" title=" " alt="" coords="5,182,87,208"/>
+<area shape="rect" id="node2" href="$group__sprite.html#gac271acdc4c1c774a4851b4a62560c723" title=" " alt="" coords="513,55,635,82"/>
+<area shape="rect" id="node3" href="$group__sprite.html#ga10470dac4f17e5c4f271e709cf9490d8" title=" " alt="" coords="135,55,284,82"/>
+<area shape="rect" id="node4" href="$map_8h.html#a1dbd4fd6cdcd2b959c1667ebd59fa787" title=" " alt="" coords="173,106,245,132"/>
+<area shape="rect" id="node6" href="$walls_8h.html#a3db90213ff2c034df306c2f10fd51918" title=" " alt="" coords="175,156,244,183"/>
+<area shape="rect" id="node7" href="$group__sprite.html#ga2e5a8273dd022cbf60439cbd657460dc" title="SPRITE." alt="" coords="168,207,251,234"/>
+<area shape="rect" id="node9" href="$group__sprite.html#ga6516767b0b0babfdccddf598eed3cfac" title=" " alt="" coords="163,258,256,284"/>
+<area shape="rect" id="node11" href="$group__sprite.html#ga4adb74a0a0f69a6a7c8425a8469b1369" title=" " alt="" coords="162,308,257,335"/>
+<area shape="rect" id="node13" href="$group__sprite.html#ga147c19d6da7dc2d15fc1a4041f9e7ece" title=" " alt="" coords="156,359,263,386"/>
+<area shape="rect" id="node5" href="$group__sprite.html#ga7a482947d79a7c0abd375567bcd295e4" title="BASIC SPRITE." alt="" coords="338,106,459,132"/>
+<area shape="rect" id="node8" href="$group__sprite.html#ga78a203f9e5ef0b66bb67eba0f9601d88" title=" " alt="" coords="340,207,457,234"/>
+<area shape="rect" id="node10" href="$group__sprite.html#ga1a5c0c2b65c8ef1a76621239e5bbed9e" title=" " alt="" coords="333,258,464,284"/>
+<area shape="rect" id="node12" href="$group__sprite.html#ga07c634de39b5ea0c935940bc0bfbe993" title=" " alt="" coords="332,308,465,335"/>
+</map>

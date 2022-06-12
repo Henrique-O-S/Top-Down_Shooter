@@ -1,0 +1,8 @@
+<map id="set_highscore" name="set_highscore">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,108,57"/>
+<area shape="rect" id="node2" href="$group__aux__functions.html#ga34cc26bfefefb0611da2436c7575e714" title=" " alt="" coords="156,5,279,32"/>
+<area shape="rect" id="node3" href="$group__rtc.html#ga8ae99541946dea0035bfb5e8042f86f3" title="Reads date from RTC." alt="" coords="184,56,251,83"/>
+<area shape="rect" id="node4" href="$group__rtc.html#ga58c3a42afd8690620a3c782ec1af889b" title="Converts a byte in BCD to binary." alt="" coords="327,5,405,32"/>
+<area shape="rect" id="node5" href="$group__rtc.html#gadc99d6e13380791f37d25254f382185b" title="Checks if the data read from RTC is in BCD." alt="" coords="337,56,395,83"/>
+<area shape="rect" id="node6" href="$group__utils.html#ga79a031a8611f5b2d6afa4158e92b0fb4" title="sys_inb wrapper" alt="" coords="453,81,544,108"/>
+</map>

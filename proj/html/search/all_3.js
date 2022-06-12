@@ -1,19 +1,14 @@
 var searchData=
 [
-  ['data_5fcmd_5fwrite_0',['DATA_CMD_WRITE',['../group__kbc__macros.html#ga33809d0ffdeabecdc38efaf65f37b7bc',1,'kbc_macros.h']]],
-  ['default_1',['DEFAULT',['../group__mouse__macros.html#ga3da44afeba217135a680a7477b5e3ce3',1,'mouse_macros.h']]],
-  ['delay_2',['DELAY',['../group__kbc__macros.html#ga62249e384b997229a3e2ae74ade334e2',1,'kbc_macros.h']]],
-  ['direct_5f1280_5f1024_5f565_3',['DIRECT_1280_1024_565',['../group__graphics__macros.html#gae37f82f4bd973b5466ce2c8df918a3da',1,'graphics_macros.h']]],
-  ['direct_5f1280_5f1024_5f888_4',['DIRECT_1280_1024_888',['../group__graphics__macros.html#ga56b61cd9dd5db78ad31f894a9ea4481a',1,'graphics_macros.h']]],
-  ['direct_5f640_5f480_5',['DIRECT_640_480',['../group__graphics__macros.html#ga725ddc2613ead012efa716d5644a0563',1,'graphics_macros.h']]],
-  ['direct_5f800_5f600_6',['DIRECT_800_600',['../group__graphics__macros.html#ga051e6b47323761dcfdaf731b7a9df327',1,'graphics_macros.h']]],
-  ['dis_5fdata_5frep_7',['DIS_DATA_REP',['../group__mouse__macros.html#ga1c84607e844d7b3736a1a3491c18e872',1,'mouse_macros.h']]],
-  ['dis_5fkbd_8',['DIS_KBD',['../group__kbc__macros.html#ga19930b86ba4c64067d597a8b115dc3ad',1,'kbc_macros.h']]],
-  ['dis_5fmou_9',['DIS_MOU',['../group__kbc__macros.html#gac4306ee172c4fc7a335410c6147dc0d4',1,'kbc_macros.h']]],
-  ['done_10',['done',['../group__kbd.html#ga5992b274cfdcacdbc1fa8347fd01ebde',1,'done():&#160;kbd.h'],['../kbd_8c.html#a5992b274cfdcacdbc1fa8347fd01ebde',1,'done():&#160;kbd.c']]],
-  ['draw_5fbullets_11',['draw_bullets',['../group__elements.html#ga284ddfc73c5ee0be160e0bb766d231e4',1,'draw_bullets():&#160;elements.c'],['../group__elements.html#ga284ddfc73c5ee0be160e0bb766d231e4',1,'draw_bullets():&#160;elements.c']]],
-  ['draw_5fhline_12',['draw_hline',['../group__graphics.html#gabfbedb6c93fc8eb59745694ce8e19e14',1,'draw_hline(uint16_t x, uint16_t y, uint16_t len, uint32_t color):&#160;graphics.c'],['../group__graphics.html#gabfbedb6c93fc8eb59745694ce8e19e14',1,'draw_hline(uint16_t x, uint16_t y, uint16_t len, uint32_t color):&#160;graphics.c']]],
-  ['draw_5fmonsters_13',['draw_monsters',['../group__elements.html#gac9400e53b03f0a41c76afc7af50e57ad',1,'draw_monsters():&#160;elements.c'],['../group__elements.html#gac9400e53b03f0a41c76afc7af50e57ad',1,'draw_monsters():&#160;elements.c']]],
-  ['draw_5fplayer_14',['draw_player',['../group__elements.html#gabd47ce64b64a5dcb39f1129a92eaad3b',1,'draw_player():&#160;elements.c'],['../group__elements.html#gabd47ce64b64a5dcb39f1129a92eaad3b',1,'draw_player():&#160;elements.c']]],
-  ['draw_5frectangle_15',['draw_rectangle',['../group__graphics.html#ga31178cc71e7af0d6045707842517b225',1,'draw_rectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color):&#160;graphics.c'],['../group__graphics.html#ga31178cc71e7af0d6045707842517b225',1,'draw_rectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color):&#160;graphics.c']]]
+  ['c_0',['c',['../structsprite.html#af5eb5e069332572ff8b4def6a6d3eb91',1,'sprite::c()'],['../structenemy.html#a6765a119c9350172900ef6d38d9b5a6b',1,'enemy::c()'],['../structbullet.html#a32382bfcd973e7c071d915d34d074361',1,'bullet::c()']]],
+  ['clear_5fscreen_1',['clear_screen',['../group__graphics.html#gafa445e5837d138c8bc596dd2f287fc44',1,'clear_screen():&#160;graphics.c'],['../group__graphics.html#gafa445e5837d138c8bc596dd2f287fc44',1,'clear_screen():&#160;graphics.c']]],
+  ['collision_5fbullet_5fmonster_2',['collision_bullet_monster',['../group__elements.html#gacb7228993cd5ddf06bcfe1e442423126',1,'collision_bullet_monster(enemy_t enemy, struct bullet bullet):&#160;elements.c'],['../group__elements.html#gacb7228993cd5ddf06bcfe1e442423126',1,'collision_bullet_monster(enemy_t enemy, bullet_t bullet):&#160;elements.c']]],
+  ['collision_5fbullet_5fwall_3',['collision_bullet_wall',['../group__elements.html#gab29dd799825a7ef67e792614a745f023',1,'collision_bullet_wall(struct bullet bullet):&#160;elements.c'],['../group__elements.html#gab29dd799825a7ef67e792614a745f023',1,'collision_bullet_wall(bullet_t bullet):&#160;elements.c']]],
+  ['collision_5fmonster_5fwall_4',['collision_monster_wall',['../group__elements.html#gad45923a0d77c93c3f38f23cf36ffa719',1,'collision_monster_wall(enemy_t enemy, int threshold):&#160;elements.c'],['../group__elements.html#gad45923a0d77c93c3f38f23cf36ffa719',1,'collision_monster_wall(enemy_t enemy, int threshold):&#160;elements.c']]],
+  ['collision_5fplayer_5fmonster_5',['collision_player_monster',['../group__elements.html#ga6cc8c499075988ac456ffb68701fdaf2',1,'collision_player_monster(enemy_t enemy, player_t player):&#160;elements.c'],['../group__elements.html#ga6cc8c499075988ac456ffb68701fdaf2',1,'collision_player_monster(enemy_t enemy, player_t player):&#160;elements.c']]],
+  ['collision_5fplayer_5fwall_6',['collision_player_wall',['../group__elements.html#gaab4a77fca8a5a695b4db1f62bff0b2a9',1,'collision_player_wall(player_t player, int threshold):&#160;elements.c'],['../group__elements.html#gaab4a77fca8a5a695b4db1f62bff0b2a9',1,'collision_player_wall(player_t player, int threshold):&#160;elements.c']]],
+  ['crosshair_2eh_7',['crosshair.h',['../crosshair_8h.html',1,'']]],
+  ['cur_5fcooldown_8',['cur_cooldown',['../structplayer.html#ab1459fc30755a0ba8868f94ee03cb76a',1,'player']]],
+  ['current_5fanimation_9',['current_animation',['../structsprite.html#aa613497bef232e8196170126481493d6',1,'sprite']]],
+  ['current_5fwait_10',['current_wait',['../structsprite.html#a4cc97a99307f6096da8dd8f2f88698dc',1,'sprite']]]
 ];

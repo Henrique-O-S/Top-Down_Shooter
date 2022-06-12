@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sprite_0',['sprite',['../structsprite.html',1,'']]]
+  ['keys_0',['keys',['../structkeys.html',1,'']]]
 ];

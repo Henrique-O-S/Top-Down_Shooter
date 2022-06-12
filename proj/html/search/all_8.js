@@ -1,16 +1,12 @@
 var searchData=
 [
-  ['i8254_0',['i8254',['../group__i8254.html',1,'']]],
-  ['i8254_2eh_1',['i8254.h',['../i8254_8h.html',1,'']]],
-  ['id_2',['id',['../structmonster.html#a18fb0aa137bb03a705184bf858f4edcb',1,'monster::id()'],['../structbullet.html#a07313a2a11ad417535ec8aa6c4ac8b24',1,'bullet::id()']]],
-  ['img_3',['img',['../structplayer.html#a52058876f3f8b1783859e6229f91bb2c',1,'player::img()'],['../structmonster.html#afa47d8c4bc02e67a2ce8012367a2d5ae',1,'monster::img()'],['../structbullet.html#a361b326c28159e9a1295c8272f7ccbce',1,'bullet::img()']]],
-  ['in_5fbuf_5ffull_4',['IN_BUF_FULL',['../group__kbc__macros.html#ga70aa83e4e00095f3d337d2457c1ba353',1,'kbc_macros.h']]],
-  ['indexed_5f1024_5f768_5',['INDEXED_1024_768',['../group__graphics__macros.html#gac2d4dc066c8ba9dae1cf9eb948649d00',1,'graphics_macros.h']]],
-  ['inh_5fflag_6',['INH_FLAG',['../group__kbc__macros.html#ga25c2487a8013ee637101e31957da1d3f',1,'kbc_macros.h']]],
-  ['int_5fkbd_7',['INT_KBD',['../group__kbc__macros.html#gaea3e2c47ff5ce4b0dbf5e81e40678aab',1,'kbc_macros.h']]],
-  ['int_5fmou_8',['INT_MOU',['../group__kbc__macros.html#ga44a184d740d45229170b9b263378d740',1,'kbc_macros.h']]],
-  ['interrupts_9',['interrupts',['../group__interrupts.html',1,'']]],
-  ['interrupts_2ec_10',['interrupts.c',['../interrupts_8c.html',1,'']]],
-  ['interrupts_2ed_11',['interrupts.d',['../interrupts_8d.html',1,'']]],
-  ['interrupts_2eh_12',['interrupts.h',['../interrupts_8h.html',1,'']]]
+  ['h_0',['h',['../structbasic__sprite.html#aadf3a7cdca2d532cf1454f410a0fd213',1,'basic_sprite']]],
+  ['health_1',['health',['../structplayer.html#a46e908a72ca54baf54330861bbc56713',1,'player']]],
+  ['highscore_2eh_2',['highscore.h',['../highscore_8h.html',1,'']]],
+  ['hours_3',['HOURS',['../group__rtc__macros.html#ga212d0f839f6f7ca43ccde311f93d5892',1,'rtc_macros.h']]],
+  ['house_5fcoordinate_5fx_4',['house_coordinate_x',['../elements_8c.html#a42f929792cfa23da91c0b6c4170beffd',1,'elements.c']]],
+  ['house_5fcoordinate_5fx2_5',['house_coordinate_x2',['../elements_8c.html#a2746aefdcf8f843e2d333cf945789327',1,'elements.c']]],
+  ['house_5fcoordinate_5fy_6',['house_coordinate_y',['../elements_8c.html#aacb1bcde3b141c36a32c6b1c1fdbe2ef',1,'elements.c']]],
+  ['house_5fcoordinate_5fy2_7',['house_coordinate_y2',['../elements_8c.html#a6ed164393716379f0e0268ffad94c2a3',1,'elements.c']]],
+  ['hud_2eh_8',['hud.h',['../hud_8h.html',1,'']]]
 ];

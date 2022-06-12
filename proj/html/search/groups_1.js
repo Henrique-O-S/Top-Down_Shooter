@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['elements_0',['elements',['../group__elements.html',1,'']]]
+  ['aux_5ffunctions_0',['aux_functions',['../group__aux__functions.html',1,'']]]
 ];

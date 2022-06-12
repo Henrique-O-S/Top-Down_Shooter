@@ -1,0 +1,20 @@
+\hypertarget{instructions_8h_source}{}\doxysection{instructions.\+h}
+\label{instructions_8h_source}\index{src/media/instructions.h@{src/media/instructions.h}}
+\mbox{\hyperlink{instructions_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INSTRUCTIONS\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INSTRUCTIONS\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{graphics_8h}{graphics.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}instructions.xpm"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{static} \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** \mbox{\hyperlink{instructions_8h_a4eed5ab1ecdc1f1a7b182ed7a81e1a68}{get\_instructions}}(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{8     \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** ret = (\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}*) * 1);}
+\DoxyCodeLine{9     ret[0] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)instructions\_xpm, 0, 0);}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \textcolor{keywordflow}{return} ret;}
+\DoxyCodeLine{12 \}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//INSTRUCTIONS\_H\_INCLUDED}}
+
+\end{DoxyCode}

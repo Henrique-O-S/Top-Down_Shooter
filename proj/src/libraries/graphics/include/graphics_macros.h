@@ -99,5 +99,9 @@
 #define MAP_COL59 0xbafc03
 #define MAP_COL60 0xbcff03
 
+/**
+ * @}
+ */
 
-#endif /* end of include guard: GRAPHICS_MACROS_H_INCLUDED */
+
+#endif //GRAPHICS_MACROS_H_INCLUDED

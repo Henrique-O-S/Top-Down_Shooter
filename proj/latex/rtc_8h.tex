@@ -1,0 +1,37 @@
+\hypertarget{rtc_8h}{}\doxysection{src/libraries/rtc/include/rtc.h File Reference}
+\label{rtc_8h}\index{src/libraries/rtc/include/rtc.h@{src/libraries/rtc/include/rtc.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}rtc\+\_\+macros.\+h\char`\"{}}\newline
+Include dependency graph for rtc.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__rtc_ga503bf713f0f23cab3ed4433dec1dad07}{subscribe\+\_\+rtc\+\_\+interrupt}} (uint8\+\_\+t interrupt\+\_\+bit, int $\ast$interrupt\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Subscribes RTC Interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__rtc_ga73e9cfc707b230abcda4e24cbac48d4d}{rtc\+\_\+set\+\_\+updates}} (int on)
+\begin{DoxyCompactList}\small\item\em Enables/\+Disables interrupts on update. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__rtc_gaa2b091a9cf7dce22b896bb1f041b3e2f}{is\+RTCUpdating}} ()
+\begin{DoxyCompactList}\small\item\em Checks if RTC is updating. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__rtc_gadc99d6e13380791f37d25254f382185b}{is\+BCD}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the data read from RTC is in BCD. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__rtc_ga58c3a42afd8690620a3c782ec1af889b}{BCDto\+Bin}} (uint8\+\_\+t $\ast$bcd)
+\begin{DoxyCompactList}\small\item\em Converts a byte in BCD to binary. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}} \mbox{\hyperlink{group__rtc_ga8ae99541946dea0035bfb5e8042f86f3}{get\+Date}} (uint8\+\_\+t $\ast$year, uint8\+\_\+t $\ast$month, uint8\+\_\+t $\ast$day)
+\begin{DoxyCompactList}\small\item\em Reads date from RTC. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}} \mbox{\hyperlink{group__rtc_gadf7b4e16b962d458867ca804ef05d31e}{get\+Hour}} (uint8\+\_\+t $\ast$hours, uint8\+\_\+t $\ast$minutes, uint8\+\_\+t $\ast$seconds)
+\begin{DoxyCompactList}\small\item\em Reads time from RTC. \end{DoxyCompactList}\end{DoxyCompactItemize}

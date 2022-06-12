@@ -1,0 +1,18 @@
+<map id="update_monster_pos" name="update_monster_pos">
+<area shape="rect" id="node1" title=" " alt="" coords="5,195,148,221"/>
+<area shape="rect" id="node2" href="$group__elements.html#gad45923a0d77c93c3f38f23cf36ffa719" title=" " alt="" coords="196,43,348,69"/>
+<area shape="rect" id="node8" href="$group__elements.html#gae0dac1708fbe2a046854077e7ecbc0d2" title=" " alt="" coords="233,144,311,171"/>
+<area shape="rect" id="node9" href="$group__elements.html#ga68d3b014b391718c3b3c2494f1a82074" title=" " alt="" coords="203,195,341,221"/>
+<area shape="rect" id="node10" href="$group__elements.html#ga232cb07c89a848cf1feb7f84e2c135fe" title=" " alt="" coords="224,245,320,272"/>
+<area shape="rect" id="node11" href="$group__elements.html#gaed39f5647ba1389c4f630492902c69f6" title=" " alt="" coords="207,296,337,323"/>
+<area shape="rect" id="node12" href="$group__elements.html#ga8e4712871418dcc7d5fb3a072b468601" title=" " alt="" coords="209,93,335,120"/>
+<area shape="rect" id="node14" href="$group__elements.html#gaefd042701d43329a869bfc984c707991" title=" " alt="" coords="235,347,309,373"/>
+<area shape="rect" id="node3" href="$group__sprite.html#ga6516767b0b0babfdccddf598eed3cfac" title=" " alt="" coords="591,5,685,32"/>
+<area shape="rect" id="node5" href="$group__sprite.html#ga4adb74a0a0f69a6a7c8425a8469b1369" title=" " alt="" coords="591,68,685,95"/>
+<area shape="rect" id="node7" href="$group__elements.html#gaf215806a957e2b3490a52f0d9340c15f" title=" " alt="" coords="420,93,519,120"/>
+<area shape="rect" id="node4" href="$group__sprite.html#ga1a5c0c2b65c8ef1a76621239e5bbed9e" title=" " alt="" coords="735,5,865,32"/>
+<area shape="rect" id="node6" href="$group__sprite.html#ga07c634de39b5ea0c935940bc0bfbe993" title=" " alt="" coords="733,68,867,95"/>
+<area shape="rect" id="node13" href="$group__elements.html#ga3e4354fb607b4fce626593db3cd13036" title=" " alt="" coords="396,144,543,171"/>
+<area shape="rect" id="node15" href="$group__graphics.html#ga1e78ad9ed25b03687bc0b0d06b3957e4" title=" " alt="" coords="431,321,508,348"/>
+<area shape="rect" id="node16" href="$group__graphics.html#gaff98c1ed5146900037a3747de30f6a79" title=" " alt="" coords="430,372,509,399"/>
+</map>

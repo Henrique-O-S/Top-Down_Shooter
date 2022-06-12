@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['i8254_0',['i8254',['../group__i8254.html',1,'']]],
-  ['interrupts_1',['interrupts',['../group__interrupts.html',1,'']]]
+  ['game_0',['game',['../group__game.html',1,'']]],
+  ['graphics_1',['graphics',['../group__graphics.html',1,'']]],
+  ['graphics_5fmacros_2',['graphics_macros',['../group__graphics__macros.html',1,'']]]
 ];

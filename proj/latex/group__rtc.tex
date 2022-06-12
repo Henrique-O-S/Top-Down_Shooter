@@ -1,0 +1,212 @@
+\hypertarget{group__rtc}{}\doxysection{rtc}
+\label{group__rtc}\index{rtc@{rtc}}
+Collaboration diagram for rtc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{group__rtc}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__rtc_ga503bf713f0f23cab3ed4433dec1dad07}{subscribe\+\_\+rtc\+\_\+interrupt}} (uint8\+\_\+t interrupt\+\_\+bit, int $\ast$interrupt\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Subscribes RTC Interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__rtc_ga73e9cfc707b230abcda4e24cbac48d4d}{rtc\+\_\+set\+\_\+updates}} (int on)
+\begin{DoxyCompactList}\small\item\em Enables/\+Disables interrupts on update. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__rtc_gaa2b091a9cf7dce22b896bb1f041b3e2f}{is\+RTCUpdating}} ()
+\begin{DoxyCompactList}\small\item\em Checks if RTC is updating. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__rtc_gadc99d6e13380791f37d25254f382185b}{is\+BCD}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the data read from RTC is in BCD. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__rtc_ga58c3a42afd8690620a3c782ec1af889b}{BCDto\+Bin}} (uint8\+\_\+t $\ast$bcd)
+\begin{DoxyCompactList}\small\item\em Converts a byte in BCD to binary. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}} \mbox{\hyperlink{group__rtc_ga8ae99541946dea0035bfb5e8042f86f3}{get\+Date}} (uint8\+\_\+t $\ast$year, uint8\+\_\+t $\ast$month, uint8\+\_\+t $\ast$day)
+\begin{DoxyCompactList}\small\item\em Reads date from RTC. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}} \mbox{\hyperlink{group__rtc_gadf7b4e16b962d458867ca804ef05d31e}{get\+Hour}} (uint8\+\_\+t $\ast$hours, uint8\+\_\+t $\ast$minutes, uint8\+\_\+t $\ast$seconds)
+\begin{DoxyCompactList}\small\item\em Reads time from RTC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic functions to operate via polling mode on the Real-\/\+Time Clock (RTC). 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__rtc_ga58c3a42afd8690620a3c782ec1af889b}\label{group__rtc_ga58c3a42afd8690620a3c782ec1af889b}} 
+\index{rtc@{rtc}!BCDtoBin@{BCDtoBin}}
+\index{BCDtoBin@{BCDtoBin}!rtc@{rtc}}
+\doxysubsubsection{\texorpdfstring{BCDtoBin()}{BCDtoBin()}}
+{\footnotesize\ttfamily uint8\+\_\+t BCDto\+Bin (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{bcd }\end{DoxyParamCaption})}
+
+
+
+Converts a byte in BCD to binary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bcd} & a pointer to the byte in BCD form\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the binary form of the given BCD byte 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__rtc_ga58c3a42afd8690620a3c782ec1af889b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__rtc_ga8ae99541946dea0035bfb5e8042f86f3}\label{group__rtc_ga8ae99541946dea0035bfb5e8042f86f3}} 
+\index{rtc@{rtc}!getDate@{getDate}}
+\index{getDate@{getDate}!rtc@{rtc}}
+\doxysubsubsection{\texorpdfstring{getDate()}{getDate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}} get\+Date (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{year,  }\item[{uint8\+\_\+t $\ast$}]{month,  }\item[{uint8\+\_\+t $\ast$}]{day }\end{DoxyParamCaption})}
+
+
+
+Reads date from RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & a pointer to a byte to store the year \\
+\hline
+{\em month} & a pointer to a byte to store the month \\
+\hline
+{\em day} & a pointer to a byte to store the day \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{group__rtc_ga8ae99541946dea0035bfb5e8042f86f3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{group__rtc_ga8ae99541946dea0035bfb5e8042f86f3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__rtc_gadf7b4e16b962d458867ca804ef05d31e}\label{group__rtc_gadf7b4e16b962d458867ca804ef05d31e}} 
+\index{rtc@{rtc}!getHour@{getHour}}
+\index{getHour@{getHour}!rtc@{rtc}}
+\doxysubsubsection{\texorpdfstring{getHour()}{getHour()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}} get\+Hour (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{hours,  }\item[{uint8\+\_\+t $\ast$}]{minutes,  }\item[{uint8\+\_\+t $\ast$}]{seconds }\end{DoxyParamCaption})}
+
+
+
+Reads time from RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hour} & a pointer to a byte to store the hour \\
+\hline
+{\em minutes} & a pointer to a byte to store the minutes \\
+\hline
+{\em seconds} & a pointer to a byte to store the seconds \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{group__rtc_gadf7b4e16b962d458867ca804ef05d31e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__rtc_gadc99d6e13380791f37d25254f382185b}\label{group__rtc_gadc99d6e13380791f37d25254f382185b}} 
+\index{rtc@{rtc}!isBCD@{isBCD}}
+\index{isBCD@{isBCD}!rtc@{rtc}}
+\doxysubsubsection{\texorpdfstring{isBCD()}{isBCD()}}
+{\footnotesize\ttfamily int is\+BCD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the data read from RTC is in BCD. 
+
+\begin{DoxyReturn}{Returns}
+1 if BCD, 0 if binary 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{group__rtc_gadc99d6e13380791f37d25254f382185b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__rtc_gadc99d6e13380791f37d25254f382185b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__rtc_gaa2b091a9cf7dce22b896bb1f041b3e2f}\label{group__rtc_gaa2b091a9cf7dce22b896bb1f041b3e2f}} 
+\index{rtc@{rtc}!isRTCUpdating@{isRTCUpdating}}
+\index{isRTCUpdating@{isRTCUpdating}!rtc@{rtc}}
+\doxysubsubsection{\texorpdfstring{isRTCUpdating()}{isRTCUpdating()}}
+{\footnotesize\ttfamily int is\+RTCUpdating (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if RTC is updating. 
+
+\begin{DoxyReturn}{Returns}
+1 if RTC updating, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{group__rtc_gaa2b091a9cf7dce22b896bb1f041b3e2f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__rtc_ga73e9cfc707b230abcda4e24cbac48d4d}\label{group__rtc_ga73e9cfc707b230abcda4e24cbac48d4d}} 
+\index{rtc@{rtc}!rtc\_set\_updates@{rtc\_set\_updates}}
+\index{rtc\_set\_updates@{rtc\_set\_updates}!rtc@{rtc}}
+\doxysubsubsection{\texorpdfstring{rtc\_set\_updates()}{rtc\_set\_updates()}}
+{\footnotesize\ttfamily int() rtc\+\_\+set\+\_\+updates (\begin{DoxyParamCaption}\item[{int}]{on }\end{DoxyParamCaption})}
+
+
+
+Enables/\+Disables interrupts on update. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{group__rtc_ga73e9cfc707b230abcda4e24cbac48d4d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__rtc_ga73e9cfc707b230abcda4e24cbac48d4d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__rtc_ga503bf713f0f23cab3ed4433dec1dad07}\label{group__rtc_ga503bf713f0f23cab3ed4433dec1dad07}} 
+\index{rtc@{rtc}!subscribe\_rtc\_interrupt@{subscribe\_rtc\_interrupt}}
+\index{subscribe\_rtc\_interrupt@{subscribe\_rtc\_interrupt}!rtc@{rtc}}
+\doxysubsubsection{\texorpdfstring{subscribe\_rtc\_interrupt()}{subscribe\_rtc\_interrupt()}}
+{\footnotesize\ttfamily int() subscribe\+\_\+rtc\+\_\+interrupt (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{interrupt\+\_\+bit,  }\item[{int $\ast$}]{interrupt\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Subscribes RTC Interrupts. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__rtc_ga503bf713f0f23cab3ed4433dec1dad07_icgraph}
+\end{center}
+\end{figure}

@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['y_0',['y',['../structsprite.html#ac749be5d954aa01e47791dd0c6d0cb30',1,'sprite::y()'],['../structplayer.html#ab1da25240a30a5563d4e0714dade1575',1,'player::y()'],['../structmonster.html#a27794f21cfd56304fe7d85ea921b03ec',1,'monster::y()'],['../structbullet.html#a4ae297548b93d952fc700f9d9761b794',1,'bullet::y()']]],
-  ['y_5foverflow_1',['Y_OVERFLOW',['../group__mouse__macros.html#gacd54c5569c84fd2d1710cccd190e138a',1,'mouse_macros.h']]],
-  ['yspeed_2',['yspeed',['../structsprite.html#ac74d2dc7c50324b9c24857c79a23dc98',1,'sprite::yspeed()'],['../structplayer.html#a8274204d9a304224f29837bb8a0894e3',1,'player::yspeed()'],['../structmonster.html#afa97e6bc9194a8404b38e387c5f83e37',1,'monster::yspeed()'],['../structbullet.html#a28563229d7277f1079a2399ae6ad27a6',1,'bullet::yspeed()']]]
+  ['x_0',['x',['../structsprite.html#a96766cc6a5f5aa271e756908be5c4220',1,'sprite::x()'],['../structtext.html#a6900c6f790649187650f69ef03b55cb5',1,'text::x()'],['../structdate.html#a88440cb99b7ab52ea5664d6b0519bb1a',1,'date::x()'],['../structret__pair.html#a4d6fe1ebe442c14c78e75933c3bed22d',1,'ret_pair::x()'],['../structplayer.html#a2ee7d18d25bfcab15206b51e270e83e4',1,'player::x()'],['../structenemy.html#a7cb417e965c2412ab1e6070ce7654f85',1,'enemy::x()'],['../structbullet.html#a88d9b442fa2262887697c48537150fd0',1,'bullet::x()']]],
+  ['x_5fentrance_1',['x_entrance',['../structenemy.html#a254cdc4805e480fefea412d7d0d36677',1,'enemy']]],
+  ['x_5foffset_2',['x_offset',['../structbasic__sprite.html#adc3b603d732a782b0127bee694d92547',1,'basic_sprite::x_offset()'],['../structsprite.html#ab054c3b8b8ec1042a33202faf24beca7',1,'sprite::x_offset()']]],
+  ['x_5foverflow_3',['X_OVERFLOW',['../group__mouse__macros.html#ga82dc3ac9577dabd19733ada75d2822d0',1,'mouse_macros.h']]],
+  ['xmov_4',['xMov',['../structplayer.html#a43b83eb5db45af760749a75cd1c7dbb5',1,'player']]]
 ];

@@ -72,4 +72,4 @@ int (pixmap_drawer)(uint16_t x, uint16_t y, enum pixmap pixmap);
 
 /**@}*/
 
-#endif /* end of include guard: GRAPHICS_H_INCLUDED */
+#endif //GRAPHICS_H_INCLUDED

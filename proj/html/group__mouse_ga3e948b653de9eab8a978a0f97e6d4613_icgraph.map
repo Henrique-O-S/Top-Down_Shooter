@@ -1,6 +1,5 @@
 <map id="sign_extend_byte" name="sign_extend_byte">
-<area shape="rect" id="node1" title=" " alt="" coords="357,31,481,57"/>
-<area shape="rect" id="node2" href="$group__mouse.html#gaa0e718b250931f7cb91a4f56fe33d94c" title=" " alt="" coords="163,31,309,57"/>
-<area shape="rect" id="node3" href="$game_8c.html#a649a26d3c9953d9f2af863e859e0c40d" title=" " alt="" coords="17,5,103,32"/>
-<area shape="rect" id="node4" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,56,115,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="357,5,481,32"/>
+<area shape="rect" id="node2" href="$group__mouse.html#gaa0e718b250931f7cb91a4f56fe33d94c" title=" " alt="" coords="163,5,309,32"/>
+<area shape="rect" id="node3" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,115,32"/>
 </map>

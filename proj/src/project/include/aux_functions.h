@@ -3,7 +3,7 @@
 
 /**
  * @defgroup aux_functions aux_functions
- * @ingroup proj
+ * @ingroup project
  *
  * @{
  */
@@ -111,11 +111,12 @@ date_t*(date_ctor)(int16_t x, int16_t y);
 void (date_set_number)(date_t *t,int16_t pos2,  int16_t pos1, int16_t pos0);
 void (date_draw)(date_t *t);
 
-/**
- * @}
- */
 int (map1_init)();
 
 void (map1_background)(void);
+
+/**
+ * @}
+ */
 
 #endif //AUX_FUNCTIONS_H_INCLUDED

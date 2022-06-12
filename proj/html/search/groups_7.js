@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['pixmap_0',['pixmap',['../group__pixmap.html',1,'']]],
-  ['proj_1',['proj',['../group__proj.html',1,'']]]
+  ['mouse_0',['mouse',['../group__mouse.html',1,'']]],
+  ['mouse_5fmacros_1',['mouse_macros',['../group__mouse__macros.html',1,'']]]
 ];

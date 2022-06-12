@@ -1,5 +1,4 @@
-// IMPORTANT: you must include the following line in all your C files
-#include <lcom/lcf.h>
+ #include <lcom/lcf.h>
 
 #include "proj.h"
 #include "player0.h"
@@ -11,8 +10,6 @@
 #include "gameover.h"
 #include "highscore.h"
 #include "instructions.h"
-
-// Any header files included below this line should have been created by you
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -61,7 +58,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
     return 1;
   }
 
-  /// SPRITES
+  // SPRITES
 
 
   bsp_gameover = get_gameover();
@@ -142,12 +139,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       }
                       else{
                         draw_menu();
-                        //if(menu_draw()) finished = true;
                       }
-                      //sprite_set_pos(sp_numbers, 150, 150);
-                      //sprite_draw(sp_highscore);
-                      //sprite_update_animation(sp_numbers, 0);
-
 
                       sprite_set_pos(sp_crosshair, get_mouse_X(), get_mouse_Y());
     

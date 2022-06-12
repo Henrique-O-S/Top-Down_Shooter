@@ -1,0 +1,11 @@
+<map id="enemy" name="enemy">
+<area shape="rect" id="node1" title=" " alt="" coords="285,557,346,584"/>
+<area shape="rect" id="node2" title=" " alt="" coords="181,298,220,325"/>
+<area shape="rect" id="node3" href="$structsprite.html" title=" " alt="" coords="265,298,320,325"/>
+<area shape="rect" id="node4" href="$structbasic__sprite.html" title=" " alt="" coords="97,125,189,152"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,5,76,32"/>
+<area shape="rect" id="node6" title=" " alt="" coords="100,5,168,32"/>
+<area shape="rect" id="node7" title=" " alt="" coords="205,5,266,32"/>
+<area shape="rect" id="node8" title=" " alt="" coords="315,125,377,152"/>
+<area shape="rect" id="node9" title=" " alt="" coords="427,125,487,152"/>
+</map>

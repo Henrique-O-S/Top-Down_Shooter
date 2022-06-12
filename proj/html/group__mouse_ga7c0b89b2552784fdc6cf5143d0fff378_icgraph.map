@@ -1,0 +1,8 @@
+<map id="mouse_read_byte" name="mouse_read_byte">
+<area shape="rect" id="node1" title=" " alt="" coords="855,31,980,57"/>
+<area shape="rect" id="node2" href="$group__mouse.html#ga17f6a309e34b241931cc44259a3afda6" title=" " alt="" coords="676,31,807,57"/>
+<area shape="rect" id="node3" href="$group__mouse.html#gabf4140d9d2b0a560eb7910b635bc89fb" title=" " alt="" coords="469,31,628,57"/>
+<area shape="rect" id="node4" href="$group__interrupts.html#gaa47d951ed5ee7678663adf66785022f4" title="Subscribes all drivers used (timer&#45;&gt;keyboard&#45;&gt;mouse)" alt="" coords="163,5,261,32"/>
+<area shape="rect" id="node6" href="$group__interrupts.html#gadd6f2c43bcf6aa436d16dd18edbeea81" title="Unsubscribes all subscribed interrupts." alt="" coords="309,56,421,83"/>
+<area shape="rect" id="node5" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,31,115,57"/>
+</map>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['libraries_2eh_0',['libraries.h',['../libraries_8h.html',1,'']]]
+  ['highscore_2eh_0',['highscore.h',['../highscore_8h.html',1,'']]],
+  ['hud_2eh_1',['hud.h',['../hud_8h.html',1,'']]]
 ];

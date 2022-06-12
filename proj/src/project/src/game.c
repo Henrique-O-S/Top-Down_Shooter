@@ -17,7 +17,6 @@ void(game_place_everything)() {
 int(game_display)(keys_t *keys) {
   tick_cooldown();
   map1_background();
-  // sprite_draw(sp_map);
   draw_map();
   if(get_no_interupts()/60 <= 60) spawn_monsters();
   update_monster_pos();

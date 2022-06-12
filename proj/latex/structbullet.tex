@@ -10,7 +10,7 @@ Collaboration diagram for bullet\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=268pt]{structbullet__coll__graph}
+\includegraphics[width=350pt]{structbullet__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Attributes}
@@ -20,26 +20,44 @@ int \mbox{\hyperlink{structbullet_a07313a2a11ad417535ec8aa6c4ac8b24}{id}}
 \item 
 \mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}} $\ast$ \mbox{\hyperlink{structbullet_a8e08b86b4d999c2f85532c45fbea9519}{bullet\+\_\+sprite}}
 \item 
-int \mbox{\hyperlink{structbullet_a8aa2473ae3eecca4edc2456b0682314b}{x}}
+double \mbox{\hyperlink{structbullet_a88d9b442fa2262887697c48537150fd0}{x}}
 \item 
-int \mbox{\hyperlink{structbullet_a4ae297548b93d952fc700f9d9761b794}{y}}
+double \mbox{\hyperlink{structbullet_ac83f9af3ebd9a8cd2b4b7e5fb89a4067}{y}}
 \item 
-int \mbox{\hyperlink{structbullet_ae47b10f86107dc365dd262a9a9b62d2c}{xspeed}}
+double \mbox{\hyperlink{structbullet_a7ce9c745c3fb0f4ee8b352f57b9e1af8}{speed}}
 \item 
-int \mbox{\hyperlink{structbullet_a28563229d7277f1079a2399ae6ad27a6}{yspeed}}
+double \mbox{\hyperlink{structbullet_afe1d0610a9e57519e3cdb413efe1a1a9}{angle}}
+\item 
+double \mbox{\hyperlink{structbullet_a32382bfcd973e7c071d915d34d074361}{c}}
+\item 
+double \mbox{\hyperlink{structbullet_a63a73c727148288755f42f8596a8c4e3}{s}}
 \item 
 int \mbox{\hyperlink{structbullet_aaeb6feb08b947abe77f28601b8b4b500}{fired}}
 \item 
-xpm\+\_\+image\+\_\+t \mbox{\hyperlink{structbullet_a361b326c28159e9a1295c8272f7ccbce}{img}}
+int \mbox{\hyperlink{structbullet_aaa0042cbd69149e5326302c752e1e833}{wait}}
+\item 
+int \mbox{\hyperlink{structbullet_a1c7f55bc2ffe798d3060ed77195f8fe0}{wait\+\_\+threshold}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structbullet_afe1d0610a9e57519e3cdb413efe1a1a9}\label{structbullet_afe1d0610a9e57519e3cdb413efe1a1a9}} 
+\index{bullet@{bullet}!angle@{angle}}
+\index{angle@{angle}!bullet@{bullet}}
+\doxysubsubsection{\texorpdfstring{angle}{angle}}
+{\footnotesize\ttfamily double bullet\+::angle}
+
 \mbox{\Hypertarget{structbullet_a8e08b86b4d999c2f85532c45fbea9519}\label{structbullet_a8e08b86b4d999c2f85532c45fbea9519}} 
 \index{bullet@{bullet}!bullet\_sprite@{bullet\_sprite}}
 \index{bullet\_sprite@{bullet\_sprite}!bullet@{bullet}}
 \doxysubsubsection{\texorpdfstring{bullet\_sprite}{bullet\_sprite}}
 {\footnotesize\ttfamily \mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}}$\ast$ bullet\+::bullet\+\_\+sprite}
+
+\mbox{\Hypertarget{structbullet_a32382bfcd973e7c071d915d34d074361}\label{structbullet_a32382bfcd973e7c071d915d34d074361}} 
+\index{bullet@{bullet}!c@{c}}
+\index{c@{c}!bullet@{bullet}}
+\doxysubsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily double bullet\+::c}
 
 \mbox{\Hypertarget{structbullet_aaeb6feb08b947abe77f28601b8b4b500}\label{structbullet_aaeb6feb08b947abe77f28601b8b4b500}} 
 \index{bullet@{bullet}!fired@{fired}}
@@ -53,35 +71,41 @@ xpm\+\_\+image\+\_\+t \mbox{\hyperlink{structbullet_a361b326c28159e9a1295c8272f7
 \doxysubsubsection{\texorpdfstring{id}{id}}
 {\footnotesize\ttfamily int bullet\+::id}
 
-\mbox{\Hypertarget{structbullet_a361b326c28159e9a1295c8272f7ccbce}\label{structbullet_a361b326c28159e9a1295c8272f7ccbce}} 
-\index{bullet@{bullet}!img@{img}}
-\index{img@{img}!bullet@{bullet}}
-\doxysubsubsection{\texorpdfstring{img}{img}}
-{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t bullet\+::img}
+\mbox{\Hypertarget{structbullet_a63a73c727148288755f42f8596a8c4e3}\label{structbullet_a63a73c727148288755f42f8596a8c4e3}} 
+\index{bullet@{bullet}!s@{s}}
+\index{s@{s}!bullet@{bullet}}
+\doxysubsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily double bullet\+::s}
 
-\mbox{\Hypertarget{structbullet_a8aa2473ae3eecca4edc2456b0682314b}\label{structbullet_a8aa2473ae3eecca4edc2456b0682314b}} 
+\mbox{\Hypertarget{structbullet_a7ce9c745c3fb0f4ee8b352f57b9e1af8}\label{structbullet_a7ce9c745c3fb0f4ee8b352f57b9e1af8}} 
+\index{bullet@{bullet}!speed@{speed}}
+\index{speed@{speed}!bullet@{bullet}}
+\doxysubsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily double bullet\+::speed}
+
+\mbox{\Hypertarget{structbullet_aaa0042cbd69149e5326302c752e1e833}\label{structbullet_aaa0042cbd69149e5326302c752e1e833}} 
+\index{bullet@{bullet}!wait@{wait}}
+\index{wait@{wait}!bullet@{bullet}}
+\doxysubsubsection{\texorpdfstring{wait}{wait}}
+{\footnotesize\ttfamily int bullet\+::wait}
+
+\mbox{\Hypertarget{structbullet_a1c7f55bc2ffe798d3060ed77195f8fe0}\label{structbullet_a1c7f55bc2ffe798d3060ed77195f8fe0}} 
+\index{bullet@{bullet}!wait\_threshold@{wait\_threshold}}
+\index{wait\_threshold@{wait\_threshold}!bullet@{bullet}}
+\doxysubsubsection{\texorpdfstring{wait\_threshold}{wait\_threshold}}
+{\footnotesize\ttfamily int bullet\+::wait\+\_\+threshold}
+
+\mbox{\Hypertarget{structbullet_a88d9b442fa2262887697c48537150fd0}\label{structbullet_a88d9b442fa2262887697c48537150fd0}} 
 \index{bullet@{bullet}!x@{x}}
 \index{x@{x}!bullet@{bullet}}
 \doxysubsubsection{\texorpdfstring{x}{x}}
-{\footnotesize\ttfamily int bullet\+::x}
+{\footnotesize\ttfamily double bullet\+::x}
 
-\mbox{\Hypertarget{structbullet_ae47b10f86107dc365dd262a9a9b62d2c}\label{structbullet_ae47b10f86107dc365dd262a9a9b62d2c}} 
-\index{bullet@{bullet}!xspeed@{xspeed}}
-\index{xspeed@{xspeed}!bullet@{bullet}}
-\doxysubsubsection{\texorpdfstring{xspeed}{xspeed}}
-{\footnotesize\ttfamily int bullet\+::xspeed}
-
-\mbox{\Hypertarget{structbullet_a4ae297548b93d952fc700f9d9761b794}\label{structbullet_a4ae297548b93d952fc700f9d9761b794}} 
+\mbox{\Hypertarget{structbullet_ac83f9af3ebd9a8cd2b4b7e5fb89a4067}\label{structbullet_ac83f9af3ebd9a8cd2b4b7e5fb89a4067}} 
 \index{bullet@{bullet}!y@{y}}
 \index{y@{y}!bullet@{bullet}}
 \doxysubsubsection{\texorpdfstring{y}{y}}
-{\footnotesize\ttfamily int bullet\+::y}
-
-\mbox{\Hypertarget{structbullet_a28563229d7277f1079a2399ae6ad27a6}\label{structbullet_a28563229d7277f1079a2399ae6ad27a6}} 
-\index{bullet@{bullet}!yspeed@{yspeed}}
-\index{yspeed@{yspeed}!bullet@{bullet}}
-\doxysubsubsection{\texorpdfstring{yspeed}{yspeed}}
-{\footnotesize\ttfamily int bullet\+::yspeed}
+{\footnotesize\ttfamily double bullet\+::y}
 
 
 
