@@ -246,7 +246,7 @@ int (build_monsters)(basic_sprite_t **idle,  basic_sprite_t **attacking) {
         m.spawn_point = i;
         m.x = 0.0;
         m.y = 0.0;
-        m.speed = 6;
+        m.speed = ENEMY_SPEED;
         m.x_entrance = 0;
         m.y_entrance = 0;
         m.alive = 0;

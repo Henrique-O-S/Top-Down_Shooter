@@ -8,7 +8,7 @@ static int keyboard_subscription = 0;
 
 static int mouse_subscription = 0;
 
-static int rtc_subscription = 0;
+//static int rtc_subscription = 0;
 
 int (subscribe_all)(void) {
 

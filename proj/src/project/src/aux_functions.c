@@ -262,6 +262,10 @@ void(draw_hud)(int h, int k, int t) {
   text_draw(game_timer);
 }
 
+void (set_highscore){}
+
+void (draw_highscore){}
+
 void(draw_end_game)(int k, int t) {
 
   int pos0k, pos1k, pos2k;

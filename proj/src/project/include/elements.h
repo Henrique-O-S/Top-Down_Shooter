@@ -13,7 +13,7 @@
 
 //game macros
 #define PLAYER_SPEED    5
-#define MONSTER_SPEED   3
+#define ENEMY_SPEED   4
 #define BULLET_SPEED    30
 #define SHOT_COOLDOWN   10
 #define BORDER_OFFSET   25
