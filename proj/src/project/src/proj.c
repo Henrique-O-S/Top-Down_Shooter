@@ -8,6 +8,10 @@
 #include "map.h"
 #include "crosshair.h"
 #include "game.h"
+#include "numbers.h"
+#include "gameover.h"
+#include "highscore.h"
+#include "instructions.h"
 
 // Any header files included below this line should have been created by you
 
@@ -60,6 +64,18 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
   /// SPRITES
 
+  bsp_numbers = get_number();
+  sp_numbers = sprite_ctor(bsp_numbers, 10);
+
+  bsp_gameover = get_gameover();
+  sp_gameover = sprite_ctor(bsp_gameover, 1);
+
+  bsp_highscore_menu = get_highscore();
+  sp_highscore_menu = sprite_ctor(bsp_highscore_menu, 1);
+
+  bsp_instructions_menu = get_instructions();
+  sp_instructions_menu = sprite_ctor(bsp_instructions_menu, 1);
+
   bsp_player_idle = get_player_idle();
   bsp_player_shooting = get_player_shooting();
 
@@ -71,6 +87,8 @@ int(proj_main_loop)(int argc, char* argv[]) {
   bsp_map = get_map();
   sp_map = sprite_ctor(bsp_map, 1);
   sprite_set_pos(sp_map, 0, 75);
+
+  set_menu();
 
   build_map();
   build_player(500, 500, bsp_player_idle, bsp_player_shooting); 
@@ -93,7 +111,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
   message msg;
   int finished = false;
   //For the program to know if the game_loop should be entered
-  int game_enter = false;
+  int game_enter = false, instructions = false, highscore = false, gameover = false;
 
   while(!finished) { /* You may want to use a different condition */
      /* Get a request message. */
@@ -113,13 +131,30 @@ int(proj_main_loop)(int argc, char* argv[]) {
                         if(game_display(keys)) {
                           game_dispawn_everyting();
                           game_enter = false;
+                          gameover = true;
                         }
                       }
-                      else{
-                        if(menu_draw()) finished = true;
+                      else if(gameover) {
+                        sprite_draw(sp_gameover);
                       }
+                      else if(instructions) {
+                        sprite_draw(sp_instructions_menu);
+                      }
+                      else if(highscore) {
+                        sprite_draw(sp_highscore_menu);
+                      }
+                      else{
+                        draw_menu();
+                        //if(menu_draw()) finished = true;
+                      }
+                      //sprite_set_pos(sp_numbers, 150, 150);
+                      //sprite_draw(sp_highscore);
+                      //sprite_update_animation(sp_numbers, 0);
+
 
                       sprite_set_pos(sp_crosshair, get_mouse_X(), get_mouse_Y());
+
+    
                       sprite_draw(sp_crosshair);
                       
                       draw_double_buffer();
@@ -135,12 +170,18 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       if(game_enter) {
                         game_dispawn_everyting();
                         game_enter = false;
+                        gameover = true;
+                      }
+                      else if(gameover) {
+                        gameover = false;
+                      } 
+                      else if(instructions) {
+                        instructions = false;
+                      }
+                      else if(highscore) {
+                        highscore = false;
                       }
                       else finished = true;
-                    }
-
-                    if(game_enter){
-                      //update_player_pos();
                     }
                  }
                  if(msg.m_notify.interrupts & get_irq(MOUSE_IRQ)){
@@ -155,8 +196,13 @@ int(proj_main_loop)(int argc, char* argv[]) {
                         set_no_interupts(1);
                         game_enter = true;
                       }
-
                       else if(option == 2){
+                         highscore = true;
+                      }
+                      else if(option == 3){
+                        instructions = true;
+                      }
+                      else if(option == 4){
                         finished = true;
                       }
                       update_mouse(&pp);

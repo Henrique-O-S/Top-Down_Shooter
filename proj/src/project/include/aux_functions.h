@@ -20,6 +20,18 @@ struct keys {
 
 typedef struct keys keys_t;
 
+basic_sprite_t **bsp_play;
+sprite_t *sp_play;
+
+basic_sprite_t **bsp_exit;
+sprite_t *sp_exit;
+
+basic_sprite_t **bsp_instructions;
+sprite_t *sp_instructions;
+
+basic_sprite_t **bsp_highscore;
+sprite_t *sp_highscore;
+
 void update_key_press(void);
 
 void update_mouse_press(struct packet pp);
@@ -27,6 +39,12 @@ void update_mouse_press(struct packet pp);
 keys_t* (get_key_press)(void);
 
 int (menu_draw)();
+
+void (set_menu)();
+
+uint16_t (mouse_on_top)();
+
+void (draw_menu)();
 
 uint16_t (mouse_in_box)();
 

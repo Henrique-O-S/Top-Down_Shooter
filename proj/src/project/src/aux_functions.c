@@ -3,6 +3,8 @@
 #include "aux_functions.h"
 #include "mouse.h"
 
+#include "menu.h"
+
 static keys_t key;
 
 void update_key_press(void) {
@@ -74,12 +76,79 @@ int (process_mouse)(struct packet *p, int in_game){
   uint16_t selected = 0;
 
   if(!in_game){
-    selected = mouse_in_box();
+    selected = mouse_on_top();
   }
 
   if(p->lb){
     return selected;
   }
+  return 0;
+}
+
+void (set_menu)() {
+  bsp_play = get_play();
+  bsp_exit = get_exit();
+  bsp_highscore = get_highscore();
+  bsp_instructions = get_instructions();
+
+  sp_play = sprite_ctor(bsp_play, 2);
+  sp_exit = sprite_ctor(bsp_exit, 2);
+  sp_highscore = sprite_ctor(bsp_highscore, 2);
+  sp_instructions = sprite_ctor(bsp_instructions, 2);
+
+  sprite_set_pos(sp_play, get_XRes()/2 - 60, get_YRes()*2/11);
+  sprite_set_pos(sp_highscore, get_XRes()/2 - 130, get_YRes()*4/11);
+  sprite_set_pos(sp_instructions, get_XRes()/2 - 180, get_YRes()*6/11);
+  sprite_set_pos(sp_exit, get_XRes()/2 - 60, get_YRes()*8/11);
+}
+
+void (draw_menu)() {
+  vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MENU_BACKGROUND_COLOR);
+
+  uint16_t pos = mouse_on_top();
+  switch (pos) {
+    case 1: sprite_update_animation(sp_play, 0); break;
+    case 2: sprite_update_animation(sp_highscore, 0);break;
+    case 3: sprite_update_animation(sp_instructions, 0);break;
+    case 4: sprite_update_animation(sp_exit, 0); break;
+  default: break;
+  }
+  sprite_draw(sp_play);
+  sprite_draw(sp_exit);
+  sprite_draw(sp_highscore);
+  sprite_draw(sp_instructions);
+  switch (pos) {
+    case 1: sprite_update_animation(sp_play, 0); break;
+    case 2: sprite_update_animation(sp_highscore, 0);break;
+    case 3: sprite_update_animation(sp_instructions, 0);break;
+    case 4: sprite_update_animation(sp_exit, 0); break;
+  default: break;
+  }
+}
+
+uint16_t (mouse_on_top)(){
+  uint16_t mouse_x = get_mouse_X(), mouse_y = get_mouse_Y();
+  uint16_t x, y, w, h;
+  x = sprite_get_X(sp_play); y = sprite_get_Y(sp_play); 
+  w = sprite_get_w(sp_play); h = sprite_get_h(sp_play);
+  if((x < mouse_x && mouse_x < (x + w)) && (y < mouse_y && mouse_y < (y + h)))
+    return 1;
+  
+  x = sprite_get_X(sp_highscore); y = sprite_get_Y(sp_highscore); 
+  w = sprite_get_w(sp_highscore); h = sprite_get_h(sp_highscore);
+  if((x < mouse_x && mouse_x < (x + w)) && (y < mouse_y && mouse_y < (y + h)))
+    return 2;
+
+  x = sprite_get_X(sp_instructions); y = sprite_get_Y(sp_instructions); 
+  w = sprite_get_w(sp_instructions); h = sprite_get_h(sp_instructions);
+  if((x < mouse_x && mouse_x < (x + w)) && (y < mouse_y && mouse_y < (y + h)))
+    return 3;
+
+  x = sprite_get_X(sp_exit); y = sprite_get_Y(sp_exit); 
+  w = sprite_get_w(sp_exit); h = sprite_get_h(sp_exit);
+  if((x < mouse_x && mouse_x < (x + w)) && (y < mouse_y && mouse_y < (y + h)))
+    return 4;
+
   return 0;
 }
   
