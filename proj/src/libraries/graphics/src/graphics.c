@@ -203,7 +203,7 @@ int (pixmap_drawer)(uint16_t x, uint16_t y, enum pixmap pixmap){
 
 /******* SPRITE *******/
 
-basic_sprite_t* (basic_sprite_ctor)(const char *const *xpm, int16_t u0, int16_t v0){
+basic_sprite_t* (basic_sprite_ctor)(const char *const *xpm, int16_t x_offset, int16_t y_offset){
     basic_sprite_t *ret = malloc(sizeof(basic_sprite_t));
     if(ret == NULL) return NULL;
     enum xpm_image_type type = XPM_8_8_8_8;
@@ -215,8 +215,8 @@ basic_sprite_t* (basic_sprite_ctor)(const char *const *xpm, int16_t u0, int16_t 
     }
     ret->w = img.width;
     ret->h = img.height;
-    ret->u0 = u0;
-    ret->v0 = v0;
+    ret->x_offset = x_offset;
+    ret->y_offset = y_offset;
     return ret;
 }
 
@@ -232,9 +232,9 @@ uint16_t       (basic_sprite_get_w)  (const basic_sprite_t *p){ return p->w  ; }
 
 uint16_t       (basic_sprite_get_h)  (const basic_sprite_t *p){ return p->h  ; }
 
-int16_t        (basic_sprite_get_u0) (const basic_sprite_t *p){ return p->u0 ; }
+int16_t        (basic_sprite_get_x_offset) (const basic_sprite_t *p){ return p->x_offset ; }
 
-int16_t        (basic_sprite_get_v0) (const basic_sprite_t *p){ return p->v0 ; }
+int16_t        (basic_sprite_get_y_offset) (const basic_sprite_t *p){ return p->y_offset ; }
 
 sprite_t* (sprite_ctor)(basic_sprite_t **bsp, uint8_t animation){
     sprite_t *ret = malloc(sizeof(sprite_t));
@@ -249,8 +249,8 @@ sprite_t* (sprite_ctor)(basic_sprite_t **bsp, uint8_t animation){
     }
     ret->x = 0;
     ret->y = 0;
-    ret->su0 = (int16_t)(ret->bsp[0]->u0);
-    ret->sv0 = (int16_t)(ret->bsp[0]->v0);
+    ret->x_offset = (int16_t)(ret->bsp[0]->x_offset);
+    ret->y_offset = (int16_t)(ret->bsp[0]->y_offset);
 
     sprite_set_angle(ret, 0.0);
 
@@ -262,11 +262,11 @@ void (sprite_dtor)(sprite_t *p){
     free(p);
 }
 
-void (sprite_set_pos)   (sprite_t *p, int16_t x , int16_t y ){ p->x = x; p->y = y; }
+void (sprite_set_pos) (sprite_t *p, int16_t x, int16_t y){ p->x = x; p->y = y; }
 
-void (sprite_set_angle) (sprite_t *p, double angle          ){ p->theta = angle; p->c = fm_cos(p->theta); p->s = fm_sin(p->theta); }
+void (sprite_set_angle) (sprite_t *p, double angle){ p->angle = angle; p->c = cos(p->angle); p->s = sin(p->angle); }
 
-double   (sprite_get_angle)(const sprite_t *p){ return p->theta; }
+double   (sprite_get_angle) (const sprite_t *p){ return p->angle; }
 
 uint16_t (sprite_get_w)(const sprite_t *p){ 
     return basic_sprite_get_w(p->bsp[0]); 
@@ -289,54 +289,54 @@ double (sprite_angle_of_two)(const sprite_t *p, const sprite_t *p1) {
 }
 
 static void (sprite_src2sbuf)(const sprite_t *p, int16_t x, int16_t y, int16_t *u, int16_t *v){
-    if(p->theta == 0.0){
-        *u = x - p->x + p->su0;
-        *v = y - p->y + p->sv0;
+    if(p->angle == 0.0){
+        *u = x - p->x + p->x_offset;
+        *v = y - p->y + p->y_offset;
     }else{
         double dx = x - p->x;
         double dy = y - p->y;
-        int16_t du = (int16_t)(dx*p->c - dy*p->s - 0.5f);
-        int16_t dv = (int16_t)(dx*p->s + dy*p->c - 0.5f);
-        *u = du + p->su0;
-        *v = dv + p->sv0;
+        int16_t du = (int16_t)(dx*p->c - dy*p->s);
+        int16_t dv = (int16_t)(dx*p->s + dy*p->c);
+        *u = du + p->x_offset;
+        *v = dv + p->y_offset;
     }
 }
 
-static void (sprite_sbuf2src)(const sprite_t *p, int16_t u, int16_t v, int16_t *x, int16_t *y){
-    int16_t du = u - p->su0;
-    int16_t dv = v - p->sv0;
+static void (sprite_set_corner_for_rotation)(const sprite_t *p, int16_t u, int16_t v, int16_t *x, int16_t *y){
+    int16_t du = u - p->x_offset; // set for x_offset
+    int16_t dv = v - p->y_offset; // set for y_offset
     double dx =  du*p->c + dv*p->s;
     double dy = -du*p->s + dv*p->c;
-    *x = (int16_t)(dx + 0.5 + p->x);
-    *y = (int16_t)(dy + 0.5 + p->y);
+    *x = (int16_t)(dx + p->x);
+    *y = (int16_t)(dy + p->y);
 }
 
 void (sprite_draw)(const sprite_t *p){
     int animation = p->current_animation;
     const uint16_t sw = (uint16_t)(basic_sprite_get_w(p->bsp[0]));
     const uint16_t sh = (uint16_t)(basic_sprite_get_h(p->bsp[0]));
-    int16_t xmin, xmax, ymin, ymax; {
-        int16_t x, y;
-        sprite_sbuf2src(p, 0, 0, &x, &y);
-        xmin = x; xmax = x; ymin = y; ymax = y;
-        sprite_sbuf2src(p, (int16_t)sw, 0          , &x, &y);
-        xmin = min(x, xmin); xmax = max(x, xmax); ymin = min(y, ymin); ymax = max(y, ymax);
-        sprite_sbuf2src(p, 0, (int16_t)sh, &x, &y);
-        xmin = min(x, xmin); xmax = max(x, xmax); ymin = min(y, ymin); ymax = max(y, ymax);
-        sprite_sbuf2src(p, (int16_t)sw, (int16_t)sh, &x, &y);
-        xmin = min(x, xmin); xmax = max(x, xmax); ymin = min(y, ymin); ymax = max(y, ymax);
-        xmin = max(xmin-2, 0); xmax = min(xmax+2, (int16_t)get_XRes());
-        ymin = max(ymin-2, 0); ymax = min(ymax+2, (int16_t)get_YRes());
-    }
+    int16_t xmin, xmax, ymin, ymax;
+    int16_t x, y;
+    sprite_set_corner_for_rotation(p, 0, 0, &x, &y);                     // TOP LEFT
+    xmin = x; xmax = x; ymin = y; ymax = y;
+    sprite_set_corner_for_rotation(p, (int16_t)sw, 0, &x, &y);           // TOP RIGHT
+    xmin = min(x, xmin); xmax = max(x, xmax); ymin = min(y, ymin); ymax = max(y, ymax);
+    sprite_set_corner_for_rotation(p, 0, (int16_t)sh, &x, &y);           // BOTTOM LEFT
+    xmin = min(x, xmin); xmax = max(x, xmax); ymin = min(y, ymin); ymax = max(y, ymax);
+    sprite_set_corner_for_rotation(p, (int16_t)sw, (int16_t)sh, &x, &y); // BOTTOM RIGHT
+    xmin = min(x, xmin); xmax = max(x, xmax); ymin = min(y, ymin); ymax = max(y, ymax);
+    xmin = max(xmin, 0); xmax = min(xmax, (int16_t)get_XRes());
+    ymin = max(ymin, 0); ymax = min(ymax, (int16_t)get_YRes());
+    
     const uint16_t bytes_pixel = 3;
     for(int16_t u, v, y = ymin; y < ymax; ++y){
         uint8_t *place = double_buffer + (xmin + y*get_XRes())*bytes_pixel;
         for(int16_t x = xmin; x < xmax; ++x, place += bytes_pixel){
             sprite_src2sbuf(p, x, y, &u, &v);
             if(0 <= u && u < sw && 0 <= v && v < sh){
-                const uint8_t *c_p = basic_sprite_get_map(p->bsp[animation])+(v*sw+u)*4;
-                if(*(c_p+3) < ALPHA_THRESHOLD){ //alpha
-                    memcpy(place, c_p, bytes_pixel);
+                const uint8_t *color = basic_sprite_get_map(p->bsp[animation])+(v*sw+u)*4;
+                if(*(color+3) < ALPHA_THRESHOLD){ //alpha
+                    memcpy(place, color, bytes_pixel);
                 }
             }
         }

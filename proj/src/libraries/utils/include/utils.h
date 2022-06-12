@@ -32,10 +32,6 @@ int(util_get_LSB)(uint16_t val, uint8_t *lsb);
  */
 int(util_get_MSB)(uint16_t val, uint8_t *msb);
 
-#ifdef LAB3
-    uint32_t sys_inb_counter;
-#endif
-
 /**
  * @brief sys_inb wrapper
  * @param port Port to read from
@@ -46,9 +42,6 @@ int (util_sys_inb)(int port, uint8_t *value);
 
 int16_t min(int16_t a, int16_t b);
 int16_t max(int16_t a, int16_t b);
-
-double fm_sin(double x);
-double fm_cos(double x);
 
 /**@}*/
 

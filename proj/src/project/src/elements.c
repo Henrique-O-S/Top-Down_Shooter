@@ -7,8 +7,14 @@
 #include <math.h>
 
 
-static int spawn_coordinate_x[4] = {90,50,950,950};
-static int spawn_coordinate_y[4] = {100,500,50,600};
+static int spawn_coordinate_x[4] = {90,50,950,960};
+static int spawn_coordinate_y[4] = {100,500,50,720};
+
+static int house_coordinate_x[4] = {630,135,920,950};
+static int house_coordinate_y[4] = {195,500,460,600};
+
+static int house_coordinate_x2[4] = {650,650,650,650};
+static int house_coordinate_y2[4] = {520,520,520,520};
 
 void (build_map)() {
     map.background = sprite_ctor(get_map(), 1);
@@ -51,6 +57,7 @@ int (build_player)(int start_x, int start_y,  basic_sprite_t **idle,  basic_spri
 void (dispawn_player)(void) {
     p.x = PLAYER_SPAWN_X; p.y = PLAYER_SPAWN_Y;
     p.health = 3;
+    p.alive = 1;
     p.cur_cooldown = 2;
 }
 
@@ -90,10 +97,10 @@ void (update_player_pos)(){
         int x0 = p.x, y0 = p.y;
         int x = p.x + (p.speed * p.xMov);
         int y = p.y + (p.speed * p.yMov);
-        if(collision_player_wall(p, 0)){
+        if(collision_player_wall(p, -PLAYER_SPEED*2)){
             p.x = x;
             p.y = y;
-            if(collision_player_wall(p, -PLAYER_SPEED)) {
+            if(collision_player_wall(p, -PLAYER_SPEED*3)) {
                 p.x = x0;
                 p.y = y0;
             }
@@ -116,13 +123,13 @@ void (update_player_pos)(){
         
         for(int i = 0; i < n_enemies; i++){
             if(enemies[i].alive && collision_player_monster(enemies[i], p) && enemies[i].wait == 7){
-                enemies[i].alive = 0; //for test
-                enemy_reset(&enemies[i]); // for test
-                /*
+                // enemies[i].alive = 0; //for test
+                // enemy_reset(&enemies[i]); // for test
+                
                 p.health--;
                 if (!p.health)
                     p.alive = 0;
-                    */
+                    
             }
         } 
     }   
@@ -172,9 +179,11 @@ ret_pair_t (is_border)(int x, int y) {
 
 ret_pair_t (path_to_take)(int x, int y) {
     ret_pair_t ret;
-
+    
     ret.x = (x - p.x < 0)? 1 : -1 ;
     ret.y = (y - p.y < 0)? 1 : -1 ;
+    if(x-p.x == 0) ret.x = 0;
+    if(y-p.y == 0) ret.y = 0;
 
     return ret;
 }
@@ -190,20 +199,42 @@ void (tick_cooldown)(){
     if(p.cur_cooldown > 0) p.cur_cooldown--;
 }
 
+double get_angle(enemy_t e) {
+    return atan2(e.y - e.y_entrance, e.x_entrance - e.x);
+}
+
+double get_angle_to_player(enemy_t e) {
+    return atan2(e.y - p.y, p.x - e.x);
+}
+
+double get_angle_two_points(int x, int y, int x1, int y1) {
+    return atan2(y - y1, x1 - x);
+}
+
+int get_distance(enemy_t e) {
+    double distance_x = e.x - e.x_entrance;
+    double distance_y = e.y - e.y_entrance;
+    double radius = sqrt(distance_x * distance_x + distance_y * distance_y);
+    return (radius < 15 ? 1 : 0);
+}
+
 //Enemy
 
 int n_enemies = 4;
 
-int (build_monsters)(int start_x, int start_y,  basic_sprite_t **idle,  basic_sprite_t **attacking) {
+int (build_monsters)(basic_sprite_t **idle,  basic_sprite_t **attacking) {
     for(int i = 0; i < n_enemies; i++){
         enemy_t m;
         m.id = i;
         m.spawn_point = i;
-        m.x = start_x;
-        m.y = start_y;
-        m.xspeed = 2;
-        m.yspeed = 2;
+        m.x = 0.0;
+        m.y = 0.0;
+        m.speed = 7;
+        m.x_entrance = 0;
+        m.y_entrance = 0;
         m.alive = 0;
+        m.in_house = 0;
+        m.angle = 0;
         m.enemy_idle = sprite_ctor(idle, 20);
         m.enemy_attacking = sprite_ctor(attacking, 15);
         m.wait = 0;
@@ -222,13 +253,13 @@ void (draw_monsters)() {
             if(enemies[i].wait > 0) {
                 enemies[i].wait--;
                 sprite_set_pos(enemies[i].enemy_attacking, enemies[i].x, enemies[i].y);
-                sprite_set_angle(enemies[i].enemy_attacking, sprite_angle_of_two(p.player_idle, enemies[i].enemy_attacking));
+                sprite_set_angle(enemies[i].enemy_attacking, enemies[i].angle);
                 sprite_draw(enemies[i].enemy_attacking);
                 sprite_update_animation(enemies[i].enemy_attacking, 0);
             }
             else {
                 sprite_set_pos(enemies[i].enemy_idle, enemies[i].x, enemies[i].y);
-                sprite_set_angle(enemies[i].enemy_idle, sprite_angle_of_two(p.player_idle, enemies[i].enemy_idle));
+                sprite_set_angle(enemies[i].enemy_idle, enemies[i].angle);
                 sprite_draw(enemies[i].enemy_idle);
                 sprite_update_animation(enemies[i].enemy_idle, 0);
             }
@@ -243,6 +274,15 @@ void (spawn_monsters)(void) {
             enemies[i].alive = 1;
             enemies[i].x = spawn_coordinate_x[enemies[i].spawn_point];
             enemies[i].y = spawn_coordinate_y[enemies[i].spawn_point];
+            enemies[i].x_entrance = house_coordinate_x[enemies[i].spawn_point];
+            enemies[i].y_entrance = house_coordinate_y[enemies[i].spawn_point];
+
+            enemies[i].angle = get_angle(enemies[i]);
+            enemies[i].c = cos(enemies[i].angle);
+            enemies[i].s = -sin(enemies[i].angle);
+
+            enemies[i].in_house = 0;
+            enemies[i].in_house2 = 0;
         }
     }
 }
@@ -253,6 +293,7 @@ void (dispawn_monsters)(void) {
             enemies[i].alive = 0;
             enemies[i].x = spawn_coordinate_x[enemies[i].spawn_point];
             enemies[i].y = spawn_coordinate_y[enemies[i].spawn_point];
+            enemies[i].in_house = 0;
         }
     }
 }
@@ -262,41 +303,91 @@ void (enemy_reset)(enemy_t *enemy) {
     enemy->wait = 0;
 }
 
-
 void (update_monster_pos)(){
     for(int i = 0; i < n_enemies; i++){
         if(enemies[i].alive){
             int x0 = enemies[i].x;
             int y0 = enemies[i].y;
             int range =in_range_of_player(enemies[i]);
-            if(range < DISTANCE_THRESHOLD) {
+            if(range < DISTANCE_THRESHOLD && !in_sight_of_player(enemies[i])) {
+                enemies[i].angle = get_angle_to_player(enemies[i]);
+                enemies[i].c = cos(enemies[i].angle);
+                enemies[i].s = -sin(enemies[i].angle);
+                enemies[i].x += enemies[i].speed*enemies[i].c;
+                enemies[i].y += enemies[i].speed*enemies[i].s;
                 
-                ret_pair_t r = path_to_take(enemies[i].x, enemies[i].y);
-                int x = enemies[i].x + enemies[i].xspeed*r.x;
-                int y = enemies[i].y + enemies[i].yspeed*r.y;
-                ret_pair_t r2 = is_border(x, y);
-                if(r2.x) enemies[i].x = x;
-                if(r2.y) enemies[i].y = y;
-
                 // for animation
                 if(!enemies[i].wait && range < ATTACK_THRESHOLD) enemies[i].wait = enemies[i].wait_threshold;
             }
             else {
-                int rand_x = rand() % 100 -50;
-                int rand_y = rand() % 100 -50;
-                int x = enemies[i].x + enemies[i].xspeed*rand_x;
-                int y = enemies[i].y + enemies[i].yspeed*rand_y;
-                ret_pair_t r = is_border(x, y);
-                if(r.x) enemies[i].x = x;
-                if(r.y) enemies[i].y = y;
+                /*
+                switch (enemies[i].spawn_point)
+                {
+                case 1: 
+                    enemies[i].x += enemies[i].c * enemies[i].speed;
+                    enemies[i].y += enemies[i].s * enemies[i].speed;
+                    break;
+                
+                default:
+                    break;
+                } */
+                if(!enemies[i].in_house && !enemies[i].in_house2) enemies[i].in_house = get_distance(enemies[i]);
+                if(!enemies[i].in_house && !enemies[i].in_house2) {
+                    enemies[i].x += enemies[i].c * enemies[i].speed;
+                    enemies[i].y += enemies[i].s * enemies[i].speed;
+                }
+                else {
+                    if(!enemies[i].in_house2) {
+                        enemies[i].x_entrance = house_coordinate_x2[enemies[i].spawn_point];
+                        enemies[i].y_entrance = house_coordinate_y2[enemies[i].spawn_point];
+                        enemies[i].angle = get_angle(enemies[i]);
+                        enemies[i].c = cos(enemies[i].angle);
+                        enemies[i].s = -sin(enemies[i].angle);
+                        enemies[i].in_house2 = 1;
+                    }
+
+                    enemies[i].in_house = get_distance(enemies[i]);
+                    if(!enemies[i].in_house) {
+                        enemies[i].x += enemies[i].c * enemies[i].speed;
+                        enemies[i].y += enemies[i].s * enemies[i].speed;
+                    }
+                    else {
+                        ;
+                    }
+                }              
             }
 
-            if(collision_monster_wall(enemies[i], 0)){
+            if(collision_monster_wall(enemies[i], -20)){
                 enemies[i].x = x0;
                 enemies[i].y = y0;
             }
+
+            ret_pair_t r = is_border(enemies[i].x, enemies[i].y);
+                if(!r.x) enemies[i].x = x0;
+                if(!r.y) enemies[i].y = y0;
         }
     }
+}
+
+int (in_sight_of_player)(enemy_t enemy) {
+    int x_e, y_e, x_p, y_p;
+    x_e = (int)enemy.x;
+    y_e = (int)enemy.y;
+    x_p = (int)p.x;
+    y_p = (int)p.y;
+
+    double distance_x = enemy.x - (double)p.x;
+    double distance_y = enemy.y - (double)p.y;
+
+    double distance = sqrt(distance_x*distance_x + distance_y*distance_y);
+    double angle = get_angle_two_points(x_e, y_e, x_p, y_p);
+    double c = cos(angle), s = -sin(angle);
+
+    for(double i = 0; i <= distance; i+=10) {
+        if(wall_collision(x_e + c*i, y_e + s*i)) return 1;
+    }
+    
+    return 0;
 }
 
 int (collision_monster_wall)( enemy_t enemy, int threshold) {
@@ -338,8 +429,8 @@ void (spawn_bullets)(void) {
         if(!bullets[i].fired) {
             bullets[i].fired = true;
             bullets[i].angle = get_mouse_angle(p.player_idle);
-            bullets[i].c = fm_cos(bullets[i].angle); 
-            bullets[i].s = -fm_sin(bullets[i].angle);
+            bullets[i].c = cos(bullets[i].angle); 
+            bullets[i].s = -sin(bullets[i].angle);
             bullets[i].x = p.x;
             bullets[i].y = p.y;
             sprite_set_angle(bullets[i].bullet_sprite, bullets[i].angle);
@@ -415,8 +506,8 @@ int (collision_bullet_wall)(bullet_t bullet) {
 int (collision_bullet_monster)(enemy_t enemy, bullet_t bullet) {
     double bullet_radius = fmax(sprite_get_w(bullet.bullet_sprite), sprite_get_h(bullet.bullet_sprite))/2.0;
     double monster_radius = fmax(sprite_get_w(enemy.enemy_idle), sprite_get_h(enemy.enemy_idle))/4.0;
-    double distance_x = (double)enemy.x - bullet.x;
-    double distance_y = (double)enemy.y - bullet.y;
+    double distance_x = enemy.x - bullet.x;
+    double distance_y = enemy.y - bullet.y;
     double radius = sqrt(distance_x * distance_x + distance_y * distance_y);
     return radius <= monster_radius + bullet_radius;
 }

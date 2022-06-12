@@ -17,7 +17,7 @@
 struct basic_sprite{
     uint8_t *map;
     uint16_t w, h;
-    int16_t u0, v0;
+    int16_t x_offset, y_offset;
 };
 typedef struct basic_sprite basic_sprite_t;
 
@@ -25,8 +25,7 @@ struct sprite{
     basic_sprite_t **bsp;
     uint8_t current_animation, animation, current_wait, wait;
     int16_t x, y, x_offset, y_offset; //position in screen
-    int16_t su0, sv0;
-    double theta, s, c;
+    double angle, s, c;
 };
 
 

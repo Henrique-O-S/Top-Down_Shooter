@@ -4,8 +4,6 @@
 
 #include "i8254.h"
 
-
-
 int (subscribe_timer_interrupt)(uint8_t interrupt_bit, int *interrupt_id) {
     if (interrupt_id == NULL) return 1;
     *interrupt_id = interrupt_bit;

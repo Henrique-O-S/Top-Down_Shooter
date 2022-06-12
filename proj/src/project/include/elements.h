@@ -17,7 +17,7 @@
 #define BULLET_SPEED    30
 #define SHOT_COOLDOWN   10
 #define BORDER_OFFSET   25
-#define DISTANCE_THRESHOLD   375
+#define DISTANCE_THRESHOLD 375
 #define ATTACK_THRESHOLD   175
 #define PLAYER_SPAWN_X   500
 #define PLAYER_SPAWN_Y   500
@@ -55,13 +55,11 @@ player_t p;
 
 struct enemy{
     int id;
-    int spawn_point;
+    int spawn_point, in_house, in_house2;
     sprite_t *enemy_idle;
     sprite_t *enemy_attacking;
-    int x;
-    int y;
-    int xspeed;
-    int yspeed;
+    double x, y, c, s, angle;
+    int speed, x_entrance, y_entrance;
     int alive;
     int wait, wait_threshold;
 };
@@ -78,9 +76,8 @@ struct bullet{
     int id;
     sprite_t *bullet_sprite;
     double x, y;
-    double speed;
+    double speed, angle;
     double c, s;
-    double angle;
     int fired;
     int wait, wait_threshold;
 };
@@ -108,6 +105,14 @@ struct map map;
 ret_pair_t (is_border)(int x, int y);
 
 ret_pair_t (path_to_take)(int x, int y);
+
+double get_angle(enemy_t e);
+
+double get_angle_two_points(int x, int y, int x1, int y1);
+
+double get_angle_to_player(enemy_t e);
+
+int get_distance(enemy_t e);
 
 //Elements functions
 
@@ -140,7 +145,7 @@ void (tick_cooldown)();
 
 //Monsters
 
-int (build_monsters)(int start_x, int start_y,  basic_sprite_t **idle,  basic_sprite_t **attacking);
+int (build_monsters)(basic_sprite_t **idle,  basic_sprite_t **attacking);
 
 void (draw_monsters)();
 
@@ -151,6 +156,8 @@ void (dispawn_monsters)(void);
 void (update_monster_pos)();
 
 void (enemy_reset)(enemy_t *enemy);
+
+int (in_sight_of_player)(enemy_t enemy);
 
 int (collision_monster_wall)(enemy_t enemy, int threshold);
 

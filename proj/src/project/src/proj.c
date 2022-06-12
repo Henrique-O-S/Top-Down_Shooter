@@ -74,7 +74,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
   build_map();
   build_player(500, 500, bsp_player_idle, bsp_player_shooting); 
-  build_monsters(0, 0, bsp_enemy_idle, bsp_enemy_attacking);
+  build_monsters(bsp_enemy_idle, bsp_enemy_attacking);
   build_bullets(170, 80, bsp_bullet);
 
 
@@ -86,6 +86,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
   bsp_crosshair = get_crosshair(); if(bsp_crosshair == NULL) printf("failed to get crosshair\n");
   printf("got crosshair\n");
   sp_crosshair = sprite_ctor(bsp_crosshair, 1);
+  sprite_set_pos(sp_crosshair, get_XRes()/2, get_YRes()/2);
   printf("after crosshair\n");
 
   int ipc_status, r;
@@ -109,7 +110,10 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       clear_screen();
 
                       if(game_enter){
-                        if(game_display(keys)) finished = true;
+                        if(game_display(keys)) {
+                          game_dispawn_everyting();
+                          game_enter = false;
+                        }
                       }
                       else{
                         if(menu_draw()) finished = true;
@@ -120,7 +124,6 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       
                       draw_double_buffer();
 
-                      set_no_interupts(1);
                     }
                  }
                  if(msg.m_notify.interrupts & get_irq(KBC_IRQ)){
@@ -137,7 +140,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
                     }
 
                     if(game_enter){
-                      update_player_pos();
+                      //update_player_pos();
                     }
                  }
                  if(msg.m_notify.interrupts & get_irq(MOUSE_IRQ)){
@@ -149,6 +152,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       int option = process_mouse(&pp, game_enter);
 
                       if(option == 1){
+                        set_no_interupts(1);
                         game_enter = true;
                       }
 
