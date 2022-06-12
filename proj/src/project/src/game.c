@@ -29,7 +29,7 @@ int(game_display)(keys_t *keys) {
   update_bullet_pos();
   draw_bullets();
 
-  draw_hud(player_get_health(), player_get_kills(), get_no_interupts()/60);
+  draw_hud(player_get_health(), player_get_kills(), 60-get_no_interupts()/60);
 
   sprite_set_pos(sp_crosshair, get_mouse_X(), get_mouse_Y());
   sprite_draw(sp_crosshair);

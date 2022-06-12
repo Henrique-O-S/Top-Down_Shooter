@@ -128,7 +128,7 @@ void (update_player_pos)(){
                 // enemies[i].alive = 0; //for test
                 // enemy_reset(&enemies[i]); // for test
                 
-                p.health--;
+                //p.health--;
                 if (!p.health)
                     p.alive = 0;
                     
@@ -246,7 +246,7 @@ int (build_monsters)(basic_sprite_t **idle,  basic_sprite_t **attacking) {
         m.spawn_point = i;
         m.x = 0.0;
         m.y = 0.0;
-        m.speed = 4;
+        m.speed = 6;
         m.x_entrance = 0;
         m.y_entrance = 0;
         m.alive = 0;

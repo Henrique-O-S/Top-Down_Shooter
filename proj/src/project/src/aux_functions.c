@@ -233,6 +233,7 @@ void(draw_hud)(int h, int k, int t) {
   int pos0h, pos1h, pos2h;
   int pos0k, pos1k, pos2k;
   int pos0t, pos1t, pos2t;
+  if(t < 0) t = 0;
   pos0h = h % 10;  h /=10;
   if(!h) pos1h = 0;
   else  pos1h = h % 10;  h /=10;
