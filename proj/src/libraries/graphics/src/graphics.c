@@ -356,3 +356,7 @@ void (sprite_update_animation) (sprite_t *p, int reset) {
         if(p->current_animation >= p->animation) p->current_animation = 0;
     }
 }
+
+void (sprite_choose_animation) (sprite_t *p, int animation) {
+    p->current_animation = animation;
+}

@@ -73,6 +73,8 @@ void (sprite_draw)(const sprite_t *p);
 
 void (sprite_update_animation) (sprite_t *p, int reset);
 
+void (sprite_choose_animation) (sprite_t *p, int animation);
+
 /**
  * @}
  */

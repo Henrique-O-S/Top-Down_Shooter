@@ -51,6 +51,7 @@ int (build_player)(int start_x, int start_y,  basic_sprite_t **idle,  basic_spri
     p.player_shooting = sprite_ctor(shooting, 3);
     p.wait = 0;
     p.wait_threshold = 3;
+    p.kills = 0;
     return 0; 
 }
 
@@ -59,6 +60,7 @@ void (dispawn_player)(void) {
     p.health = 3;
     p.alive = 1;
     p.cur_cooldown = 2;
+    p.kills = 0;
 }
 
 void (draw_player)(){
@@ -139,6 +141,14 @@ int (get_player_status)() {
     return p.alive;
 }
 
+int (get_game_status)() {
+    int r = 0;
+    for(int i = 0; i < n_enemies; i++) {
+        if(enemies[i].alive) r++;
+    }
+    return r;
+}
+
 int (collision_player_monster)(enemy_t enemy, player_t player) {
     double player_radius = fmax(sprite_get_w(player.player_idle), sprite_get_h(player.player_idle))/2.0;
     double monster_radius = fmax(sprite_get_w(enemy.enemy_idle), sprite_get_h(enemy.enemy_idle))/2.0;
@@ -159,6 +169,13 @@ int (collision_player_wall)(player_t player, int threshold){
     return 0;
 }
 
+int (player_get_kills)(void) {
+    return p.kills;
+}
+
+int (player_get_health)(void) {
+    return p.health;
+}
 
 ret_pair_t (is_border)(int x, int y) {
     ret_pair_t ret;
@@ -229,7 +246,7 @@ int (build_monsters)(basic_sprite_t **idle,  basic_sprite_t **attacking) {
         m.spawn_point = i;
         m.x = 0.0;
         m.y = 0.0;
-        m.speed = 7;
+        m.speed = 4;
         m.x_entrance = 0;
         m.y_entrance = 0;
         m.alive = 0;
@@ -320,17 +337,6 @@ void (update_monster_pos)(){
                 if(!enemies[i].wait && range < ATTACK_THRESHOLD) enemies[i].wait = enemies[i].wait_threshold;
             }
             else {
-                /*
-                switch (enemies[i].spawn_point)
-                {
-                case 1: 
-                    enemies[i].x += enemies[i].c * enemies[i].speed;
-                    enemies[i].y += enemies[i].s * enemies[i].speed;
-                    break;
-                
-                default:
-                    break;
-                } */
                 if(!enemies[i].in_house && !enemies[i].in_house2) enemies[i].in_house = get_distance(enemies[i]);
                 if(!enemies[i].in_house && !enemies[i].in_house2) {
                     enemies[i].x += enemies[i].c * enemies[i].speed;
@@ -357,7 +363,7 @@ void (update_monster_pos)(){
                 }              
             }
 
-            if(collision_monster_wall(enemies[i], -20)){
+            if(collision_monster_wall(enemies[i], -30)){
                 enemies[i].x = x0;
                 enemies[i].y = y0;
             }
@@ -482,6 +488,7 @@ void (update_bullet_pos)(){
             for(int j = 0; j < n_enemies; j++){
                 if(enemies[j].alive){
                     if(collision_bullet_monster(enemies[j], bullets[i])) {
+                        p.kills++;
                         bullets[i].fired = 0;
                         bullets[i].wait = 0;
                         enemies[j].alive = 0;

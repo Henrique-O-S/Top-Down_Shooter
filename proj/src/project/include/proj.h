@@ -28,8 +28,6 @@ basic_sprite_t **bsp_map;
 basic_sprite_t **bsp_highscore_menu;
 basic_sprite_t **bsp_instructions_menu;
 basic_sprite_t **bsp_gameover;
-basic_sprite_t **bsp_numbers;
-sprite_t *sp_numbers;
 sprite_t *sp_highscore_menu;
 sprite_t *sp_instructions_menu; 
 sprite_t *sp_gameover;  

@@ -8,7 +8,6 @@
 #include "map.h"
 #include "crosshair.h"
 #include "game.h"
-#include "numbers.h"
 #include "gameover.h"
 #include "highscore.h"
 #include "instructions.h"
@@ -64,8 +63,6 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
   /// SPRITES
 
-  bsp_numbers = get_number();
-  sp_numbers = sprite_ctor(bsp_numbers, 10);
 
   bsp_gameover = get_gameover();
   sp_gameover = sprite_ctor(bsp_gameover, 1);
@@ -89,6 +86,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
   sprite_set_pos(sp_map, 0, 75);
 
   set_menu();
+  game_place_everything();
 
   build_map();
   build_player(500, 500, bsp_player_idle, bsp_player_shooting); 
@@ -124,7 +122,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
              case HARDWARE: /* hardware interrupt notification */       
                  if(msg.m_notify.interrupts & get_irq(TIMER0_IRQ)){
                     timer_int_handler();
-                    if(get_no_interupts() % 3 == 0){ // the second 60 corresponds to the refresh rate
+                    if(get_no_interupts() % 2 == 0){ // the second 60 corresponds to the refresh rate
                       clear_screen();
 
                       if(game_enter){
@@ -136,6 +134,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
                       }
                       else if(gameover) {
                         sprite_draw(sp_gameover);
+                        display_score();
                       }
                       else if(instructions) {
                         sprite_draw(sp_instructions_menu);
@@ -153,7 +152,6 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
 
                       sprite_set_pos(sp_crosshair, get_mouse_X(), get_mouse_Y());
-
     
                       sprite_draw(sp_crosshair);
                       
@@ -197,7 +195,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
                         game_enter = true;
                       }
                       else if(option == 2){
-                         highscore = true;
+                        highscore = true;
                       }
                       else if(option == 3){
                         instructions = true;

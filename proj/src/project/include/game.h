@@ -21,12 +21,22 @@ int (game_display)(keys_t *keys);
 /**
  * @}
  */
+void(game_place_everything)();
+
+/**
+ * @}
+ */
 int (process_key)(const uint8_t* scancode);
 
 /**
  * @}
  */
-void(game_dispawn_everyting());
+void(game_dispawn_everyting)();
+
+/**
+ * @}
+ */
+void(display_score)();
 
 
 #endif //GAME_H_INCLUDED

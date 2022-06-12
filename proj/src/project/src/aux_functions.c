@@ -2,10 +2,75 @@
 
 #include "aux_functions.h"
 #include "mouse.h"
-
+#include "numbers.h"
 #include "menu.h"
+#include "hud.h"
+
 
 static keys_t key;
+
+text_t*(text_ctor)(int16_t x, int16_t y) {
+  text_t *t = malloc(sizeof(text_t));
+  t->numbers = NULL;
+  printf("here\n");
+  t->numbers = sprite_ctor(get_number(), 10);
+  printf("here\n");
+  sprite_set_pos(t->numbers,x, y);
+  printf("here\n");
+  t->x = x;
+  t->y = y;
+  t->pos2 = 0;
+  t->pos1 = 0;
+  t->pos0 = 0;
+
+  return t;
+}
+
+void (text_set_number)(text_t *t, int16_t pos2, int16_t pos1, int16_t pos0) {
+  t->pos2 = pos2;
+  t->pos1 = pos1;
+  t->pos0 = pos0;
+}
+
+void (text_draw)(text_t *t) {
+    int x = sprite_get_X(t->numbers);
+    int y = sprite_get_Y(t->numbers);
+    //int pos1 = x + 20, pos0 = x + 40;
+
+
+    if(!t->pos2) {
+      if(!t->pos1) {
+        sprite_set_pos(t->numbers, t->x, t->y);
+        sprite_choose_animation(t->numbers, t->pos0);
+        sprite_draw(t->numbers);
+      }
+      else {
+        sprite_set_pos(t->numbers, t->x , t->y);
+        sprite_choose_animation(t->numbers, t->pos1);
+        sprite_draw(t->numbers);
+    
+        sprite_set_pos(t->numbers, t->x + 20, t->y);
+        sprite_choose_animation(t->numbers, t->pos0);
+        sprite_draw(t->numbers);
+      }
+    }
+    else {
+
+        sprite_set_pos(t->numbers, t->x , t->y);
+        sprite_choose_animation(t->numbers, t->pos2);
+        sprite_draw(t->numbers);
+
+        sprite_set_pos(t->numbers, t->x + 20 , t->y);
+        sprite_choose_animation(t->numbers, t->pos1);
+        sprite_draw(t->numbers);
+    
+        sprite_set_pos(t->numbers, t->x + 40, t->y);
+        sprite_choose_animation(t->numbers, t->pos0);
+        sprite_draw(t->numbers);
+    }
+
+    sprite_set_pos(t->numbers, x, y);
+}
 
 void update_key_press(void) {
   if(keyboard_get_size() == 1) {
@@ -152,6 +217,74 @@ uint16_t (mouse_on_top)(){
   return 0;
 }
   
+void (set_hud)() {
+  bsp_hud = get_hud();
+  sp_hud = sprite_ctor(bsp_hud, 1);
+  bsp_numbers = get_number();
+  sp_numbers = sprite_ctor(bsp_numbers, 10);
+  p_health = text_ctor(290, 20);
+  p_kills = text_ctor(650, 20);
+  game_timer = text_ctor(460, 20);
+  end_p_kills = text_ctor(770, 335);;
+  end_game_timer = text_ctor(770, 425);;
+}
+
+void(draw_hud)(int h, int k, int t) {
+  int pos0h, pos1h, pos2h;
+  int pos0k, pos1k, pos2k;
+  int pos0t, pos1t, pos2t;
+  pos0h = h % 10;  h /=10;
+  if(!h) pos1h = 0;
+  else  pos1h = h % 10;  h /=10;
+  if(!h) pos2h = 0;
+  else  pos2h = h % 10;  h /=10;
+
+  pos0k = k % 10;  k /=10;
+  if(!k) pos1k = 0;
+  else  pos1k = k % 10;  k /=10;
+  if(!k) pos2k = 0;
+  else  pos2k = k % 10;  k /=10;
+
+  pos0t = t % 10;  t /=10;
+  if(!t) pos1t = 0;
+  else  pos1t = t % 10;  t /=10;
+  if(!t) pos2t = 0;
+  else  pos2t = t % 10;  t /=10;
+  
+
+  sprite_draw(sp_hud);
+  text_set_number(p_health, pos2h, pos1h, pos0h);
+  text_set_number(p_kills, pos2k, pos1k, pos0k);
+  text_set_number(game_timer, pos2t, pos1t, pos0t);
+  text_draw(p_health);
+  text_draw(p_kills);
+  text_draw(game_timer);
+}
+
+void(draw_end_game)(int k, int t) {
+
+  int pos0k, pos1k, pos2k;
+  int pos0t, pos1t, pos2t;
+
+  pos0k = k % 10;  k /=10;
+  if(!k) pos1k = 0;
+  else  pos1k = k % 10;  k /=10;
+  if(!k) pos2k = 0;
+  else  pos2k = k % 10;  k /=10;
+
+  pos0t = t % 10;  t /=10;
+  if(!t) pos1t = 0;
+  else  pos1t = t % 10;  t /=10;
+  if(!t) pos2t = 0;
+  else  pos2t = t % 10;  t /=10;
+  
+
+  text_set_number(end_p_kills, pos2k, pos1k, pos0k);
+  text_set_number(end_game_timer, pos2t, pos1t, pos0t);
+  text_draw(end_p_kills);
+  text_draw(end_game_timer);
+}
+
 int (map1_init)() {
   vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MENU_BACKGROUND_COLOR);
 
@@ -159,8 +292,6 @@ int (map1_init)() {
 }
 
 void (map1_background)(void) {
-
-
   switch (no_interrupts/(60)) // each 5 secs changes color
   {
   case 0: vg_draw_rectangle(0, 0, get_XRes(), get_YRes(), MAP_COL01); break;

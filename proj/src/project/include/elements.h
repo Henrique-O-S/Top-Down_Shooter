@@ -17,7 +17,7 @@
 #define BULLET_SPEED    30
 #define SHOT_COOLDOWN   10
 #define BORDER_OFFSET   25
-#define DISTANCE_THRESHOLD 375
+#define DISTANCE_THRESHOLD 500
 #define ATTACK_THRESHOLD   175
 #define PLAYER_SPAWN_X   500
 #define PLAYER_SPAWN_Y   500
@@ -35,6 +35,7 @@ typedef struct ret_pair ret_pair_t;
 struct player{
     sprite_t *player_idle;
     sprite_t *player_shooting;
+    int kills;
     int x;
     int y;
     int xMov; //can be -1, 0 or 1
@@ -134,9 +135,15 @@ void (update_player_pos)();
 
 int (get_player_status)();
 
+int (get_game_status)();
+
 int (collision_player_monster)(enemy_t enemy, player_t player);
 
 int (collision_player_wall)(player_t player, int threshold);
+
+int (player_get_kills)(void);
+
+int (player_get_health)(void);
 
 int (in_range_of_player)(enemy_t enemy);
 

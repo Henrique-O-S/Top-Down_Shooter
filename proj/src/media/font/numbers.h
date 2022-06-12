@@ -15,16 +15,16 @@
 
 static basic_sprite_t** get_number(void) {
     basic_sprite_t** ret = (basic_sprite_t**)malloc(sizeof(basic_sprite_t*) * 10);
-    ret[0] = basic_sprite_ctor((const char *const *)char0_xpm, 38, 38);
-    ret[1] = basic_sprite_ctor((const char *const *)char1_xpm, 38, 38);
-    ret[2] = basic_sprite_ctor((const char *const *)char2_xpm, 38, 38);
-    ret[3] = basic_sprite_ctor((const char *const *)char3_xpm, 38, 38);
-    ret[4] = basic_sprite_ctor((const char *const *)char4_xpm, 38, 38);
-    ret[5] = basic_sprite_ctor((const char *const *)char5_xpm, 38, 38);
-    ret[6] = basic_sprite_ctor((const char *const *)char6_xpm, 38, 38);
-    ret[7] = basic_sprite_ctor((const char *const *)char7_xpm, 38, 38);
-    ret[8] = basic_sprite_ctor((const char *const *)char8_xpm, 38, 38);
-    ret[9] = basic_sprite_ctor((const char *const *)char9_xpm, 38, 38);
+    ret[0] = basic_sprite_ctor((const char *const *)char0_xpm, 10, 10);
+    ret[1] = basic_sprite_ctor((const char *const *)char1_xpm, 10, 10);
+    ret[2] = basic_sprite_ctor((const char *const *)char2_xpm, 10, 10);
+    ret[3] = basic_sprite_ctor((const char *const *)char3_xpm, 10, 10);
+    ret[4] = basic_sprite_ctor((const char *const *)char4_xpm, 10, 10);
+    ret[5] = basic_sprite_ctor((const char *const *)char5_xpm, 10, 10);
+    ret[6] = basic_sprite_ctor((const char *const *)char6_xpm, 10, 10);
+    ret[7] = basic_sprite_ctor((const char *const *)char7_xpm, 10, 10);
+    ret[8] = basic_sprite_ctor((const char *const *)char8_xpm, 10, 10);
+    ret[9] = basic_sprite_ctor((const char *const *)char9_xpm, 10, 10);
 
     return ret;
 }
