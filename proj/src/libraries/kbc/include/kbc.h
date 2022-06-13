@@ -1,20 +1,15 @@
-/**
- * This file concerns everything related to the KBC (KeyBoard Controller, which
- * actually also manages the mouse)
- */
-
 #ifndef KBC_H_INCLUDED
 #define KBC_H_INCLUDED
 
 /**
- * @brief Unsubcribes Interrupts
- * @param interrupt_id Interrupt ID, value via arguments on subscription of the interrupt_id
- * @see subscribe_kbc_interrupt, subscribe_timer_interrupt
- * @return Whether operation was sucessful or not
+ * @defgroup kbc kbc
+ * @ingroup libraries
+ *
+ * @{
  */
-int (unsubscribe_interrupt)(int *interrupt_id);
 
 /**
+
  * @brief High-level function that reads the command byte of the KBC
  * @param cmd Pointer to variable where command byte read from KBC will be stored
  * @return 0 if operation was successful, 1 otherwise
@@ -59,5 +54,7 @@ int (kbc_issue_arg)(uint8_t arg);
  * @return 0 if operation was successful, 1 otherwise
  */
 int (kbc_read_byte)(uint8_t *byte);
+
+/**@}*/
 
 #endif //KBC_H_INCLUDED

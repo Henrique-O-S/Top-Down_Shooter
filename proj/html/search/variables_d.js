@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['p_0',['p',['../group__elements.html#ga56f5fc5c4c51589477f728309cde2c65',1,'elements.h']]],
+  ['p_5fhealth_1',['p_health',['../group__aux__functions.html#gadead8956601338a62620294f041d9a98',1,'aux_functions.h']]],
+  ['p_5fkills_2',['p_kills',['../group__aux__functions.html#ga53c5cdbb99020f14493152953e53ab47',1,'aux_functions.h']]],
+  ['packet_5fmouse_3',['packet_mouse',['../group__mouse.html#ga9badc2315839b29741a100272fb05a49',1,'packet_mouse():&#160;mouse.h'],['../mouse_8c.html#a9badc2315839b29741a100272fb05a49',1,'packet_mouse():&#160;mouse.c']]],
+  ['play_4',['play',['../group__pixmap.html#ga75daaad06d01eba71ec53ed9464660dc',1,'pixmap.h']]],
+  ['player_5fidle_5',['player_idle',['../structplayer.html#a8d13cad460e844c4f232405a1bc5b843',1,'player']]],
+  ['player_5fkills_6',['player_kills',['../game_8c.html#a7d8e33f5690eeec0f2ff8871e1f902fe',1,'game.c']]],
+  ['player_5fshooting_7',['player_shooting',['../structplayer.html#ab2e4afe3349025acf52d9905b3391ef1',1,'player']]],
+  ['pos0_8',['pos0',['../structtext.html#a5460de2ff04eab27259a601be527c76c',1,'text::pos0()'],['../structdate.html#a827b2d06a7d66108e6c8d8de8650e189',1,'date::pos0()']]],
+  ['pos1_9',['pos1',['../structtext.html#af1f08c3e4c29b9bfa62dd753be14bf99',1,'text::pos1()'],['../structdate.html#acf0c3e7078fd7fdaa4869b8281033238',1,'date::pos1()']]],
+  ['pos2_10',['pos2',['../structtext.html#a670f58585b9913bb765b45358eb1b1cb',1,'text::pos2()'],['../structdate.html#a2cd0683e67c4d1db0e24730dae7d2762',1,'date::pos2()']]],
+  ['pos3_11',['pos3',['../structdate.html#a5f45c0363c19a3a8ba3cf59ebde51332',1,'date']]],
+  ['pos4_12',['pos4',['../structdate.html#a47f85a55712d603b1376b18d7e9062d0',1,'date']]],
+  ['pos5_13',['pos5',['../structdate.html#aa5a918e9837712e0485fb80db06bf6eb',1,'date']]],
+  ['pos6_14',['pos6',['../structdate.html#ad83067cf1b5ea845813c25d2e1315ef7',1,'date']]],
+  ['pos7_15',['pos7',['../structdate.html#aa41156cddd4bc80774ea588392f751f2',1,'date']]],
+  ['pos8_16',['pos8',['../structdate.html#ac2daa28c8301f60588f9e336b3f2df9f',1,'date']]],
+  ['pos9_17',['pos9',['../structdate.html#a1b427b4f481f634b1c4039cad47956d3',1,'date']]]
+];

@@ -1,0 +1,7 @@
+<map id="mouse_issue_cmd" name="mouse_issue_cmd">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,136,83"/>
+<area shape="rect" id="node2" href="$group__kbc.html#ga081c509c47a33f55ca8756f2d8a21fa6" title="Low&#45;level function to issue an argument of a command." alt="" coords="193,5,300,32"/>
+<area shape="rect" id="node4" href="$group__kbc.html#gabf6e77da648ded62b65bdb3f9a437424" title="Low&#45;level function to issue a command to keyboard." alt="" coords="190,56,303,83"/>
+<area shape="rect" id="node5" href="$group__mouse.html#ga7c0b89b2552784fdc6cf5143d0fff378" title=" " alt="" coords="184,107,309,133"/>
+<area shape="rect" id="node3" href="$group__utils.html#ga79a031a8611f5b2d6afa4158e92b0fb4" title="sys_inb wrapper" alt="" coords="357,56,448,83"/>
+</map>

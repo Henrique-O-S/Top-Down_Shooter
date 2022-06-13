@@ -1,0 +1,45 @@
+\hypertarget{mouse__macros_8h_source}{}\doxysection{mouse\+\_\+macros.\+h}
+\label{mouse__macros_8h_source}\index{libraries/kbc/include/mouse\_macros.h@{libraries/kbc/include/mouse\_macros.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MOUSE\_MACROS\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MOUSE\_MACROS\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define MOUSE\_IRQ 12}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{/* Mouse Data Packet */}}
+\DoxyCodeLine{14 \textcolor{comment}{// Byte 0 -\/ Button States}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define LEFT\_BUTTON     BIT(0) }\textcolor{comment}{/* @brief Left button click event*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define RIGHT\_BUTTON    BIT(1) }\textcolor{comment}{/* @brief Right button click event */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define MIDDLE\_BUTTON   BIT(2) }\textcolor{comment}{/* @brief Middle button click event */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define FIRST\_BYTE\_ID   BIT(3) }\textcolor{comment}{/* @brief Identifier of first byte of packet CAREFUL: Not 100\% accurate */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define MSB\_X\_DELTA     BIT(4) }\textcolor{comment}{/* @brief Most significant bit of X delta */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define MSB\_Y\_DELTA     BIT(5) }\textcolor{comment}{/* @brief Most significant bit of Y delta */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define X\_OVERFLOW      BIT(6) }\textcolor{comment}{/* @brief X delta overflowed */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define Y\_OVERFLOW      BIT(7) }\textcolor{comment}{/* @brief Y delta overflowed */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{23 \textcolor{comment}{// Byte 1 -\/ X delta}}
+\DoxyCodeLine{24 \textcolor{comment}{// Byte 2 -\/ Y delta}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{/* Mouse Commands */}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define RESET           0xFF }\textcolor{comment}{/* @brief Reset mouse */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define RESEND          0xFE }\textcolor{comment}{/* @brief Resend command */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define DEFAULT         0xF6 }\textcolor{comment}{/* @brief Set default values */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define DIS\_DATA\_REP    0xF5 }\textcolor{comment}{/* @brief Disable Data Reporting */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define ENABLE\_DATA\_REP 0xF4 }\textcolor{comment}{/* @brief Enable Data Reporting */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define SET\_SAMPLE\_RT   0xF3 }\textcolor{comment}{/* @brief Sets state sampling rate */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define SET\_REMOTE\_MD   0xF0 }\textcolor{comment}{/* @brief Sets Mouse on Remote Mode, data on request */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define READ\_DATA       0xEB }\textcolor{comment}{/* @brief Sends data packet request */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define SET\_STREAM\_MD   0xEA }\textcolor{comment}{/* @brief Sets mouse on Stream Mode, data on events */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define STATUS\_REQUEST  0xE9 }\textcolor{comment}{/* @brief Get mouse configuration */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define SET\_RESOLUTION  0xE8 }\textcolor{comment}{/* @brief Sets resolution for mouse movement */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define SCALING\_ACC\_MD  0xE7 }\textcolor{comment}{/* @brief Sets scaling on acceleration mode */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define SCALING\_LIN\_MD  0xE6 }\textcolor{comment}{/* @brief Sets scaling on linear mode */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{comment}{/* Mouse Controller Responses */}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define ACK\_OK      0xFA }\textcolor{comment}{/* @brief Operation sucessful */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define ACK\_INVALID 0xFE }\textcolor{comment}{/* @brief Invalid Byte, first occurence */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define ACK\_ERROR   0xFC }\textcolor{comment}{/* @brief Invalid Byte on resend */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MOUSE\_MACROS\_H\_INCLUDED}}
+
+\end{DoxyCode}

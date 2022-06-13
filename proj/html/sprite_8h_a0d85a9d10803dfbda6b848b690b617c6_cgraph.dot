@@ -1,0 +1,16 @@
+digraph "sprite_draw"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="sprite_draw",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="get_XRes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$graphics_8c.html#a1e78ad9ed25b03687bc0b0d06b3957e4",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="get_YRes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$graphics_8c.html#aff98c1ed5146900037a3747de30f6a79",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="set_pixel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$graphics_8c.html#ab202e9acd2a0826e183d01a13930d5d6",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="get_bytes_pixel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$graphics_8c.html#afa7636d40c82e2b1a63585e2ad8138ff",tooltip=" "];
+}

@@ -1,0 +1,10 @@
+digraph "vg_draw_rectangle"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="vg_draw_rectangle",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="aux function to draw rectangle into the buffer"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="draw_menu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__aux__functions.html#ga8b436345808e86cfdb278061a65a0fe7",tooltip="Draws Main Menu."];
+}

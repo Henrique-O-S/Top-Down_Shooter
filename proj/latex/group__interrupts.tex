@@ -1,0 +1,157 @@
+\hypertarget{group__interrupts}{}\doxysection{interrupts}
+\label{group__interrupts}\index{interrupts@{interrupts}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__interrupts_gaa47d951ed5ee7678663adf66785022f4}{subscribe\+\_\+all}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\begin{DoxyCompactList}\small\item\em Subscribes all drivers used (timer-\/\texorpdfstring{$>$}{>}keyboard-\/\texorpdfstring{$>$}{>}mouse) \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__interrupts_gadd6f2c43bcf6aa436d16dd18edbeea81}{unsubscribe\+\_\+all}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\begin{DoxyCompactList}\small\item\em Unsubscribes all subscribed interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__interrupts_ga0c400925da5041db14dfec219817f3ee}{get\+\_\+irq}} (int id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{group__interrupts_ga724d31681653653604a2b744c259cd16}{timer\+\_\+id}}
+\item 
+static int \mbox{\hyperlink{group__interrupts_gabbcbf83119b95ef024b7095128a21fda}{kbc\+\_\+id}}
+\item 
+static int \mbox{\hyperlink{group__interrupts_ga8e79a262db698503cde2128f159e63f5}{mouse\+\_\+id}}
+\item 
+static int \mbox{\hyperlink{group__interrupts_ga32ef5092702c59ada428caef6c515382}{rtc\+\_\+id}}
+\item 
+static int \mbox{\hyperlink{group__interrupts_ga2ed7f85685b1cc595a870fc8bc385167}{timer\+\_\+subscription}}
+\item 
+static int \mbox{\hyperlink{group__interrupts_gaedf8670fc8b713d894942d40cf66a210}{keyboard\+\_\+subscription}}
+\item 
+static int \mbox{\hyperlink{group__interrupts_gacbae20bbcb6c3feb37d09ee2a37b7b1c}{mouse\+\_\+subscription}}
+\item 
+static int \mbox{\hyperlink{group__interrupts_gaf112b12f61d2a4e217d4d4b58661ca5b}{rtc\+\_\+subscription}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__interrupts_ga0c400925da5041db14dfec219817f3ee}\label{group__interrupts_ga0c400925da5041db14dfec219817f3ee}} 
+\index{interrupts@{interrupts}!get\_irq@{get\_irq}}
+\index{get\_irq@{get\_irq}!interrupts@{interrupts}}
+\doxysubsubsection{\texorpdfstring{get\_irq()}{get\_irq()}}
+{\footnotesize\ttfamily int() get\+\_\+irq (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{group__interrupts_ga0c400925da5041db14dfec219817f3ee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__interrupts_gaa47d951ed5ee7678663adf66785022f4}\label{group__interrupts_gaa47d951ed5ee7678663adf66785022f4}} 
+\index{interrupts@{interrupts}!subscribe\_all@{subscribe\_all}}
+\index{subscribe\_all@{subscribe\_all}!interrupts@{interrupts}}
+\doxysubsubsection{\texorpdfstring{subscribe\_all()}{subscribe\_all()}}
+{\footnotesize\ttfamily int() subscribe\+\_\+all (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Subscribes all drivers used (timer-\/\texorpdfstring{$>$}{>}keyboard-\/\texorpdfstring{$>$}{>}mouse) 
+
+\begin{DoxyReturn}{Returns}
+Returns 0 if succeded, non 0 other wise; 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__interrupts_gaa47d951ed5ee7678663adf66785022f4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{group__interrupts_gaa47d951ed5ee7678663adf66785022f4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__interrupts_gadd6f2c43bcf6aa436d16dd18edbeea81}\label{group__interrupts_gadd6f2c43bcf6aa436d16dd18edbeea81}} 
+\index{interrupts@{interrupts}!unsubscribe\_all@{unsubscribe\_all}}
+\index{unsubscribe\_all@{unsubscribe\_all}!interrupts@{interrupts}}
+\doxysubsubsection{\texorpdfstring{unsubscribe\_all()}{unsubscribe\_all()}}
+{\footnotesize\ttfamily int() unsubscribe\+\_\+all (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Unsubscribes all subscribed interrupts. 
+
+\begin{DoxyReturn}{Returns}
+Returns 0 if succeded, non 0 other wise; 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__interrupts_gadd6f2c43bcf6aa436d16dd18edbeea81_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__interrupts_gadd6f2c43bcf6aa436d16dd18edbeea81_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group__interrupts_gabbcbf83119b95ef024b7095128a21fda}\label{group__interrupts_gabbcbf83119b95ef024b7095128a21fda}} 
+\index{interrupts@{interrupts}!kbc\_id@{kbc\_id}}
+\index{kbc\_id@{kbc\_id}!interrupts@{interrupts}}
+\doxysubsubsection{\texorpdfstring{kbc\_id}{kbc\_id}}
+{\footnotesize\ttfamily int kbc\+\_\+id\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__interrupts_gaedf8670fc8b713d894942d40cf66a210}\label{group__interrupts_gaedf8670fc8b713d894942d40cf66a210}} 
+\index{interrupts@{interrupts}!keyboard\_subscription@{keyboard\_subscription}}
+\index{keyboard\_subscription@{keyboard\_subscription}!interrupts@{interrupts}}
+\doxysubsubsection{\texorpdfstring{keyboard\_subscription}{keyboard\_subscription}}
+{\footnotesize\ttfamily int keyboard\+\_\+subscription\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__interrupts_ga8e79a262db698503cde2128f159e63f5}\label{group__interrupts_ga8e79a262db698503cde2128f159e63f5}} 
+\index{interrupts@{interrupts}!mouse\_id@{mouse\_id}}
+\index{mouse\_id@{mouse\_id}!interrupts@{interrupts}}
+\doxysubsubsection{\texorpdfstring{mouse\_id}{mouse\_id}}
+{\footnotesize\ttfamily int mouse\+\_\+id\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__interrupts_gacbae20bbcb6c3feb37d09ee2a37b7b1c}\label{group__interrupts_gacbae20bbcb6c3feb37d09ee2a37b7b1c}} 
+\index{interrupts@{interrupts}!mouse\_subscription@{mouse\_subscription}}
+\index{mouse\_subscription@{mouse\_subscription}!interrupts@{interrupts}}
+\doxysubsubsection{\texorpdfstring{mouse\_subscription}{mouse\_subscription}}
+{\footnotesize\ttfamily int mouse\+\_\+subscription\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__interrupts_ga32ef5092702c59ada428caef6c515382}\label{group__interrupts_ga32ef5092702c59ada428caef6c515382}} 
+\index{interrupts@{interrupts}!rtc\_id@{rtc\_id}}
+\index{rtc\_id@{rtc\_id}!interrupts@{interrupts}}
+\doxysubsubsection{\texorpdfstring{rtc\_id}{rtc\_id}}
+{\footnotesize\ttfamily int rtc\+\_\+id\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__interrupts_gaf112b12f61d2a4e217d4d4b58661ca5b}\label{group__interrupts_gaf112b12f61d2a4e217d4d4b58661ca5b}} 
+\index{interrupts@{interrupts}!rtc\_subscription@{rtc\_subscription}}
+\index{rtc\_subscription@{rtc\_subscription}!interrupts@{interrupts}}
+\doxysubsubsection{\texorpdfstring{rtc\_subscription}{rtc\_subscription}}
+{\footnotesize\ttfamily int rtc\+\_\+subscription\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__interrupts_ga724d31681653653604a2b744c259cd16}\label{group__interrupts_ga724d31681653653604a2b744c259cd16}} 
+\index{interrupts@{interrupts}!timer\_id@{timer\_id}}
+\index{timer\_id@{timer\_id}!interrupts@{interrupts}}
+\doxysubsubsection{\texorpdfstring{timer\_id}{timer\_id}}
+{\footnotesize\ttfamily int timer\+\_\+id\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{group__interrupts_ga2ed7f85685b1cc595a870fc8bc385167}\label{group__interrupts_ga2ed7f85685b1cc595a870fc8bc385167}} 
+\index{interrupts@{interrupts}!timer\_subscription@{timer\_subscription}}
+\index{timer\_subscription@{timer\_subscription}!interrupts@{interrupts}}
+\doxysubsubsection{\texorpdfstring{timer\_subscription}{timer\_subscription}}
+{\footnotesize\ttfamily int timer\+\_\+subscription\hspace{0.3cm}{\ttfamily [static]}}
+

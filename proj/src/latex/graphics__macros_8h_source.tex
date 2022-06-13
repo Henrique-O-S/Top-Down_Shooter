@@ -1,0 +1,97 @@
+\hypertarget{graphics__macros_8h_source}{}\doxysection{graphics\+\_\+macros.\+h}
+\label{graphics__macros_8h_source}\index{libraries/graphics/include/graphics\_macros.h@{libraries/graphics/include/graphics\_macros.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GRAPHICS\_MACROS\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GRAPHICS\_MACROS\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{11 \textcolor{comment}{// Bios Services/Calls}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define VC\_BIOS\_SERV  0x10 }}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define VBE\_CALL 0x4F }}
+\DoxyCodeLine{17 \textcolor{comment}{// Graphics Functions}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define VBE\_CTRL\_INFO 0x00 }}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define VBE\_MD\_INFO 0x01 }}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define FUNC\_02 0x02 }}
+\DoxyCodeLine{23 \textcolor{comment}{// Graphics modes}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define INDEXED\_1024\_768        0x105}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define DIRECT\_640\_480          0x110}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define DIRECT\_800\_600          0x115}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define DIRECT\_1024\_768\_888     0x118}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define DIRECT\_1280\_1024\_565    0x11A}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define DIRECT\_1280\_1024\_888    0x11B}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define LINEAR\_FRAME\_BUFFER\_MD  BIT(14)}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{// Color}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define BLACK 0x00000000}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define MENU\_BACKGROUND\_COLOR 0x0ABAB5}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define MENU\_OPTION\_COLOR 0xFF0000}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define PLAY\_COLOR 0x93c47d}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define EXIT\_COLOR 0x93c47d}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define SELECTED\_COLOR 0xffff00}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define MAP\_COL01 0x030400}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define MAP\_COL02 0x080a00}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define MAP\_COL03 0x0b0f00}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define MAP\_COL04 0x0f1400}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define MAP\_COL05 0x131a00}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define MAP\_COL06 0x171f00}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define MAP\_COL07 0x182100}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define MAP\_COL08 0x1a2400}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define MAP\_COL09 0x1e2900}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define MAP\_COL10 0x222e00}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define MAP\_COL11 0x263301}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define MAP\_COL12 0x293801}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define MAP\_COL13 0x2d3d01}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define MAP\_COL14 0x314201}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define MAP\_COL15 0x354701}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define MAP\_COL16 0x384d01}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define MAP\_COL17 0x3c5201}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define MAP\_COL18 0x405701}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define MAP\_COL19 0x445c01}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define MAP\_COL20 0x476101}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define MAP\_COL21 0x4b6601}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define MAP\_COL22 0x4f6b01}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define MAP\_COL23 0x537001}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define MAP\_COL24 0x567501}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define MAP\_COL25 0x5a7a01}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define MAP\_COL26 0x5e8001}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define MAP\_COL27 0x628501}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define MAP\_COL28 0x658a01}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define MAP\_COL29 0x698f01}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define MAP\_COL30 0x6d9401}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define MAP\_COL31 0x719902}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define MAP\_COL32 0x749e02}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define MAP\_COL33 0x78a302}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define MAP\_COL34 0x7aa602}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define MAP\_COL35 0x7ca802}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define MAP\_COL36 0x7eab02}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define MAP\_COL37 0x80ad02}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define MAP\_COL38 0x81b002}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define MAP\_COL39 0x83b302}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define MAP\_COL40 0x85b502}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define MAP\_COL41 0x87b802}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define MAP\_COL42 0x8bbd02}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define MAP\_COL43 0x8fc202}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define MAP\_COL44 0x91c402}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define MAP\_COL45 0x92c702}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define MAP\_COL46 0x94c902}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define MAP\_COL47 0x96cc02}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define MAP\_COL48 0x9ad102}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define MAP\_COL49 0x9ed602}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define MAP\_COL50 0xa1db02}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define MAP\_COL51 0xa5e002}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define MAP\_COL52 0xa9e502}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define MAP\_COL53 0xadeb02}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define MAP\_COL54 0xafed02}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define MAP\_COL55 0xb0f002}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define MAP\_COL56 0xb4f502}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define MAP\_COL57 0xb6f702}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define MAP\_COL58 0xb8fa02}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define MAP\_COL59 0xbafc03}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define MAP\_COL60 0xbcff03}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//GRAPHICS\_MACROS\_H\_INCLUDED}}
+
+\end{DoxyCode}

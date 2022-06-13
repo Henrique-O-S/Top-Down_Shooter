@@ -1,0 +1,62 @@
+\hypertarget{kbd_8c}{}\doxysection{src/libraries/kbc/src/kbd.c File Reference}
+\label{kbd_8c}\index{src/libraries/kbc/src/kbd.c@{src/libraries/kbc/src/kbd.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/kbd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/kbc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/kbc\+\_\+macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}aux\+\_\+functions.\+h\char`\"{}}\newline
+Include dependency graph for kbd.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbd_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__kbd_gab35cfc697428fac7727ef5a6411b86f0}{subscribe\+\_\+kbc\+\_\+interrupt}} (uint8\+\_\+t interrupt\+\_\+bit, int $\ast$interrupt\+\_\+id)
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__kbd_ga5761bd4aad91ac1d68916ad88f583d9f}{kbc\+\_\+ih}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+int() \mbox{\hyperlink{group__kbd_gac83c39ace6f539167f5cc34f6c689cd2}{keyboard\+\_\+poll}} (uint8\+\_\+t bytes\mbox{[}$\,$\mbox{]}, uint8\+\_\+t $\ast$size)
+\item 
+const uint8\+\_\+t $\ast$ \mbox{\hyperlink{group__kbd_gaf9fae340464cde05ae307740c23e57b8}{get\+\_\+scancode}} ()
+\item 
+int \mbox{\hyperlink{group__kbd_ga6b5a3839c3253ab21aa69739a1cdfa0f}{keyboard\+\_\+get\+\_\+done}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+int \mbox{\hyperlink{group__kbd_ga2ebba414b43d0a512cbf6ed4fc93ff61}{keyboard\+\_\+get\+\_\+size}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+int \mbox{\hyperlink{group__kbd_ga92aeaf639bfed417b8a439361f92f221}{keyboard\+\_\+get\+\_\+error}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{kbd_8c_a5992b274cfdcacdbc1fa8347fd01ebde}{done}} = 1
+\item 
+int \mbox{\hyperlink{kbd_8c_a0e1ea19fb9fa7881d15d84eff4c090e1}{sz}} = 1
+\item 
+int \mbox{\hyperlink{kbd_8c_a6729a7041834743f389446708ab0b24d}{got\+\_\+error\+\_\+keyboard}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{kbd_8c_a5992b274cfdcacdbc1fa8347fd01ebde}\label{kbd_8c_a5992b274cfdcacdbc1fa8347fd01ebde}} 
+\index{kbd.c@{kbd.c}!done@{done}}
+\index{done@{done}!kbd.c@{kbd.c}}
+\doxysubsubsection{\texorpdfstring{done}{done}}
+{\footnotesize\ttfamily int done = 1}
+
+\mbox{\Hypertarget{kbd_8c_a6729a7041834743f389446708ab0b24d}\label{kbd_8c_a6729a7041834743f389446708ab0b24d}} 
+\index{kbd.c@{kbd.c}!got\_error\_keyboard@{got\_error\_keyboard}}
+\index{got\_error\_keyboard@{got\_error\_keyboard}!kbd.c@{kbd.c}}
+\doxysubsubsection{\texorpdfstring{got\_error\_keyboard}{got\_error\_keyboard}}
+{\footnotesize\ttfamily int got\+\_\+error\+\_\+keyboard = 0}
+
+\mbox{\Hypertarget{kbd_8c_a0e1ea19fb9fa7881d15d84eff4c090e1}\label{kbd_8c_a0e1ea19fb9fa7881d15d84eff4c090e1}} 
+\index{kbd.c@{kbd.c}!sz@{sz}}
+\index{sz@{sz}!kbd.c@{kbd.c}}
+\doxysubsubsection{\texorpdfstring{sz}{sz}}
+{\footnotesize\ttfamily int sz = 1}
+

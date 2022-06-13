@@ -1,0 +1,176 @@
+\hypertarget{elements_8h_source}{}\doxysection{elements.\+h}
+\label{elements_8h_source}\index{project/include/elements.h@{project/include/elements.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef ELEMENTS\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define ELEMENTS\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}libraries.h"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}aux\_functions.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{//game macros}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define PLAYER\_SPEED    5}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define ENEMY\_SPEED   4}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define BULLET\_SPEED    30}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define SHOT\_COOLDOWN   10}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define BORDER\_OFFSET   25}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define DISTANCE\_THRESHOLD 500}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define ATTACK\_THRESHOLD   175}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define PLAYER\_SPAWN\_X   500}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define PLAYER\_SPAWN\_Y   500}}
+\DoxyCodeLine{24 \textcolor{comment}{//structs}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{struct }\mbox{\hyperlink{structret__pair}{ret\_pair}}\{}
+\DoxyCodeLine{29     \textcolor{keywordtype}{int} x;}
+\DoxyCodeLine{30     \textcolor{keywordtype}{int} y;}
+\DoxyCodeLine{31 \};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{37 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structret__pair}{ret\_pair}} \mbox{\hyperlink{structret__pair}{ret\_pair\_t}};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{struct }\mbox{\hyperlink{structplayer}{player}}\{}
+\DoxyCodeLine{40     \mbox{\hyperlink{structsprite}{sprite\_t}} *player\_idle;}
+\DoxyCodeLine{41     \mbox{\hyperlink{structsprite}{sprite\_t}} *player\_shooting;}
+\DoxyCodeLine{42     \textcolor{keywordtype}{int} kills;}
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} x;}
+\DoxyCodeLine{44     \textcolor{keywordtype}{int} y;}
+\DoxyCodeLine{45     \textcolor{keywordtype}{int} xMov; \textcolor{comment}{//can be -\/1, 0 or 1}}
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} yMov; \textcolor{comment}{//can be -\/1, 0 or 1}}
+\DoxyCodeLine{47     \textcolor{keywordtype}{int} speed;}
+\DoxyCodeLine{48     \textcolor{comment}{//Shot cooldown is number of frames between shooting and when the player can shoot again}}
+\DoxyCodeLine{49     \textcolor{keywordtype}{int} shot\_cooldown, cur\_cooldown;}
+\DoxyCodeLine{50     \textcolor{keywordtype}{int} alive, health;}
+\DoxyCodeLine{51     \textcolor{keywordtype}{int} wait, wait\_threshold;}
+\DoxyCodeLine{52 \};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{58 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structplayer}{player}} \mbox{\hyperlink{structplayer}{player\_t}};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \mbox{\hyperlink{structplayer}{player\_t}} p;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{keyword}{struct }\mbox{\hyperlink{structenemy}{enemy}}\{}
+\DoxyCodeLine{63     \textcolor{keywordtype}{int} id;}
+\DoxyCodeLine{64     \textcolor{keywordtype}{int} spawn\_point, in\_house, in\_house2;}
+\DoxyCodeLine{65     \mbox{\hyperlink{structsprite}{sprite\_t}} *enemy\_idle;}
+\DoxyCodeLine{66     \mbox{\hyperlink{structsprite}{sprite\_t}} *enemy\_attacking;}
+\DoxyCodeLine{67     \textcolor{keywordtype}{double} x, y, c, s, angle;}
+\DoxyCodeLine{68     \textcolor{keywordtype}{int} speed, x\_entrance, y\_entrance;}
+\DoxyCodeLine{69     \textcolor{keywordtype}{int} alive;}
+\DoxyCodeLine{70     \textcolor{keywordtype}{int} wait, wait\_threshold;}
+\DoxyCodeLine{71 \};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{77 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structenemy}{enemy}} \mbox{\hyperlink{structenemy}{enemy\_t}};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{keywordtype}{int} n\_enemies;}
+\DoxyCodeLine{80 \mbox{\hyperlink{structenemy}{enemy\_t}} enemies[10]; \textcolor{comment}{//enemy size got to be equal to n\_enemies}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{keyword}{struct }\mbox{\hyperlink{structbullet}{bullet}}\{}
+\DoxyCodeLine{83     \textcolor{keywordtype}{int} id;}
+\DoxyCodeLine{84     \mbox{\hyperlink{structsprite}{sprite\_t}} *bullet\_sprite;}
+\DoxyCodeLine{85     \textcolor{keywordtype}{double} x, y;}
+\DoxyCodeLine{86     \textcolor{keywordtype}{double} speed, angle;}
+\DoxyCodeLine{87     \textcolor{keywordtype}{double} c, s;}
+\DoxyCodeLine{88     \textcolor{keywordtype}{int} fired;}
+\DoxyCodeLine{89     \textcolor{keywordtype}{int} wait, wait\_threshold;}
+\DoxyCodeLine{90 \};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{96 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{structbullet}{bullet\_t}};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{keywordtype}{int} n\_bullets;}
+\DoxyCodeLine{99 \mbox{\hyperlink{structbullet}{bullet\_t}} bullets[5]; \textcolor{comment}{//bullets size got to be equal to n\_bullets}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{comment}{//is in single bullet mode which means only one bullet can be shot at a time}}
+\DoxyCodeLine{102 \textcolor{comment}{//bullet limits can be changed by increasing n\_bullets}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{keyword}{struct }\mbox{\hyperlink{structmap}{map}}\{}
+\DoxyCodeLine{105     \mbox{\hyperlink{structsprite}{sprite\_t}} *background;}
+\DoxyCodeLine{106     uint8\_t *walls;}
+\DoxyCodeLine{107 \};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{113 \textcolor{keyword}{struct }\mbox{\hyperlink{structmap}{map}} \mbox{\hyperlink{structmap}{map}};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{comment}{//Aux functions}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{120 \mbox{\hyperlink{group__elements_gae82a683cc51eb7f73ffc6bbb470bdcda}{ret\_pair\_t}} (\mbox{\hyperlink{group__elements_gaefd042701d43329a869bfc984c707991}{is\_border}})(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{125 \textcolor{keywordtype}{double} \mbox{\hyperlink{group__elements_gae0dac1708fbe2a046854077e7ecbc0d2}{get\_angle}}(\mbox{\hyperlink{structenemy}{enemy\_t}} e);}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{130 \textcolor{keywordtype}{double} \mbox{\hyperlink{group__elements_ga3e4354fb607b4fce626593db3cd13036}{get\_angle\_two\_points}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} x1, \textcolor{keywordtype}{int} y1);}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{135 \textcolor{keywordtype}{double} \mbox{\hyperlink{group__elements_ga68d3b014b391718c3b3c2494f1a82074}{get\_angle\_to\_player}}(\mbox{\hyperlink{structenemy}{enemy\_t}} e);}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{140 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__elements_ga232cb07c89a848cf1feb7f84e2c135fe}{get\_distance}}(\mbox{\hyperlink{structenemy}{enemy\_t}} e);}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{comment}{//Elements functions}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{147 void (\mbox{\hyperlink{group__elements_gaa9cc820ca222189d0563d9cfe365a92e}{build\_map}})();}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{152 void (\mbox{\hyperlink{group__elements_ga3b11d835d79f07bc68a7411380ab079f}{draw\_map}})();}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 \textcolor{comment}{//Player}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{159 int (\mbox{\hyperlink{group__elements_ga151be3f921bf438accdb3df006886671}{build\_player}})(\textcolor{keywordtype}{int} start\_x, \textcolor{keywordtype}{int} start\_y,  \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}} **idle,  \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}} **shooting);}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{164 void (\mbox{\hyperlink{group__elements_ga376d69c2a7a538c8eac0b0b4eeecd92d}{despawn\_player}})(void);}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{169 void (\mbox{\hyperlink{group__elements_gabd47ce64b64a5dcb39f1129a92eaad3b}{draw\_player}})();}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{174 void (\mbox{\hyperlink{group__elements_ga6b811a4bbaec41619a5ff000813ae112}{update\_player}})(\mbox{\hyperlink{structkeys}{keys\_t}} *\mbox{\hyperlink{structkeys}{keys}});}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{179 void (\mbox{\hyperlink{group__elements_ga2dcbae50a90d8664f409cacb03aef5f0}{update\_player\_pos}})();}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{184 int (\mbox{\hyperlink{group__elements_gaee839e89257b78e751b27dc840b28ece}{get\_player\_status}})();}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{189 int (\mbox{\hyperlink{group__elements_ga5dba4439f40be12c1b51d4015f21bfa7}{get\_enemies\_alive}})();}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{194 int (\mbox{\hyperlink{group__elements_ga92a08df434beb84ee099d8b42a9ea591}{collision\_player\_enemy}})(\mbox{\hyperlink{structenemy}{enemy\_t}} \mbox{\hyperlink{structenemy}{enemy}}, \mbox{\hyperlink{structplayer}{player\_t}} \mbox{\hyperlink{structplayer}{player}});}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{199 int (\mbox{\hyperlink{group__elements_gaab4a77fca8a5a695b4db1f62bff0b2a9}{collision\_player\_wall}})(\mbox{\hyperlink{structplayer}{player\_t}} \mbox{\hyperlink{structplayer}{player}}, \textcolor{keywordtype}{int} threshold);}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{204 int (\mbox{\hyperlink{group__elements_gaf8a181a7d6795c7d3c5d636133530a98}{player\_get\_kills}})(void);}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{209 int (\mbox{\hyperlink{group__elements_gaba86813a27d4869e71be86e0f481e8a0}{player\_get\_health}})(void);}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{214 int (\mbox{\hyperlink{group__elements_gaed39f5647ba1389c4f630492902c69f6}{in\_range\_of\_player}})(\mbox{\hyperlink{structenemy}{enemy\_t}} \mbox{\hyperlink{structenemy}{enemy}});}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{219 void (\mbox{\hyperlink{group__elements_ga2a7787e00191dc02f23bf13ffd53f072}{tick\_cooldown}})();}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 \textcolor{comment}{//Monsters}}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{226 int (\mbox{\hyperlink{group__elements_ga1eed60a7b4449704210dbec3e9eef30e}{build\_enemies}})(\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}} **idle,  \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}} **attacking);}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{231 void (\mbox{\hyperlink{group__elements_ga6269d449cf87c82827507d14986e349d}{draw\_enemies}})();}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{236 void (\mbox{\hyperlink{group__elements_ga6d8b80d7c68beff8bcfd57116796c2ae}{spawn\_enemies}})(void);}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{241 void (\mbox{\hyperlink{group__elements_ga7da15278550e3cf51c6c15c130da16ff}{despawn\_enemies}})(void);}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{246 void (\mbox{\hyperlink{group__elements_ga75f4b25d3615afbf98cf7c4b720261d9}{update\_enemy\_pos}})();}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{251 int (\mbox{\hyperlink{group__elements_ga8e4712871418dcc7d5fb3a072b468601}{in\_sight\_of\_player}})(\mbox{\hyperlink{structenemy}{enemy\_t}} \mbox{\hyperlink{structenemy}{enemy}});}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{256 int (\mbox{\hyperlink{group__elements_ga3ec2d05dd6ff70dcdd5073c3e09f07db}{collision\_enemy\_wall}})(\mbox{\hyperlink{structenemy}{enemy\_t}} \mbox{\hyperlink{structenemy}{enemy}}, \textcolor{keywordtype}{int} threshold);}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258 \textcolor{comment}{//Bullet}}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{263 int (\mbox{\hyperlink{group__elements_gabb16c955532dc3bd8792020db469174b}{build\_bullets}})(\textcolor{keywordtype}{int} startx, \textcolor{keywordtype}{int} starty,  \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}} **\mbox{\hyperlink{structsprite}{sprite}});}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{268 void (\mbox{\hyperlink{group__elements_gac833fc6b98694f7e6cb26e54f6e19b04}{spawn\_bullet}})();}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{273 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__elements_ga377d41d4a15324537b316bfc7a421168}{despawn\_bullets}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{278 void (\mbox{\hyperlink{group__elements_ga284ddfc73c5ee0be160e0bb766d231e4}{draw\_bullets}})();}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{283 void (\mbox{\hyperlink{group__elements_gab1f4d04853abc689afcf236a444fa5e0}{update\_bullet\_pos}})();}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{288 int (\mbox{\hyperlink{group__elements_gab29dd799825a7ef67e792614a745f023}{collision\_bullet\_wall}})(\textcolor{keyword}{struct }\mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{structbullet}{bullet}});}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{293 int (\mbox{\hyperlink{group__elements_gae4f8f5e94c6f675160d8cab11f02de8a}{collision\_bullet\_enemy}})(\mbox{\hyperlink{structenemy}{enemy\_t}} \mbox{\hyperlink{structenemy}{enemy}}, \textcolor{keyword}{struct }\mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{structbullet}{bullet}});}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295 \textcolor{comment}{//Walls}}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{300 int (\mbox{\hyperlink{group__elements_gaf215806a957e2b3490a52f0d9340c15f}{wall\_collision}})(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//ELEMENTS\_H\_INCLUDED}}
+
+\end{DoxyCode}

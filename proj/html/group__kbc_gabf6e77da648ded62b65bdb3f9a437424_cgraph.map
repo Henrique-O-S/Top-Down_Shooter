@@ -1,0 +1,4 @@
+<map id="kbc_issue_cmd" name="kbc_issue_cmd">
+<area shape="rect" id="node1" title="Low&#45;level function to issue a command to keyboard." alt="" coords="5,5,119,32"/>
+<area shape="rect" id="node2" href="$group__utils.html#ga79a031a8611f5b2d6afa4158e92b0fb4" title="sys_inb wrapper" alt="" coords="167,5,257,32"/>
+</map>

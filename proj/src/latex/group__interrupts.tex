@@ -1,0 +1,56 @@
+\hypertarget{group__interrupts}{}\doxysection{interrupts}
+\label{group__interrupts}\index{interrupts@{interrupts}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__interrupts_gaa47d951ed5ee7678663adf66785022f4}{subscribe\+\_\+all}} (void)
+\begin{DoxyCompactList}\small\item\em Subscribes all drivers used (timer-\/\texorpdfstring{$>$}{>}keyboard-\/\texorpdfstring{$>$}{>}mouse) \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__interrupts_gadd6f2c43bcf6aa436d16dd18edbeea81}{unsubscribe\+\_\+all}} (void)
+\begin{DoxyCompactList}\small\item\em Unsubscribes all subscribed interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__interrupts_ga0c400925da5041db14dfec219817f3ee}{get\+\_\+irq}} (int id)
+\begin{DoxyCompactList}\small\item\em Gets irq bit id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__interrupts_ga0c400925da5041db14dfec219817f3ee}\label{group__interrupts_ga0c400925da5041db14dfec219817f3ee}} 
+\index{interrupts@{interrupts}!get\_irq@{get\_irq}}
+\index{get\_irq@{get\_irq}!interrupts@{interrupts}}
+\doxysubsubsection{\texorpdfstring{get\_irq()}{get\_irq()}}
+{\footnotesize\ttfamily int() get\+\_\+irq (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Gets irq bit id. 
+
+\begin{DoxyReturn}{Returns}
+returns bit id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__interrupts_gaa47d951ed5ee7678663adf66785022f4}\label{group__interrupts_gaa47d951ed5ee7678663adf66785022f4}} 
+\index{interrupts@{interrupts}!subscribe\_all@{subscribe\_all}}
+\index{subscribe\_all@{subscribe\_all}!interrupts@{interrupts}}
+\doxysubsubsection{\texorpdfstring{subscribe\_all()}{subscribe\_all()}}
+{\footnotesize\ttfamily int() subscribe\+\_\+all (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Subscribes all drivers used (timer-\/\texorpdfstring{$>$}{>}keyboard-\/\texorpdfstring{$>$}{>}mouse) 
+
+\begin{DoxyReturn}{Returns}
+Returns 0 if succeded, non 0 other wise; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__interrupts_gadd6f2c43bcf6aa436d16dd18edbeea81}\label{group__interrupts_gadd6f2c43bcf6aa436d16dd18edbeea81}} 
+\index{interrupts@{interrupts}!unsubscribe\_all@{unsubscribe\_all}}
+\index{unsubscribe\_all@{unsubscribe\_all}!interrupts@{interrupts}}
+\doxysubsubsection{\texorpdfstring{unsubscribe\_all()}{unsubscribe\_all()}}
+{\footnotesize\ttfamily int() unsubscribe\+\_\+all (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Unsubscribes all subscribed interrupts. 
+
+\begin{DoxyReturn}{Returns}
+Returns 0 if succeded, non 0 other wise; 
+\end{DoxyReturn}

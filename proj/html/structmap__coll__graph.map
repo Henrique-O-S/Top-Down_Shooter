@@ -1,0 +1,10 @@
+<map id="map" name="map">
+<area shape="rect" id="node1" title=" " alt="" coords="76,364,123,391"/>
+<area shape="rect" id="node2" href="$structsprite.html" title=" " alt="" coords="224,275,279,301"/>
+<area shape="rect" id="node3" href="$structbasic__sprite.html" title=" " alt="" coords="101,125,193,152"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,5,76,32"/>
+<area shape="rect" id="node5" title=" " alt="" coords="105,5,173,32"/>
+<area shape="rect" id="node6" title=" " alt="" coords="209,5,270,32"/>
+<area shape="rect" id="node7" title=" " alt="" coords="321,125,382,152"/>
+<area shape="rect" id="node8" title=" " alt="" coords="431,125,491,152"/>
+</map>

@@ -1,0 +1,511 @@
+\hypertarget{group__graphics}{}\doxysection{graphics}
+\label{group__graphics}\index{graphics@{graphics}}
+Collaboration diagram for graphics\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{group__graphics}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__graphics_ga20a8c4bd352d15a0e1e2349eec2e9710}{GET\+\_\+\+RED}}(n)~(0x\+FF \& ((n) $>$$>$ 16))
+\item 
+\#define \mbox{\hyperlink{group__graphics_gadd275be0112f1d2af5e7dbc03ab221a8}{GET\+\_\+\+GRE}}(n)~(0x\+FF \& ((n) $>$$>$  8))
+\item 
+\#define \mbox{\hyperlink{group__graphics_ga75843763a880805c52f5713dac46cd1e}{GET\+\_\+\+BLU}}(n)~(0x\+FF \& (n      ))
+\item 
+\#define \mbox{\hyperlink{group__graphics_gadd486ade6cb226273a0e3741ec0e63d1}{SET\+\_\+\+RED}}(n)~(((n)\&0x\+FF) $<$$<$ 16)
+\item 
+\#define \mbox{\hyperlink{group__graphics_gacc20c705a3b018810e24d4c1818c965c}{SET\+\_\+\+GRE}}(n)~(((n)\&0x\+FF) $<$$<$  8)
+\item 
+\#define \mbox{\hyperlink{group__graphics_gaced4f5e0671e588794cc1e0bd72ae820}{SET\+\_\+\+BLU}}(n)~(((n)\&0x\+FF)      )
+\item 
+\#define \mbox{\hyperlink{group__graphics_ga67e10ca508bfbe5f2ea25c46dec6a24f}{SET\+\_\+\+COLOR}}(r,  g,  b)~(\mbox{\hyperlink{group__graphics_gadd486ade6cb226273a0e3741ec0e63d1}{SET\+\_\+\+RED}}(r) $\vert$ \mbox{\hyperlink{group__graphics_gacc20c705a3b018810e24d4c1818c965c}{SET\+\_\+\+GRE}}(g) $\vert$ \mbox{\hyperlink{group__graphics_gaced4f5e0671e588794cc1e0bd72ae820}{SET\+\_\+\+BLU}}(b))
+\item 
+\#define \mbox{\hyperlink{group__graphics_ga43ab52a2004b081176f3ee6e22b4f8d7}{FAR2\+PHYS}}(n)~((((n)$>$$>$12) \& 0x\+FFFFFFF0) + ((n) \& 0x0000\+FFFF))
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__graphics_gacffa85dc875ba8bc4c40e81486b82b47}{pixmap}} \{ \mbox{\hyperlink{group__graphics_ggacffa85dc875ba8bc4c40e81486b82b47a0352906d1ea1dfcd663c918f3a86755b}{PLAY}}
+, \mbox{\hyperlink{group__graphics_ggacffa85dc875ba8bc4c40e81486b82b47a7a10b5d68d31711288e1fe0fa17dbf4f}{EXIT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__graphics_ga270cebf5612b0408b5103d5c98fdc7c6}{set\+\_\+vbe\+\_\+mode}} (uint16\+\_\+t mode)
+\item 
+int() \mbox{\hyperlink{group__graphics_gab202e9acd2a0826e183d01a13930d5d6}{set\+\_\+pixel}} (uint16\+\_\+t x, uint16\+\_\+t y, uint32\+\_\+t color)
+\item 
+int() \mbox{\hyperlink{group__graphics_gabfbedb6c93fc8eb59745694ce8e19e14}{draw\+\_\+hline}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t len, uint32\+\_\+t color)
+\item 
+int() \mbox{\hyperlink{group__graphics_ga31178cc71e7af0d6045707842517b225}{draw\+\_\+rectangle}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height, uint32\+\_\+t color)
+\item 
+int() \mbox{\hyperlink{group__graphics_ga99d2da2559e11200c6b40c469e9977ec}{vg\+\_\+draw\+\_\+rectangle}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height, uint32\+\_\+t color)
+\item 
+int() \mbox{\hyperlink{group__graphics_ga3f35ae9212b60b107e7fa82d6fad6d22}{get\+\_\+permission}} (unsigned int base\+\_\+addr, unsigned int size)
+\item 
+int() \mbox{\hyperlink{group__graphics_ga43e7a2cc7510bba330b712f0c35f4182}{vbe\+\_\+get\+\_\+mode\+\_\+information}} (uint16\+\_\+t mode)
+\item 
+int() \mbox{\hyperlink{group__graphics_gacfc4589de71bef6e8446198c70e28974}{free\+\_\+memory\+\_\+map}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__graphics_ga59fe4af42434741fab1b76cc42d51058}{draw\+\_\+double\+\_\+buffer}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+int() \mbox{\hyperlink{group__graphics_ga78fda8a56aed2c406353ad605e361073}{map\+\_\+vram}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+\mbox{\hyperlink{group__graphics_ga4dfc59c104f0c09fed3fdb4015c11f9e}{void}} (swap\+Buffer())
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group__graphics_ga9b1703881c2c7c2fc1d05679a867dfed}{get\+\_\+bits\+\_\+pixel}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group__graphics_gafa7636d40c82e2b1a63585e2ad8138ff}{get\+\_\+bytes\+\_\+pixel}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group__graphics_ga1e78ad9ed25b03687bc0b0d06b3957e4}{get\+\_\+\+XRes}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group__graphics_gaff98c1ed5146900037a3747de30f6a79}{get\+\_\+\+YRes}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group__graphics_gafb4ad1f3736c17e4e000461243e3faf6}{get\+\_\+\+Red\+Mask\+Size}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group__graphics_gadda5dcfacfba9f9657c8f70a266adee2}{get\+\_\+\+Green\+Mask\+Size}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group__graphics_gab1eee0c55083ae85a35e6c5f4b0c5493}{get\+\_\+\+Blue\+Mask\+Size}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+phys\+\_\+bytes \mbox{\hyperlink{group__graphics_gacaadaa500eac72ea406149bc3cdb59d3}{get\+\_\+phys\+\_\+addr}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+unsigned int \mbox{\hyperlink{group__graphics_gadd9a51710818c110bb5699378f1af8cb}{get\+\_\+vram\+\_\+size}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+int \mbox{\hyperlink{group__graphics_ga1430d88a17cc33c0fb2a40dd6a4aaabc}{paint\+\_\+screen}} (uint32\+\_\+t color)
+\item 
+int \mbox{\hyperlink{group__graphics_gafa445e5837d138c8bc596dd2f287fc44}{clear\+\_\+screen}} ()
+\item 
+int() \mbox{\hyperlink{group__graphics_ga17ff3e2b182f63f42f264514659b9c5c}{pixmap\+\_\+drawer}} (uint16\+\_\+t x, uint16\+\_\+t y, enum \mbox{\hyperlink{group__graphics_gacffa85dc875ba8bc4c40e81486b82b47}{pixmap}} \mbox{\hyperlink{group__graphics_gacffa85dc875ba8bc4c40e81486b82b47}{pixmap}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__graphics_ga43ab52a2004b081176f3ee6e22b4f8d7}\label{group__graphics_ga43ab52a2004b081176f3ee6e22b4f8d7}} 
+\index{graphics@{graphics}!FAR2PHYS@{FAR2PHYS}}
+\index{FAR2PHYS@{FAR2PHYS}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{FAR2PHYS}{FAR2PHYS}}
+{\footnotesize\ttfamily \#define FAR2\+PHYS(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~((((n)$>$$>$12) \& 0x\+FFFFFFF0) + ((n) \& 0x0000\+FFFF))}
+
+\mbox{\Hypertarget{group__graphics_ga75843763a880805c52f5713dac46cd1e}\label{group__graphics_ga75843763a880805c52f5713dac46cd1e}} 
+\index{graphics@{graphics}!GET\_BLU@{GET\_BLU}}
+\index{GET\_BLU@{GET\_BLU}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{GET\_BLU}{GET\_BLU}}
+{\footnotesize\ttfamily \#define GET\+\_\+\+BLU(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(0x\+FF \& (n      ))}
+
+\mbox{\Hypertarget{group__graphics_gadd275be0112f1d2af5e7dbc03ab221a8}\label{group__graphics_gadd275be0112f1d2af5e7dbc03ab221a8}} 
+\index{graphics@{graphics}!GET\_GRE@{GET\_GRE}}
+\index{GET\_GRE@{GET\_GRE}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{GET\_GRE}{GET\_GRE}}
+{\footnotesize\ttfamily \#define GET\+\_\+\+GRE(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(0x\+FF \& ((n) $>$$>$  8))}
+
+\mbox{\Hypertarget{group__graphics_ga20a8c4bd352d15a0e1e2349eec2e9710}\label{group__graphics_ga20a8c4bd352d15a0e1e2349eec2e9710}} 
+\index{graphics@{graphics}!GET\_RED@{GET\_RED}}
+\index{GET\_RED@{GET\_RED}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{GET\_RED}{GET\_RED}}
+{\footnotesize\ttfamily \#define GET\+\_\+\+RED(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(0x\+FF \& ((n) $>$$>$ 16))}
+
+\mbox{\Hypertarget{group__graphics_gaced4f5e0671e588794cc1e0bd72ae820}\label{group__graphics_gaced4f5e0671e588794cc1e0bd72ae820}} 
+\index{graphics@{graphics}!SET\_BLU@{SET\_BLU}}
+\index{SET\_BLU@{SET\_BLU}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{SET\_BLU}{SET\_BLU}}
+{\footnotesize\ttfamily \#define SET\+\_\+\+BLU(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((n)\&0x\+FF)      )}
+
+\mbox{\Hypertarget{group__graphics_ga67e10ca508bfbe5f2ea25c46dec6a24f}\label{group__graphics_ga67e10ca508bfbe5f2ea25c46dec6a24f}} 
+\index{graphics@{graphics}!SET\_COLOR@{SET\_COLOR}}
+\index{SET\_COLOR@{SET\_COLOR}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{SET\_COLOR}{SET\_COLOR}}
+{\footnotesize\ttfamily \#define SET\+\_\+\+COLOR(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{g,  }\item[{}]{b }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__graphics_gadd486ade6cb226273a0e3741ec0e63d1}{SET\+\_\+\+RED}}(r) $\vert$ \mbox{\hyperlink{group__graphics_gacc20c705a3b018810e24d4c1818c965c}{SET\+\_\+\+GRE}}(g) $\vert$ \mbox{\hyperlink{group__graphics_gaced4f5e0671e588794cc1e0bd72ae820}{SET\+\_\+\+BLU}}(b))}
+
+\mbox{\Hypertarget{group__graphics_gacc20c705a3b018810e24d4c1818c965c}\label{group__graphics_gacc20c705a3b018810e24d4c1818c965c}} 
+\index{graphics@{graphics}!SET\_GRE@{SET\_GRE}}
+\index{SET\_GRE@{SET\_GRE}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{SET\_GRE}{SET\_GRE}}
+{\footnotesize\ttfamily \#define SET\+\_\+\+GRE(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((n)\&0x\+FF) $<$$<$  8)}
+
+\mbox{\Hypertarget{group__graphics_gadd486ade6cb226273a0e3741ec0e63d1}\label{group__graphics_gadd486ade6cb226273a0e3741ec0e63d1}} 
+\index{graphics@{graphics}!SET\_RED@{SET\_RED}}
+\index{SET\_RED@{SET\_RED}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{SET\_RED}{SET\_RED}}
+{\footnotesize\ttfamily \#define SET\+\_\+\+RED(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((n)\&0x\+FF) $<$$<$ 16)}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__graphics_gacffa85dc875ba8bc4c40e81486b82b47}\label{group__graphics_gacffa85dc875ba8bc4c40e81486b82b47}} 
+\index{graphics@{graphics}!pixmap@{pixmap}}
+\index{pixmap@{pixmap}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{pixmap}{pixmap}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__graphics_gacffa85dc875ba8bc4c40e81486b82b47}{pixmap}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAY@{PLAY}!graphics@{graphics}}\index{graphics@{graphics}!PLAY@{PLAY}}}\mbox{\Hypertarget{group__graphics_ggacffa85dc875ba8bc4c40e81486b82b47a0352906d1ea1dfcd663c918f3a86755b}\label{group__graphics_ggacffa85dc875ba8bc4c40e81486b82b47a0352906d1ea1dfcd663c918f3a86755b}} 
+PLAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXIT@{EXIT}!graphics@{graphics}}\index{graphics@{graphics}!EXIT@{EXIT}}}\mbox{\Hypertarget{group__graphics_ggacffa85dc875ba8bc4c40e81486b82b47a7a10b5d68d31711288e1fe0fa17dbf4f}\label{group__graphics_ggacffa85dc875ba8bc4c40e81486b82b47a7a10b5d68d31711288e1fe0fa17dbf4f}} 
+EXIT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__graphics_gafa445e5837d138c8bc596dd2f287fc44}\label{group__graphics_gafa445e5837d138c8bc596dd2f287fc44}} 
+\index{graphics@{graphics}!clear\_screen@{clear\_screen}}
+\index{clear\_screen@{clear\_screen}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{clear\_screen()}{clear\_screen()}}
+{\footnotesize\ttfamily int clear\+\_\+screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{group__graphics_gafa445e5837d138c8bc596dd2f287fc44_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{group__graphics_gafa445e5837d138c8bc596dd2f287fc44_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_ga59fe4af42434741fab1b76cc42d51058}\label{group__graphics_ga59fe4af42434741fab1b76cc42d51058}} 
+\index{graphics@{graphics}!draw\_double\_buffer@{draw\_double\_buffer}}
+\index{draw\_double\_buffer@{draw\_double\_buffer}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{draw\_double\_buffer()}{draw\_double\_buffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() draw\+\_\+double\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{group__graphics_ga59fe4af42434741fab1b76cc42d51058_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__graphics_ga59fe4af42434741fab1b76cc42d51058_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_gabfbedb6c93fc8eb59745694ce8e19e14}\label{group__graphics_gabfbedb6c93fc8eb59745694ce8e19e14}} 
+\index{graphics@{graphics}!draw\_hline@{draw\_hline}}
+\index{draw\_hline@{draw\_hline}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{draw\_hline()}{draw\_hline()}}
+{\footnotesize\ttfamily int() draw\+\_\+hline (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{len,  }\item[{uint32\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__graphics_gabfbedb6c93fc8eb59745694ce8e19e14_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__graphics_gabfbedb6c93fc8eb59745694ce8e19e14_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_ga31178cc71e7af0d6045707842517b225}\label{group__graphics_ga31178cc71e7af0d6045707842517b225}} 
+\index{graphics@{graphics}!draw\_rectangle@{draw\_rectangle}}
+\index{draw\_rectangle@{draw\_rectangle}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{draw\_rectangle()}{draw\_rectangle()}}
+{\footnotesize\ttfamily int() draw\+\_\+rectangle (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height,  }\item[{uint32\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__graphics_ga31178cc71e7af0d6045707842517b225_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__graphics_ga31178cc71e7af0d6045707842517b225_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_gacfc4589de71bef6e8446198c70e28974}\label{group__graphics_gacfc4589de71bef6e8446198c70e28974}} 
+\index{graphics@{graphics}!free\_memory\_map@{free\_memory\_map}}
+\index{free\_memory\_map@{free\_memory\_map}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{free\_memory\_map()}{free\_memory\_map()}}
+{\footnotesize\ttfamily int() free\+\_\+memory\+\_\+map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__graphics_gacfc4589de71bef6e8446198c70e28974_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_ga9b1703881c2c7c2fc1d05679a867dfed}\label{group__graphics_ga9b1703881c2c7c2fc1d05679a867dfed}} 
+\index{graphics@{graphics}!get\_bits\_pixel@{get\_bits\_pixel}}
+\index{get\_bits\_pixel@{get\_bits\_pixel}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{get\_bits\_pixel()}{get\_bits\_pixel()}}
+{\footnotesize\ttfamily uint16\+\_\+t get\+\_\+bits\+\_\+pixel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__graphics_gab1eee0c55083ae85a35e6c5f4b0c5493}\label{group__graphics_gab1eee0c55083ae85a35e6c5f4b0c5493}} 
+\index{graphics@{graphics}!get\_BlueMaskSize@{get\_BlueMaskSize}}
+\index{get\_BlueMaskSize@{get\_BlueMaskSize}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{get\_BlueMaskSize()}{get\_BlueMaskSize()}}
+{\footnotesize\ttfamily uint16\+\_\+t get\+\_\+\+Blue\+Mask\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__graphics_gafa7636d40c82e2b1a63585e2ad8138ff}\label{group__graphics_gafa7636d40c82e2b1a63585e2ad8138ff}} 
+\index{graphics@{graphics}!get\_bytes\_pixel@{get\_bytes\_pixel}}
+\index{get\_bytes\_pixel@{get\_bytes\_pixel}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{get\_bytes\_pixel()}{get\_bytes\_pixel()}}
+{\footnotesize\ttfamily uint16\+\_\+t get\+\_\+bytes\+\_\+pixel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__graphics_gafa7636d40c82e2b1a63585e2ad8138ff_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_gadda5dcfacfba9f9657c8f70a266adee2}\label{group__graphics_gadda5dcfacfba9f9657c8f70a266adee2}} 
+\index{graphics@{graphics}!get\_GreenMaskSize@{get\_GreenMaskSize}}
+\index{get\_GreenMaskSize@{get\_GreenMaskSize}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{get\_GreenMaskSize()}{get\_GreenMaskSize()}}
+{\footnotesize\ttfamily uint16\+\_\+t get\+\_\+\+Green\+Mask\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__graphics_ga3f35ae9212b60b107e7fa82d6fad6d22}\label{group__graphics_ga3f35ae9212b60b107e7fa82d6fad6d22}} 
+\index{graphics@{graphics}!get\_permission@{get\_permission}}
+\index{get\_permission@{get\_permission}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{get\_permission()}{get\_permission()}}
+{\footnotesize\ttfamily int() get\+\_\+permission (\begin{DoxyParamCaption}\item[{unsigned int}]{base\+\_\+addr,  }\item[{unsigned int}]{size }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__graphics_ga3f35ae9212b60b107e7fa82d6fad6d22_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_gacaadaa500eac72ea406149bc3cdb59d3}\label{group__graphics_gacaadaa500eac72ea406149bc3cdb59d3}} 
+\index{graphics@{graphics}!get\_phys\_addr@{get\_phys\_addr}}
+\index{get\_phys\_addr@{get\_phys\_addr}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{get\_phys\_addr()}{get\_phys\_addr()}}
+{\footnotesize\ttfamily phys\+\_\+bytes get\+\_\+phys\+\_\+addr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__graphics_gacaadaa500eac72ea406149bc3cdb59d3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_gafb4ad1f3736c17e4e000461243e3faf6}\label{group__graphics_gafb4ad1f3736c17e4e000461243e3faf6}} 
+\index{graphics@{graphics}!get\_RedMaskSize@{get\_RedMaskSize}}
+\index{get\_RedMaskSize@{get\_RedMaskSize}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{get\_RedMaskSize()}{get\_RedMaskSize()}}
+{\footnotesize\ttfamily uint16\+\_\+t get\+\_\+\+Red\+Mask\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__graphics_gadd9a51710818c110bb5699378f1af8cb}\label{group__graphics_gadd9a51710818c110bb5699378f1af8cb}} 
+\index{graphics@{graphics}!get\_vram\_size@{get\_vram\_size}}
+\index{get\_vram\_size@{get\_vram\_size}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{get\_vram\_size()}{get\_vram\_size()}}
+{\footnotesize\ttfamily unsigned int get\+\_\+vram\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__graphics_gadd9a51710818c110bb5699378f1af8cb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_ga1e78ad9ed25b03687bc0b0d06b3957e4}\label{group__graphics_ga1e78ad9ed25b03687bc0b0d06b3957e4}} 
+\index{graphics@{graphics}!get\_XRes@{get\_XRes}}
+\index{get\_XRes@{get\_XRes}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{get\_XRes()}{get\_XRes()}}
+{\footnotesize\ttfamily uint16\+\_\+t get\+\_\+\+XRes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__graphics_ga1e78ad9ed25b03687bc0b0d06b3957e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_gaff98c1ed5146900037a3747de30f6a79}\label{group__graphics_gaff98c1ed5146900037a3747de30f6a79}} 
+\index{graphics@{graphics}!get\_YRes@{get\_YRes}}
+\index{get\_YRes@{get\_YRes}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{get\_YRes()}{get\_YRes()}}
+{\footnotesize\ttfamily uint16\+\_\+t get\+\_\+\+YRes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__graphics_gaff98c1ed5146900037a3747de30f6a79_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_ga78fda8a56aed2c406353ad605e361073}\label{group__graphics_ga78fda8a56aed2c406353ad605e361073}} 
+\index{graphics@{graphics}!map\_vram@{map\_vram}}
+\index{map\_vram@{map\_vram}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{map\_vram()}{map\_vram()}}
+{\footnotesize\ttfamily int() map\+\_\+vram (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{group__graphics_ga78fda8a56aed2c406353ad605e361073_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{group__graphics_ga78fda8a56aed2c406353ad605e361073_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_ga1430d88a17cc33c0fb2a40dd6a4aaabc}\label{group__graphics_ga1430d88a17cc33c0fb2a40dd6a4aaabc}} 
+\index{graphics@{graphics}!paint\_screen@{paint\_screen}}
+\index{paint\_screen@{paint\_screen}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{paint\_screen()}{paint\_screen()}}
+{\footnotesize\ttfamily int paint\+\_\+screen (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__graphics_ga1430d88a17cc33c0fb2a40dd6a4aaabc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_ga17ff3e2b182f63f42f264514659b9c5c}\label{group__graphics_ga17ff3e2b182f63f42f264514659b9c5c}} 
+\index{graphics@{graphics}!pixmap\_drawer@{pixmap\_drawer}}
+\index{pixmap\_drawer@{pixmap\_drawer}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{pixmap\_drawer()}{pixmap\_drawer()}}
+{\footnotesize\ttfamily int() pixmap\+\_\+drawer (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{enum \mbox{\hyperlink{group__graphics_gacffa85dc875ba8bc4c40e81486b82b47}{pixmap}}}]{pixmap }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__graphics_ga17ff3e2b182f63f42f264514659b9c5c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_gab202e9acd2a0826e183d01a13930d5d6}\label{group__graphics_gab202e9acd2a0826e183d01a13930d5d6}} 
+\index{graphics@{graphics}!set\_pixel@{set\_pixel}}
+\index{set\_pixel@{set\_pixel}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{set\_pixel()}{set\_pixel()}}
+{\footnotesize\ttfamily int() set\+\_\+pixel (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint32\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{group__graphics_gab202e9acd2a0826e183d01a13930d5d6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__graphics_gab202e9acd2a0826e183d01a13930d5d6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_ga270cebf5612b0408b5103d5c98fdc7c6}\label{group__graphics_ga270cebf5612b0408b5103d5c98fdc7c6}} 
+\index{graphics@{graphics}!set\_vbe\_mode@{set\_vbe\_mode}}
+\index{set\_vbe\_mode@{set\_vbe\_mode}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{set\_vbe\_mode()}{set\_vbe\_mode()}}
+{\footnotesize\ttfamily int() set\+\_\+vbe\+\_\+mode (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{group__graphics_ga270cebf5612b0408b5103d5c98fdc7c6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_ga43e7a2cc7510bba330b712f0c35f4182}\label{group__graphics_ga43e7a2cc7510bba330b712f0c35f4182}} 
+\index{graphics@{graphics}!vbe\_get\_mode\_information@{vbe\_get\_mode\_information}}
+\index{vbe\_get\_mode\_information@{vbe\_get\_mode\_information}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{vbe\_get\_mode\_information()}{vbe\_get\_mode\_information()}}
+{\footnotesize\ttfamily int() vbe\+\_\+get\+\_\+mode\+\_\+information (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{group__graphics_ga43e7a2cc7510bba330b712f0c35f4182_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{group__graphics_ga43e7a2cc7510bba330b712f0c35f4182_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_ga99d2da2559e11200c6b40c469e9977ec}\label{group__graphics_ga99d2da2559e11200c6b40c469e9977ec}} 
+\index{graphics@{graphics}!vg\_draw\_rectangle@{vg\_draw\_rectangle}}
+\index{vg\_draw\_rectangle@{vg\_draw\_rectangle}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{vg\_draw\_rectangle()}{vg\_draw\_rectangle()}}
+{\footnotesize\ttfamily int() vg\+\_\+draw\+\_\+rectangle (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height,  }\item[{uint32\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__graphics_ga99d2da2559e11200c6b40c469e9977ec_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__graphics_ga99d2da2559e11200c6b40c469e9977ec_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__graphics_ga4dfc59c104f0c09fed3fdb4015c11f9e}\label{group__graphics_ga4dfc59c104f0c09fed3fdb4015c11f9e}} 
+\index{graphics@{graphics}!void@{void}}
+\index{void@{void}!graphics@{graphics}}
+\doxysubsubsection{\texorpdfstring{void()}{void()}}
+{\footnotesize\ttfamily void (\begin{DoxyParamCaption}\item[{swap\+Buffer()}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{group__graphics_ga4dfc59c104f0c09fed3fdb4015c11f9e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{group__graphics_ga4dfc59c104f0c09fed3fdb4015c11f9e_icgraph}
+\end{center}
+\end{figure}

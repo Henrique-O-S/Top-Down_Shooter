@@ -1,0 +1,75 @@
+\hypertarget{sprite_8h_source}{}\doxysection{sprite.\+h}
+\label{sprite_8h_source}\index{libraries/graphics/include/sprite.h@{libraries/graphics/include/sprite.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SPRITE\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SPRITE\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ALPHA\_THRESHOLD 0x7F}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{25 \textcolor{keyword}{struct }\mbox{\hyperlink{structbasic__sprite}{basic\_sprite}}\{}
+\DoxyCodeLine{26     uint8\_t *\mbox{\hyperlink{structmap}{map}};}
+\DoxyCodeLine{27     uint16\_t w, h;}
+\DoxyCodeLine{28     int16\_t x\_offset, y\_offset;}
+\DoxyCodeLine{29 \};}
+\DoxyCodeLine{30 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structbasic__sprite}{basic\_sprite}} \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{45 \textcolor{keyword}{struct }\mbox{\hyperlink{structsprite}{sprite}}\{}
+\DoxyCodeLine{46     \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}} **bsp;}
+\DoxyCodeLine{47     uint8\_t current\_animation, animation, current\_wait, wait;}
+\DoxyCodeLine{48     int16\_t x, y, x\_offset, y\_offset; \textcolor{comment}{//position in screen}}
+\DoxyCodeLine{49     \textcolor{keywordtype}{double} angle, s, c;}
+\DoxyCodeLine{50 \};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structsprite}{sprite}} \mbox{\hyperlink{structsprite}{sprite\_t}};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{65 \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}* (\mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}})(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *xpm, int16\_t x\_offset, int16\_t y\_offset);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{71 void            (\mbox{\hyperlink{group__sprite_gac271acdc4c1c774a4851b4a62560c723}{basic\_sprite\_dtor}})(\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}} *p);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{78 \textcolor{keyword}{const} uint8\_t* (\mbox{\hyperlink{group__sprite_ga10470dac4f17e5c4f271e709cf9490d8}{basic\_sprite\_get\_map}})(\textcolor{keyword}{const} \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}} *p);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{85 uint16\_t       (\mbox{\hyperlink{group__sprite_ga07c634de39b5ea0c935940bc0bfbe993}{basic\_sprite\_get\_w}})  (\textcolor{keyword}{const} \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}} *p);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{92 uint16\_t       (\mbox{\hyperlink{group__sprite_ga1a5c0c2b65c8ef1a76621239e5bbed9e}{basic\_sprite\_get\_h}})  (\textcolor{keyword}{const} \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}} *p);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{99 int16\_t        (\mbox{\hyperlink{group__sprite_ga5c8aff57d09abba570c129ca56a80bc6}{basic\_sprite\_get\_x\_offset}}) (\textcolor{keyword}{const} \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}} *p);}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{106 int16\_t        (\mbox{\hyperlink{group__sprite_ga4b4558f87b58cbbe4560299499b620f5}{basic\_sprite\_get\_y\_offset}}) (\textcolor{keyword}{const} \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}} *p);}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{109 }
+\DoxyCodeLine{116 \mbox{\hyperlink{structsprite}{sprite\_t}}* (\mbox{\hyperlink{group__sprite_ga2e5a8273dd022cbf60439cbd657460dc}{sprite\_ctor}})(\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}} **bsp, uint8\_t animation);}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{122 void (\mbox{\hyperlink{group__sprite_ga56b7413de011230d829af730b4195e59}{sprite\_dtor}})(\mbox{\hyperlink{structsprite}{sprite\_t}} *p);}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{130 void (\mbox{\hyperlink{group__sprite_ga147c19d6da7dc2d15fc1a4041f9e7ece}{sprite\_set\_pos}})   (\mbox{\hyperlink{structsprite}{sprite\_t}} *p, int16\_t x, int16\_t y);}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{137 void (\mbox{\hyperlink{group__sprite_ga78a203f9e5ef0b66bb67eba0f9601d88}{sprite\_set\_angle}}) (\mbox{\hyperlink{structsprite}{sprite\_t}} *p, \textcolor{keywordtype}{double} angle);}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{144 double   (\mbox{\hyperlink{group__sprite_ga0dac642b91ab9707aedfe35a95326d85}{sprite\_get\_angle}})(\textcolor{keyword}{const} \mbox{\hyperlink{structsprite}{sprite\_t}} *p);}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{151 uint16\_t (\mbox{\hyperlink{group__sprite_ga4adb74a0a0f69a6a7c8425a8469b1369}{sprite\_get\_w}})(\textcolor{keyword}{const} \mbox{\hyperlink{structsprite}{sprite\_t}} *p);}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{158 uint16\_t (\mbox{\hyperlink{group__sprite_ga6516767b0b0babfdccddf598eed3cfac}{sprite\_get\_h}})(\textcolor{keyword}{const} \mbox{\hyperlink{structsprite}{sprite\_t}} *p);}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{165 uint16\_t (\mbox{\hyperlink{group__sprite_gabd0ec8bfd082e7911d1d566f484f39b8}{sprite\_get\_X}})(\textcolor{keyword}{const} \mbox{\hyperlink{structsprite}{sprite\_t}} *p);}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{172 uint16\_t (\mbox{\hyperlink{group__sprite_gaae66681a74c0c71427e61d299404734f}{sprite\_get\_Y}})(\textcolor{keyword}{const} \mbox{\hyperlink{structsprite}{sprite\_t}} *p);}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{180 double (\mbox{\hyperlink{group__sprite_ga08626216c0df03d95a323db61138abda}{sprite\_angle\_of\_two}})(\textcolor{keyword}{const} \mbox{\hyperlink{structsprite}{sprite\_t}} *p, \textcolor{keyword}{const} \mbox{\hyperlink{structsprite}{sprite\_t}} *p1);}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{186 void (\mbox{\hyperlink{group__sprite_ga4550eb78c720c0577782e2f8c373b2eb}{sprite\_draw}})(\textcolor{keyword}{const} \mbox{\hyperlink{structsprite}{sprite\_t}} *p);}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{193 void (\mbox{\hyperlink{group__sprite_ga1fd0069896123635d9d3a71cdb55f7b1}{sprite\_update\_animation}}) (\mbox{\hyperlink{structsprite}{sprite\_t}} *p, \textcolor{keywordtype}{int} reset);}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{200 void (\mbox{\hyperlink{group__sprite_gae46aa306a1ae9cf1aa0339c4085840a1}{sprite\_choose\_animation}}) (\mbox{\hyperlink{structsprite}{sprite\_t}} *p, \textcolor{keywordtype}{int} animation);}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//SPRITE\_H\_INCLUDED}}
+
+\end{DoxyCode}

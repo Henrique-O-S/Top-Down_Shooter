@@ -1,0 +1,21 @@
+\hypertarget{interrupts_8h_source}{}\doxysection{interrupts.\+h}
+\label{interrupts_8h_source}\index{src/project/include/interrupts.h@{src/project/include/interrupts.h}}
+\mbox{\hyperlink{interrupts_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INTERRUPTS\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INTERRUPTS\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{libraries_8h}{libraries.h}}"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{group__interrupts_ga724d31681653653604a2b744c259cd16}{timer\_id}}, \mbox{\hyperlink{group__interrupts_gabbcbf83119b95ef024b7095128a21fda}{kbc\_id}}, \mbox{\hyperlink{group__interrupts_ga8e79a262db698503cde2128f159e63f5}{mouse\_id}}, \mbox{\hyperlink{group__interrupts_ga32ef5092702c59ada428caef6c515382}{rtc\_id}};}
+\DoxyCodeLine{14 \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{group__interrupts_ga2ed7f85685b1cc595a870fc8bc385167}{timer\_subscription}}, \mbox{\hyperlink{group__interrupts_gaedf8670fc8b713d894942d40cf66a210}{keyboard\_subscription}}, \mbox{\hyperlink{group__interrupts_gacbae20bbcb6c3feb37d09ee2a37b7b1c}{mouse\_subscription}}, \mbox{\hyperlink{group__interrupts_gaf112b12f61d2a4e217d4d4b58661ca5b}{rtc\_subscription}};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{20 int (\mbox{\hyperlink{group__interrupts_gaa47d951ed5ee7678663adf66785022f4}{subscribe\_all}})(\mbox{\hyperlink{group__graphics_ga4dfc59c104f0c09fed3fdb4015c11f9e}{void}});}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{26 int (\mbox{\hyperlink{group__interrupts_gadd6f2c43bcf6aa436d16dd18edbeea81}{unsubscribe\_all}})(\mbox{\hyperlink{group__graphics_ga4dfc59c104f0c09fed3fdb4015c11f9e}{void}});}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 int (\mbox{\hyperlink{group__interrupts_ga0c400925da5041db14dfec219817f3ee}{get\_irq}})(\textcolor{keywordtype}{int} id);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//INTERRUPTS\_H\_INCLUDED}}
+
+\end{DoxyCode}

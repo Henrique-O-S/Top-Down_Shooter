@@ -1,0 +1,31 @@
+\hypertarget{kbd_8h_source}{}\doxysection{kbd.\+h}
+\label{kbd_8h_source}\index{src/libraries/kbc/include/kbd.h@{src/libraries/kbc/include/kbd.h}}
+\mbox{\hyperlink{kbd_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef KBD\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define KBD\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <lcom/lcf.h>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 int (\mbox{\hyperlink{group__kbd_gab35cfc697428fac7727ef5a6411b86f0}{subscribe\_kbc\_interrupt}})(uint8\_t interrupt\_bit, \textcolor{keywordtype}{int} *interrupt\_id);}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 uint8\_t \mbox{\hyperlink{group__kbd_ga01577ed8d3646775ae6a8e00d24c1d94}{scancode}}[2];}
+\DoxyCodeLine{16 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__kbd_ga5992b274cfdcacdbc1fa8347fd01ebde}{done}};}
+\DoxyCodeLine{17 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__kbd_ga0e1ea19fb9fa7881d15d84eff4c090e1}{sz}};}
+\DoxyCodeLine{18 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__kbd_ga6729a7041834743f389446708ab0b24d}{got\_error\_keyboard}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \mbox{\hyperlink{group__graphics_ga4dfc59c104f0c09fed3fdb4015c11f9e}{void}} (\mbox{\hyperlink{group__kbd_ga5761bd4aad91ac1d68916ad88f583d9f}{kbc\_ih}})(\mbox{\hyperlink{group__graphics_ga4dfc59c104f0c09fed3fdb4015c11f9e}{void}});}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 int (\mbox{\hyperlink{group__kbd_gac83c39ace6f539167f5cc34f6c689cd2}{keyboard\_poll}})(uint8\_t bytes[], uint8\_t *size);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{const} uint8\_t* (\mbox{\hyperlink{group__kbd_gaf9fae340464cde05ae307740c23e57b8}{get\_scancode}})();}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__kbd_ga6b5a3839c3253ab21aa69739a1cdfa0f}{keyboard\_get\_done}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__kbd_ga2ebba414b43d0a512cbf6ed4fc93ff61}{keyboard\_get\_size}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__kbd_ga92aeaf639bfed417b8a439361f92f221}{keyboard\_get\_error}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//KBD\_H\_INCLUDED}}
+
+\end{DoxyCode}

@@ -1,0 +1,43 @@
+\hypertarget{mouse_8h_source}{}\doxysection{mouse.\+h}
+\label{mouse_8h_source}\index{src/libraries/kbc/include/mouse.h@{src/libraries/kbc/include/mouse.h}}
+\mbox{\hyperlink{mouse_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MOUSE\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MOUSE\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{sprite_8h}{sprite.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__mouse_gadde01062b0a114bcc0722cf1fc24d132}{bytes\_counter}};}
+\DoxyCodeLine{16 uint8\_t \mbox{\hyperlink{group__mouse_ga9badc2315839b29741a100272fb05a49}{packet\_mouse}}[3];}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 int (\mbox{\hyperlink{group__mouse_ga7ff28e5ab0e59a20c7a8ccec987a71d1}{mouse\_subscribe\_int}})(uint8\_t interrupt\_bit, \textcolor{keywordtype}{int} *interrupt\_id);}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 int (\mbox{\hyperlink{group__mouse_ga3781238807e9bdcdb58e541f279ccec1}{mouse\_unsubscribe\_int}})(\textcolor{keywordtype}{int} *interrupt\_id);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \mbox{\hyperlink{group__graphics_ga4dfc59c104f0c09fed3fdb4015c11f9e}{void}} (\mbox{\hyperlink{group__mouse_ga210374b50462acdedab00df64d5cea3c}{mouse\_ih}})();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 int (\mbox{\hyperlink{group__mouse_ga8f733d871219356a3aa3fcbba1e06436}{get\_mouse\_ih\_counter}})();}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 int (\mbox{\hyperlink{group__mouse_gaa0e718b250931f7cb91a4f56fe33d94c}{mouse\_parse\_packet}})(\textcolor{keyword}{struct }packet *packet);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \mbox{\hyperlink{group__graphics_ga4dfc59c104f0c09fed3fdb4015c11f9e}{void}} (\mbox{\hyperlink{group__mouse_ga3f5ddebd8ad8c4252ea28dc40faea6a5}{update\_mouse}})(\textcolor{keyword}{struct }packet *\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}});}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 int16\_t \mbox{\hyperlink{group__mouse_ga23d7aeb5d8cf04f855dc4f4d10b04aad}{get\_mouse\_X}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 int16\_t \mbox{\hyperlink{group__mouse_gae8b36a4fe5503fa46bbf52200c1404cf}{get\_mouse\_Y}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keywordtype}{double} \mbox{\hyperlink{group__mouse_gaa8a9752ad27693d112aecd6a19413e99}{get\_mouse\_angle}}(\textcolor{keyword}{const} \mbox{\hyperlink{structsprite}{sprite\_t}} *\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}});}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 int16\_t (\mbox{\hyperlink{group__mouse_ga3e948b653de9eab8a978a0f97e6d4613}{sign\_extend\_byte}})(uint8\_t sign\_bit, uint8\_t byte);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 int (\mbox{\hyperlink{group__mouse_ga17f6a309e34b241931cc44259a3afda6}{mouse\_issue\_cmd}})(uint8\_t cmd);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 int (\mbox{\hyperlink{group__mouse_gabf4140d9d2b0a560eb7910b635bc89fb}{mouse\_set\_data\_report}})(\textcolor{keywordtype}{int} on);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 int (\mbox{\hyperlink{group__mouse_ga7c0b89b2552784fdc6cf5143d0fff378}{mouse\_read\_byte}})(uint8\_t *byte);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//MOUSE\_H\_INCLUDED}}
+
+\end{DoxyCode}

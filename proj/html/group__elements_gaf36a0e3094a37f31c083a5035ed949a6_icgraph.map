@@ -1,0 +1,9 @@
+<map id="wall_collision" name="wall_collision">
+<area shape="rect" id="node1" title=" " alt="" coords="396,56,495,83"/>
+<area shape="rect" id="node2" href="$elements_8c.html#ae2d15848c30d1808124b8ef3ab8a475f" title=" " alt="" coords="204,5,340,32"/>
+<area shape="rect" id="node4" href="$elements_8c.html#a624c72f95b8d2e974d70df1066267487" title=" " alt="" coords="196,56,348,83"/>
+<area shape="rect" id="node6" href="$elements_8c.html#afdc84cfca8a98585433ff3b1ed0385bd" title=" " alt="" coords="202,107,342,133"/>
+<area shape="rect" id="node3" href="$elements_8c.html#af6562f481cf612f465e12e0d9167c774" title=" " alt="" coords="13,5,140,32"/>
+<area shape="rect" id="node5" href="$elements_8c.html#a5f7b99d83f9b033ad69c25a76eb1d43b" title=" " alt="" coords="5,56,148,83"/>
+<area shape="rect" id="node7" href="$elements_8c.html#a5fcf4fe14e5af4401245d7bfc86df21e" title=" " alt="" coords="11,107,142,133"/>
+</map>

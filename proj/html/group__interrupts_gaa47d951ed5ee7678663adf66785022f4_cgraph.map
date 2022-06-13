@@ -1,0 +1,17 @@
+<map id="subscribe_all" name="subscribe_all">
+<area shape="rect" id="node1" title="Subscribes all drivers used (timer&#45;&gt;keyboard&#45;&gt;mouse)" alt="" coords="5,172,104,199"/>
+<area shape="rect" id="node2" href="$group__mouse.html#gabf4140d9d2b0a560eb7910b635bc89fb" title=" " alt="" coords="368,122,527,148"/>
+<area shape="rect" id="node8" href="$group__mouse.html#ga7ff28e5ab0e59a20c7a8ccec987a71d1" title=" " alt="" coords="163,71,309,98"/>
+<area shape="rect" id="node9" href="$group__rtc.html#ga73e9cfc707b230abcda4e24cbac48d4d" title="Enables/Disables interrupts on update." alt="" coords="583,20,697,47"/>
+<area shape="rect" id="node10" href="$group__kbd.html#gab35cfc697428fac7727ef5a6411b86f0" title=" " alt="" coords="156,172,316,199"/>
+<area shape="rect" id="node11" href="$group__rtc.html#ga503bf713f0f23cab3ed4433dec1dad07" title="Subscribes RTC Interrupts." alt="" coords="159,223,313,250"/>
+<area shape="rect" id="node12" href="$group__timer.html#ga11445809a6c9be6a3ed5ffb185bf88c3" title=" " alt="" coords="152,274,320,300"/>
+<area shape="rect" id="node13" href="$group__interrupts.html#gadd6f2c43bcf6aa436d16dd18edbeea81" title="Unsubscribes all subscribed interrupts." alt="" coords="180,324,292,351"/>
+<area shape="rect" id="node3" href="$group__mouse.html#ga17f6a309e34b241931cc44259a3afda6" title=" " alt="" coords="575,122,705,148"/>
+<area shape="rect" id="node4" href="$group__kbc.html#ga081c509c47a33f55ca8756f2d8a21fa6" title="Low&#45;level function to issue an argument of a command." alt="" coords="763,71,869,98"/>
+<area shape="rect" id="node6" href="$group__kbc.html#gabf6e77da648ded62b65bdb3f9a437424" title="Low&#45;level function to issue a command to keyboard." alt="" coords="759,122,873,148"/>
+<area shape="rect" id="node7" href="$group__mouse.html#ga7c0b89b2552784fdc6cf5143d0fff378" title=" " alt="" coords="753,172,879,199"/>
+<area shape="rect" id="node5" href="$group__utils.html#ga79a031a8611f5b2d6afa4158e92b0fb4" title="sys_inb wrapper" alt="" coords="927,96,1017,123"/>
+<area shape="rect" id="node14" href="$group__mouse.html#ga3781238807e9bdcdb58e541f279ccec1" title=" " alt="" coords="368,299,527,326"/>
+<area shape="rect" id="node15" href="$group__utils.html#gaadc49a62c6faf07bd5a25495ed4fa813" title="Unsubcribes Interrupts." alt="" coords="374,350,521,376"/>
+</map>

@@ -1,0 +1,28 @@
+\hypertarget{utils_8c}{}\doxysection{src/libraries/utils/src/utils.c File Reference}
+\label{utils_8c}\index{src/libraries/utils/src/utils.c@{src/libraries/utils/src/utils.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+Include dependency graph for utils.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{utils_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__utils_gaadc49a62c6faf07bd5a25495ed4fa813}{unsubscribe\+\_\+interrupt}} (int $\ast$interrupt\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Unsubcribes Interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__utils_ga81621440b3d65680979425e39aa8c789}{util\+\_\+get\+\_\+\+LSB}} (uint16\+\_\+t val, uint8\+\_\+t $\ast$lsb)
+\begin{DoxyCompactList}\small\item\em Gets the least significant byte of a 16-\/bit variable. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__utils_ga6a880076cd2ec468834438b6e0c58836}{util\+\_\+get\+\_\+\+MSB}} (uint16\+\_\+t val, uint8\+\_\+t $\ast$msb)
+\begin{DoxyCompactList}\small\item\em Gets the most significant byte of a 16-\/bit variable. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__utils_ga79a031a8611f5b2d6afa4158e92b0fb4}{util\+\_\+sys\+\_\+inb}} (int port, uint8\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em sys\+\_\+inb wrapper \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{group__utils_ga499d23bfacd6a957be5c89acaf2f8c59}{min}} (int16\+\_\+t a, int16\+\_\+t b)
+\item 
+int16\+\_\+t \mbox{\hyperlink{group__utils_gabfe9bd035a0195eebca322468e35e0ce}{max}} (int16\+\_\+t a, int16\+\_\+t b)
+\end{DoxyCompactItemize}

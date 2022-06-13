@@ -1,0 +1,10 @@
+<map id="kbc_issue_arg" name="kbc_issue_arg">
+<area shape="rect" id="node1" title="Low&#45;level function to issue an argument of a command." alt="" coords="855,31,961,57"/>
+<area shape="rect" id="node2" href="$group__kbc.html#ga979788590a8e65eb1d5259ee6faa37a5" title="High&#45;level function that changes the command byte of the KBC." alt="" coords="679,5,803,32"/>
+<area shape="rect" id="node4" href="$group__mouse.html#ga17f6a309e34b241931cc44259a3afda6" title=" " alt="" coords="676,56,807,83"/>
+<area shape="rect" id="node3" href="$kbc_8c.html#ad23a7f1edcc0f9b1d46b073a198f9f88" title=" " alt="" coords="489,5,608,32"/>
+<area shape="rect" id="node5" href="$group__mouse.html#gabf4140d9d2b0a560eb7910b635bc89fb" title=" " alt="" coords="469,56,628,83"/>
+<area shape="rect" id="node6" href="$group__interrupts.html#gaa47d951ed5ee7678663adf66785022f4" title="Subscribes all drivers used (timer&#45;&gt;keyboard&#45;&gt;mouse)" alt="" coords="163,31,261,57"/>
+<area shape="rect" id="node8" href="$group__interrupts.html#gadd6f2c43bcf6aa436d16dd18edbeea81" title="Unsubscribes all subscribed interrupts." alt="" coords="309,81,421,108"/>
+<area shape="rect" id="node7" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,56,115,83"/>
+</map>

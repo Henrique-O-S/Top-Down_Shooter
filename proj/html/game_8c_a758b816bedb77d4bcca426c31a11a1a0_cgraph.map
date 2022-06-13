@@ -1,0 +1,14 @@
+<map id="void" name="void">
+<area shape="rect" id="node1" title=" " alt="" coords="5,132,49,159"/>
+<area shape="rect" id="node2" href="$group__elements.html#ga646896c051b71330adf4bc81704d1201" title=" " alt="" coords="105,5,220,32"/>
+<area shape="rect" id="node3" href="$group__elements.html#ga417edb92517ad5827518297e26d9f4f2" title=" " alt="" coords="97,56,228,83"/>
+<area shape="rect" id="node4" href="$group__elements.html#gab21f405b30ed78ae12d89b45793e74e5" title=" " alt="" coords="107,107,218,133"/>
+<area shape="rect" id="node5" href="$group__timer.html#ga1a81b5e8a75c2845c8db3f7e2cb149b0" title=" " alt="" coords="103,157,222,184"/>
+<area shape="rect" id="node6" href="$group__elements.html#gaf8a181a7d6795c7d3c5d636133530a98" title=" " alt="" coords="107,208,219,235"/>
+<area shape="rect" id="node7" href="$group__aux__functions.html#ga313878f42073bab6512b601c0466beca" title=" " alt="" coords="111,259,214,285"/>
+<area shape="rect" id="node8" href="$group__aux__functions.html#ga34cc26bfefefb0611da2436c7575e714" title=" " alt="" coords="276,233,399,260"/>
+<area shape="rect" id="node9" href="$group__rtc.html#ga8ae99541946dea0035bfb5e8042f86f3" title="Reads date from RTC." alt="" coords="304,284,371,311"/>
+<area shape="rect" id="node10" href="$group__rtc.html#ga58c3a42afd8690620a3c782ec1af889b" title="Converts a byte in BCD to binary." alt="" coords="447,233,525,260"/>
+<area shape="rect" id="node11" href="$group__rtc.html#gadc99d6e13380791f37d25254f382185b" title="Checks if the data read from RTC is in BCD." alt="" coords="457,284,515,311"/>
+<area shape="rect" id="node12" href="$group__utils.html#ga79a031a8611f5b2d6afa4158e92b0fb4" title="sys_inb wrapper" alt="" coords="573,309,664,336"/>
+</map>

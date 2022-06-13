@@ -4,6 +4,7 @@
 #include "../include/kbc.h"
 #include "../include/kbc_macros.h"
 #include "../include/utils.h"
+#include "aux_functions.h"
 
 int (subscribe_kbc_interrupt)(uint8_t interrupt_bit, int *interrupt_id) {
     if (interrupt_id == NULL) return 1;
@@ -35,6 +36,7 @@ void (kbc_ih)(void) {
 
     scancode[sz-1] = byte;
     done = !(TWO_BYTE_CODE == byte);
+    if(done) update_key_press();
 }
 
 int (keyboard_poll)(uint8_t bytes[], uint8_t *size){
@@ -54,6 +56,18 @@ int (keyboard_poll)(uint8_t bytes[], uint8_t *size){
     return 0;
 }
 
-uint8_t get_scancode(int i){
-    return scancode[i];
+const uint8_t* get_scancode(){
+    return scancode;
+}
+
+int keyboard_get_done(void){ 
+    return done; 
+}
+
+int keyboard_get_size(void){ 
+    return sz;
+}
+
+int keyboard_get_error(void){
+    return got_error_keyboard; 
 }

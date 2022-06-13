@@ -1,0 +1,9 @@
+digraph "sprite"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="sprite",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Basic sprite that contains a xpm map and offset values to center it."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" bsp" ,fontname="Helvetica"];
+  Node2 [label="basic_sprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structbasic__sprite.html",tooltip="Basic sprite that contains a xpm map and offset values to center it."];
+}

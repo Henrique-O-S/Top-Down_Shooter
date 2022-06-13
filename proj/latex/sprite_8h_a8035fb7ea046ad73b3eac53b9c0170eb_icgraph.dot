@@ -1,0 +1,32 @@
+digraph "sprite_get_w"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="sprite_get_w",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="collision_bullet_monster",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$elements_8c.html#a0a1e7d8c08cd85d691155ee384c9ea47",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="update_bullet_pos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$elements_8c.html#af6562f481cf612f465e12e0d9167c774",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="update_monster_pos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$elements_8c.html#a5f7b99d83f9b033ad69c25a76eb1d43b",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="collision_bullet_wall",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$elements_8c.html#ae2d15848c30d1808124b8ef3ab8a475f",tooltip=" "];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="collision_monster_wall",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$elements_8c.html#a624c72f95b8d2e974d70df1066267487",tooltip=" "];
+  Node6 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="collision_player_monster",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$elements_8c.html#a4e0464bbee168a97c81eb8563e0f5bca",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="update_player_pos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$elements_8c.html#a5fcf4fe14e5af4401245d7bfc86df21e",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="collision_player_wall",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$elements_8c.html#afdc84cfca8a98585433ff3b1ed0385bd",tooltip=" "];
+  Node9 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="wall_collision",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$elements_8c.html#af36a0e3094a37f31c083a5035ed949a6",tooltip=" "];
+  Node10 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

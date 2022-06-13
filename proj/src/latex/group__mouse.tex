@@ -1,0 +1,259 @@
+\hypertarget{group__mouse}{}\doxysection{mouse}
+\label{group__mouse}\index{mouse@{mouse}}
+Collaboration diagram for mouse\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__mouse_ga7ff28e5ab0e59a20c7a8ccec987a71d1}{mouse\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t interrupt\+\_\+bit, int $\ast$interrupt\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Subscribes Mouse Interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__mouse_ga3781238807e9bdcdb58e541f279ccec1}{mouse\+\_\+unsubscribe\+\_\+int}} (int $\ast$interrupt\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Unsubscribes Mouse Interrupts. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__mouse_ga210374b50462acdedab00df64d5cea3c}\label{group__mouse_ga210374b50462acdedab00df64d5cea3c}} 
+void() {\bfseries mouse\+\_\+ih} ()
+\begin{DoxyCompactList}\small\item\em Mouse interrupt handler. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__mouse_ga8f733d871219356a3aa3fcbba1e06436}{get\+\_\+mouse\+\_\+ih\+\_\+counter}} ()
+\begin{DoxyCompactList}\small\item\em Number of mouse bytes received. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__mouse_gaa0e718b250931f7cb91a4f56fe33d94c}{mouse\+\_\+parse\+\_\+packet}} (struct packet $\ast$packet)
+\begin{DoxyCompactList}\small\item\em Parse 3 bytes and returns it as a parsed, struct packet. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__mouse_ga3f5ddebd8ad8c4252ea28dc40faea6a5}{update\+\_\+mouse}} (struct packet $\ast$p)
+\begin{DoxyCompactList}\small\item\em Updates mouse position. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{group__mouse_ga23d7aeb5d8cf04f855dc4f4d10b04aad}{get\+\_\+mouse\+\_\+X}} (void)
+\begin{DoxyCompactList}\small\item\em Gets mouse horizontal position. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{group__mouse_gae8b36a4fe5503fa46bbf52200c1404cf}{get\+\_\+mouse\+\_\+Y}} (void)
+\begin{DoxyCompactList}\small\item\em Gets mouse vertical position. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__mouse_gaa8a9752ad27693d112aecd6a19413e99}{get\+\_\+mouse\+\_\+angle}} (const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Gets mouse angle relative to player position. \end{DoxyCompactList}\item 
+int16\+\_\+t() \mbox{\hyperlink{group__mouse_ga3e948b653de9eab8a978a0f97e6d4613}{sign\+\_\+extend\+\_\+byte}} (uint8\+\_\+t sign\+\_\+bit, uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Converts 9-\/bit number to 16-\/bit with sign extension. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__mouse_ga17f6a309e34b241931cc44259a3afda6}{mouse\+\_\+issue\+\_\+cmd}} (uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em Issues command to mouse. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__mouse_gabf4140d9d2b0a560eb7910b635bc89fb}{mouse\+\_\+set\+\_\+data\+\_\+report}} (int on)
+\begin{DoxyCompactList}\small\item\em Sets data report mode for mouse. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__mouse_ga7c0b89b2552784fdc6cf5143d0fff378}{mouse\+\_\+read\+\_\+byte}} (uint8\+\_\+t $\ast$byte)
+\begin{DoxyCompactList}\small\item\em Reads byte from mouse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__mouse_gadde01062b0a114bcc0722cf1fc24d132}\label{group__mouse_gadde01062b0a114bcc0722cf1fc24d132}} 
+int {\bfseries bytes\+\_\+counter}
+\item 
+\mbox{\Hypertarget{group__mouse_ga9badc2315839b29741a100272fb05a49}\label{group__mouse_ga9badc2315839b29741a100272fb05a49}} 
+uint8\+\_\+t {\bfseries packet\+\_\+mouse} \mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__mouse_gaa8a9752ad27693d112aecd6a19413e99}\label{group__mouse_gaa8a9752ad27693d112aecd6a19413e99}} 
+\index{mouse@{mouse}!get\_mouse\_angle@{get\_mouse\_angle}}
+\index{get\_mouse\_angle@{get\_mouse\_angle}!mouse@{mouse}}
+\doxysubsubsection{\texorpdfstring{get\_mouse\_angle()}{get\_mouse\_angle()}}
+{\footnotesize\ttfamily double get\+\_\+mouse\+\_\+angle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Gets mouse angle relative to player position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Pointer to player sprite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Mouse angle relative to player position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mouse_ga8f733d871219356a3aa3fcbba1e06436}\label{group__mouse_ga8f733d871219356a3aa3fcbba1e06436}} 
+\index{mouse@{mouse}!get\_mouse\_ih\_counter@{get\_mouse\_ih\_counter}}
+\index{get\_mouse\_ih\_counter@{get\_mouse\_ih\_counter}!mouse@{mouse}}
+\doxysubsubsection{\texorpdfstring{get\_mouse\_ih\_counter()}{get\_mouse\_ih\_counter()}}
+{\footnotesize\ttfamily int() get\+\_\+mouse\+\_\+ih\+\_\+counter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Number of mouse bytes received. 
+
+\begin{DoxyReturn}{Returns}
+Number of bytes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mouse_ga23d7aeb5d8cf04f855dc4f4d10b04aad}\label{group__mouse_ga23d7aeb5d8cf04f855dc4f4d10b04aad}} 
+\index{mouse@{mouse}!get\_mouse\_X@{get\_mouse\_X}}
+\index{get\_mouse\_X@{get\_mouse\_X}!mouse@{mouse}}
+\doxysubsubsection{\texorpdfstring{get\_mouse\_X()}{get\_mouse\_X()}}
+{\footnotesize\ttfamily int16\+\_\+t get\+\_\+mouse\+\_\+X (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Gets mouse horizontal position. 
+
+\begin{DoxyReturn}{Returns}
+Mouse horizontal position 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{group__mouse_gae8b36a4fe5503fa46bbf52200c1404cf}\label{group__mouse_gae8b36a4fe5503fa46bbf52200c1404cf}} 
+\index{mouse@{mouse}!get\_mouse\_Y@{get\_mouse\_Y}}
+\index{get\_mouse\_Y@{get\_mouse\_Y}!mouse@{mouse}}
+\doxysubsubsection{\texorpdfstring{get\_mouse\_Y()}{get\_mouse\_Y()}}
+{\footnotesize\ttfamily int16\+\_\+t get\+\_\+mouse\+\_\+Y (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Gets mouse vertical position. 
+
+\begin{DoxyReturn}{Returns}
+Mouse vertical position 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{group__mouse_ga17f6a309e34b241931cc44259a3afda6}\label{group__mouse_ga17f6a309e34b241931cc44259a3afda6}} 
+\index{mouse@{mouse}!mouse\_issue\_cmd@{mouse\_issue\_cmd}}
+\index{mouse\_issue\_cmd@{mouse\_issue\_cmd}!mouse@{mouse}}
+\doxysubsubsection{\texorpdfstring{mouse\_issue\_cmd()}{mouse\_issue\_cmd()}}
+{\footnotesize\ttfamily int() mouse\+\_\+issue\+\_\+cmd (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Issues command to mouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & Command to be issued \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{group__mouse_gaa0e718b250931f7cb91a4f56fe33d94c}\label{group__mouse_gaa0e718b250931f7cb91a4f56fe33d94c}} 
+\index{mouse@{mouse}!mouse\_parse\_packet@{mouse\_parse\_packet}}
+\index{mouse\_parse\_packet@{mouse\_parse\_packet}!mouse@{mouse}}
+\doxysubsubsection{\texorpdfstring{mouse\_parse\_packet()}{mouse\_parse\_packet()}}
+{\footnotesize\ttfamily int() mouse\+\_\+parse\+\_\+packet (\begin{DoxyParamCaption}\item[{struct packet $\ast$}]{packet }\end{DoxyParamCaption})}
+
+
+
+Parse 3 bytes and returns it as a parsed, struct packet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & Pointer to packet to store the information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 successful, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mouse_ga7c0b89b2552784fdc6cf5143d0fff378}\label{group__mouse_ga7c0b89b2552784fdc6cf5143d0fff378}} 
+\index{mouse@{mouse}!mouse\_read\_byte@{mouse\_read\_byte}}
+\index{mouse\_read\_byte@{mouse\_read\_byte}!mouse@{mouse}}
+\doxysubsubsection{\texorpdfstring{mouse\_read\_byte()}{mouse\_read\_byte()}}
+{\footnotesize\ttfamily int() mouse\+\_\+read\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{byte }\end{DoxyParamCaption})}
+
+
+
+Reads byte from mouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em byte} & Pointer to variable where byte read from mouse will be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mouse_gabf4140d9d2b0a560eb7910b635bc89fb}\label{group__mouse_gabf4140d9d2b0a560eb7910b635bc89fb}} 
+\index{mouse@{mouse}!mouse\_set\_data\_report@{mouse\_set\_data\_report}}
+\index{mouse\_set\_data\_report@{mouse\_set\_data\_report}!mouse@{mouse}}
+\doxysubsubsection{\texorpdfstring{mouse\_set\_data\_report()}{mouse\_set\_data\_report()}}
+{\footnotesize\ttfamily int() mouse\+\_\+set\+\_\+data\+\_\+report (\begin{DoxyParamCaption}\item[{int}]{on }\end{DoxyParamCaption})}
+
+
+
+Sets data report mode for mouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em on} & zero to disable data report, any other value to enable data report \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{group__mouse_ga7ff28e5ab0e59a20c7a8ccec987a71d1}\label{group__mouse_ga7ff28e5ab0e59a20c7a8ccec987a71d1}} 
+\index{mouse@{mouse}!mouse\_subscribe\_int@{mouse\_subscribe\_int}}
+\index{mouse\_subscribe\_int@{mouse\_subscribe\_int}!mouse@{mouse}}
+\doxysubsubsection{\texorpdfstring{mouse\_subscribe\_int()}{mouse\_subscribe\_int()}}
+{\footnotesize\ttfamily int() mouse\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{interrupt\+\_\+bit,  }\item[{int $\ast$}]{interrupt\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Subscribes Mouse Interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interrupt\+\_\+bit} & Bit of Interrupt Vector that will be set when Mouse Interrupt is pending \\
+\hline
+{\em interrupt\+\_\+id} & Mouse Interrupt ID to specify the Mouse Interrupt in other calls \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mouse_ga3781238807e9bdcdb58e541f279ccec1}\label{group__mouse_ga3781238807e9bdcdb58e541f279ccec1}} 
+\index{mouse@{mouse}!mouse\_unsubscribe\_int@{mouse\_unsubscribe\_int}}
+\index{mouse\_unsubscribe\_int@{mouse\_unsubscribe\_int}!mouse@{mouse}}
+\doxysubsubsection{\texorpdfstring{mouse\_unsubscribe\_int()}{mouse\_unsubscribe\_int()}}
+{\footnotesize\ttfamily int() mouse\+\_\+unsubscribe\+\_\+int (\begin{DoxyParamCaption}\item[{int $\ast$}]{interrupt\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Unsubscribes Mouse Interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interrupt\+\_\+id} & Mouse Interrupt ID to specify the Mouse Interrupt in other calls \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mouse_ga3e948b653de9eab8a978a0f97e6d4613}\label{group__mouse_ga3e948b653de9eab8a978a0f97e6d4613}} 
+\index{mouse@{mouse}!sign\_extend\_byte@{sign\_extend\_byte}}
+\index{sign\_extend\_byte@{sign\_extend\_byte}!mouse@{mouse}}
+\doxysubsubsection{\texorpdfstring{sign\_extend\_byte()}{sign\_extend\_byte()}}
+{\footnotesize\ttfamily int16\+\_\+t() sign\+\_\+extend\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sign\+\_\+bit,  }\item[{uint8\+\_\+t}]{byte }\end{DoxyParamCaption})}
+
+
+
+Converts 9-\/bit number to 16-\/bit with sign extension. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sign\+\_\+bit} & Sign bit identifiying the signal of the number \\
+\hline
+{\em byte} & Least significant byte that will be extended \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Extended 9-\/bit number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mouse_ga3f5ddebd8ad8c4252ea28dc40faea6a5}\label{group__mouse_ga3f5ddebd8ad8c4252ea28dc40faea6a5}} 
+\index{mouse@{mouse}!update\_mouse@{update\_mouse}}
+\index{update\_mouse@{update\_mouse}!mouse@{mouse}}
+\doxysubsubsection{\texorpdfstring{update\_mouse()}{update\_mouse()}}
+{\footnotesize\ttfamily void() update\+\_\+mouse (\begin{DoxyParamCaption}\item[{struct packet $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Updates mouse position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Pointer to packet to store the information. \\
+\hline
+\end{DoxyParams}

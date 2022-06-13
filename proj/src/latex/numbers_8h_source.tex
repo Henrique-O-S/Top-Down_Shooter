@@ -1,0 +1,46 @@
+\hypertarget{numbers_8h_source}{}\doxysection{numbers.\+h}
+\label{numbers_8h_source}\index{media/font/numbers.h@{media/font/numbers.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef NUMBERS\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define NUMBERS\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}graphics.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}0.xpm"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}1.xpm"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}2.xpm"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}3.xpm"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}4.xpm"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}5.xpm"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}6.xpm"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}7.xpm"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}8.xpm"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}9.xpm"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}slash.xpm"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{static} \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** get\_number(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{18     \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** ret = (\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}*) * 10);}
+\DoxyCodeLine{19     ret[0] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)char0\_xpm, 10, 10);}
+\DoxyCodeLine{20     ret[1] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)char1\_xpm, 10, 10);}
+\DoxyCodeLine{21     ret[2] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)char2\_xpm, 10, 10);}
+\DoxyCodeLine{22     ret[3] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)char3\_xpm, 10, 10);}
+\DoxyCodeLine{23     ret[4] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)char4\_xpm, 10, 10);}
+\DoxyCodeLine{24     ret[5] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)char5\_xpm, 10, 10);}
+\DoxyCodeLine{25     ret[6] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)char6\_xpm, 10, 10);}
+\DoxyCodeLine{26     ret[7] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)char7\_xpm, 10, 10);}
+\DoxyCodeLine{27     ret[8] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)char8\_xpm, 10, 10);}
+\DoxyCodeLine{28     ret[9] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)char9\_xpm, 10, 10);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keywordflow}{return} ret;}
+\DoxyCodeLine{31 \}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{static} \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** get\_slash(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{34     \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** ret = (\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}*) * 1);}
+\DoxyCodeLine{35     ret[0] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)slash\_xpm, 10, 10);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keywordflow}{return} ret;}
+\DoxyCodeLine{38 \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//NUMBERS\_H\_INCLUDED}}
+
+\end{DoxyCode}

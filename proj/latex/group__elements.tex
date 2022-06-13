@@ -1,0 +1,940 @@
+\hypertarget{group__elements}{}\doxysection{elements}
+\label{group__elements}\index{elements@{elements}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structret__pair}{ret\+\_\+pair}}
+\item 
+struct \mbox{\hyperlink{structplayer}{player}}
+\item 
+struct \mbox{\hyperlink{structenemy}{enemy}}
+\item 
+struct \mbox{\hyperlink{structbullet}{bullet}}
+\item 
+struct \mbox{\hyperlink{structmap}{map}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__elements_gaf49bad41acef45feb40939c0cf9d5d35}{PLAYER\+\_\+\+SPEED}}~5
+\item 
+\#define \mbox{\hyperlink{group__elements_ga918e3124d6f55628dce6a99d2a615be6}{ENEMY\+\_\+\+SPEED}}~4
+\item 
+\#define \mbox{\hyperlink{group__elements_ga70b3e643b533b8f785b7912e69434161}{BULLET\+\_\+\+SPEED}}~30
+\item 
+\#define \mbox{\hyperlink{group__elements_ga87010ba8737bbdc9c672a04acc9a378e}{SHOT\+\_\+\+COOLDOWN}}~10
+\item 
+\#define \mbox{\hyperlink{group__elements_ga200709d3c21daaf3ce4fee30c138aa8d}{BORDER\+\_\+\+OFFSET}}~25
+\item 
+\#define \mbox{\hyperlink{group__elements_ga00719a0387f578831fd8b092bd4d38d3}{DISTANCE\+\_\+\+THRESHOLD}}~500
+\item 
+\#define \mbox{\hyperlink{group__elements_ga1b274c6654f206bab57cf9578b7e2b31}{ATTACK\+\_\+\+THRESHOLD}}~175
+\item 
+\#define \mbox{\hyperlink{group__elements_ga4a40bf0e420cc12b54963b54750d99d2}{PLAYER\+\_\+\+SPAWN\+\_\+X}}~500
+\item 
+\#define \mbox{\hyperlink{group__elements_ga8d8711a1eb437af56b982a7c781135fe}{PLAYER\+\_\+\+SPAWN\+\_\+Y}}~500
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structret__pair}{ret\+\_\+pair}} \mbox{\hyperlink{group__elements_gae82a683cc51eb7f73ffc6bbb470bdcda}{ret\+\_\+pair\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structplayer}{player}} \mbox{\hyperlink{group__elements_ga9df65ef34efcf40007091fa0e679ea0c}{player\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Player. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structenemy}{enemy}} \mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Enemy. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{group__elements_ga753b243f53ea6b43745e2fa18c01e6ab}{bullet\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Bullet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__elements_gae82a683cc51eb7f73ffc6bbb470bdcda}{ret\+\_\+pair\+\_\+t}}() \mbox{\hyperlink{group__elements_gaefd042701d43329a869bfc984c707991}{is\+\_\+border}} (int x, int y)
+\item 
+\mbox{\hyperlink{group__elements_gae82a683cc51eb7f73ffc6bbb470bdcda}{ret\+\_\+pair\+\_\+t}}() \mbox{\hyperlink{group__elements_ga25a5d4ca368206a6b1ff17cbce3cdcc9}{path\+\_\+to\+\_\+take}} (int x, int y)
+\item 
+double \mbox{\hyperlink{group__elements_gae0dac1708fbe2a046854077e7ecbc0d2}{get\+\_\+angle}} (\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} e)
+\item 
+double \mbox{\hyperlink{group__elements_ga3e4354fb607b4fce626593db3cd13036}{get\+\_\+angle\+\_\+two\+\_\+points}} (int x, int y, int x1, int y1)
+\item 
+double \mbox{\hyperlink{group__elements_ga68d3b014b391718c3b3c2494f1a82074}{get\+\_\+angle\+\_\+to\+\_\+player}} (\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} e)
+\item 
+int \mbox{\hyperlink{group__elements_ga232cb07c89a848cf1feb7f84e2c135fe}{get\+\_\+distance}} (\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} e)
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__elements_gaa9cc820ca222189d0563d9cfe365a92e}{build\+\_\+map}} ()
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__elements_ga3b11d835d79f07bc68a7411380ab079f}{draw\+\_\+map}} ()
+\item 
+int() \mbox{\hyperlink{group__elements_ga151be3f921bf438accdb3df006886671}{build\+\_\+player}} (int start\+\_\+x, int start\+\_\+y, \mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$idle, \mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$shooting)
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__elements_gab21f405b30ed78ae12d89b45793e74e5}{dispawn\+\_\+player}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__elements_gabd47ce64b64a5dcb39f1129a92eaad3b}{draw\+\_\+player}} ()
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__elements_gaed73aa517eb4a68d070954fd14453348}{set\+\_\+player\+\_\+pos}} (\mbox{\hyperlink{group__aux__functions_ga7e73507e11719429d41bacdb8e73d1ee}{keys\+\_\+t}} $\ast$\mbox{\hyperlink{structkeys}{keys}})
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__elements_ga2dcbae50a90d8664f409cacb03aef5f0}{update\+\_\+player\+\_\+pos}} ()
+\item 
+int() \mbox{\hyperlink{group__elements_gaee839e89257b78e751b27dc840b28ece}{get\+\_\+player\+\_\+status}} ()
+\item 
+int() \mbox{\hyperlink{group__elements_ga5f9fd8282ad6822bb4cb57f80837d84c}{get\+\_\+game\+\_\+status}} ()
+\item 
+int() \mbox{\hyperlink{group__elements_ga6cc8c499075988ac456ffb68701fdaf2}{collision\+\_\+player\+\_\+monster}} (\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} \mbox{\hyperlink{structenemy}{enemy}}, \mbox{\hyperlink{group__elements_ga9df65ef34efcf40007091fa0e679ea0c}{player\+\_\+t}} \mbox{\hyperlink{structplayer}{player}})
+\item 
+int() \mbox{\hyperlink{group__elements_gaab4a77fca8a5a695b4db1f62bff0b2a9}{collision\+\_\+player\+\_\+wall}} (\mbox{\hyperlink{group__elements_ga9df65ef34efcf40007091fa0e679ea0c}{player\+\_\+t}} \mbox{\hyperlink{structplayer}{player}}, int threshold)
+\item 
+int() \mbox{\hyperlink{group__elements_gaf8a181a7d6795c7d3c5d636133530a98}{player\+\_\+get\+\_\+kills}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+int() \mbox{\hyperlink{group__elements_gaba86813a27d4869e71be86e0f481e8a0}{player\+\_\+get\+\_\+health}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+int() \mbox{\hyperlink{group__elements_gaed39f5647ba1389c4f630492902c69f6}{in\+\_\+range\+\_\+of\+\_\+player}} (\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} \mbox{\hyperlink{structenemy}{enemy}})
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__elements_ga2a7787e00191dc02f23bf13ffd53f072}{tick\+\_\+cooldown}} ()
+\item 
+int() \mbox{\hyperlink{group__elements_gaddd50f12c797c0cfe13be6e695cdbc30}{build\+\_\+monsters}} (\mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$idle, \mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$attacking)
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__elements_gac9400e53b03f0a41c76afc7af50e57ad}{draw\+\_\+monsters}} ()
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__elements_gaf3812700b89240f0a4f3c4dfff32b001}{spawn\+\_\+monsters}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__elements_ga417edb92517ad5827518297e26d9f4f2}{dispawn\+\_\+monsters}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__elements_ga2ce64ea1e3c3db107b58d139d7b2b27c}{update\+\_\+monster\+\_\+pos}} ()
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__elements_gad7ab34bfe8b7ffba8058bf7994ee591b}{enemy\+\_\+reset}} (\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} $\ast$\mbox{\hyperlink{structenemy}{enemy}})
+\item 
+int() \mbox{\hyperlink{group__elements_ga8e4712871418dcc7d5fb3a072b468601}{in\+\_\+sight\+\_\+of\+\_\+player}} (\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} \mbox{\hyperlink{structenemy}{enemy}})
+\item 
+int() \mbox{\hyperlink{group__elements_gad45923a0d77c93c3f38f23cf36ffa719}{collision\+\_\+monster\+\_\+wall}} (\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} \mbox{\hyperlink{structenemy}{enemy}}, int threshold)
+\item 
+int() \mbox{\hyperlink{group__elements_gabb16c955532dc3bd8792020db469174b}{build\+\_\+bullets}} (int startx, int starty, \mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$\mbox{\hyperlink{structsprite}{sprite}})
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__elements_ga9909341b1fdf5fbb20879ddf88e0633e}{spawn\+\_\+bullets}} ()
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}} \mbox{\hyperlink{group__elements_ga646896c051b71330adf4bc81704d1201}{dispawn\+\_\+bullets}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__elements_ga284ddfc73c5ee0be160e0bb766d231e4}{draw\+\_\+bullets}} ()
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__elements_gab1f4d04853abc689afcf236a444fa5e0}{update\+\_\+bullet\+\_\+pos}} ()
+\item 
+int() \mbox{\hyperlink{group__elements_gab29dd799825a7ef67e792614a745f023}{collision\+\_\+bullet\+\_\+wall}} (struct \mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{structbullet}{bullet}})
+\item 
+int() \mbox{\hyperlink{group__elements_gacb7228993cd5ddf06bcfe1e442423126}{collision\+\_\+bullet\+\_\+monster}} (\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} \mbox{\hyperlink{structenemy}{enemy}}, struct \mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{structbullet}{bullet}})
+\item 
+int() \mbox{\hyperlink{group__elements_gaf215806a957e2b3490a52f0d9340c15f}{wall\+\_\+collision}} (int x, int y)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__elements_ga9df65ef34efcf40007091fa0e679ea0c}{player\+\_\+t}} \mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}}
+\item 
+int \mbox{\hyperlink{group__elements_gaa9a8beea197e3d552d9bc0a4efe57f07}{n\+\_\+enemies}}
+\item 
+\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} \mbox{\hyperlink{group__elements_gaf258526e67bb744432573017e7d7bc73}{enemies}} \mbox{[}10\mbox{]}
+\item 
+int \mbox{\hyperlink{group__elements_gaba491a8e216507a1e9286e8bd652d8c8}{n\+\_\+bullets}}
+\item 
+\mbox{\hyperlink{group__elements_ga753b243f53ea6b43745e2fa18c01e6ab}{bullet\+\_\+t}} \mbox{\hyperlink{group__elements_gae3fe896396a0916c265fa1dc483de70c}{bullets}} \mbox{[}5\mbox{]}
+\item 
+struct \mbox{\hyperlink{structmap}{map}} \mbox{\hyperlink{group__elements_gaceb1ca55c7458494b7fe73d271432ad8}{map}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__elements_ga1b274c6654f206bab57cf9578b7e2b31}\label{group__elements_ga1b274c6654f206bab57cf9578b7e2b31}} 
+\index{elements@{elements}!ATTACK\_THRESHOLD@{ATTACK\_THRESHOLD}}
+\index{ATTACK\_THRESHOLD@{ATTACK\_THRESHOLD}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{ATTACK\_THRESHOLD}{ATTACK\_THRESHOLD}}
+{\footnotesize\ttfamily \#define ATTACK\+\_\+\+THRESHOLD~175}
+
+\mbox{\Hypertarget{group__elements_ga200709d3c21daaf3ce4fee30c138aa8d}\label{group__elements_ga200709d3c21daaf3ce4fee30c138aa8d}} 
+\index{elements@{elements}!BORDER\_OFFSET@{BORDER\_OFFSET}}
+\index{BORDER\_OFFSET@{BORDER\_OFFSET}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{BORDER\_OFFSET}{BORDER\_OFFSET}}
+{\footnotesize\ttfamily \#define BORDER\+\_\+\+OFFSET~25}
+
+\mbox{\Hypertarget{group__elements_ga70b3e643b533b8f785b7912e69434161}\label{group__elements_ga70b3e643b533b8f785b7912e69434161}} 
+\index{elements@{elements}!BULLET\_SPEED@{BULLET\_SPEED}}
+\index{BULLET\_SPEED@{BULLET\_SPEED}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{BULLET\_SPEED}{BULLET\_SPEED}}
+{\footnotesize\ttfamily \#define BULLET\+\_\+\+SPEED~30}
+
+\mbox{\Hypertarget{group__elements_ga00719a0387f578831fd8b092bd4d38d3}\label{group__elements_ga00719a0387f578831fd8b092bd4d38d3}} 
+\index{elements@{elements}!DISTANCE\_THRESHOLD@{DISTANCE\_THRESHOLD}}
+\index{DISTANCE\_THRESHOLD@{DISTANCE\_THRESHOLD}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{DISTANCE\_THRESHOLD}{DISTANCE\_THRESHOLD}}
+{\footnotesize\ttfamily \#define DISTANCE\+\_\+\+THRESHOLD~500}
+
+\mbox{\Hypertarget{group__elements_ga918e3124d6f55628dce6a99d2a615be6}\label{group__elements_ga918e3124d6f55628dce6a99d2a615be6}} 
+\index{elements@{elements}!ENEMY\_SPEED@{ENEMY\_SPEED}}
+\index{ENEMY\_SPEED@{ENEMY\_SPEED}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{ENEMY\_SPEED}{ENEMY\_SPEED}}
+{\footnotesize\ttfamily \#define ENEMY\+\_\+\+SPEED~4}
+
+\mbox{\Hypertarget{group__elements_ga4a40bf0e420cc12b54963b54750d99d2}\label{group__elements_ga4a40bf0e420cc12b54963b54750d99d2}} 
+\index{elements@{elements}!PLAYER\_SPAWN\_X@{PLAYER\_SPAWN\_X}}
+\index{PLAYER\_SPAWN\_X@{PLAYER\_SPAWN\_X}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_SPAWN\_X}{PLAYER\_SPAWN\_X}}
+{\footnotesize\ttfamily \#define PLAYER\+\_\+\+SPAWN\+\_\+X~500}
+
+\mbox{\Hypertarget{group__elements_ga8d8711a1eb437af56b982a7c781135fe}\label{group__elements_ga8d8711a1eb437af56b982a7c781135fe}} 
+\index{elements@{elements}!PLAYER\_SPAWN\_Y@{PLAYER\_SPAWN\_Y}}
+\index{PLAYER\_SPAWN\_Y@{PLAYER\_SPAWN\_Y}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_SPAWN\_Y}{PLAYER\_SPAWN\_Y}}
+{\footnotesize\ttfamily \#define PLAYER\+\_\+\+SPAWN\+\_\+Y~500}
+
+\mbox{\Hypertarget{group__elements_gaf49bad41acef45feb40939c0cf9d5d35}\label{group__elements_gaf49bad41acef45feb40939c0cf9d5d35}} 
+\index{elements@{elements}!PLAYER\_SPEED@{PLAYER\_SPEED}}
+\index{PLAYER\_SPEED@{PLAYER\_SPEED}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_SPEED}{PLAYER\_SPEED}}
+{\footnotesize\ttfamily \#define PLAYER\+\_\+\+SPEED~5}
+
+\mbox{\Hypertarget{group__elements_ga87010ba8737bbdc9c672a04acc9a378e}\label{group__elements_ga87010ba8737bbdc9c672a04acc9a378e}} 
+\index{elements@{elements}!SHOT\_COOLDOWN@{SHOT\_COOLDOWN}}
+\index{SHOT\_COOLDOWN@{SHOT\_COOLDOWN}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{SHOT\_COOLDOWN}{SHOT\_COOLDOWN}}
+{\footnotesize\ttfamily \#define SHOT\+\_\+\+COOLDOWN~10}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__elements_ga753b243f53ea6b43745e2fa18c01e6ab}\label{group__elements_ga753b243f53ea6b43745e2fa18c01e6ab}} 
+\index{elements@{elements}!bullet\_t@{bullet\_t}}
+\index{bullet\_t@{bullet\_t}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{bullet\_t}{bullet\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{group__elements_ga753b243f53ea6b43745e2fa18c01e6ab}{bullet\+\_\+t}}}
+
+
+
+Bullet. 
+
+\mbox{\Hypertarget{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}\label{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}} 
+\index{elements@{elements}!enemy\_t@{enemy\_t}}
+\index{enemy\_t@{enemy\_t}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{enemy\_t}{enemy\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structenemy}{enemy}} \mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}}}
+
+
+
+Enemy. 
+
+\mbox{\Hypertarget{group__elements_ga9df65ef34efcf40007091fa0e679ea0c}\label{group__elements_ga9df65ef34efcf40007091fa0e679ea0c}} 
+\index{elements@{elements}!player\_t@{player\_t}}
+\index{player\_t@{player\_t}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{player\_t}{player\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structplayer}{player}} \mbox{\hyperlink{group__elements_ga9df65ef34efcf40007091fa0e679ea0c}{player\+\_\+t}}}
+
+
+
+Player. 
+
+\mbox{\Hypertarget{group__elements_gae82a683cc51eb7f73ffc6bbb470bdcda}\label{group__elements_gae82a683cc51eb7f73ffc6bbb470bdcda}} 
+\index{elements@{elements}!ret\_pair\_t@{ret\_pair\_t}}
+\index{ret\_pair\_t@{ret\_pair\_t}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{ret\_pair\_t}{ret\_pair\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structret__pair}{ret\+\_\+pair}} \mbox{\hyperlink{group__elements_gae82a683cc51eb7f73ffc6bbb470bdcda}{ret\+\_\+pair\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__elements_gabb16c955532dc3bd8792020db469174b}\label{group__elements_gabb16c955532dc3bd8792020db469174b}} 
+\index{elements@{elements}!build\_bullets@{build\_bullets}}
+\index{build\_bullets@{build\_bullets}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{build\_bullets()}{build\_bullets()}}
+{\footnotesize\ttfamily int() build\+\_\+bullets (\begin{DoxyParamCaption}\item[{int}]{startx,  }\item[{int}]{starty,  }\item[{\mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$}]{sprite }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gabb16c955532dc3bd8792020db469174b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{group__elements_gabb16c955532dc3bd8792020db469174b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gaa9cc820ca222189d0563d9cfe365a92e}\label{group__elements_gaa9cc820ca222189d0563d9cfe365a92e}} 
+\index{elements@{elements}!build\_map@{build\_map}}
+\index{build\_map@{build\_map}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{build\_map()}{build\_map()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() build\+\_\+map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gaa9cc820ca222189d0563d9cfe365a92e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{group__elements_gaa9cc820ca222189d0563d9cfe365a92e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gaddd50f12c797c0cfe13be6e695cdbc30}\label{group__elements_gaddd50f12c797c0cfe13be6e695cdbc30}} 
+\index{elements@{elements}!build\_monsters@{build\_monsters}}
+\index{build\_monsters@{build\_monsters}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{build\_monsters()}{build\_monsters()}}
+{\footnotesize\ttfamily int() build\+\_\+monsters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$}]{idle,  }\item[{\mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$}]{attacking }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gaddd50f12c797c0cfe13be6e695cdbc30_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{group__elements_gaddd50f12c797c0cfe13be6e695cdbc30_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_ga151be3f921bf438accdb3df006886671}\label{group__elements_ga151be3f921bf438accdb3df006886671}} 
+\index{elements@{elements}!build\_player@{build\_player}}
+\index{build\_player@{build\_player}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{build\_player()}{build\_player()}}
+{\footnotesize\ttfamily int() build\+\_\+player (\begin{DoxyParamCaption}\item[{int}]{start\+\_\+x,  }\item[{int}]{start\+\_\+y,  }\item[{\mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$}]{idle,  }\item[{\mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$}]{shooting }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga151be3f921bf438accdb3df006886671_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{group__elements_ga151be3f921bf438accdb3df006886671_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gacb7228993cd5ddf06bcfe1e442423126}\label{group__elements_gacb7228993cd5ddf06bcfe1e442423126}} 
+\index{elements@{elements}!collision\_bullet\_monster@{collision\_bullet\_monster}}
+\index{collision\_bullet\_monster@{collision\_bullet\_monster}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{collision\_bullet\_monster()}{collision\_bullet\_monster()}}
+{\footnotesize\ttfamily int() collision\+\_\+bullet\+\_\+monster (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}}}]{enemy,  }\item[{struct \mbox{\hyperlink{structbullet}{bullet}}}]{bullet }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gacb7228993cd5ddf06bcfe1e442423126_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gacb7228993cd5ddf06bcfe1e442423126_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gab29dd799825a7ef67e792614a745f023}\label{group__elements_gab29dd799825a7ef67e792614a745f023}} 
+\index{elements@{elements}!collision\_bullet\_wall@{collision\_bullet\_wall}}
+\index{collision\_bullet\_wall@{collision\_bullet\_wall}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{collision\_bullet\_wall()}{collision\_bullet\_wall()}}
+{\footnotesize\ttfamily int() collision\+\_\+bullet\+\_\+wall (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structbullet}{bullet}}}]{bullet }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gab29dd799825a7ef67e792614a745f023_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gab29dd799825a7ef67e792614a745f023_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gad45923a0d77c93c3f38f23cf36ffa719}\label{group__elements_gad45923a0d77c93c3f38f23cf36ffa719}} 
+\index{elements@{elements}!collision\_monster\_wall@{collision\_monster\_wall}}
+\index{collision\_monster\_wall@{collision\_monster\_wall}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{collision\_monster\_wall()}{collision\_monster\_wall()}}
+{\footnotesize\ttfamily int() collision\+\_\+monster\+\_\+wall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}}}]{enemy,  }\item[{int}]{threshold }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gad45923a0d77c93c3f38f23cf36ffa719_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gad45923a0d77c93c3f38f23cf36ffa719_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_ga6cc8c499075988ac456ffb68701fdaf2}\label{group__elements_ga6cc8c499075988ac456ffb68701fdaf2}} 
+\index{elements@{elements}!collision\_player\_monster@{collision\_player\_monster}}
+\index{collision\_player\_monster@{collision\_player\_monster}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{collision\_player\_monster()}{collision\_player\_monster()}}
+{\footnotesize\ttfamily int() collision\+\_\+player\+\_\+monster (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}}}]{enemy,  }\item[{\mbox{\hyperlink{group__elements_ga9df65ef34efcf40007091fa0e679ea0c}{player\+\_\+t}}}]{player }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga6cc8c499075988ac456ffb68701fdaf2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga6cc8c499075988ac456ffb68701fdaf2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gaab4a77fca8a5a695b4db1f62bff0b2a9}\label{group__elements_gaab4a77fca8a5a695b4db1f62bff0b2a9}} 
+\index{elements@{elements}!collision\_player\_wall@{collision\_player\_wall}}
+\index{collision\_player\_wall@{collision\_player\_wall}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{collision\_player\_wall()}{collision\_player\_wall()}}
+{\footnotesize\ttfamily int() collision\+\_\+player\+\_\+wall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__elements_ga9df65ef34efcf40007091fa0e679ea0c}{player\+\_\+t}}}]{player,  }\item[{int}]{threshold }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gaab4a77fca8a5a695b4db1f62bff0b2a9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gaab4a77fca8a5a695b4db1f62bff0b2a9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_ga646896c051b71330adf4bc81704d1201}\label{group__elements_ga646896c051b71330adf4bc81704d1201}} 
+\index{elements@{elements}!dispawn\_bullets@{dispawn\_bullets}}
+\index{dispawn\_bullets@{dispawn\_bullets}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{dispawn\_bullets()}{dispawn\_bullets()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}} dispawn\+\_\+bullets (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{group__elements_ga646896c051b71330adf4bc81704d1201_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_ga417edb92517ad5827518297e26d9f4f2}\label{group__elements_ga417edb92517ad5827518297e26d9f4f2}} 
+\index{elements@{elements}!dispawn\_monsters@{dispawn\_monsters}}
+\index{dispawn\_monsters@{dispawn\_monsters}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{dispawn\_monsters()}{dispawn\_monsters()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() dispawn\+\_\+monsters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{group__elements_ga417edb92517ad5827518297e26d9f4f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gab21f405b30ed78ae12d89b45793e74e5}\label{group__elements_gab21f405b30ed78ae12d89b45793e74e5}} 
+\index{elements@{elements}!dispawn\_player@{dispawn\_player}}
+\index{dispawn\_player@{dispawn\_player}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{dispawn\_player()}{dispawn\_player()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() dispawn\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{group__elements_gab21f405b30ed78ae12d89b45793e74e5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_ga284ddfc73c5ee0be160e0bb766d231e4}\label{group__elements_ga284ddfc73c5ee0be160e0bb766d231e4}} 
+\index{elements@{elements}!draw\_bullets@{draw\_bullets}}
+\index{draw\_bullets@{draw\_bullets}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{draw\_bullets()}{draw\_bullets()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() draw\+\_\+bullets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga284ddfc73c5ee0be160e0bb766d231e4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga284ddfc73c5ee0be160e0bb766d231e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_ga3b11d835d79f07bc68a7411380ab079f}\label{group__elements_ga3b11d835d79f07bc68a7411380ab079f}} 
+\index{elements@{elements}!draw\_map@{draw\_map}}
+\index{draw\_map@{draw\_map}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{draw\_map()}{draw\_map()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() draw\+\_\+map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga3b11d835d79f07bc68a7411380ab079f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga3b11d835d79f07bc68a7411380ab079f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gac9400e53b03f0a41c76afc7af50e57ad}\label{group__elements_gac9400e53b03f0a41c76afc7af50e57ad}} 
+\index{elements@{elements}!draw\_monsters@{draw\_monsters}}
+\index{draw\_monsters@{draw\_monsters}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{draw\_monsters()}{draw\_monsters()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() draw\+\_\+monsters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gac9400e53b03f0a41c76afc7af50e57ad_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gac9400e53b03f0a41c76afc7af50e57ad_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gabd47ce64b64a5dcb39f1129a92eaad3b}\label{group__elements_gabd47ce64b64a5dcb39f1129a92eaad3b}} 
+\index{elements@{elements}!draw\_player@{draw\_player}}
+\index{draw\_player@{draw\_player}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{draw\_player()}{draw\_player()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() draw\+\_\+player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gabd47ce64b64a5dcb39f1129a92eaad3b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gabd47ce64b64a5dcb39f1129a92eaad3b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gad7ab34bfe8b7ffba8058bf7994ee591b}\label{group__elements_gad7ab34bfe8b7ffba8058bf7994ee591b}} 
+\index{elements@{elements}!enemy\_reset@{enemy\_reset}}
+\index{enemy\_reset@{enemy\_reset}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{enemy\_reset()}{enemy\_reset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() enemy\+\_\+reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} $\ast$}]{enemy }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{group__elements_gad7ab34bfe8b7ffba8058bf7994ee591b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gae0dac1708fbe2a046854077e7ecbc0d2}\label{group__elements_gae0dac1708fbe2a046854077e7ecbc0d2}} 
+\index{elements@{elements}!get\_angle@{get\_angle}}
+\index{get\_angle@{get\_angle}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{get\_angle()}{get\_angle()}}
+{\footnotesize\ttfamily double get\+\_\+angle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}}}]{e }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gae0dac1708fbe2a046854077e7ecbc0d2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_ga68d3b014b391718c3b3c2494f1a82074}\label{group__elements_ga68d3b014b391718c3b3c2494f1a82074}} 
+\index{elements@{elements}!get\_angle\_to\_player@{get\_angle\_to\_player}}
+\index{get\_angle\_to\_player@{get\_angle\_to\_player}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{get\_angle\_to\_player()}{get\_angle\_to\_player()}}
+{\footnotesize\ttfamily double get\+\_\+angle\+\_\+to\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}}}]{e }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga68d3b014b391718c3b3c2494f1a82074_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_ga3e4354fb607b4fce626593db3cd13036}\label{group__elements_ga3e4354fb607b4fce626593db3cd13036}} 
+\index{elements@{elements}!get\_angle\_two\_points@{get\_angle\_two\_points}}
+\index{get\_angle\_two\_points@{get\_angle\_two\_points}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{get\_angle\_two\_points()}{get\_angle\_two\_points()}}
+{\footnotesize\ttfamily double get\+\_\+angle\+\_\+two\+\_\+points (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{x1,  }\item[{int}]{y1 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga3e4354fb607b4fce626593db3cd13036_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_ga232cb07c89a848cf1feb7f84e2c135fe}\label{group__elements_ga232cb07c89a848cf1feb7f84e2c135fe}} 
+\index{elements@{elements}!get\_distance@{get\_distance}}
+\index{get\_distance@{get\_distance}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{get\_distance()}{get\_distance()}}
+{\footnotesize\ttfamily int get\+\_\+distance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}}}]{e }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga232cb07c89a848cf1feb7f84e2c135fe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_ga5f9fd8282ad6822bb4cb57f80837d84c}\label{group__elements_ga5f9fd8282ad6822bb4cb57f80837d84c}} 
+\index{elements@{elements}!get\_game\_status@{get\_game\_status}}
+\index{get\_game\_status@{get\_game\_status}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{get\_game\_status()}{get\_game\_status()}}
+{\footnotesize\ttfamily int() get\+\_\+game\+\_\+status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga5f9fd8282ad6822bb4cb57f80837d84c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gaee839e89257b78e751b27dc840b28ece}\label{group__elements_gaee839e89257b78e751b27dc840b28ece}} 
+\index{elements@{elements}!get\_player\_status@{get\_player\_status}}
+\index{get\_player\_status@{get\_player\_status}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{get\_player\_status()}{get\_player\_status()}}
+{\footnotesize\ttfamily int() get\+\_\+player\+\_\+status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gaee839e89257b78e751b27dc840b28ece_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gaed39f5647ba1389c4f630492902c69f6}\label{group__elements_gaed39f5647ba1389c4f630492902c69f6}} 
+\index{elements@{elements}!in\_range\_of\_player@{in\_range\_of\_player}}
+\index{in\_range\_of\_player@{in\_range\_of\_player}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{in\_range\_of\_player()}{in\_range\_of\_player()}}
+{\footnotesize\ttfamily int() in\+\_\+range\+\_\+of\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}}}]{enemy }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gaed39f5647ba1389c4f630492902c69f6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_ga8e4712871418dcc7d5fb3a072b468601}\label{group__elements_ga8e4712871418dcc7d5fb3a072b468601}} 
+\index{elements@{elements}!in\_sight\_of\_player@{in\_sight\_of\_player}}
+\index{in\_sight\_of\_player@{in\_sight\_of\_player}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{in\_sight\_of\_player()}{in\_sight\_of\_player()}}
+{\footnotesize\ttfamily int() in\+\_\+sight\+\_\+of\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}}}]{enemy }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga8e4712871418dcc7d5fb3a072b468601_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga8e4712871418dcc7d5fb3a072b468601_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gaefd042701d43329a869bfc984c707991}\label{group__elements_gaefd042701d43329a869bfc984c707991}} 
+\index{elements@{elements}!is\_border@{is\_border}}
+\index{is\_border@{is\_border}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{is\_border()}{is\_border()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__elements_gae82a683cc51eb7f73ffc6bbb470bdcda}{ret\+\_\+pair\+\_\+t}}() is\+\_\+border (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{group__elements_gaefd042701d43329a869bfc984c707991_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gaefd042701d43329a869bfc984c707991_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_ga25a5d4ca368206a6b1ff17cbce3cdcc9}\label{group__elements_ga25a5d4ca368206a6b1ff17cbce3cdcc9}} 
+\index{elements@{elements}!path\_to\_take@{path\_to\_take}}
+\index{path\_to\_take@{path\_to\_take}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{path\_to\_take()}{path\_to\_take()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__elements_gae82a683cc51eb7f73ffc6bbb470bdcda}{ret\+\_\+pair\+\_\+t}}() path\+\_\+to\+\_\+take (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__elements_gaba86813a27d4869e71be86e0f481e8a0}\label{group__elements_gaba86813a27d4869e71be86e0f481e8a0}} 
+\index{elements@{elements}!player\_get\_health@{player\_get\_health}}
+\index{player\_get\_health@{player\_get\_health}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{player\_get\_health()}{player\_get\_health()}}
+{\footnotesize\ttfamily int() player\+\_\+get\+\_\+health (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gaba86813a27d4869e71be86e0f481e8a0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gaf8a181a7d6795c7d3c5d636133530a98}\label{group__elements_gaf8a181a7d6795c7d3c5d636133530a98}} 
+\index{elements@{elements}!player\_get\_kills@{player\_get\_kills}}
+\index{player\_get\_kills@{player\_get\_kills}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{player\_get\_kills()}{player\_get\_kills()}}
+{\footnotesize\ttfamily int() player\+\_\+get\+\_\+kills (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gaf8a181a7d6795c7d3c5d636133530a98_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gaed73aa517eb4a68d070954fd14453348}\label{group__elements_gaed73aa517eb4a68d070954fd14453348}} 
+\index{elements@{elements}!set\_player\_pos@{set\_player\_pos}}
+\index{set\_player\_pos@{set\_player\_pos}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{set\_player\_pos()}{set\_player\_pos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() set\+\_\+player\+\_\+pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__aux__functions_ga7e73507e11719429d41bacdb8e73d1ee}{keys\+\_\+t}} $\ast$}]{keys }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gaed73aa517eb4a68d070954fd14453348_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gaed73aa517eb4a68d070954fd14453348_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_ga9909341b1fdf5fbb20879ddf88e0633e}\label{group__elements_ga9909341b1fdf5fbb20879ddf88e0633e}} 
+\index{elements@{elements}!spawn\_bullets@{spawn\_bullets}}
+\index{spawn\_bullets@{spawn\_bullets}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{spawn\_bullets()}{spawn\_bullets()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() spawn\+\_\+bullets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga9909341b1fdf5fbb20879ddf88e0633e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga9909341b1fdf5fbb20879ddf88e0633e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gaf3812700b89240f0a4f3c4dfff32b001}\label{group__elements_gaf3812700b89240f0a4f3c4dfff32b001}} 
+\index{elements@{elements}!spawn\_monsters@{spawn\_monsters}}
+\index{spawn\_monsters@{spawn\_monsters}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{spawn\_monsters()}{spawn\_monsters()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() spawn\+\_\+monsters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{group__elements_gaf3812700b89240f0a4f3c4dfff32b001_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gaf3812700b89240f0a4f3c4dfff32b001_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_ga2a7787e00191dc02f23bf13ffd53f072}\label{group__elements_ga2a7787e00191dc02f23bf13ffd53f072}} 
+\index{elements@{elements}!tick\_cooldown@{tick\_cooldown}}
+\index{tick\_cooldown@{tick\_cooldown}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{tick\_cooldown()}{tick\_cooldown()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() tick\+\_\+cooldown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga2a7787e00191dc02f23bf13ffd53f072_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gab1f4d04853abc689afcf236a444fa5e0}\label{group__elements_gab1f4d04853abc689afcf236a444fa5e0}} 
+\index{elements@{elements}!update\_bullet\_pos@{update\_bullet\_pos}}
+\index{update\_bullet\_pos@{update\_bullet\_pos}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{update\_bullet\_pos()}{update\_bullet\_pos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() update\+\_\+bullet\+\_\+pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gab1f4d04853abc689afcf236a444fa5e0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gab1f4d04853abc689afcf236a444fa5e0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_ga2ce64ea1e3c3db107b58d139d7b2b27c}\label{group__elements_ga2ce64ea1e3c3db107b58d139d7b2b27c}} 
+\index{elements@{elements}!update\_monster\_pos@{update\_monster\_pos}}
+\index{update\_monster\_pos@{update\_monster\_pos}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{update\_monster\_pos()}{update\_monster\_pos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() update\+\_\+monster\+\_\+pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga2ce64ea1e3c3db107b58d139d7b2b27c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga2ce64ea1e3c3db107b58d139d7b2b27c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_ga2dcbae50a90d8664f409cacb03aef5f0}\label{group__elements_ga2dcbae50a90d8664f409cacb03aef5f0}} 
+\index{elements@{elements}!update\_player\_pos@{update\_player\_pos}}
+\index{update\_player\_pos@{update\_player\_pos}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{update\_player\_pos()}{update\_player\_pos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() update\+\_\+player\+\_\+pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga2dcbae50a90d8664f409cacb03aef5f0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_ga2dcbae50a90d8664f409cacb03aef5f0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__elements_gaf215806a957e2b3490a52f0d9340c15f}\label{group__elements_gaf215806a957e2b3490a52f0d9340c15f}} 
+\index{elements@{elements}!wall\_collision@{wall\_collision}}
+\index{wall\_collision@{wall\_collision}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{wall\_collision()}{wall\_collision()}}
+{\footnotesize\ttfamily int() wall\+\_\+collision (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gaf215806a957e2b3490a52f0d9340c15f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__elements_gaf215806a957e2b3490a52f0d9340c15f_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group__elements_gae3fe896396a0916c265fa1dc483de70c}\label{group__elements_gae3fe896396a0916c265fa1dc483de70c}} 
+\index{elements@{elements}!bullets@{bullets}}
+\index{bullets@{bullets}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{bullets}{bullets}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__elements_ga753b243f53ea6b43745e2fa18c01e6ab}{bullet\+\_\+t}} bullets\mbox{[}5\mbox{]}}
+
+\mbox{\Hypertarget{group__elements_gaf258526e67bb744432573017e7d7bc73}\label{group__elements_gaf258526e67bb744432573017e7d7bc73}} 
+\index{elements@{elements}!enemies@{enemies}}
+\index{enemies@{enemies}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{enemies}{enemies}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} enemies\mbox{[}10\mbox{]}}
+
+\mbox{\Hypertarget{group__elements_gaceb1ca55c7458494b7fe73d271432ad8}\label{group__elements_gaceb1ca55c7458494b7fe73d271432ad8}} 
+\index{elements@{elements}!map@{map}}
+\index{map@{map}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structmap}{map}} \mbox{\hyperlink{structmap}{map}}}
+
+\mbox{\Hypertarget{group__elements_gaba491a8e216507a1e9286e8bd652d8c8}\label{group__elements_gaba491a8e216507a1e9286e8bd652d8c8}} 
+\index{elements@{elements}!n\_bullets@{n\_bullets}}
+\index{n\_bullets@{n\_bullets}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{n\_bullets}{n\_bullets}}
+{\footnotesize\ttfamily int n\+\_\+bullets}
+
+\mbox{\Hypertarget{group__elements_gaa9a8beea197e3d552d9bc0a4efe57f07}\label{group__elements_gaa9a8beea197e3d552d9bc0a4efe57f07}} 
+\index{elements@{elements}!n\_enemies@{n\_enemies}}
+\index{n\_enemies@{n\_enemies}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{n\_enemies}{n\_enemies}}
+{\footnotesize\ttfamily int n\+\_\+enemies}
+
+\mbox{\Hypertarget{group__elements_ga56f5fc5c4c51589477f728309cde2c65}\label{group__elements_ga56f5fc5c4c51589477f728309cde2c65}} 
+\index{elements@{elements}!p@{p}}
+\index{p@{p}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__elements_ga9df65ef34efcf40007091fa0e679ea0c}{player\+\_\+t}} p}
+

@@ -1,0 +1,158 @@
+\hypertarget{group__kbd}{}\doxysection{kbd}
+\label{group__kbd}\index{kbd@{kbd}}
+Collaboration diagram for kbd\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{group__kbd}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__kbd_gab35cfc697428fac7727ef5a6411b86f0}{subscribe\+\_\+kbc\+\_\+interrupt}} (uint8\+\_\+t interrupt\+\_\+bit, int $\ast$interrupt\+\_\+id)
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__kbd_ga5761bd4aad91ac1d68916ad88f583d9f}{kbc\+\_\+ih}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+int() \mbox{\hyperlink{group__kbd_gac83c39ace6f539167f5cc34f6c689cd2}{keyboard\+\_\+poll}} (uint8\+\_\+t bytes\mbox{[}$\,$\mbox{]}, uint8\+\_\+t $\ast$size)
+\item 
+const uint8\+\_\+t $\ast$() \mbox{\hyperlink{group__kbd_gaf9fae340464cde05ae307740c23e57b8}{get\+\_\+scancode}} ()
+\item 
+int \mbox{\hyperlink{group__kbd_ga6b5a3839c3253ab21aa69739a1cdfa0f}{keyboard\+\_\+get\+\_\+done}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+int \mbox{\hyperlink{group__kbd_ga2ebba414b43d0a512cbf6ed4fc93ff61}{keyboard\+\_\+get\+\_\+size}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+int \mbox{\hyperlink{group__kbd_ga92aeaf639bfed417b8a439361f92f221}{keyboard\+\_\+get\+\_\+error}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group__kbd_ga01577ed8d3646775ae6a8e00d24c1d94}{scancode}} \mbox{[}2\mbox{]}
+\item 
+int \mbox{\hyperlink{group__kbd_ga5992b274cfdcacdbc1fa8347fd01ebde}{done}}
+\item 
+int \mbox{\hyperlink{group__kbd_ga0e1ea19fb9fa7881d15d84eff4c090e1}{sz}}
+\item 
+int \mbox{\hyperlink{group__kbd_ga6729a7041834743f389446708ab0b24d}{got\+\_\+error\+\_\+keyboard}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__kbd_gaf9fae340464cde05ae307740c23e57b8}\label{group__kbd_gaf9fae340464cde05ae307740c23e57b8}} 
+\index{kbd@{kbd}!get\_scancode@{get\_scancode}}
+\index{get\_scancode@{get\_scancode}!kbd@{kbd}}
+\doxysubsubsection{\texorpdfstring{get\_scancode()}{get\_scancode()}}
+{\footnotesize\ttfamily const uint8\+\_\+t $\ast$() get\+\_\+scancode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__kbd_gaf9fae340464cde05ae307740c23e57b8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__kbd_ga5761bd4aad91ac1d68916ad88f583d9f}\label{group__kbd_ga5761bd4aad91ac1d68916ad88f583d9f}} 
+\index{kbd@{kbd}!kbc\_ih@{kbc\_ih}}
+\index{kbc\_ih@{kbc\_ih}!kbd@{kbd}}
+\doxysubsubsection{\texorpdfstring{kbc\_ih()}{kbc\_ih()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() kbc\+\_\+ih (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__kbd_ga5761bd4aad91ac1d68916ad88f583d9f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{group__kbd_ga5761bd4aad91ac1d68916ad88f583d9f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__kbd_ga6b5a3839c3253ab21aa69739a1cdfa0f}\label{group__kbd_ga6b5a3839c3253ab21aa69739a1cdfa0f}} 
+\index{kbd@{kbd}!keyboard\_get\_done@{keyboard\_get\_done}}
+\index{keyboard\_get\_done@{keyboard\_get\_done}!kbd@{kbd}}
+\doxysubsubsection{\texorpdfstring{keyboard\_get\_done()}{keyboard\_get\_done()}}
+{\footnotesize\ttfamily int keyboard\+\_\+get\+\_\+done (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__kbd_ga92aeaf639bfed417b8a439361f92f221}\label{group__kbd_ga92aeaf639bfed417b8a439361f92f221}} 
+\index{kbd@{kbd}!keyboard\_get\_error@{keyboard\_get\_error}}
+\index{keyboard\_get\_error@{keyboard\_get\_error}!kbd@{kbd}}
+\doxysubsubsection{\texorpdfstring{keyboard\_get\_error()}{keyboard\_get\_error()}}
+{\footnotesize\ttfamily int keyboard\+\_\+get\+\_\+error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group__kbd_ga2ebba414b43d0a512cbf6ed4fc93ff61}\label{group__kbd_ga2ebba414b43d0a512cbf6ed4fc93ff61}} 
+\index{kbd@{kbd}!keyboard\_get\_size@{keyboard\_get\_size}}
+\index{keyboard\_get\_size@{keyboard\_get\_size}!kbd@{kbd}}
+\doxysubsubsection{\texorpdfstring{keyboard\_get\_size()}{keyboard\_get\_size()}}
+{\footnotesize\ttfamily int keyboard\+\_\+get\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__kbd_ga2ebba414b43d0a512cbf6ed4fc93ff61_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__kbd_gac83c39ace6f539167f5cc34f6c689cd2}\label{group__kbd_gac83c39ace6f539167f5cc34f6c689cd2}} 
+\index{kbd@{kbd}!keyboard\_poll@{keyboard\_poll}}
+\index{keyboard\_poll@{keyboard\_poll}!kbd@{kbd}}
+\doxysubsubsection{\texorpdfstring{keyboard\_poll()}{keyboard\_poll()}}
+{\footnotesize\ttfamily int() keyboard\+\_\+poll (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{bytes\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t $\ast$}]{size }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__kbd_gac83c39ace6f539167f5cc34f6c689cd2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__kbd_gab35cfc697428fac7727ef5a6411b86f0}\label{group__kbd_gab35cfc697428fac7727ef5a6411b86f0}} 
+\index{kbd@{kbd}!subscribe\_kbc\_interrupt@{subscribe\_kbc\_interrupt}}
+\index{subscribe\_kbc\_interrupt@{subscribe\_kbc\_interrupt}!kbd@{kbd}}
+\doxysubsubsection{\texorpdfstring{subscribe\_kbc\_interrupt()}{subscribe\_kbc\_interrupt()}}
+{\footnotesize\ttfamily int() subscribe\+\_\+kbc\+\_\+interrupt (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{interrupt\+\_\+bit,  }\item[{int $\ast$}]{interrupt\+\_\+id }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__kbd_gab35cfc697428fac7727ef5a6411b86f0_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group__kbd_ga5992b274cfdcacdbc1fa8347fd01ebde}\label{group__kbd_ga5992b274cfdcacdbc1fa8347fd01ebde}} 
+\index{kbd@{kbd}!done@{done}}
+\index{done@{done}!kbd@{kbd}}
+\doxysubsubsection{\texorpdfstring{done}{done}}
+{\footnotesize\ttfamily int done}
+
+\mbox{\Hypertarget{group__kbd_ga6729a7041834743f389446708ab0b24d}\label{group__kbd_ga6729a7041834743f389446708ab0b24d}} 
+\index{kbd@{kbd}!got\_error\_keyboard@{got\_error\_keyboard}}
+\index{got\_error\_keyboard@{got\_error\_keyboard}!kbd@{kbd}}
+\doxysubsubsection{\texorpdfstring{got\_error\_keyboard}{got\_error\_keyboard}}
+{\footnotesize\ttfamily int got\+\_\+error\+\_\+keyboard}
+
+\mbox{\Hypertarget{group__kbd_ga01577ed8d3646775ae6a8e00d24c1d94}\label{group__kbd_ga01577ed8d3646775ae6a8e00d24c1d94}} 
+\index{kbd@{kbd}!scancode@{scancode}}
+\index{scancode@{scancode}!kbd@{kbd}}
+\doxysubsubsection{\texorpdfstring{scancode}{scancode}}
+{\footnotesize\ttfamily uint8\+\_\+t scancode\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{group__kbd_ga0e1ea19fb9fa7881d15d84eff4c090e1}\label{group__kbd_ga0e1ea19fb9fa7881d15d84eff4c090e1}} 
+\index{kbd@{kbd}!sz@{sz}}
+\index{sz@{sz}!kbd@{kbd}}
+\doxysubsubsection{\texorpdfstring{sz}{sz}}
+{\footnotesize\ttfamily int sz}
+

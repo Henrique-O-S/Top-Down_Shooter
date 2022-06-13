@@ -1,0 +1,11 @@
+<map id="unsubscribe_all" name="unsubscribe_all">
+<area shape="rect" id="node1" title="Unsubscribes all subscribed interrupts." alt="" coords="5,107,117,133"/>
+<area shape="rect" id="node2" href="$group__mouse.html#gabf4140d9d2b0a560eb7910b635bc89fb" title=" " alt="" coords="165,56,324,83"/>
+<area shape="rect" id="node8" href="$group__mouse.html#ga3781238807e9bdcdb58e541f279ccec1" title=" " alt="" coords="165,107,324,133"/>
+<area shape="rect" id="node9" href="$group__utils.html#gaadc49a62c6faf07bd5a25495ed4fa813" title="Unsubcribes Interrupts." alt="" coords="171,157,318,184"/>
+<area shape="rect" id="node3" href="$group__mouse.html#ga17f6a309e34b241931cc44259a3afda6" title=" " alt="" coords="372,56,503,83"/>
+<area shape="rect" id="node4" href="$group__kbc.html#ga081c509c47a33f55ca8756f2d8a21fa6" title="Low&#45;level function to issue an argument of a command." alt="" coords="560,5,667,32"/>
+<area shape="rect" id="node6" href="$group__kbc.html#gabf6e77da648ded62b65bdb3f9a437424" title="Low&#45;level function to issue a command to keyboard." alt="" coords="557,56,670,83"/>
+<area shape="rect" id="node7" href="$group__mouse.html#ga7c0b89b2552784fdc6cf5143d0fff378" title=" " alt="" coords="551,107,676,133"/>
+<area shape="rect" id="node5" href="$group__utils.html#ga79a031a8611f5b2d6afa4158e92b0fb4" title="sys_inb wrapper" alt="" coords="724,56,815,83"/>
+</map>

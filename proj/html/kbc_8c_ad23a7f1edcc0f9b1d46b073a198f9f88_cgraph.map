@@ -1,0 +1,9 @@
+<map id="kbc_restore_kbd" name="kbc_restore_kbd">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,124,83"/>
+<area shape="rect" id="node2" href="$group__kbc.html#ga979788590a8e65eb1d5259ee6faa37a5" title="High&#45;level function that changes the command byte of the KBC." alt="" coords="172,31,296,57"/>
+<area shape="rect" id="node6" href="$group__kbc.html#ga4d01b87977dde6d295c19c982e5426ea" title="High&#45;level function that reads the command byte of the KBC." alt="" coords="181,81,287,108"/>
+<area shape="rect" id="node3" href="$group__kbc.html#ga081c509c47a33f55ca8756f2d8a21fa6" title="Low&#45;level function to issue an argument of a command." alt="" coords="347,5,454,32"/>
+<area shape="rect" id="node5" href="$group__kbc.html#gabf6e77da648ded62b65bdb3f9a437424" title="Low&#45;level function to issue a command to keyboard." alt="" coords="344,56,457,83"/>
+<area shape="rect" id="node4" href="$group__utils.html#ga79a031a8611f5b2d6afa4158e92b0fb4" title="sys_inb wrapper" alt="" coords="505,56,596,83"/>
+<area shape="rect" id="node7" href="$group__kbc.html#ga0653674ee39394a08915bb1599ae67f9" title="Low&#45;level function for reading byte from keyboard Low&#45;level function for reading byte from keyboard...." alt="" coords="347,107,454,133"/>
+</map>

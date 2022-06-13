@@ -1,0 +1,15 @@
+<map id="draw_bullets" name="draw_bullets">
+<area shape="rect" id="node1" title=" " alt="" coords="5,259,100,285"/>
+<area shape="rect" id="node2" href="$group__sprite.html#ga4550eb78c720c0577782e2f8c373b2eb" title=" " alt="" coords="185,208,273,235"/>
+<area shape="rect" id="node12" href="$group__sprite.html#ga147c19d6da7dc2d15fc1a4041f9e7ece" title=" " alt="" coords="176,259,283,285"/>
+<area shape="rect" id="node13" href="$group__sprite.html#ga1fd0069896123635d9d3a71cdb55f7b1" title=" " alt="" coords="148,309,311,336"/>
+<area shape="rect" id="node3" href="$group__sprite.html#ga1a5c0c2b65c8ef1a76621239e5bbed9e" title=" " alt="" coords="368,5,499,32"/>
+<area shape="rect" id="node4" href="$group__sprite.html#ga10470dac4f17e5c4f271e709cf9490d8" title=" " alt="" coords="359,56,508,83"/>
+<area shape="rect" id="node5" href="$group__sprite.html#ga07c634de39b5ea0c935940bc0bfbe993" title=" " alt="" coords="367,107,500,133"/>
+<area shape="rect" id="node6" href="$group__graphics.html#ga1e78ad9ed25b03687bc0b0d06b3957e4" title=" " alt="" coords="395,157,472,184"/>
+<area shape="rect" id="node7" href="$group__graphics.html#gaff98c1ed5146900037a3747de30f6a79" title=" " alt="" coords="394,208,473,235"/>
+<area shape="rect" id="node8" href="$group__utils.html#gabfe9bd035a0195eebca322468e35e0ce" title=" " alt="" coords="410,259,457,285"/>
+<area shape="rect" id="node9" href="$group__utils.html#ga499d23bfacd6a957be5c89acaf2f8c59" title=" " alt="" coords="412,309,455,336"/>
+<area shape="rect" id="node10" href="$graphics_8c.html#a40c3ebeb097155e47c242076bb625b91" title=" " alt="" coords="362,361,505,402"/>
+<area shape="rect" id="node11" href="$graphics_8c.html#ac95c4a8fae7d00a84b27303d1d445fcc" title=" " alt="" coords="378,427,489,453"/>
+</map>

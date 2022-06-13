@@ -1,0 +1,96 @@
+\hypertarget{enemy_8h_source}{}\doxysection{enemy.\+h}
+\label{enemy_8h_source}\index{src/media/enemy/enemy.h@{src/media/enemy/enemy.h}}
+\mbox{\hyperlink{enemy_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef ENEMY\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define ENEMY\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{graphics_8h}{graphics.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}survivor-\/meleeattack\_knife\_0.xpm"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}survivor-\/meleeattack\_knife\_1.xpm"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}survivor-\/meleeattack\_knife\_2.xpm"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}survivor-\/meleeattack\_knife\_3.xpm"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}survivor-\/meleeattack\_knife\_4.xpm"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}survivor-\/meleeattack\_knife\_5.xpm"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}survivor-\/meleeattack\_knife\_6.xpm"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}survivor-\/meleeattack\_knife\_7.xpm"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}survivor-\/meleeattack\_knife\_8.xpm"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}survivor-\/meleeattack\_knife\_9.xpm"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}survivor-\/meleeattack\_knife\_10.xpm"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}survivor-\/meleeattack\_knife\_11.xpm"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}survivor-\/meleeattack\_knife\_12.xpm"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}survivor-\/meleeattack\_knife\_13.xpm"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}survivor-\/meleeattack\_knife\_14.xpm"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_0.xpm"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_1.xpm"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_2.xpm"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_3.xpm"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_4.xpm"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_5.xpm"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_6.xpm"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_7.xpm"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_8.xpm"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_9.xpm"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_10.xpm"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_11.xpm"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_12.xpm"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_13.xpm"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_14.xpm"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_15.xpm"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_16.xpm"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_17.xpm"{}}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_18.xpm"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}survivor-\/move\_knife\_19.xpm"{}}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{static} \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** \mbox{\hyperlink{enemy_8h_a00a02a64d57c243868bcc0e32e25b122}{get\_enemy\_attacking}}(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{44     \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** ret = (\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}*) * 15);}
+\DoxyCodeLine{45     ret[0] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_meleeattack\_knife\_0\_xpm, 57, 57);}
+\DoxyCodeLine{46     ret[1] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_meleeattack\_knife\_1\_xpm, 57, 57);}
+\DoxyCodeLine{47     ret[2] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_meleeattack\_knife\_2\_xpm, 57, 57);}
+\DoxyCodeLine{48     ret[3] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_meleeattack\_knife\_3\_xpm, 57, 57);}
+\DoxyCodeLine{49     ret[4] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_meleeattack\_knife\_4\_xpm, 57, 57);}
+\DoxyCodeLine{50     ret[5] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_meleeattack\_knife\_5\_xpm, 57, 57);}
+\DoxyCodeLine{51     ret[6] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_meleeattack\_knife\_6\_xpm, 57, 57);}
+\DoxyCodeLine{52     ret[7] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_meleeattack\_knife\_7\_xpm, 57, 57);}
+\DoxyCodeLine{53     ret[8] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_meleeattack\_knife\_8\_xpm, 57, 57);}
+\DoxyCodeLine{54     ret[9] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_meleeattack\_knife\_9\_xpm, 57, 57);}
+\DoxyCodeLine{55     ret[10] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_meleeattack\_knife\_10\_xpm, 57, 57);}
+\DoxyCodeLine{56     ret[11] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_meleeattack\_knife\_11\_xpm, 57, 57);}
+\DoxyCodeLine{57     ret[12] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_meleeattack\_knife\_12\_xpm, 57, 57);}
+\DoxyCodeLine{58     ret[13] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_meleeattack\_knife\_13\_xpm, 57, 57);}
+\DoxyCodeLine{59     ret[14] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_meleeattack\_knife\_14\_xpm, 57, 57);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{keywordflow}{return} ret;}
+\DoxyCodeLine{62 \}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{keyword}{static} \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** \mbox{\hyperlink{enemy_8h_a94facdaecf804ac38e4f8818e1d3a214}{get\_enemy\_idle}}(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{65     \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** ret = (\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}*) * 20);}
+\DoxyCodeLine{66     ret[0] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_0\_xpm, 57, 57);}
+\DoxyCodeLine{67     ret[1] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_1\_xpm, 57, 57);}
+\DoxyCodeLine{68     ret[2] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_2\_xpm, 57, 57);}
+\DoxyCodeLine{69     ret[3] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_3\_xpm, 57, 57);}
+\DoxyCodeLine{70     ret[4] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_4\_xpm, 57, 57);}
+\DoxyCodeLine{71     ret[5] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_5\_xpm, 57, 57);}
+\DoxyCodeLine{72     ret[6] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_6\_xpm, 57, 57);}
+\DoxyCodeLine{73     ret[7] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_7\_xpm, 57, 57);}
+\DoxyCodeLine{74     ret[8] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_8\_xpm, 57, 57);}
+\DoxyCodeLine{75     ret[9] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_9\_xpm, 57, 57);}
+\DoxyCodeLine{76     ret[10] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_10\_xpm, 57, 57);}
+\DoxyCodeLine{77     ret[11] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_11\_xpm, 57, 57);}
+\DoxyCodeLine{78     ret[12] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_12\_xpm, 57, 57);}
+\DoxyCodeLine{79     ret[13] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_13\_xpm, 57, 57);}
+\DoxyCodeLine{80     ret[14] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_14\_xpm, 57, 57);}
+\DoxyCodeLine{81     ret[15] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_15\_xpm, 57, 57);}
+\DoxyCodeLine{82     ret[16] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_16\_xpm, 57, 57);}
+\DoxyCodeLine{83     ret[17] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_18\_xpm, 57, 57);}
+\DoxyCodeLine{84     ret[18] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_18\_xpm, 57, 57);}
+\DoxyCodeLine{85     ret[19] = \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)survivor\_move\_knife\_19\_xpm, 57, 57);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{keywordflow}{return} ret;}
+\DoxyCodeLine{88 \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//ENEMY\_H\_INCLUDED}}
+
+\end{DoxyCode}

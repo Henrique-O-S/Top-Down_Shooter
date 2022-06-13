@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['read_5fdata_0',['READ_DATA',['../group__mouse__macros.html#ga8d406d5aff787991429e62cfd9bac721',1,'mouse_macros.h']]],
+  ['read_5fkbc_5fcmd_1',['READ_KBC_CMD',['../group__kbc__macros.html#ga45c2432923d72440cccff8a2239e4957',1,'kbc_macros.h']]],
+  ['reg_5fa_2',['REG_A',['../group__rtc__macros.html#gaa0e40d1cb9fea79e800aa79b8ca291f7',1,'rtc_macros.h']]],
+  ['reg_5fa_5fuip_3',['REG_A_UIP',['../group__rtc__macros.html#gabf750280c8f263587fd8830fe0f85866',1,'rtc_macros.h']]],
+  ['reg_5fb_4',['REG_B',['../group__rtc__macros.html#ga28ed75c6727784e56c2bb8d828c876c9',1,'rtc_macros.h']]],
+  ['reg_5fb_5fbin_5',['REG_B_BIN',['../group__rtc__macros.html#ga35b479f897a47ffe4b2ee2714cc56a14',1,'rtc_macros.h']]],
+  ['resend_6',['RESEND',['../group__mouse__macros.html#ga92f67631ef5a97e4a266c15bc710776d',1,'mouse_macros.h']]],
+  ['reset_7',['RESET',['../group__mouse__macros.html#gab702106cf3b3e96750b6845ded4e0299',1,'mouse_macros.h']]],
+  ['ret_5fpair_8',['ret_pair',['../structret__pair.html',1,'']]],
+  ['ret_5fpair_5ft_9',['ret_pair_t',['../group__elements.html#gae82a683cc51eb7f73ffc6bbb470bdcda',1,'elements.h']]],
+  ['right_5fbutton_10',['RIGHT_BUTTON',['../group__mouse__macros.html#gaeb17351958162535ab6af2cd6b030955',1,'mouse_macros.h']]],
+  ['rtc_11',['rtc',['../group__rtc.html',1,'']]],
+  ['rtc_2ec_12',['rtc.c',['../rtc_8c.html',1,'']]],
+  ['rtc_2ed_13',['rtc.d',['../rtc_8d.html',1,'']]],
+  ['rtc_2eh_14',['rtc.h',['../rtc_8h.html',1,'']]],
+  ['rtc_5faddr_5freg_15',['RTC_ADDR_REG',['../group__rtc__macros.html#ga710b98232df2c563009e6f8a6cd18220',1,'rtc_macros.h']]],
+  ['rtc_5fdata_5freg_16',['RTC_DATA_REG',['../group__rtc__macros.html#ga2f258a00c59c3f347c8d2d4a75471ce0',1,'rtc_macros.h']]],
+  ['rtc_5fid_17',['rtc_id',['../group__interrupts.html#ga32ef5092702c59ada428caef6c515382',1,'interrupts.h']]],
+  ['rtc_5firq_18',['RTC_IRQ',['../group__rtc__macros.html#ga4e22feb6ffbc1cda32fadff5c740dc51',1,'rtc_macros.h']]],
+  ['rtc_5fmacros_2eh_19',['rtc_macros.h',['../rtc__macros_8h.html',1,'']]],
+  ['rtc_5fset_5fupdates_20',['rtc_set_updates',['../group__rtc.html#ga73e9cfc707b230abcda4e24cbac48d4d',1,'rtc_set_updates(int on):&#160;rtc.c'],['../group__rtc.html#ga73e9cfc707b230abcda4e24cbac48d4d',1,'rtc_set_updates(int on):&#160;rtc.c']]],
+  ['rtc_5fsubscription_21',['rtc_subscription',['../group__interrupts.html#gaf112b12f61d2a4e217d4d4b58661ca5b',1,'rtc_subscription():&#160;interrupts.h'],['../interrupts_8c.html#af112b12f61d2a4e217d4d4b58661ca5b',1,'rtc_subscription():&#160;interrupts.c']]]
+];

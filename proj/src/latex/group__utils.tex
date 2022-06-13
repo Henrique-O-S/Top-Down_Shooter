@@ -1,0 +1,148 @@
+\hypertarget{group__utils}{}\doxysection{utils}
+\label{group__utils}\index{utils@{utils}}
+Collaboration diagram for utils\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__utils_gaadc49a62c6faf07bd5a25495ed4fa813}{unsubscribe\+\_\+interrupt}} (int $\ast$interrupt\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Unsubcribes Interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__utils_ga81621440b3d65680979425e39aa8c789}{util\+\_\+get\+\_\+\+LSB}} (uint16\+\_\+t val, uint8\+\_\+t $\ast$lsb)
+\begin{DoxyCompactList}\small\item\em Gets the least significant byte of a 16-\/bit variable. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__utils_ga6a880076cd2ec468834438b6e0c58836}{util\+\_\+get\+\_\+\+MSB}} (uint16\+\_\+t val, uint8\+\_\+t $\ast$msb)
+\begin{DoxyCompactList}\small\item\em Gets the most significant byte of a 16-\/bit variable. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__utils_ga79a031a8611f5b2d6afa4158e92b0fb4}{util\+\_\+sys\+\_\+inb}} (int port, uint8\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em sys\+\_\+inb wrapper \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{group__utils_ga499d23bfacd6a957be5c89acaf2f8c59}{min}} (int16\+\_\+t a, int16\+\_\+t b)
+\begin{DoxyCompactList}\small\item\em Gets the minimum between to given values. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{group__utils_gabfe9bd035a0195eebca322468e35e0ce}{max}} (int16\+\_\+t a, int16\+\_\+t b)
+\begin{DoxyCompactList}\small\item\em Gets the maximum between to given values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__utils_gabfe9bd035a0195eebca322468e35e0ce}\label{group__utils_gabfe9bd035a0195eebca322468e35e0ce}} 
+\index{utils@{utils}!max@{max}}
+\index{max@{max}!utils@{utils}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily int16\+\_\+t max (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{a,  }\item[{int16\+\_\+t}]{b }\end{DoxyParamCaption})}
+
+
+
+Gets the maximum between to given values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & value to be compared \\
+\hline
+{\em b} & value to be compared \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bigger value between the two 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__utils_ga499d23bfacd6a957be5c89acaf2f8c59}\label{group__utils_ga499d23bfacd6a957be5c89acaf2f8c59}} 
+\index{utils@{utils}!min@{min}}
+\index{min@{min}!utils@{utils}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily int16\+\_\+t min (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{a,  }\item[{int16\+\_\+t}]{b }\end{DoxyParamCaption})}
+
+
+
+Gets the minimum between to given values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & value to be compared \\
+\hline
+{\em b} & value to be compared \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+smaller value between the two 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__utils_gaadc49a62c6faf07bd5a25495ed4fa813}\label{group__utils_gaadc49a62c6faf07bd5a25495ed4fa813}} 
+\index{utils@{utils}!unsubscribe\_interrupt@{unsubscribe\_interrupt}}
+\index{unsubscribe\_interrupt@{unsubscribe\_interrupt}!utils@{utils}}
+\doxysubsubsection{\texorpdfstring{unsubscribe\_interrupt()}{unsubscribe\_interrupt()}}
+{\footnotesize\ttfamily int() unsubscribe\+\_\+interrupt (\begin{DoxyParamCaption}\item[{int $\ast$}]{interrupt\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Unsubcribes Interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interrupt\+\_\+id} & Interrupt ID, value via arguments on subscription of the interrupt\+\_\+id \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__kbd_gab35cfc697428fac7727ef5a6411b86f0}{subscribe\+\_\+kbc\+\_\+interrupt}}, \mbox{\hyperlink{group__timer_ga11445809a6c9be6a3ed5ffb185bf88c3}{subscribe\+\_\+timer\+\_\+interrupt}} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Whether operation was sucessful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__utils_ga81621440b3d65680979425e39aa8c789}\label{group__utils_ga81621440b3d65680979425e39aa8c789}} 
+\index{utils@{utils}!util\_get\_LSB@{util\_get\_LSB}}
+\index{util\_get\_LSB@{util\_get\_LSB}!utils@{utils}}
+\doxysubsubsection{\texorpdfstring{util\_get\_LSB()}{util\_get\_LSB()}}
+{\footnotesize\ttfamily int() util\+\_\+get\+\_\+\+LSB (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{val,  }\item[{uint8\+\_\+t $\ast$}]{lsb }\end{DoxyParamCaption})}
+
+
+
+Gets the least significant byte of a 16-\/bit variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & 16-\/bit variable \\
+\hline
+{\em lsb} & Pointer to a 8-\/bit variable to store the value of the LSB \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+CODE code representing the result of the operation, SUCCESS code is returned if everything is OK 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__utils_ga6a880076cd2ec468834438b6e0c58836}\label{group__utils_ga6a880076cd2ec468834438b6e0c58836}} 
+\index{utils@{utils}!util\_get\_MSB@{util\_get\_MSB}}
+\index{util\_get\_MSB@{util\_get\_MSB}!utils@{utils}}
+\doxysubsubsection{\texorpdfstring{util\_get\_MSB()}{util\_get\_MSB()}}
+{\footnotesize\ttfamily int() util\+\_\+get\+\_\+\+MSB (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{val,  }\item[{uint8\+\_\+t $\ast$}]{msb }\end{DoxyParamCaption})}
+
+
+
+Gets the most significant byte of a 16-\/bit variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & 16-\/bit variable \\
+\hline
+{\em lsb} & Pointer to a 8-\/bit variable to store the value of the MSB \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+CODE code representing the result of the operation, SUCCESS code is returned if everything is OK 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__utils_ga79a031a8611f5b2d6afa4158e92b0fb4}\label{group__utils_ga79a031a8611f5b2d6afa4158e92b0fb4}} 
+\index{utils@{utils}!util\_sys\_inb@{util\_sys\_inb}}
+\index{util\_sys\_inb@{util\_sys\_inb}!utils@{utils}}
+\doxysubsubsection{\texorpdfstring{util\_sys\_inb()}{util\_sys\_inb()}}
+{\footnotesize\ttfamily int() util\+\_\+sys\+\_\+inb (\begin{DoxyParamCaption}\item[{int}]{port,  }\item[{uint8\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+sys\+\_\+inb wrapper 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Port to read from \\
+\hline
+{\em value} & Pointer to byte to store value read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+CODE code representing the result of the operation, SUCCESS code is returned if everything is OK 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 1

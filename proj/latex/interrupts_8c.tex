@@ -1,0 +1,58 @@
+\hypertarget{interrupts_8c}{}\doxysection{src/project/src/interrupts.c File Reference}
+\label{interrupts_8c}\index{src/project/src/interrupts.c@{src/project/src/interrupts.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}interrupts.\+h\char`\"{}}\newline
+Include dependency graph for interrupts.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interrupts_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__interrupts_gaa47d951ed5ee7678663adf66785022f4}{subscribe\+\_\+all}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\begin{DoxyCompactList}\small\item\em Subscribes all drivers used (timer-\/\texorpdfstring{$>$}{>}keyboard-\/\texorpdfstring{$>$}{>}mouse) \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__interrupts_gadd6f2c43bcf6aa436d16dd18edbeea81}{unsubscribe\+\_\+all}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\begin{DoxyCompactList}\small\item\em Unsubscribes all subscribed interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__interrupts_ga0c400925da5041db14dfec219817f3ee}{get\+\_\+irq}} (int id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{interrupts_8c_a2ed7f85685b1cc595a870fc8bc385167}{timer\+\_\+subscription}} = 0
+\item 
+static int \mbox{\hyperlink{interrupts_8c_aedf8670fc8b713d894942d40cf66a210}{keyboard\+\_\+subscription}} = 0
+\item 
+static int \mbox{\hyperlink{interrupts_8c_acbae20bbcb6c3feb37d09ee2a37b7b1c}{mouse\+\_\+subscription}} = 0
+\item 
+static int \mbox{\hyperlink{interrupts_8c_af112b12f61d2a4e217d4d4b58661ca5b}{rtc\+\_\+subscription}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{interrupts_8c_aedf8670fc8b713d894942d40cf66a210}\label{interrupts_8c_aedf8670fc8b713d894942d40cf66a210}} 
+\index{interrupts.c@{interrupts.c}!keyboard\_subscription@{keyboard\_subscription}}
+\index{keyboard\_subscription@{keyboard\_subscription}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{keyboard\_subscription}{keyboard\_subscription}}
+{\footnotesize\ttfamily int keyboard\+\_\+subscription = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{interrupts_8c_acbae20bbcb6c3feb37d09ee2a37b7b1c}\label{interrupts_8c_acbae20bbcb6c3feb37d09ee2a37b7b1c}} 
+\index{interrupts.c@{interrupts.c}!mouse\_subscription@{mouse\_subscription}}
+\index{mouse\_subscription@{mouse\_subscription}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_subscription}{mouse\_subscription}}
+{\footnotesize\ttfamily int mouse\+\_\+subscription = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{interrupts_8c_af112b12f61d2a4e217d4d4b58661ca5b}\label{interrupts_8c_af112b12f61d2a4e217d4d4b58661ca5b}} 
+\index{interrupts.c@{interrupts.c}!rtc\_subscription@{rtc\_subscription}}
+\index{rtc\_subscription@{rtc\_subscription}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{rtc\_subscription}{rtc\_subscription}}
+{\footnotesize\ttfamily int rtc\+\_\+subscription = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{interrupts_8c_a2ed7f85685b1cc595a870fc8bc385167}\label{interrupts_8c_a2ed7f85685b1cc595a870fc8bc385167}} 
+\index{interrupts.c@{interrupts.c}!timer\_subscription@{timer\_subscription}}
+\index{timer\_subscription@{timer\_subscription}!interrupts.c@{interrupts.c}}
+\doxysubsubsection{\texorpdfstring{timer\_subscription}{timer\_subscription}}
+{\footnotesize\ttfamily int timer\+\_\+subscription = 0\hspace{0.3cm}{\ttfamily [static]}}
+

@@ -1,0 +1,7 @@
+<map id="spawn_bullets" name="spawn_bullets">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,109,83"/>
+<area shape="rect" id="node2" href="$group__mouse.html#gaa8a9752ad27693d112aecd6a19413e99" title=" " alt="" coords="157,31,281,57"/>
+<area shape="rect" id="node5" href="$group__sprite.html#ga78a203f9e5ef0b66bb67eba0f9601d88" title=" " alt="" coords="161,81,278,108"/>
+<area shape="rect" id="node3" href="$group__sprite.html#gabd0ec8bfd082e7911d1d566f484f39b8" title=" " alt="" coords="330,5,423,32"/>
+<area shape="rect" id="node4" href="$group__sprite.html#gaae66681a74c0c71427e61d299404734f" title=" " alt="" coords="329,56,424,83"/>
+</map>

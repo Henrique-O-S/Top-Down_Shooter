@@ -1,0 +1,6 @@
+<map id="getHour" name="getHour">
+<area shape="rect" id="node1" title="Reads time from RTC." alt="" coords="5,56,72,83"/>
+<area shape="rect" id="node2" href="$group__rtc.html#ga58c3a42afd8690620a3c782ec1af889b" title="Converts a byte in BCD to binary." alt="" coords="120,5,199,32"/>
+<area shape="rect" id="node3" href="$group__rtc.html#gadc99d6e13380791f37d25254f382185b" title="Checks if the data read from RTC is in BCD." alt="" coords="130,56,189,83"/>
+<area shape="rect" id="node4" href="$group__utils.html#ga79a031a8611f5b2d6afa4158e92b0fb4" title="sys_inb wrapper" alt="" coords="247,81,337,108"/>
+</map>

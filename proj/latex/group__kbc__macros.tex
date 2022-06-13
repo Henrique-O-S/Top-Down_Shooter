@@ -1,0 +1,346 @@
+\hypertarget{group__kbc__macros}{}\doxysection{kbc\+\_\+macros}
+\label{group__kbc__macros}\index{kbc\_macros@{kbc\_macros}}
+Collaboration diagram for kbc\+\_\+macros\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{group__kbc__macros}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga16c5827f043d82f87c726c2d4369c11d}{KBC\+\_\+\+IRQ}}~1   /$\ast$ @brief KBC Controller IRQ Line $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga85964cb90343bb1a029b1d1b4229f910}{MOUSE\+\_\+\+IRQ}}~12  /$\ast$ @brief Mouse IRQ Line $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga62249e384b997229a3e2ae74ade334e2}{DELAY}}~20000 /$\ast$ @brief KBC Response Delay $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga01be3e103b959ac623cc97a88b22cc5d}{KBC\+\_\+\+NUM\+\_\+\+TRIES}}~20    /$\ast$ @brief Number of tries to issue command before timeout $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_gaccd56b4b7cdc027b95966350b0e8b6ca}{KBC\+\_\+\+CMD}}~0x64 /$\ast$ @brief Address to send commands to KBC $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga86ba9231756abbb662cdbe9c8a5179ae}{KBC\+\_\+\+CMD\+\_\+\+ARG}}~0x60 /$\ast$ @brief Address to write KBC Command Arguments $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga1f7e79cfe81dc06414550fa52418941e}{STATUS\+\_\+\+REG}}~0x64 /$\ast$ @brief KBC Status Register address $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_gabfe67695f24d9972a1fc965479fdf12a}{OUTPUT\+\_\+\+BUF}}~0x60 /$\ast$ @brief Address of Output Buffer of KBC $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga45c2432923d72440cccff8a2239e4957}{READ\+\_\+\+KBC\+\_\+\+CMD}}~0x20 /$\ast$ @brief Read KBC Command Byte $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga3bdaa3141c49059e9774d845c9cecc3d}{WRITE\+\_\+\+KBC\+\_\+\+CMD}}~0x60 /$\ast$ @brief Write KBC Command Byte $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga3add1395817336a078643ed6e0175ad6}{KBC\+\_\+\+SELF\+\_\+\+TEST}}~0x\+AA /$\ast$ @brief KBC Diagnostic Tests $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga5c4f46b2dd7031fb4f77bd8e79870567}{KBC\+\_\+\+INT\+\_\+\+TEST}}~0x\+AB /$\ast$ @brief Tests Keyboard Clock and Data lines $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_gacf9d13bf72313a87190ab5fc37c620eb}{KBC\+\_\+\+INT\+\_\+\+DISABLE}}~0x\+AD /$\ast$ @brief Disable KBC Interface $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_gaa69e273c9fd66f141a04da50117cb9b6}{KBC\+\_\+\+INT\+\_\+\+ENABLE}}~0x\+AE /$\ast$ @brief Enable KBC Interface $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga094907f521b569f790a760be8885ec4d}{MOUSE\+\_\+\+DISABLE}}~0x\+A7 /$\ast$ @brief Disable Mouse $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga4e6aa8d10e05b5f94c196bfe2cdfb8d7}{MOUSE\+\_\+\+ENABLE}}~0x\+A8 /$\ast$ @brief Enable Mouse $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_gac61f997a7f73e1861582c6541666c8ee}{MOUSE\+\_\+\+INT\+\_\+\+TEST}}~0x\+A9 /$\ast$ @brief Tests Mouse data line $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga8e724cfd2e919393d272a68a0ced6eaf}{MOUSE\+\_\+\+WRITE\+\_\+B}}~0x\+D4 /$\ast$ @brief Write a byte directly to the mouse $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga0d084199005860aa696b1d1cdd1bf486}{OUT\+\_\+\+BUF\+\_\+\+FUL}}~BIT(0) /$\ast$ @brief Output Buffer State $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga70aa83e4e00095f3d337d2457c1ba353}{IN\+\_\+\+BUF\+\_\+\+FULL}}~BIT(1) /$\ast$ @brief Input Buffer State $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga70ba5cfd6ec32ae0b141b32f232d5ca2}{SYS\+\_\+\+FLAG}}~BIT(2) /$\ast$ @brief System Flag $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga33809d0ffdeabecdc38efaf65f37b7bc}{DATA\+\_\+\+CMD\+\_\+\+WRITE}}~BIT(3) /$\ast$ @brief Identifier of type of byte in input buffer $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga25c2487a8013ee637101e31957da1d3f}{INH\+\_\+\+FLAG}}~BIT(4) /$\ast$ @brief Keyboard inihibited $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga2d87a4296d8ac7763da0206a022fbca8}{AUX\+\_\+\+MOUSE}}~BIT(5) /$\ast$ @brief Mouse Data $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_gab0f20937919ec3e417227366d6ccec89}{TIME\+\_\+\+OUT\+\_\+\+REC}}~BIT(6) /$\ast$ @brief Time Out Error -\/ Invalid Data $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga81d2ca6759f3f3bf04556b7558aea6bc}{PARITY\+\_\+\+ERROR}}~BIT(7) /$\ast$ @brief Parity Error -\/ Invalid Data $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga592dfdf397b21913348b4dd6b7759b2d}{ESC\+\_\+\+BREAK\+\_\+\+CODE}}~0x81    /$\ast$ @brief ESC Break Code $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_gac822a3953d90207e64b58f480454a8d8}{W\+\_\+\+MAKE}}~0x11    /$\ast$ @brief W Make Code $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga32d11f9abffe8bb3df11feef5ca5213d}{W\+\_\+\+BREAK}}~0x91    /$\ast$ @brief W Break Code $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga0f76fe84c649e8cf3a4114d0d9bf085a}{A\+\_\+\+MAKE}}~0x1E    /$\ast$ @brief A Make Code $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga05826112c5acf959ee58dcacd8e9d065}{A\+\_\+\+BREAK}}~0x9E    /$\ast$ @brief A Break Code $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_gac2c2b345d42f2a5b5a028028eb8c5680}{S\+\_\+\+MAKE}}~0x1F    /$\ast$ @brief S Make Code $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga85b3c65b8b6c952e08c252e9737b74f9}{S\+\_\+\+BREAK}}~0x9F    /$\ast$ @brief S Break Code $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga629b0c93e278a4bf1e1678af58fbea95}{D\+\_\+\+MAKE}}~0x20    /$\ast$ @brief D Make Code $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_gad2db9242348c43c781cc14746060470b}{D\+\_\+\+BREAK}}~0x\+A0    /$\ast$ @brief D Break Code $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga2877405e9b042d1e29cc09bcc8daccfa}{TWO\+\_\+\+BYTE\+\_\+\+CODE}}~0x\+E0    /$\ast$ @brief First byte of a two byte Scancode $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga2c0f8c2cc8170ddda747b0b266022e05}{BREAK\+\_\+\+CODE\+\_\+\+BIT}}~BIT(7)  /$\ast$ @brief Bit to distinguish between Make code and Break code $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_gaea3e2c47ff5ce4b0dbf5e81e40678aab}{INT\+\_\+\+KBD}}~BIT(0)  /$\ast$ @brief Enable Keyboard Interrupts $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga44a184d740d45229170b9b263378d740}{INT\+\_\+\+MOU}}~BIT(1)  /$\ast$ @brief Enable Mouse Interrupts $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_ga19930b86ba4c64067d597a8b115dc3ad}{DIS\+\_\+\+KBD}}~BIT(4)  /$\ast$ @brief Disable Keyboard $\ast$/
+\item 
+\#define \mbox{\hyperlink{group__kbc__macros_gac4306ee172c4fc7a335410c6147dc0d4}{DIS\+\_\+\+MOU}}~BIT(5)  /$\ast$ @brief Disable Mouse $\ast$/
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Constants for programming the KBC. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__kbc__macros_ga05826112c5acf959ee58dcacd8e9d065}\label{group__kbc__macros_ga05826112c5acf959ee58dcacd8e9d065}} 
+\index{kbc\_macros@{kbc\_macros}!A\_BREAK@{A\_BREAK}}
+\index{A\_BREAK@{A\_BREAK}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{A\_BREAK}{A\_BREAK}}
+{\footnotesize\ttfamily \#define A\+\_\+\+BREAK~0x9E    /$\ast$ @brief A Break Code $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga0f76fe84c649e8cf3a4114d0d9bf085a}\label{group__kbc__macros_ga0f76fe84c649e8cf3a4114d0d9bf085a}} 
+\index{kbc\_macros@{kbc\_macros}!A\_MAKE@{A\_MAKE}}
+\index{A\_MAKE@{A\_MAKE}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{A\_MAKE}{A\_MAKE}}
+{\footnotesize\ttfamily \#define A\+\_\+\+MAKE~0x1E    /$\ast$ @brief A Make Code $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga2d87a4296d8ac7763da0206a022fbca8}\label{group__kbc__macros_ga2d87a4296d8ac7763da0206a022fbca8}} 
+\index{kbc\_macros@{kbc\_macros}!AUX\_MOUSE@{AUX\_MOUSE}}
+\index{AUX\_MOUSE@{AUX\_MOUSE}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{AUX\_MOUSE}{AUX\_MOUSE}}
+{\footnotesize\ttfamily \#define AUX\+\_\+\+MOUSE~BIT(5) /$\ast$ @brief Mouse Data $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga2c0f8c2cc8170ddda747b0b266022e05}\label{group__kbc__macros_ga2c0f8c2cc8170ddda747b0b266022e05}} 
+\index{kbc\_macros@{kbc\_macros}!BREAK\_CODE\_BIT@{BREAK\_CODE\_BIT}}
+\index{BREAK\_CODE\_BIT@{BREAK\_CODE\_BIT}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{BREAK\_CODE\_BIT}{BREAK\_CODE\_BIT}}
+{\footnotesize\ttfamily \#define BREAK\+\_\+\+CODE\+\_\+\+BIT~BIT(7)  /$\ast$ @brief Bit to distinguish between Make code and Break code $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_gad2db9242348c43c781cc14746060470b}\label{group__kbc__macros_gad2db9242348c43c781cc14746060470b}} 
+\index{kbc\_macros@{kbc\_macros}!D\_BREAK@{D\_BREAK}}
+\index{D\_BREAK@{D\_BREAK}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{D\_BREAK}{D\_BREAK}}
+{\footnotesize\ttfamily \#define D\+\_\+\+BREAK~0x\+A0    /$\ast$ @brief D Break Code $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga629b0c93e278a4bf1e1678af58fbea95}\label{group__kbc__macros_ga629b0c93e278a4bf1e1678af58fbea95}} 
+\index{kbc\_macros@{kbc\_macros}!D\_MAKE@{D\_MAKE}}
+\index{D\_MAKE@{D\_MAKE}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{D\_MAKE}{D\_MAKE}}
+{\footnotesize\ttfamily \#define D\+\_\+\+MAKE~0x20    /$\ast$ @brief D Make Code $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga33809d0ffdeabecdc38efaf65f37b7bc}\label{group__kbc__macros_ga33809d0ffdeabecdc38efaf65f37b7bc}} 
+\index{kbc\_macros@{kbc\_macros}!DATA\_CMD\_WRITE@{DATA\_CMD\_WRITE}}
+\index{DATA\_CMD\_WRITE@{DATA\_CMD\_WRITE}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{DATA\_CMD\_WRITE}{DATA\_CMD\_WRITE}}
+{\footnotesize\ttfamily \#define DATA\+\_\+\+CMD\+\_\+\+WRITE~BIT(3) /$\ast$ @brief Identifier of type of byte in input buffer $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga62249e384b997229a3e2ae74ade334e2}\label{group__kbc__macros_ga62249e384b997229a3e2ae74ade334e2}} 
+\index{kbc\_macros@{kbc\_macros}!DELAY@{DELAY}}
+\index{DELAY@{DELAY}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{DELAY}{DELAY}}
+{\footnotesize\ttfamily \#define DELAY~20000 /$\ast$ @brief KBC Response Delay $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga19930b86ba4c64067d597a8b115dc3ad}\label{group__kbc__macros_ga19930b86ba4c64067d597a8b115dc3ad}} 
+\index{kbc\_macros@{kbc\_macros}!DIS\_KBD@{DIS\_KBD}}
+\index{DIS\_KBD@{DIS\_KBD}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{DIS\_KBD}{DIS\_KBD}}
+{\footnotesize\ttfamily \#define DIS\+\_\+\+KBD~BIT(4)  /$\ast$ @brief Disable Keyboard $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_gac4306ee172c4fc7a335410c6147dc0d4}\label{group__kbc__macros_gac4306ee172c4fc7a335410c6147dc0d4}} 
+\index{kbc\_macros@{kbc\_macros}!DIS\_MOU@{DIS\_MOU}}
+\index{DIS\_MOU@{DIS\_MOU}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{DIS\_MOU}{DIS\_MOU}}
+{\footnotesize\ttfamily \#define DIS\+\_\+\+MOU~BIT(5)  /$\ast$ @brief Disable Mouse $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga592dfdf397b21913348b4dd6b7759b2d}\label{group__kbc__macros_ga592dfdf397b21913348b4dd6b7759b2d}} 
+\index{kbc\_macros@{kbc\_macros}!ESC\_BREAK\_CODE@{ESC\_BREAK\_CODE}}
+\index{ESC\_BREAK\_CODE@{ESC\_BREAK\_CODE}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{ESC\_BREAK\_CODE}{ESC\_BREAK\_CODE}}
+{\footnotesize\ttfamily \#define ESC\+\_\+\+BREAK\+\_\+\+CODE~0x81    /$\ast$ @brief ESC Break Code $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga70aa83e4e00095f3d337d2457c1ba353}\label{group__kbc__macros_ga70aa83e4e00095f3d337d2457c1ba353}} 
+\index{kbc\_macros@{kbc\_macros}!IN\_BUF\_FULL@{IN\_BUF\_FULL}}
+\index{IN\_BUF\_FULL@{IN\_BUF\_FULL}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{IN\_BUF\_FULL}{IN\_BUF\_FULL}}
+{\footnotesize\ttfamily \#define IN\+\_\+\+BUF\+\_\+\+FULL~BIT(1) /$\ast$ @brief Input Buffer State $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga25c2487a8013ee637101e31957da1d3f}\label{group__kbc__macros_ga25c2487a8013ee637101e31957da1d3f}} 
+\index{kbc\_macros@{kbc\_macros}!INH\_FLAG@{INH\_FLAG}}
+\index{INH\_FLAG@{INH\_FLAG}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{INH\_FLAG}{INH\_FLAG}}
+{\footnotesize\ttfamily \#define INH\+\_\+\+FLAG~BIT(4) /$\ast$ @brief Keyboard inihibited $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_gaea3e2c47ff5ce4b0dbf5e81e40678aab}\label{group__kbc__macros_gaea3e2c47ff5ce4b0dbf5e81e40678aab}} 
+\index{kbc\_macros@{kbc\_macros}!INT\_KBD@{INT\_KBD}}
+\index{INT\_KBD@{INT\_KBD}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{INT\_KBD}{INT\_KBD}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+KBD~BIT(0)  /$\ast$ @brief Enable Keyboard Interrupts $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga44a184d740d45229170b9b263378d740}\label{group__kbc__macros_ga44a184d740d45229170b9b263378d740}} 
+\index{kbc\_macros@{kbc\_macros}!INT\_MOU@{INT\_MOU}}
+\index{INT\_MOU@{INT\_MOU}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{INT\_MOU}{INT\_MOU}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+MOU~BIT(1)  /$\ast$ @brief Enable Mouse Interrupts $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_gaccd56b4b7cdc027b95966350b0e8b6ca}\label{group__kbc__macros_gaccd56b4b7cdc027b95966350b0e8b6ca}} 
+\index{kbc\_macros@{kbc\_macros}!KBC\_CMD@{KBC\_CMD}}
+\index{KBC\_CMD@{KBC\_CMD}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{KBC\_CMD}{KBC\_CMD}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+CMD~0x64 /$\ast$ @brief Address to send commands to KBC $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga86ba9231756abbb662cdbe9c8a5179ae}\label{group__kbc__macros_ga86ba9231756abbb662cdbe9c8a5179ae}} 
+\index{kbc\_macros@{kbc\_macros}!KBC\_CMD\_ARG@{KBC\_CMD\_ARG}}
+\index{KBC\_CMD\_ARG@{KBC\_CMD\_ARG}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{KBC\_CMD\_ARG}{KBC\_CMD\_ARG}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+CMD\+\_\+\+ARG~0x60 /$\ast$ @brief Address to write KBC Command Arguments $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_gacf9d13bf72313a87190ab5fc37c620eb}\label{group__kbc__macros_gacf9d13bf72313a87190ab5fc37c620eb}} 
+\index{kbc\_macros@{kbc\_macros}!KBC\_INT\_DISABLE@{KBC\_INT\_DISABLE}}
+\index{KBC\_INT\_DISABLE@{KBC\_INT\_DISABLE}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{KBC\_INT\_DISABLE}{KBC\_INT\_DISABLE}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+INT\+\_\+\+DISABLE~0x\+AD /$\ast$ @brief Disable KBC Interface $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_gaa69e273c9fd66f141a04da50117cb9b6}\label{group__kbc__macros_gaa69e273c9fd66f141a04da50117cb9b6}} 
+\index{kbc\_macros@{kbc\_macros}!KBC\_INT\_ENABLE@{KBC\_INT\_ENABLE}}
+\index{KBC\_INT\_ENABLE@{KBC\_INT\_ENABLE}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{KBC\_INT\_ENABLE}{KBC\_INT\_ENABLE}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+INT\+\_\+\+ENABLE~0x\+AE /$\ast$ @brief Enable KBC Interface $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga5c4f46b2dd7031fb4f77bd8e79870567}\label{group__kbc__macros_ga5c4f46b2dd7031fb4f77bd8e79870567}} 
+\index{kbc\_macros@{kbc\_macros}!KBC\_INT\_TEST@{KBC\_INT\_TEST}}
+\index{KBC\_INT\_TEST@{KBC\_INT\_TEST}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{KBC\_INT\_TEST}{KBC\_INT\_TEST}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+INT\+\_\+\+TEST~0x\+AB /$\ast$ @brief Tests Keyboard Clock and Data lines $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga16c5827f043d82f87c726c2d4369c11d}\label{group__kbc__macros_ga16c5827f043d82f87c726c2d4369c11d}} 
+\index{kbc\_macros@{kbc\_macros}!KBC\_IRQ@{KBC\_IRQ}}
+\index{KBC\_IRQ@{KBC\_IRQ}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{KBC\_IRQ}{KBC\_IRQ}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+IRQ~1   /$\ast$ @brief KBC Controller IRQ Line $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga01be3e103b959ac623cc97a88b22cc5d}\label{group__kbc__macros_ga01be3e103b959ac623cc97a88b22cc5d}} 
+\index{kbc\_macros@{kbc\_macros}!KBC\_NUM\_TRIES@{KBC\_NUM\_TRIES}}
+\index{KBC\_NUM\_TRIES@{KBC\_NUM\_TRIES}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{KBC\_NUM\_TRIES}{KBC\_NUM\_TRIES}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+NUM\+\_\+\+TRIES~20    /$\ast$ @brief Number of tries to issue command before timeout $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga3add1395817336a078643ed6e0175ad6}\label{group__kbc__macros_ga3add1395817336a078643ed6e0175ad6}} 
+\index{kbc\_macros@{kbc\_macros}!KBC\_SELF\_TEST@{KBC\_SELF\_TEST}}
+\index{KBC\_SELF\_TEST@{KBC\_SELF\_TEST}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{KBC\_SELF\_TEST}{KBC\_SELF\_TEST}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+SELF\+\_\+\+TEST~0x\+AA /$\ast$ @brief KBC Diagnostic Tests $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga094907f521b569f790a760be8885ec4d}\label{group__kbc__macros_ga094907f521b569f790a760be8885ec4d}} 
+\index{kbc\_macros@{kbc\_macros}!MOUSE\_DISABLE@{MOUSE\_DISABLE}}
+\index{MOUSE\_DISABLE@{MOUSE\_DISABLE}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{MOUSE\_DISABLE}{MOUSE\_DISABLE}}
+{\footnotesize\ttfamily \#define MOUSE\+\_\+\+DISABLE~0x\+A7 /$\ast$ @brief Disable Mouse $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga4e6aa8d10e05b5f94c196bfe2cdfb8d7}\label{group__kbc__macros_ga4e6aa8d10e05b5f94c196bfe2cdfb8d7}} 
+\index{kbc\_macros@{kbc\_macros}!MOUSE\_ENABLE@{MOUSE\_ENABLE}}
+\index{MOUSE\_ENABLE@{MOUSE\_ENABLE}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{MOUSE\_ENABLE}{MOUSE\_ENABLE}}
+{\footnotesize\ttfamily \#define MOUSE\+\_\+\+ENABLE~0x\+A8 /$\ast$ @brief Enable Mouse $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_gac61f997a7f73e1861582c6541666c8ee}\label{group__kbc__macros_gac61f997a7f73e1861582c6541666c8ee}} 
+\index{kbc\_macros@{kbc\_macros}!MOUSE\_INT\_TEST@{MOUSE\_INT\_TEST}}
+\index{MOUSE\_INT\_TEST@{MOUSE\_INT\_TEST}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{MOUSE\_INT\_TEST}{MOUSE\_INT\_TEST}}
+{\footnotesize\ttfamily \#define MOUSE\+\_\+\+INT\+\_\+\+TEST~0x\+A9 /$\ast$ @brief Tests Mouse data line $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga85964cb90343bb1a029b1d1b4229f910}\label{group__kbc__macros_ga85964cb90343bb1a029b1d1b4229f910}} 
+\index{kbc\_macros@{kbc\_macros}!MOUSE\_IRQ@{MOUSE\_IRQ}}
+\index{MOUSE\_IRQ@{MOUSE\_IRQ}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{MOUSE\_IRQ}{MOUSE\_IRQ}}
+{\footnotesize\ttfamily \#define MOUSE\+\_\+\+IRQ~12  /$\ast$ @brief Mouse IRQ Line $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga8e724cfd2e919393d272a68a0ced6eaf}\label{group__kbc__macros_ga8e724cfd2e919393d272a68a0ced6eaf}} 
+\index{kbc\_macros@{kbc\_macros}!MOUSE\_WRITE\_B@{MOUSE\_WRITE\_B}}
+\index{MOUSE\_WRITE\_B@{MOUSE\_WRITE\_B}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{MOUSE\_WRITE\_B}{MOUSE\_WRITE\_B}}
+{\footnotesize\ttfamily \#define MOUSE\+\_\+\+WRITE\+\_\+B~0x\+D4 /$\ast$ @brief Write a byte directly to the mouse $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga0d084199005860aa696b1d1cdd1bf486}\label{group__kbc__macros_ga0d084199005860aa696b1d1cdd1bf486}} 
+\index{kbc\_macros@{kbc\_macros}!OUT\_BUF\_FUL@{OUT\_BUF\_FUL}}
+\index{OUT\_BUF\_FUL@{OUT\_BUF\_FUL}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{OUT\_BUF\_FUL}{OUT\_BUF\_FUL}}
+{\footnotesize\ttfamily \#define OUT\+\_\+\+BUF\+\_\+\+FUL~BIT(0) /$\ast$ @brief Output Buffer State $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_gabfe67695f24d9972a1fc965479fdf12a}\label{group__kbc__macros_gabfe67695f24d9972a1fc965479fdf12a}} 
+\index{kbc\_macros@{kbc\_macros}!OUTPUT\_BUF@{OUTPUT\_BUF}}
+\index{OUTPUT\_BUF@{OUTPUT\_BUF}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{OUTPUT\_BUF}{OUTPUT\_BUF}}
+{\footnotesize\ttfamily \#define OUTPUT\+\_\+\+BUF~0x60 /$\ast$ @brief Address of Output Buffer of KBC $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga81d2ca6759f3f3bf04556b7558aea6bc}\label{group__kbc__macros_ga81d2ca6759f3f3bf04556b7558aea6bc}} 
+\index{kbc\_macros@{kbc\_macros}!PARITY\_ERROR@{PARITY\_ERROR}}
+\index{PARITY\_ERROR@{PARITY\_ERROR}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{PARITY\_ERROR}{PARITY\_ERROR}}
+{\footnotesize\ttfamily \#define PARITY\+\_\+\+ERROR~BIT(7) /$\ast$ @brief Parity Error -\/ Invalid Data $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga45c2432923d72440cccff8a2239e4957}\label{group__kbc__macros_ga45c2432923d72440cccff8a2239e4957}} 
+\index{kbc\_macros@{kbc\_macros}!READ\_KBC\_CMD@{READ\_KBC\_CMD}}
+\index{READ\_KBC\_CMD@{READ\_KBC\_CMD}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{READ\_KBC\_CMD}{READ\_KBC\_CMD}}
+{\footnotesize\ttfamily \#define READ\+\_\+\+KBC\+\_\+\+CMD~0x20 /$\ast$ @brief Read KBC Command Byte $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga85b3c65b8b6c952e08c252e9737b74f9}\label{group__kbc__macros_ga85b3c65b8b6c952e08c252e9737b74f9}} 
+\index{kbc\_macros@{kbc\_macros}!S\_BREAK@{S\_BREAK}}
+\index{S\_BREAK@{S\_BREAK}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{S\_BREAK}{S\_BREAK}}
+{\footnotesize\ttfamily \#define S\+\_\+\+BREAK~0x9F    /$\ast$ @brief S Break Code $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_gac2c2b345d42f2a5b5a028028eb8c5680}\label{group__kbc__macros_gac2c2b345d42f2a5b5a028028eb8c5680}} 
+\index{kbc\_macros@{kbc\_macros}!S\_MAKE@{S\_MAKE}}
+\index{S\_MAKE@{S\_MAKE}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{S\_MAKE}{S\_MAKE}}
+{\footnotesize\ttfamily \#define S\+\_\+\+MAKE~0x1F    /$\ast$ @brief S Make Code $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga1f7e79cfe81dc06414550fa52418941e}\label{group__kbc__macros_ga1f7e79cfe81dc06414550fa52418941e}} 
+\index{kbc\_macros@{kbc\_macros}!STATUS\_REG@{STATUS\_REG}}
+\index{STATUS\_REG@{STATUS\_REG}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{STATUS\_REG}{STATUS\_REG}}
+{\footnotesize\ttfamily \#define STATUS\+\_\+\+REG~0x64 /$\ast$ @brief KBC Status Register address $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga70ba5cfd6ec32ae0b141b32f232d5ca2}\label{group__kbc__macros_ga70ba5cfd6ec32ae0b141b32f232d5ca2}} 
+\index{kbc\_macros@{kbc\_macros}!SYS\_FLAG@{SYS\_FLAG}}
+\index{SYS\_FLAG@{SYS\_FLAG}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{SYS\_FLAG}{SYS\_FLAG}}
+{\footnotesize\ttfamily \#define SYS\+\_\+\+FLAG~BIT(2) /$\ast$ @brief System Flag $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_gab0f20937919ec3e417227366d6ccec89}\label{group__kbc__macros_gab0f20937919ec3e417227366d6ccec89}} 
+\index{kbc\_macros@{kbc\_macros}!TIME\_OUT\_REC@{TIME\_OUT\_REC}}
+\index{TIME\_OUT\_REC@{TIME\_OUT\_REC}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{TIME\_OUT\_REC}{TIME\_OUT\_REC}}
+{\footnotesize\ttfamily \#define TIME\+\_\+\+OUT\+\_\+\+REC~BIT(6) /$\ast$ @brief Time Out Error -\/ Invalid Data $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga2877405e9b042d1e29cc09bcc8daccfa}\label{group__kbc__macros_ga2877405e9b042d1e29cc09bcc8daccfa}} 
+\index{kbc\_macros@{kbc\_macros}!TWO\_BYTE\_CODE@{TWO\_BYTE\_CODE}}
+\index{TWO\_BYTE\_CODE@{TWO\_BYTE\_CODE}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{TWO\_BYTE\_CODE}{TWO\_BYTE\_CODE}}
+{\footnotesize\ttfamily \#define TWO\+\_\+\+BYTE\+\_\+\+CODE~0x\+E0    /$\ast$ @brief First byte of a two byte Scancode $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga32d11f9abffe8bb3df11feef5ca5213d}\label{group__kbc__macros_ga32d11f9abffe8bb3df11feef5ca5213d}} 
+\index{kbc\_macros@{kbc\_macros}!W\_BREAK@{W\_BREAK}}
+\index{W\_BREAK@{W\_BREAK}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{W\_BREAK}{W\_BREAK}}
+{\footnotesize\ttfamily \#define W\+\_\+\+BREAK~0x91    /$\ast$ @brief W Break Code $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_gac822a3953d90207e64b58f480454a8d8}\label{group__kbc__macros_gac822a3953d90207e64b58f480454a8d8}} 
+\index{kbc\_macros@{kbc\_macros}!W\_MAKE@{W\_MAKE}}
+\index{W\_MAKE@{W\_MAKE}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{W\_MAKE}{W\_MAKE}}
+{\footnotesize\ttfamily \#define W\+\_\+\+MAKE~0x11    /$\ast$ @brief W Make Code $\ast$/}
+
+\mbox{\Hypertarget{group__kbc__macros_ga3bdaa3141c49059e9774d845c9cecc3d}\label{group__kbc__macros_ga3bdaa3141c49059e9774d845c9cecc3d}} 
+\index{kbc\_macros@{kbc\_macros}!WRITE\_KBC\_CMD@{WRITE\_KBC\_CMD}}
+\index{WRITE\_KBC\_CMD@{WRITE\_KBC\_CMD}!kbc\_macros@{kbc\_macros}}
+\doxysubsubsection{\texorpdfstring{WRITE\_KBC\_CMD}{WRITE\_KBC\_CMD}}
+{\footnotesize\ttfamily \#define WRITE\+\_\+\+KBC\+\_\+\+CMD~0x60 /$\ast$ @brief Write KBC Command Byte $\ast$/}
+

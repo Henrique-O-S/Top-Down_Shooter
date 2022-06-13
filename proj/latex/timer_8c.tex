@@ -1,0 +1,37 @@
+\hypertarget{timer_8c}{}\doxysection{src/libraries/timer/src/timer.c File Reference}
+\label{timer_8c}\index{src/libraries/timer/src/timer.c@{src/libraries/timer/src/timer.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}i8254.\+h\char`\"{}}\newline
+Include dependency graph for timer.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{timer_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__timer_ga11445809a6c9be6a3ed5ffb185bf88c3}{subscribe\+\_\+timer\+\_\+interrupt}} (uint8\+\_\+t interrupt\+\_\+bit, int $\ast$interrupt\+\_\+id)
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__timer_ga91a2072306c68353712a6b771287dc2c}{timer\+\_\+int\+\_\+handler}} ()
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__timer_ga1a81b5e8a75c2845c8db3f7e2cb149b0}{get\+\_\+no\+\_\+interupts}} ()
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}} \mbox{\hyperlink{group__timer_ga12ae5e7acfac452d058162c2c2aa8852}{set\+\_\+no\+\_\+interupts}} (uint32\+\_\+t n)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{timer_8c_a4ec79c7a92ad220b5bf1daa87814f869}{no\+\_\+interrupts}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{timer_8c_a4ec79c7a92ad220b5bf1daa87814f869}\label{timer_8c_a4ec79c7a92ad220b5bf1daa87814f869}} 
+\index{timer.c@{timer.c}!no\_interrupts@{no\_interrupts}}
+\index{no\_interrupts@{no\_interrupts}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{no\_interrupts}{no\_interrupts}}
+{\footnotesize\ttfamily uint32\+\_\+t no\+\_\+interrupts = 0}
+

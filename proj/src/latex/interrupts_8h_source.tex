@@ -1,0 +1,21 @@
+\hypertarget{interrupts_8h_source}{}\doxysection{interrupts.\+h}
+\label{interrupts_8h_source}\index{project/include/interrupts.h@{project/include/interrupts.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INTERRUPTS\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INTERRUPTS\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}libraries.h"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{static} \textcolor{keywordtype}{int} timer\_id, kbc\_id, mouse\_id, rtc\_id;}
+\DoxyCodeLine{14 \textcolor{keyword}{static} \textcolor{keywordtype}{int} timer\_subscription, keyboard\_subscription, mouse\_subscription, rtc\_subscription;}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{20 int (\mbox{\hyperlink{group__interrupts_gaa47d951ed5ee7678663adf66785022f4}{subscribe\_all}})(void);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{26 int (\mbox{\hyperlink{group__interrupts_gadd6f2c43bcf6aa436d16dd18edbeea81}{unsubscribe\_all}})(void);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{32 int (\mbox{\hyperlink{group__interrupts_ga0c400925da5041db14dfec219817f3ee}{get\_irq}})(\textcolor{keywordtype}{int} id);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//INTERRUPTS\_H\_INCLUDED}}
+
+\end{DoxyCode}

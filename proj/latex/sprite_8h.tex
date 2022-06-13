@@ -1,0 +1,79 @@
+\hypertarget{sprite_8h}{}\doxysection{src/libraries/graphics/include/sprite.h File Reference}
+\label{sprite_8h}\index{src/libraries/graphics/include/sprite.h@{src/libraries/graphics/include/sprite.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for sprite.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{sprite_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sprite_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite}}
+\item 
+struct \mbox{\hyperlink{structsprite}{sprite}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__sprite_gad02417a2035a3697df739dcad7a4e1b3}{ALPHA\+\_\+\+THRESHOLD}}~0x7F
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite}} \mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structsprite}{sprite}} \mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$() \mbox{\hyperlink{group__sprite_ga7a482947d79a7c0abd375567bcd295e4}{basic\+\_\+sprite\+\_\+ctor}} (const char $\ast$const $\ast$xpm, int16\+\_\+t u0, int16\+\_\+t v0)
+\begin{DoxyCompactList}\small\item\em BASIC SPRITE. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__sprite_gac271acdc4c1c774a4851b4a62560c723}{basic\+\_\+sprite\+\_\+dtor}} (\mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}})
+\item 
+const uint8\+\_\+t $\ast$() \mbox{\hyperlink{group__sprite_ga10470dac4f17e5c4f271e709cf9490d8}{basic\+\_\+sprite\+\_\+get\+\_\+map}} (const \mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}})
+\item 
+uint16\+\_\+t() \mbox{\hyperlink{group__sprite_ga07c634de39b5ea0c935940bc0bfbe993}{basic\+\_\+sprite\+\_\+get\+\_\+w}} (const \mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}})
+\item 
+uint16\+\_\+t() \mbox{\hyperlink{group__sprite_ga1a5c0c2b65c8ef1a76621239e5bbed9e}{basic\+\_\+sprite\+\_\+get\+\_\+h}} (const \mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}})
+\item 
+int16\+\_\+t() \mbox{\hyperlink{group__sprite_gafa4fe5e49e77ed2109d942f0624e18b6}{basic\+\_\+sprite\+\_\+get\+\_\+u0}} (const \mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}})
+\item 
+int16\+\_\+t() \mbox{\hyperlink{group__sprite_ga6ca815fa89c353774370a9dbea1fedb4}{basic\+\_\+sprite\+\_\+get\+\_\+v0}} (const \mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}})
+\item 
+\mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}} $\ast$() \mbox{\hyperlink{group__sprite_ga2e5a8273dd022cbf60439cbd657460dc}{sprite\+\_\+ctor}} (\mbox{\hyperlink{group__sprite_gad683122aec4800507977694a17af04f3}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$bsp, uint8\+\_\+t animation)
+\begin{DoxyCompactList}\small\item\em SPRITE. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__sprite_ga56b7413de011230d829af730b4195e59}{sprite\+\_\+dtor}} (\mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}})
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__sprite_ga147c19d6da7dc2d15fc1a4041f9e7ece}{sprite\+\_\+set\+\_\+pos}} (\mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}}, int16\+\_\+t x, int16\+\_\+t y)
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__sprite_ga78a203f9e5ef0b66bb67eba0f9601d88}{sprite\+\_\+set\+\_\+angle}} (\mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}}, double angle)
+\item 
+double() \mbox{\hyperlink{group__sprite_ga0dac642b91ab9707aedfe35a95326d85}{sprite\+\_\+get\+\_\+angle}} (const \mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}})
+\item 
+uint16\+\_\+t() \mbox{\hyperlink{group__sprite_ga4adb74a0a0f69a6a7c8425a8469b1369}{sprite\+\_\+get\+\_\+w}} (const \mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}})
+\item 
+uint16\+\_\+t() \mbox{\hyperlink{group__sprite_ga6516767b0b0babfdccddf598eed3cfac}{sprite\+\_\+get\+\_\+h}} (const \mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}})
+\item 
+uint16\+\_\+t() \mbox{\hyperlink{group__sprite_gabd0ec8bfd082e7911d1d566f484f39b8}{sprite\+\_\+get\+\_\+X}} (const \mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}})
+\item 
+uint16\+\_\+t() \mbox{\hyperlink{group__sprite_gaae66681a74c0c71427e61d299404734f}{sprite\+\_\+get\+\_\+Y}} (const \mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}})
+\item 
+double() \mbox{\hyperlink{group__sprite_ga08626216c0df03d95a323db61138abda}{sprite\+\_\+angle\+\_\+of\+\_\+two}} (const \mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}}, const \mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}} $\ast$p1)
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__sprite_ga4550eb78c720c0577782e2f8c373b2eb}{sprite\+\_\+draw}} (const \mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}})
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__sprite_ga1fd0069896123635d9d3a71cdb55f7b1}{sprite\+\_\+update\+\_\+animation}} (\mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}}, int reset)
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__sprite_gae46aa306a1ae9cf1aa0339c4085840a1}{sprite\+\_\+choose\+\_\+animation}} (\mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}}, int animation)
+\end{DoxyCompactItemize}

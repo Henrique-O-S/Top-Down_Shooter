@@ -1,0 +1,95 @@
+\hypertarget{graphics_8h}{}\doxysection{src/libraries/graphics/include/graphics.h File Reference}
+\label{graphics_8h}\index{src/libraries/graphics/include/graphics.h@{src/libraries/graphics/include/graphics.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}graphics\+\_\+macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pixmap.\+h\char`\"{}}\newline
+Include dependency graph for graphics.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{graphics_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{graphics_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__graphics_ga20a8c4bd352d15a0e1e2349eec2e9710}{GET\+\_\+\+RED}}(n)~(0x\+FF \& ((n) $>$$>$ 16))
+\item 
+\#define \mbox{\hyperlink{group__graphics_gadd275be0112f1d2af5e7dbc03ab221a8}{GET\+\_\+\+GRE}}(n)~(0x\+FF \& ((n) $>$$>$  8))
+\item 
+\#define \mbox{\hyperlink{group__graphics_ga75843763a880805c52f5713dac46cd1e}{GET\+\_\+\+BLU}}(n)~(0x\+FF \& (n      ))
+\item 
+\#define \mbox{\hyperlink{group__graphics_gadd486ade6cb226273a0e3741ec0e63d1}{SET\+\_\+\+RED}}(n)~(((n)\&0x\+FF) $<$$<$ 16)
+\item 
+\#define \mbox{\hyperlink{group__graphics_gacc20c705a3b018810e24d4c1818c965c}{SET\+\_\+\+GRE}}(n)~(((n)\&0x\+FF) $<$$<$  8)
+\item 
+\#define \mbox{\hyperlink{group__graphics_gaced4f5e0671e588794cc1e0bd72ae820}{SET\+\_\+\+BLU}}(n)~(((n)\&0x\+FF)      )
+\item 
+\#define \mbox{\hyperlink{group__graphics_ga67e10ca508bfbe5f2ea25c46dec6a24f}{SET\+\_\+\+COLOR}}(r,  g,  b)~(\mbox{\hyperlink{group__graphics_gadd486ade6cb226273a0e3741ec0e63d1}{SET\+\_\+\+RED}}(r) $\vert$ \mbox{\hyperlink{group__graphics_gacc20c705a3b018810e24d4c1818c965c}{SET\+\_\+\+GRE}}(g) $\vert$ \mbox{\hyperlink{group__graphics_gaced4f5e0671e588794cc1e0bd72ae820}{SET\+\_\+\+BLU}}(b))
+\item 
+\#define \mbox{\hyperlink{group__graphics_ga43ab52a2004b081176f3ee6e22b4f8d7}{FAR2\+PHYS}}(n)~((((n)$>$$>$12) \& 0x\+FFFFFFF0) + ((n) \& 0x0000\+FFFF))
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__graphics_gacffa85dc875ba8bc4c40e81486b82b47}{pixmap}} \{ \mbox{\hyperlink{group__graphics_ggacffa85dc875ba8bc4c40e81486b82b47a0352906d1ea1dfcd663c918f3a86755b}{PLAY}}
+, \mbox{\hyperlink{group__graphics_ggacffa85dc875ba8bc4c40e81486b82b47a7a10b5d68d31711288e1fe0fa17dbf4f}{EXIT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__graphics_ga270cebf5612b0408b5103d5c98fdc7c6}{set\+\_\+vbe\+\_\+mode}} (uint16\+\_\+t mode)
+\item 
+int() \mbox{\hyperlink{group__graphics_gab202e9acd2a0826e183d01a13930d5d6}{set\+\_\+pixel}} (uint16\+\_\+t x, uint16\+\_\+t y, uint32\+\_\+t color)
+\item 
+int() \mbox{\hyperlink{group__graphics_gabfbedb6c93fc8eb59745694ce8e19e14}{draw\+\_\+hline}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t len, uint32\+\_\+t color)
+\item 
+int() \mbox{\hyperlink{group__graphics_ga31178cc71e7af0d6045707842517b225}{draw\+\_\+rectangle}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height, uint32\+\_\+t color)
+\item 
+int() \mbox{\hyperlink{group__graphics_ga99d2da2559e11200c6b40c469e9977ec}{vg\+\_\+draw\+\_\+rectangle}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height, uint32\+\_\+t color)
+\item 
+int() \mbox{\hyperlink{group__graphics_ga3f35ae9212b60b107e7fa82d6fad6d22}{get\+\_\+permission}} (unsigned int base\+\_\+addr, unsigned int size)
+\item 
+int() \mbox{\hyperlink{group__graphics_ga43e7a2cc7510bba330b712f0c35f4182}{vbe\+\_\+get\+\_\+mode\+\_\+information}} (uint16\+\_\+t mode)
+\item 
+int() \mbox{\hyperlink{group__graphics_gacfc4589de71bef6e8446198c70e28974}{free\+\_\+memory\+\_\+map}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__graphics_ga59fe4af42434741fab1b76cc42d51058}{draw\+\_\+double\+\_\+buffer}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+int() \mbox{\hyperlink{group__graphics_ga78fda8a56aed2c406353ad605e361073}{map\+\_\+vram}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+\mbox{\hyperlink{group__graphics_ga4dfc59c104f0c09fed3fdb4015c11f9e}{void}} (swap\+Buffer())
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group__graphics_ga9b1703881c2c7c2fc1d05679a867dfed}{get\+\_\+bits\+\_\+pixel}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group__graphics_gafa7636d40c82e2b1a63585e2ad8138ff}{get\+\_\+bytes\+\_\+pixel}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group__graphics_ga1e78ad9ed25b03687bc0b0d06b3957e4}{get\+\_\+\+XRes}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group__graphics_gaff98c1ed5146900037a3747de30f6a79}{get\+\_\+\+YRes}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group__graphics_gafb4ad1f3736c17e4e000461243e3faf6}{get\+\_\+\+Red\+Mask\+Size}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group__graphics_gadda5dcfacfba9f9657c8f70a266adee2}{get\+\_\+\+Green\+Mask\+Size}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group__graphics_gab1eee0c55083ae85a35e6c5f4b0c5493}{get\+\_\+\+Blue\+Mask\+Size}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+phys\+\_\+bytes \mbox{\hyperlink{group__graphics_gacaadaa500eac72ea406149bc3cdb59d3}{get\+\_\+phys\+\_\+addr}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+unsigned int \mbox{\hyperlink{group__graphics_gadd9a51710818c110bb5699378f1af8cb}{get\+\_\+vram\+\_\+size}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+int \mbox{\hyperlink{group__graphics_ga1430d88a17cc33c0fb2a40dd6a4aaabc}{paint\+\_\+screen}} (uint32\+\_\+t color)
+\item 
+int \mbox{\hyperlink{group__graphics_gafa445e5837d138c8bc596dd2f287fc44}{clear\+\_\+screen}} ()
+\item 
+int() \mbox{\hyperlink{group__graphics_ga17ff3e2b182f63f42f264514659b9c5c}{pixmap\+\_\+drawer}} (uint16\+\_\+t x, uint16\+\_\+t y, enum \mbox{\hyperlink{group__graphics_gacffa85dc875ba8bc4c40e81486b82b47}{pixmap}} \mbox{\hyperlink{group__graphics_gacffa85dc875ba8bc4c40e81486b82b47}{pixmap}})
+\end{DoxyCompactItemize}

@@ -1,0 +1,19 @@
+digraph "sprite_set_y"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="sprite_set_y",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="sprite_set_pos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sprite_8c.html#a3b4d4650099c6fefa3515801dca0d1d9",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="draw_bullets",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$elements_8c.html#a284ddfc73c5ee0be160e0bb766d231e4",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="draw_monsters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$elements_8c.html#ac9400e53b03f0a41c76afc7af50e57ad",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="game_loop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$game_8c.html#a649a26d3c9953d9f2af863e859e0c40d",tooltip=" "];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="draw_player",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$elements_8c.html#abd47ce64b64a5dcb39f1129a92eaad3b",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

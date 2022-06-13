@@ -1,0 +1,25 @@
+<map id="util_sys_inb" name="util_sys_inb">
+<area shape="rect" id="node1" title="sys_inb wrapper" alt="" coords="1031,251,1121,278"/>
+<area shape="rect" id="node2" href="$group__rtc.html#ga8ae99541946dea0035bfb5e8042f86f3" title="Reads date from RTC." alt="" coords="711,11,777,38"/>
+<area shape="rect" id="node5" href="$group__rtc.html#gadf7b4e16b962d458867ca804ef05d31e" title="Reads time from RTC." alt="" coords="711,74,777,100"/>
+<area shape="rect" id="node6" href="$group__rtc.html#gadc99d6e13380791f37d25254f382185b" title="Checks if the data read from RTC is in BCD." alt="" coords="891,48,949,75"/>
+<area shape="rect" id="node7" href="$group__rtc.html#gaa2b091a9cf7dce22b896bb1f041b3e2f" title="Checks if RTC is updating." alt="" coords="866,150,974,176"/>
+<area shape="rect" id="node8" href="$group__kbd.html#ga5761bd4aad91ac1d68916ad88f583d9f" title=" " alt="" coords="182,226,242,252"/>
+<area shape="rect" id="node10" href="$group__kbc.html#ga081c509c47a33f55ca8756f2d8a21fa6" title="Low&#45;level function to issue an argument of a command." alt="" coords="867,352,973,379"/>
+<area shape="rect" id="node17" href="$group__kbc.html#gabf6e77da648ded62b65bdb3f9a437424" title="Low&#45;level function to issue a command to keyboard." alt="" coords="863,403,977,430"/>
+<area shape="rect" id="node19" href="$group__kbc.html#ga0653674ee39394a08915bb1599ae67f9" title="Low&#45;level function for reading byte from keyboard Low&#45;level function for reading byte from keyboard...." alt="" coords="867,454,973,480"/>
+<area shape="rect" id="node21" href="$group__mouse.html#ga210374b50462acdedab00df64d5cea3c" title=" " alt="" coords="173,454,251,480"/>
+<area shape="rect" id="node22" href="$group__mouse.html#ga7c0b89b2552784fdc6cf5143d0fff378" title=" " alt="" coords="857,302,983,328"/>
+<area shape="rect" id="node23" href="$group__rtc.html#ga73e9cfc707b230abcda4e24cbac48d4d" title="Enables/Disables interrupts on update." alt="" coords="309,251,424,278"/>
+<area shape="rect" id="node3" href="$group__aux__functions.html#ga313878f42073bab6512b601c0466beca" title=" " alt="" coords="500,11,603,38"/>
+<area shape="rect" id="node4" href="$game_8c.html#a758b816bedb77d4bcca426c31a11a1a0" title=" " alt="" coords="345,11,389,38"/>
+<area shape="rect" id="node9" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,327,115,354"/>
+<area shape="rect" id="node11" href="$group__kbc.html#ga979788590a8e65eb1d5259ee6faa37a5" title="High&#45;level function that changes the command byte of the KBC." alt="" coords="682,352,806,379"/>
+<area shape="rect" id="node13" href="$group__mouse.html#ga17f6a309e34b241931cc44259a3afda6" title=" " alt="" coords="679,302,809,328"/>
+<area shape="rect" id="node12" href="$kbc_8c.html#ad23a7f1edcc0f9b1d46b073a198f9f88" title=" " alt="" coords="492,378,611,404"/>
+<area shape="rect" id="node14" href="$group__mouse.html#gabf4140d9d2b0a560eb7910b635bc89fb" title=" " alt="" coords="472,302,631,328"/>
+<area shape="rect" id="node15" href="$group__interrupts.html#gaa47d951ed5ee7678663adf66785022f4" title="Subscribes all drivers used (timer&#45;&gt;keyboard&#45;&gt;mouse)" alt="" coords="163,302,261,328"/>
+<area shape="rect" id="node16" href="$group__interrupts.html#gadd6f2c43bcf6aa436d16dd18edbeea81" title="Unsubscribes all subscribed interrupts." alt="" coords="311,352,423,379"/>
+<area shape="rect" id="node18" href="$group__kbc.html#ga4d01b87977dde6d295c19c982e5426ea" title="High&#45;level function that reads the command byte of the KBC." alt="" coords="691,403,797,430"/>
+<area shape="rect" id="node20" href="$group__kbd.html#gac83c39ace6f539167f5cc34f6c689cd2" title=" " alt="" coords="693,454,795,480"/>
+</map>

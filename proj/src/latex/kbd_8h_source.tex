@@ -1,0 +1,31 @@
+\hypertarget{kbd_8h_source}{}\doxysection{kbd.\+h}
+\label{kbd_8h_source}\index{libraries/kbc/include/kbd.h@{libraries/kbc/include/kbd.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef KBD\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define KBD\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <lcom/lcf.h>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{19 int (\mbox{\hyperlink{group__kbd_gab35cfc697428fac7727ef5a6411b86f0}{subscribe\_kbc\_interrupt}})(uint8\_t interrupt\_bit, \textcolor{keywordtype}{int} *interrupt\_id);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 uint8\_t scancode[2];}
+\DoxyCodeLine{22 \textcolor{keywordtype}{int} done;}
+\DoxyCodeLine{23 \textcolor{keywordtype}{int} sz;}
+\DoxyCodeLine{24 \textcolor{keywordtype}{int} got\_error\_keyboard;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{29 void (\mbox{\hyperlink{group__kbd_ga5761bd4aad91ac1d68916ad88f583d9f}{kbc\_ih}})(void);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{37 int (\mbox{\hyperlink{group__kbd_gac83c39ace6f539167f5cc34f6c689cd2}{keyboard\_poll}})(uint8\_t bytes[], uint8\_t *size);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{43 \textcolor{keyword}{const} uint8\_t* (\mbox{\hyperlink{group__kbd_gaf9fae340464cde05ae307740c23e57b8}{get\_scancode}})();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{49 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__kbd_ga6b5a3839c3253ab21aa69739a1cdfa0f}{keyboard\_get\_done}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{55 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__kbd_ga2ebba414b43d0a512cbf6ed4fc93ff61}{keyboard\_get\_size}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{61 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__kbd_ga92aeaf639bfed417b8a439361f92f221}{keyboard\_get\_error}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//KBD\_H\_INCLUDED}}
+
+\end{DoxyCode}

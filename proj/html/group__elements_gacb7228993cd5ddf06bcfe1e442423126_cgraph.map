@@ -1,0 +1,7 @@
+<map id="collision_bullet_monster" name="collision_bullet_monster">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,167,57"/>
+<area shape="rect" id="node2" href="$group__sprite.html#ga6516767b0b0babfdccddf598eed3cfac" title=" " alt="" coords="215,5,309,32"/>
+<area shape="rect" id="node4" href="$group__sprite.html#ga4adb74a0a0f69a6a7c8425a8469b1369" title=" " alt="" coords="215,56,309,83"/>
+<area shape="rect" id="node3" href="$group__sprite.html#ga1a5c0c2b65c8ef1a76621239e5bbed9e" title=" " alt="" coords="359,5,489,32"/>
+<area shape="rect" id="node5" href="$group__sprite.html#ga07c634de39b5ea0c935940bc0bfbe993" title=" " alt="" coords="357,56,491,83"/>
+</map>

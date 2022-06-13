@@ -1,0 +1,85 @@
+\hypertarget{mouse_8c}{}\doxysection{src/libraries/kbc/src/mouse.c File Reference}
+\label{mouse_8c}\index{src/libraries/kbc/src/mouse.c@{src/libraries/kbc/src/mouse.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}mouse.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mouse\+\_\+macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}kbc\+\_\+macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}kbc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graphics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sprite.\+h\char`\"{}}\newline
+Include dependency graph for mouse.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mouse_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__mouse_ga7ff28e5ab0e59a20c7a8ccec987a71d1}{mouse\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t interrupt\+\_\+bit, int $\ast$interrupt\+\_\+id)
+\item 
+int \mbox{\hyperlink{group__mouse_ga3781238807e9bdcdb58e541f279ccec1}{mouse\+\_\+unsubscribe\+\_\+int}} (int $\ast$interrupt\+\_\+id)
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__mouse_ga210374b50462acdedab00df64d5cea3c}{mouse\+\_\+ih}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+int() \mbox{\hyperlink{group__mouse_ga8f733d871219356a3aa3fcbba1e06436}{get\+\_\+mouse\+\_\+ih\+\_\+counter}} ()
+\item 
+\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}}() \mbox{\hyperlink{group__mouse_ga3f5ddebd8ad8c4252ea28dc40faea6a5}{update\+\_\+mouse}} (struct packet $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}})
+\item 
+int16\+\_\+t \mbox{\hyperlink{group__mouse_ga23d7aeb5d8cf04f855dc4f4d10b04aad}{get\+\_\+mouse\+\_\+X}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+int16\+\_\+t \mbox{\hyperlink{group__mouse_gae8b36a4fe5503fa46bbf52200c1404cf}{get\+\_\+mouse\+\_\+Y}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\item 
+double \mbox{\hyperlink{group__mouse_gaa8a9752ad27693d112aecd6a19413e99}{get\+\_\+mouse\+\_\+angle}} (const \mbox{\hyperlink{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}{sprite\+\_\+t}} $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}})
+\item 
+int() \mbox{\hyperlink{group__mouse_gaa0e718b250931f7cb91a4f56fe33d94c}{mouse\+\_\+parse\+\_\+packet}} (struct packet $\ast$\mbox{\hyperlink{group__elements_ga56f5fc5c4c51589477f728309cde2c65}{p}})
+\item 
+int() \mbox{\hyperlink{group__mouse_gabf4140d9d2b0a560eb7910b635bc89fb}{mouse\+\_\+set\+\_\+data\+\_\+report}} (int on)
+\item 
+int() \mbox{\hyperlink{group__mouse_ga17f6a309e34b241931cc44259a3afda6}{mouse\+\_\+issue\+\_\+cmd}} (uint8\+\_\+t cmd)
+\item 
+int16\+\_\+t() \mbox{\hyperlink{group__mouse_ga3e948b653de9eab8a978a0f97e6d4613}{sign\+\_\+extend\+\_\+byte}} (uint8\+\_\+t sign\+\_\+bit, uint8\+\_\+t byte)
+\item 
+int() \mbox{\hyperlink{group__mouse_ga7c0b89b2552784fdc6cf5143d0fff378}{mouse\+\_\+read\+\_\+byte}} (uint8\+\_\+t $\ast$byte)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{mouse_8c_adde01062b0a114bcc0722cf1fc24d132}{bytes\+\_\+counter}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mouse_8c_a9badc2315839b29741a100272fb05a49}{packet\+\_\+mouse}} \mbox{[}3\mbox{]}
+\item 
+static int16\+\_\+t \mbox{\hyperlink{mouse_8c_af31a1d563ee2613b5b30838bf58f012a}{mouse\+\_\+x}} = 0
+\item 
+static int16\+\_\+t \mbox{\hyperlink{mouse_8c_a780edb8ad65677d73615b4e40d06f5f1}{mouse\+\_\+y}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mouse_8c_adde01062b0a114bcc0722cf1fc24d132}\label{mouse_8c_adde01062b0a114bcc0722cf1fc24d132}} 
+\index{mouse.c@{mouse.c}!bytes\_counter@{bytes\_counter}}
+\index{bytes\_counter@{bytes\_counter}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{bytes\_counter}{bytes\_counter}}
+{\footnotesize\ttfamily int bytes\+\_\+counter = 0}
+
+\mbox{\Hypertarget{mouse_8c_af31a1d563ee2613b5b30838bf58f012a}\label{mouse_8c_af31a1d563ee2613b5b30838bf58f012a}} 
+\index{mouse.c@{mouse.c}!mouse\_x@{mouse\_x}}
+\index{mouse\_x@{mouse\_x}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_x}{mouse\_x}}
+{\footnotesize\ttfamily int16\+\_\+t mouse\+\_\+x = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{mouse_8c_a780edb8ad65677d73615b4e40d06f5f1}\label{mouse_8c_a780edb8ad65677d73615b4e40d06f5f1}} 
+\index{mouse.c@{mouse.c}!mouse\_y@{mouse\_y}}
+\index{mouse\_y@{mouse\_y}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_y}{mouse\_y}}
+{\footnotesize\ttfamily int16\+\_\+t mouse\+\_\+y = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{mouse_8c_a9badc2315839b29741a100272fb05a49}\label{mouse_8c_a9badc2315839b29741a100272fb05a49}} 
+\index{mouse.c@{mouse.c}!packet\_mouse@{packet\_mouse}}
+\index{packet\_mouse@{packet\_mouse}!mouse.c@{mouse.c}}
+\doxysubsubsection{\texorpdfstring{packet\_mouse}{packet\_mouse}}
+{\footnotesize\ttfamily uint8\+\_\+t packet\+\_\+mouse\mbox{[}3\mbox{]}}
+

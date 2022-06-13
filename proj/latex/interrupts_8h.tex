@@ -1,0 +1,45 @@
+\hypertarget{interrupts_8h}{}\doxysection{src/project/include/interrupts.h File Reference}
+\label{interrupts_8h}\index{src/project/include/interrupts.h@{src/project/include/interrupts.h}}
+{\ttfamily \#include \char`\"{}libraries.\+h\char`\"{}}\newline
+Include dependency graph for interrupts.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interrupts_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interrupts_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__interrupts_gaa47d951ed5ee7678663adf66785022f4}{subscribe\+\_\+all}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\begin{DoxyCompactList}\small\item\em Subscribes all drivers used (timer-\/\texorpdfstring{$>$}{>}keyboard-\/\texorpdfstring{$>$}{>}mouse) \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__interrupts_gadd6f2c43bcf6aa436d16dd18edbeea81}{unsubscribe\+\_\+all}} (\mbox{\hyperlink{game_8c_a758b816bedb77d4bcca426c31a11a1a0}{void}})
+\begin{DoxyCompactList}\small\item\em Unsubscribes all subscribed interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__interrupts_ga0c400925da5041db14dfec219817f3ee}{get\+\_\+irq}} (int id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{group__interrupts_ga724d31681653653604a2b744c259cd16}{timer\+\_\+id}}
+\item 
+static int \mbox{\hyperlink{group__interrupts_gabbcbf83119b95ef024b7095128a21fda}{kbc\+\_\+id}}
+\item 
+static int \mbox{\hyperlink{group__interrupts_ga8e79a262db698503cde2128f159e63f5}{mouse\+\_\+id}}
+\item 
+static int \mbox{\hyperlink{group__interrupts_ga32ef5092702c59ada428caef6c515382}{rtc\+\_\+id}}
+\item 
+static int \mbox{\hyperlink{group__interrupts_ga2ed7f85685b1cc595a870fc8bc385167}{timer\+\_\+subscription}}
+\item 
+static int \mbox{\hyperlink{group__interrupts_gaedf8670fc8b713d894942d40cf66a210}{keyboard\+\_\+subscription}}
+\item 
+static int \mbox{\hyperlink{group__interrupts_gacbae20bbcb6c3feb37d09ee2a37b7b1c}{mouse\+\_\+subscription}}
+\item 
+static int \mbox{\hyperlink{group__interrupts_gaf112b12f61d2a4e217d4d4b58661ca5b}{rtc\+\_\+subscription}}
+\end{DoxyCompactItemize}

@@ -1,0 +1,8 @@
+<map id="collision_monster_wall" name="collision_monster_wall">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,157,57"/>
+<area shape="rect" id="node2" href="$group__sprite.html#ga6516767b0b0babfdccddf598eed3cfac" title=" " alt="" coords="353,5,446,32"/>
+<area shape="rect" id="node4" href="$group__sprite.html#ga4adb74a0a0f69a6a7c8425a8469b1369" title=" " alt="" coords="352,68,447,95"/>
+<area shape="rect" id="node6" href="$group__elements.html#gaf215806a957e2b3490a52f0d9340c15f" title=" " alt="" coords="205,31,304,57"/>
+<area shape="rect" id="node3" href="$group__sprite.html#ga1a5c0c2b65c8ef1a76621239e5bbed9e" title=" " alt="" coords="496,5,627,32"/>
+<area shape="rect" id="node5" href="$group__sprite.html#ga07c634de39b5ea0c935940bc0bfbe993" title=" " alt="" coords="495,68,628,95"/>
+</map>

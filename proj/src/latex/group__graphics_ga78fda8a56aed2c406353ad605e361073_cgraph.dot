@@ -1,0 +1,16 @@
+digraph "map_vram"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="map_vram",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="maps vram into memory"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="free_memory_map",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__graphics.html#gacfc4589de71bef6e8446198c70e28974",tooltip="frees mapped memory"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="get_permission",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__graphics.html#ga3f35ae9212b60b107e7fa82d6fad6d22",tooltip="gets permission for the given address"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="get_phys_addr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__graphics.html#gacaadaa500eac72ea406149bc3cdb59d3",tooltip="gets physical address of flat memory frammed buffer"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="get_vram_size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__graphics.html#gadd9a51710818c110bb5699378f1af8cb",tooltip="gets Vram size of the given mode"];
+}

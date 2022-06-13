@@ -1,0 +1,4 @@
+<map id="kbc_change_cmd" name="kbc_change_cmd">
+<area shape="rect" id="node1" title="High&#45;level function that changes the command byte of the KBC." alt="" coords="172,5,296,32"/>
+<area shape="rect" id="node2" href="$kbc_8c.html#ad23a7f1edcc0f9b1d46b073a198f9f88" title=" " alt="" coords="5,5,124,32"/>
+</map>
