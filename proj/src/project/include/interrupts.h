@@ -25,6 +25,10 @@ int (subscribe_all)(void);
  */
 int (unsubscribe_all)(void);
 
+/**
+ * @brief Gets irq bit id
+ * @return returns bit id
+ */
 int (get_irq)(int id);
 
 /**

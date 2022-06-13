@@ -170,36 +170,6 @@ int clear_screen(){
     return 0;
 }
 
-void (swapBuffer()) {
-    memcpy(double_buffer, video_mem, get_YRes()*get_XRes()*get_bytes_pixel());
-}
-
-int (pixmap_drawer)(uint16_t x, uint16_t y, enum pixmap pixmap){
-    uint16_t height = 0, width = 0;
-    uint16_t selected = mouse_in_box();
-
-    if (pixmap == PLAY || pixmap == EXIT) height = 37;
-    if (pixmap == PLAY) width = 271;
-    if (pixmap == EXIT) width = 207;
-
-    for (unsigned int i = 0; i < height; i++){
-        for (unsigned int j = 0; j < width; j++){
-            if (pixmap == PLAY){
-                if (selected == 1 && play[i][j] == '0') set_pixel(x + j, y + i, SELECTED_COLOR);
-                else if (play[i][j] == '0') set_pixel(x + j, y + i, PLAY_COLOR);
-                if(play[i][j] == '1') set_pixel(x + j, y + i, MENU_BACKGROUND_COLOR);
-            }
-            else if (pixmap == EXIT){
-                if (selected == 2 && exit_pixmap[i][j] == '0') set_pixel(x + j, y + i,SELECTED_COLOR);
-                else if (exit_pixmap[i][j] == '0') set_pixel(x + j, y + i,EXIT_COLOR);
-                if(exit_pixmap[i][j] == '1') set_pixel(x + j, y + i, MENU_BACKGROUND_COLOR);
-            }
-        }
-    }
-
-    return 0;
-}
-
 
 /******* SPRITE *******/
 
@@ -288,6 +258,7 @@ double (sprite_angle_of_two)(const sprite_t *p, const sprite_t *p1) {
     return atan2(sprite_get_Y(p1) - sprite_get_Y(p), sprite_get_X(p) - sprite_get_X(p1));
 }
 
+// Change to sprite_set_rotation
 static void (sprite_src2sbuf)(const sprite_t *p, int16_t x, int16_t y, int16_t *u, int16_t *v){
     if(p->angle == 0.0){
         *u = x - p->x + p->x_offset;
@@ -358,5 +329,6 @@ void (sprite_update_animation) (sprite_t *p, int reset) {
 }
 
 void (sprite_choose_animation) (sprite_t *p, int animation) {
-    p->current_animation = animation;
+    if(animation < 0 || animation > p->animation) p->current_animation = 0;
+    else p->current_animation = animation;
 }
