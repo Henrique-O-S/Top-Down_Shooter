@@ -1,0 +1,33 @@
+digraph "libraries"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node2 [label="graphics",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__graphics.html",tooltip=" "];
+  Node3 [label="graphics_macros",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__graphics__macros.html",tooltip=" "];
+  Node12 [label="i8254",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__i8254.html",tooltip=" "];
+  Node5 [label="kbc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__kbc.html",tooltip=" "];
+  Node6 [label="kbc_macros",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__kbc__macros.html",tooltip=" "];
+  Node7 [label="kbd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__kbd.html",tooltip=" "];
+  Node1 [label="libraries",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node8 [label="mouse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__mouse.html",tooltip=" "];
+  Node9 [label="mouse_macros",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__mouse__macros.html",tooltip=" "];
+  Node10 [label="rtc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__rtc.html",tooltip=" "];
+  Node11 [label=".h rtc_macros.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__rtc__macros.html",tooltip=" "];
+  Node4 [label="sprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__sprite.html",tooltip=" "];
+  Node13 [label="timer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__timer.html",tooltip=" "];
+  Node14 [label="utils",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__utils.html",tooltip=" "];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node7 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node8 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node9 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node10 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node11 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node12 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node13 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node14 [shape=plaintext, dir="back", style="solid"];
+}

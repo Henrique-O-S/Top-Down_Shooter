@@ -1,0 +1,16 @@
+digraph "sprite_draw"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="sprite_draw",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Draws sprite into double buffer."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="date_draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__aux__functions.html#ga5eeaeae55f39b7ee5bbf72e40875dbc3",tooltip="Draws a given date."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="draw_highscore",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__aux__functions.html#gaab476630d5192277f388ebc7dd64ef91",tooltip="Draws High score."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="draw_hud",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__aux__functions.html#gae07ebb66a89e6bb847cfcccc8cdbf3b1",tooltip="Draws HUD with new values."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="draw_map",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__elements.html#ga3b11d835d79f07bc68a7411380ab079f",tooltip="Draws the map on the screen."];
+}

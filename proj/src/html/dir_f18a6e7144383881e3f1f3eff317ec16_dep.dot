@@ -1,0 +1,11 @@
+digraph "libraries/rtc/include"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_b13fc024502ebc0e54c2b869c10bdc8c {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", style="filled,dashed,", label="rtc", fontname="Helvetica", fontsize="10", URL="dir_b13fc024502ebc0e54c2b869c10bdc8c.html"]
+  dir_f18a6e7144383881e3f1f3eff317ec16 [shape=box, label="include", style="filled,bold,", fillcolor="#edf0f7", color="grey25", URL="dir_f18a6e7144383881e3f1f3eff317ec16.html"];
+  }
+}

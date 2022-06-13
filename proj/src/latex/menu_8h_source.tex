@@ -1,0 +1,53 @@
+\hypertarget{menu_8h_source}{}\doxysection{menu.\+h}
+\label{menu_8h_source}\index{media/menu/menu.h@{media/menu/menu.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MENU\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MENU\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}graphics.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}play1.xpm"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}play2.xpm"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}exit1.xpm"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}exit2.xpm"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}highscore1.xpm"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}highscore2.xpm"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}instructions1.xpm"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}instructions2.xpm"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{static} \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** get\_play(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{16     \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** ret = (\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}*) * 2);}
+\DoxyCodeLine{17     ret[0] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)play1\_xpm, 0, 0);}
+\DoxyCodeLine{18     ret[1] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)play2\_xpm, 0, 0);}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordflow}{return} ret;}
+\DoxyCodeLine{21 \}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{static} \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** get\_exit(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{24     \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** ret = (\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}*) * 2);}
+\DoxyCodeLine{25     ret[0] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)exit1\_xpm, 0, 0);}
+\DoxyCodeLine{26     ret[1] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)exit2\_xpm, 0, 0);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordflow}{return} ret;}
+\DoxyCodeLine{29 \}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{static} \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** get\_highscore(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{32     \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** ret = (\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}*) * 2);}
+\DoxyCodeLine{33     ret[0] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)highscore1\_xpm, 0, 0);}
+\DoxyCodeLine{34     ret[1] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)highscore2\_xpm, 0, 0);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keywordflow}{return} ret;}
+\DoxyCodeLine{37 \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{static} \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** get\_instructions(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{40     \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** ret = (\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}*) * 2);}
+\DoxyCodeLine{41     ret[0] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)instructions1\_xpm, 0, 0);}
+\DoxyCodeLine{42     ret[1] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)instructions2\_xpm, 0, 0);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordflow}{return} ret;}
+\DoxyCodeLine{45 \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//MENU\_H\_INCLUDED}}
+
+\end{DoxyCode}

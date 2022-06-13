@@ -1,0 +1,24 @@
+\hypertarget{bullet_8h_source}{}\doxysection{bullet.\+h}
+\label{bullet_8h_source}\index{media/bullet.h@{media/bullet.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef BULLET\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define BULLET\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}graphics.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}bullet\_0.xpm"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}bullet\_1.xpm"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}bullet\_2.xpm"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{static} \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** get\_bullet(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{10     \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** ret = (\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}*) * 3);}
+\DoxyCodeLine{11     ret[0] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)bullet\_0\_xpm, 0, 0);}
+\DoxyCodeLine{12     ret[1] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)bullet\_1\_xpm, 0, 0);}
+\DoxyCodeLine{13     ret[2] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)bullet\_2\_xpm, 0, 0);}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{keywordflow}{return} ret;}
+\DoxyCodeLine{16 \}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//BULLET\_H\_INCLUDED}}
+
+\end{DoxyCode}

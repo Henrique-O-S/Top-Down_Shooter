@@ -1,0 +1,11 @@
+digraph "libraries/kbc/include"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_982af5c857dccf81cb188b2dddb89550 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", style="filled,dashed,", label="kbc", fontname="Helvetica", fontsize="10", URL="dir_982af5c857dccf81cb188b2dddb89550.html"]
+  dir_0e09e11c444f28fb314c8ff999d5b4af [shape=box, label="include", style="filled,bold,", fillcolor="#edf0f7", color="grey25", URL="dir_0e09e11c444f28fb314c8ff999d5b4af.html"];
+  }
+}

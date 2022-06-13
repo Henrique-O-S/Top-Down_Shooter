@@ -1,0 +1,450 @@
+\hypertarget{group__sprite}{}\doxysection{sprite}
+\label{group__sprite}\index{sprite@{sprite}}
+Collaboration diagram for sprite\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite}}
+\begin{DoxyCompactList}\small\item\em Basic sprite that contains a xpm map and offset values to center it. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsprite}{sprite}}
+\begin{DoxyCompactList}\small\item\em Basic sprite that contains a xpm map and offset values to center it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__sprite_gad02417a2035a3697df739dcad7a4e1b3}\label{group__sprite_gad02417a2035a3697df739dcad7a4e1b3}} 
+\#define {\bfseries ALPHA\+\_\+\+THRESHOLD}~0x7F
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__sprite_gad683122aec4800507977694a17af04f3}\label{group__sprite_gad683122aec4800507977694a17af04f3}} 
+typedef struct \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite}} {\bfseries basic\+\_\+sprite\+\_\+t}
+\item 
+\mbox{\Hypertarget{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}\label{group__sprite_gaab4f7e34894259f3dc700a86476c02bf}} 
+typedef struct \mbox{\hyperlink{structsprite}{sprite}} {\bfseries sprite\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$() \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\+\_\+sprite\+\_\+ctor}} (const char $\ast$const $\ast$xpm, int16\+\_\+t x\+\_\+offset, int16\+\_\+t y\+\_\+offset)
+\begin{DoxyCompactList}\small\item\em BASIC SPRITE. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__sprite_gac271acdc4c1c774a4851b4a62560c723}{basic\+\_\+sprite\+\_\+dtor}} (\mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Basic sprite destructor that frees mapped memory. \end{DoxyCompactList}\item 
+const uint8\+\_\+t $\ast$() \mbox{\hyperlink{group__sprite_ga10470dac4f17e5c4f271e709cf9490d8}{basic\+\_\+sprite\+\_\+get\+\_\+map}} (const \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Gets xpm map from basic sprite. \end{DoxyCompactList}\item 
+uint16\+\_\+t() \mbox{\hyperlink{group__sprite_ga07c634de39b5ea0c935940bc0bfbe993}{basic\+\_\+sprite\+\_\+get\+\_\+w}} (const \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Gets xpm map width. \end{DoxyCompactList}\item 
+uint16\+\_\+t() \mbox{\hyperlink{group__sprite_ga1a5c0c2b65c8ef1a76621239e5bbed9e}{basic\+\_\+sprite\+\_\+get\+\_\+h}} (const \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Gets xpm map height. \end{DoxyCompactList}\item 
+int16\+\_\+t() \mbox{\hyperlink{group__sprite_ga5c8aff57d09abba570c129ca56a80bc6}{basic\+\_\+sprite\+\_\+get\+\_\+x\+\_\+offset}} (const \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Gets xpm map x\+\_\+offset. \end{DoxyCompactList}\item 
+int16\+\_\+t() \mbox{\hyperlink{group__sprite_ga4b4558f87b58cbbe4560299499b620f5}{basic\+\_\+sprite\+\_\+get\+\_\+y\+\_\+offset}} (const \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Gets xpm map y\+\_\+offset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$() \mbox{\hyperlink{group__sprite_ga2e5a8273dd022cbf60439cbd657460dc}{sprite\+\_\+ctor}} (\mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$bsp, uint8\+\_\+t animation)
+\begin{DoxyCompactList}\small\item\em SPRITE. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__sprite_ga56b7413de011230d829af730b4195e59}{sprite\+\_\+dtor}} (\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Sprite destructor that frees mapped memory. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__sprite_ga147c19d6da7dc2d15fc1a4041f9e7ece}{sprite\+\_\+set\+\_\+pos}} (\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$p, int16\+\_\+t x, int16\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em Sets sprite position in screen. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__sprite_ga78a203f9e5ef0b66bb67eba0f9601d88}{sprite\+\_\+set\+\_\+angle}} (\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$p, double angle)
+\begin{DoxyCompactList}\small\item\em Sets sprite angle. \end{DoxyCompactList}\item 
+double() \mbox{\hyperlink{group__sprite_ga0dac642b91ab9707aedfe35a95326d85}{sprite\+\_\+get\+\_\+angle}} (const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Gets sprite angle. \end{DoxyCompactList}\item 
+uint16\+\_\+t() \mbox{\hyperlink{group__sprite_ga4adb74a0a0f69a6a7c8425a8469b1369}{sprite\+\_\+get\+\_\+w}} (const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Gets width from default basic sprite. \end{DoxyCompactList}\item 
+uint16\+\_\+t() \mbox{\hyperlink{group__sprite_ga6516767b0b0babfdccddf598eed3cfac}{sprite\+\_\+get\+\_\+h}} (const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Gets height from default basic sprite. \end{DoxyCompactList}\item 
+uint16\+\_\+t() \mbox{\hyperlink{group__sprite_gabd0ec8bfd082e7911d1d566f484f39b8}{sprite\+\_\+get\+\_\+X}} (const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Gets horizontal value from sprite. \end{DoxyCompactList}\item 
+uint16\+\_\+t() \mbox{\hyperlink{group__sprite_gaae66681a74c0c71427e61d299404734f}{sprite\+\_\+get\+\_\+Y}} (const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Gets vertical value from sprite. \end{DoxyCompactList}\item 
+double() \mbox{\hyperlink{group__sprite_ga08626216c0df03d95a323db61138abda}{sprite\+\_\+angle\+\_\+of\+\_\+two}} (const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$p, const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$p1)
+\begin{DoxyCompactList}\small\item\em Gets angle value between two sprites. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__sprite_ga4550eb78c720c0577782e2f8c373b2eb}{sprite\+\_\+draw}} (const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Draws sprite into double buffer. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__sprite_ga1fd0069896123635d9d3a71cdb55f7b1}{sprite\+\_\+update\+\_\+animation}} (\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$p, int reset)
+\begin{DoxyCompactList}\small\item\em Updates sprite animation into the next one. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__sprite_gae46aa306a1ae9cf1aa0339c4085840a1}{sprite\+\_\+choose\+\_\+animation}} (\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$p, int animation)
+\begin{DoxyCompactList}\small\item\em Updates sprite animation into the indicated one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__sprite_ga5fc552fbea2d276fc539a73969510642}\label{group__sprite_ga5fc552fbea2d276fc539a73969510642}} 
+\index{sprite@{sprite}!basic\_sprite\_ctor@{basic\_sprite\_ctor}}
+\index{basic\_sprite\_ctor@{basic\_sprite\_ctor}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{basic\_sprite\_ctor()}{basic\_sprite\_ctor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$() basic\+\_\+sprite\+\_\+ctor (\begin{DoxyParamCaption}\item[{const char $\ast$const $\ast$}]{xpm,  }\item[{int16\+\_\+t}]{x\+\_\+offset,  }\item[{int16\+\_\+t}]{y\+\_\+offset }\end{DoxyParamCaption})}
+
+
+
+BASIC SPRITE. 
+
+Basic sprite constructor that maps xpm into memory 
+\begin{DoxyParams}{Parameters}
+{\em xpm} & xpm map to be loaded \\
+\hline
+{\em x\+\_\+offset} & offset value for the x axis \\
+\hline
+{\em y\+\_\+offset} & offset value for the y axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+constructed basic sprite 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{group__sprite_gac271acdc4c1c774a4851b4a62560c723}\label{group__sprite_gac271acdc4c1c774a4851b4a62560c723}} 
+\index{sprite@{sprite}!basic\_sprite\_dtor@{basic\_sprite\_dtor}}
+\index{basic\_sprite\_dtor@{basic\_sprite\_dtor}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{basic\_sprite\_dtor()}{basic\_sprite\_dtor()}}
+{\footnotesize\ttfamily void() basic\+\_\+sprite\+\_\+dtor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Basic sprite destructor that frees mapped memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & basic sprite to be freed \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{group__sprite_ga1a5c0c2b65c8ef1a76621239e5bbed9e}\label{group__sprite_ga1a5c0c2b65c8ef1a76621239e5bbed9e}} 
+\index{sprite@{sprite}!basic\_sprite\_get\_h@{basic\_sprite\_get\_h}}
+\index{basic\_sprite\_get\_h@{basic\_sprite\_get\_h}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{basic\_sprite\_get\_h()}{basic\_sprite\_get\_h()}}
+{\footnotesize\ttfamily uint16\+\_\+t() basic\+\_\+sprite\+\_\+get\+\_\+h (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Gets xpm map height. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & basic sprite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+map height 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__sprite_ga10470dac4f17e5c4f271e709cf9490d8}\label{group__sprite_ga10470dac4f17e5c4f271e709cf9490d8}} 
+\index{sprite@{sprite}!basic\_sprite\_get\_map@{basic\_sprite\_get\_map}}
+\index{basic\_sprite\_get\_map@{basic\_sprite\_get\_map}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{basic\_sprite\_get\_map()}{basic\_sprite\_get\_map()}}
+{\footnotesize\ttfamily const uint8\+\_\+t $\ast$() basic\+\_\+sprite\+\_\+get\+\_\+map (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Gets xpm map from basic sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & basic sprite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+xpm map 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{group__sprite_ga07c634de39b5ea0c935940bc0bfbe993}\label{group__sprite_ga07c634de39b5ea0c935940bc0bfbe993}} 
+\index{sprite@{sprite}!basic\_sprite\_get\_w@{basic\_sprite\_get\_w}}
+\index{basic\_sprite\_get\_w@{basic\_sprite\_get\_w}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{basic\_sprite\_get\_w()}{basic\_sprite\_get\_w()}}
+{\footnotesize\ttfamily uint16\+\_\+t() basic\+\_\+sprite\+\_\+get\+\_\+w (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Gets xpm map width. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & basic sprite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+map width 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__sprite_ga5c8aff57d09abba570c129ca56a80bc6}\label{group__sprite_ga5c8aff57d09abba570c129ca56a80bc6}} 
+\index{sprite@{sprite}!basic\_sprite\_get\_x\_offset@{basic\_sprite\_get\_x\_offset}}
+\index{basic\_sprite\_get\_x\_offset@{basic\_sprite\_get\_x\_offset}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{basic\_sprite\_get\_x\_offset()}{basic\_sprite\_get\_x\_offset()}}
+{\footnotesize\ttfamily int16\+\_\+t() basic\+\_\+sprite\+\_\+get\+\_\+x\+\_\+offset (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Gets xpm map x\+\_\+offset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & basic sprite \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__sprite_ga4b4558f87b58cbbe4560299499b620f5}\label{group__sprite_ga4b4558f87b58cbbe4560299499b620f5}} 
+\index{sprite@{sprite}!basic\_sprite\_get\_y\_offset@{basic\_sprite\_get\_y\_offset}}
+\index{basic\_sprite\_get\_y\_offset@{basic\_sprite\_get\_y\_offset}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{basic\_sprite\_get\_y\_offset()}{basic\_sprite\_get\_y\_offset()}}
+{\footnotesize\ttfamily int16\+\_\+t() basic\+\_\+sprite\+\_\+get\+\_\+y\+\_\+offset (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Gets xpm map y\+\_\+offset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & basic sprite \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__sprite_ga08626216c0df03d95a323db61138abda}\label{group__sprite_ga08626216c0df03d95a323db61138abda}} 
+\index{sprite@{sprite}!sprite\_angle\_of\_two@{sprite\_angle\_of\_two}}
+\index{sprite\_angle\_of\_two@{sprite\_angle\_of\_two}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{sprite\_angle\_of\_two()}{sprite\_angle\_of\_two()}}
+{\footnotesize\ttfamily double() sprite\+\_\+angle\+\_\+of\+\_\+two (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$}]{p,  }\item[{const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$}]{p1 }\end{DoxyParamCaption})}
+
+
+
+Gets angle value between two sprites. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & main sprite \\
+\hline
+{\em p1} & target sprite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+angle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__sprite_gae46aa306a1ae9cf1aa0339c4085840a1}\label{group__sprite_gae46aa306a1ae9cf1aa0339c4085840a1}} 
+\index{sprite@{sprite}!sprite\_choose\_animation@{sprite\_choose\_animation}}
+\index{sprite\_choose\_animation@{sprite\_choose\_animation}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{sprite\_choose\_animation()}{sprite\_choose\_animation()}}
+{\footnotesize\ttfamily void() sprite\+\_\+choose\+\_\+animation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$}]{p,  }\item[{int}]{animation }\end{DoxyParamCaption})}
+
+
+
+Updates sprite animation into the indicated one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & main sprite \\
+\hline
+{\em animation} & animation to be choosen \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{group__sprite_ga2e5a8273dd022cbf60439cbd657460dc}\label{group__sprite_ga2e5a8273dd022cbf60439cbd657460dc}} 
+\index{sprite@{sprite}!sprite\_ctor@{sprite\_ctor}}
+\index{sprite\_ctor@{sprite\_ctor}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{sprite\_ctor()}{sprite\_ctor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$() sprite\+\_\+ctor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$}]{bsp,  }\item[{uint8\+\_\+t}]{animation }\end{DoxyParamCaption})}
+
+
+
+SPRITE. 
+
+Sprite constructor that contains multiple basic sprite 
+\begin{DoxyParams}{Parameters}
+{\em bsp} & array of basic sprites \\
+\hline
+{\em animation} & number of animations \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+constructed sprite 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{group__sprite_ga4550eb78c720c0577782e2f8c373b2eb}\label{group__sprite_ga4550eb78c720c0577782e2f8c373b2eb}} 
+\index{sprite@{sprite}!sprite\_draw@{sprite\_draw}}
+\index{sprite\_draw@{sprite\_draw}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{sprite\_draw()}{sprite\_draw()}}
+{\footnotesize\ttfamily void() sprite\+\_\+draw (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Draws sprite into double buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & main sprite \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{group__sprite_ga56b7413de011230d829af730b4195e59}\label{group__sprite_ga56b7413de011230d829af730b4195e59}} 
+\index{sprite@{sprite}!sprite\_dtor@{sprite\_dtor}}
+\index{sprite\_dtor@{sprite\_dtor}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{sprite\_dtor()}{sprite\_dtor()}}
+{\footnotesize\ttfamily void() sprite\+\_\+dtor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Sprite destructor that frees mapped memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Sprite to be freed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__sprite_ga0dac642b91ab9707aedfe35a95326d85}\label{group__sprite_ga0dac642b91ab9707aedfe35a95326d85}} 
+\index{sprite@{sprite}!sprite\_get\_angle@{sprite\_get\_angle}}
+\index{sprite\_get\_angle@{sprite\_get\_angle}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{sprite\_get\_angle()}{sprite\_get\_angle()}}
+{\footnotesize\ttfamily double() sprite\+\_\+get\+\_\+angle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Gets sprite angle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & sprite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sprite angle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__sprite_ga6516767b0b0babfdccddf598eed3cfac}\label{group__sprite_ga6516767b0b0babfdccddf598eed3cfac}} 
+\index{sprite@{sprite}!sprite\_get\_h@{sprite\_get\_h}}
+\index{sprite\_get\_h@{sprite\_get\_h}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{sprite\_get\_h()}{sprite\_get\_h()}}
+{\footnotesize\ttfamily uint16\+\_\+t() sprite\+\_\+get\+\_\+h (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Gets height from default basic sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & sprite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+basic sprite height 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{group__sprite_ga4adb74a0a0f69a6a7c8425a8469b1369}\label{group__sprite_ga4adb74a0a0f69a6a7c8425a8469b1369}} 
+\index{sprite@{sprite}!sprite\_get\_w@{sprite\_get\_w}}
+\index{sprite\_get\_w@{sprite\_get\_w}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{sprite\_get\_w()}{sprite\_get\_w()}}
+{\footnotesize\ttfamily uint16\+\_\+t() sprite\+\_\+get\+\_\+w (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Gets width from default basic sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & sprite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+basic sprite width 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{group__sprite_gabd0ec8bfd082e7911d1d566f484f39b8}\label{group__sprite_gabd0ec8bfd082e7911d1d566f484f39b8}} 
+\index{sprite@{sprite}!sprite\_get\_X@{sprite\_get\_X}}
+\index{sprite\_get\_X@{sprite\_get\_X}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{sprite\_get\_X()}{sprite\_get\_X()}}
+{\footnotesize\ttfamily uint16\+\_\+t() sprite\+\_\+get\+\_\+X (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Gets horizontal value from sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & sprite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sprite horizontal value 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{group__sprite_gaae66681a74c0c71427e61d299404734f}\label{group__sprite_gaae66681a74c0c71427e61d299404734f}} 
+\index{sprite@{sprite}!sprite\_get\_Y@{sprite\_get\_Y}}
+\index{sprite\_get\_Y@{sprite\_get\_Y}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{sprite\_get\_Y()}{sprite\_get\_Y()}}
+{\footnotesize\ttfamily uint16\+\_\+t() sprite\+\_\+get\+\_\+Y (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Gets vertical value from sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & sprite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sprite vertical value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__sprite_ga78a203f9e5ef0b66bb67eba0f9601d88}\label{group__sprite_ga78a203f9e5ef0b66bb67eba0f9601d88}} 
+\index{sprite@{sprite}!sprite\_set\_angle@{sprite\_set\_angle}}
+\index{sprite\_set\_angle@{sprite\_set\_angle}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{sprite\_set\_angle()}{sprite\_set\_angle()}}
+{\footnotesize\ttfamily void() sprite\+\_\+set\+\_\+angle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$}]{p,  }\item[{double}]{angle }\end{DoxyParamCaption})}
+
+
+
+Sets sprite angle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & sprite \\
+\hline
+{\em angle} & angle of the sprite \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{group__sprite_ga147c19d6da7dc2d15fc1a4041f9e7ece}\label{group__sprite_ga147c19d6da7dc2d15fc1a4041f9e7ece}} 
+\index{sprite@{sprite}!sprite\_set\_pos@{sprite\_set\_pos}}
+\index{sprite\_set\_pos@{sprite\_set\_pos}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{sprite\_set\_pos()}{sprite\_set\_pos()}}
+{\footnotesize\ttfamily void() sprite\+\_\+set\+\_\+pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$}]{p,  }\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets sprite position in screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & sprite \\
+\hline
+{\em x} & position in the x axis \\
+\hline
+{\em y} & position in the y axis \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 12
+\mbox{\Hypertarget{group__sprite_ga1fd0069896123635d9d3a71cdb55f7b1}\label{group__sprite_ga1fd0069896123635d9d3a71cdb55f7b1}} 
+\index{sprite@{sprite}!sprite\_update\_animation@{sprite\_update\_animation}}
+\index{sprite\_update\_animation@{sprite\_update\_animation}!sprite@{sprite}}
+\doxysubsubsection{\texorpdfstring{sprite\_update\_animation()}{sprite\_update\_animation()}}
+{\footnotesize\ttfamily void() sprite\+\_\+update\+\_\+animation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$}]{p,  }\item[{int}]{reset }\end{DoxyParamCaption})}
+
+
+
+Updates sprite animation into the next one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & main sprite \\
+\hline
+{\em reset} & if 0, continues animation, otherwise resets into the first animation \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,76 @@
+\hypertarget{group__timer}{}\doxysection{timer}
+\label{group__timer}\index{timer@{timer}}
+Collaboration diagram for timer\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__timer_ga11445809a6c9be6a3ed5ffb185bf88c3}{subscribe\+\_\+timer\+\_\+interrupt}} (uint8\+\_\+t interrupt\+\_\+bit, int $\ast$interrupt\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Subscribes interrupt bit for timer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__timer_ga91a2072306c68353712a6b771287dc2c}\label{group__timer_ga91a2072306c68353712a6b771287dc2c}} 
+void() {\bfseries timer\+\_\+int\+\_\+handler} ()
+\begin{DoxyCompactList}\small\item\em Increments the number of interrupts. \end{DoxyCompactList}\item 
+uint32\+\_\+t() \mbox{\hyperlink{group__timer_ga1a81b5e8a75c2845c8db3f7e2cb149b0}{get\+\_\+no\+\_\+interupts}} ()
+\begin{DoxyCompactList}\small\item\em Gets number of interrupts. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__timer_ga12ae5e7acfac452d058162c2c2aa8852}{set\+\_\+no\+\_\+interupts}} (uint32\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Sets number of interrupts for a given value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__timer_ga4ec79c7a92ad220b5bf1daa87814f869}\label{group__timer_ga4ec79c7a92ad220b5bf1daa87814f869}} 
+uint32\+\_\+t {\bfseries no\+\_\+interrupts}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__timer_ga1a81b5e8a75c2845c8db3f7e2cb149b0}\label{group__timer_ga1a81b5e8a75c2845c8db3f7e2cb149b0}} 
+\index{timer@{timer}!get\_no\_interupts@{get\_no\_interupts}}
+\index{get\_no\_interupts@{get\_no\_interupts}!timer@{timer}}
+\doxysubsubsection{\texorpdfstring{get\_no\_interupts()}{get\_no\_interupts()}}
+{\footnotesize\ttfamily uint32\+\_\+t() get\+\_\+no\+\_\+interupts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets number of interrupts. 
+
+\begin{DoxyReturn}{Returns}
+number of interrupts 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__timer_ga12ae5e7acfac452d058162c2c2aa8852}\label{group__timer_ga12ae5e7acfac452d058162c2c2aa8852}} 
+\index{timer@{timer}!set\_no\_interupts@{set\_no\_interupts}}
+\index{set\_no\_interupts@{set\_no\_interupts}!timer@{timer}}
+\doxysubsubsection{\texorpdfstring{set\_no\_interupts()}{set\_no\_interupts()}}
+{\footnotesize\ttfamily void() set\+\_\+no\+\_\+interupts (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Sets number of interrupts for a given value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & new number for the number of interrupts \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__timer_ga11445809a6c9be6a3ed5ffb185bf88c3}\label{group__timer_ga11445809a6c9be6a3ed5ffb185bf88c3}} 
+\index{timer@{timer}!subscribe\_timer\_interrupt@{subscribe\_timer\_interrupt}}
+\index{subscribe\_timer\_interrupt@{subscribe\_timer\_interrupt}!timer@{timer}}
+\doxysubsubsection{\texorpdfstring{subscribe\_timer\_interrupt()}{subscribe\_timer\_interrupt()}}
+{\footnotesize\ttfamily int() subscribe\+\_\+timer\+\_\+interrupt (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{interrupt\+\_\+bit,  }\item[{int $\ast$}]{interrupt\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Subscribes interrupt bit for timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interrupt\+\_\+bit} & interrupt bit \\
+\hline
+{\em interrupt\+\_\+id} & pointer for the interrupt bit to be used \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if sucessful, 1 otherwise 
+\end{DoxyReturn}

@@ -1,0 +1,20 @@
+\hypertarget{hud_8h_source}{}\doxysection{hud.\+h}
+\label{hud_8h_source}\index{media/hud.h@{media/hud.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HUD\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HUD\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}graphics.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}hud.xpm"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{static} \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** get\_hud(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{8     \mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}** ret = (\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structbasic__sprite}{basic\_sprite\_t}}*) * 1);}
+\DoxyCodeLine{9     ret[0] = \mbox{\hyperlink{group__sprite_ga5fc552fbea2d276fc539a73969510642}{basic\_sprite\_ctor}}((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\textcolor{keyword}{const} *)hud\_xpm, 0, 0);}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \textcolor{keywordflow}{return} ret;}
+\DoxyCodeLine{12 \}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//HUD\_H\_INCLUDED}}
+
+\end{DoxyCode}

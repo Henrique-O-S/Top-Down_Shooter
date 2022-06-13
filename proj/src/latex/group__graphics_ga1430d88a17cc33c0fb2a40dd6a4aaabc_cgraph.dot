@@ -1,0 +1,20 @@
+digraph "paint_screen"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="paint_screen",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Paints the full screen with a given color."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="draw_rectangle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__graphics.html#ga31178cc71e7af0d6045707842517b225",tooltip="draws rectangle into the buffer"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="draw_hline",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__graphics.html#gabfbedb6c93fc8eb59745694ce8e19e14",tooltip="draws horizontal line into the buffer"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="set_pixel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__graphics.html#gab202e9acd2a0826e183d01a13930d5d6",tooltip="sets pixel into the buffer"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="get_bytes_pixel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__graphics.html#gafa7636d40c82e2b1a63585e2ad8138ff",tooltip="Gets bytes per pixel for given mode."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="get_XRes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__graphics.html#ga1e78ad9ed25b03687bc0b0d06b3957e4",tooltip="Gets horizontal resolution for the given vbe mode."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="get_YRes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__graphics.html#gaff98c1ed5146900037a3747de30f6a79",tooltip="Gets vertical resolution for the given vbe mode."];
+}

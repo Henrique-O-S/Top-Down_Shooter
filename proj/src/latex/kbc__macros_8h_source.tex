@@ -1,0 +1,74 @@
+\hypertarget{kbc__macros_8h_source}{}\doxysection{kbc\+\_\+macros.\+h}
+\label{kbc__macros_8h_source}\index{libraries/kbc/include/kbc\_macros.h@{libraries/kbc/include/kbc\_macros.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef KBC\_MACROS\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define KBC\_MACROS\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{11 \textcolor{comment}{/* KBC IRQ Line */}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define KBC\_IRQ     1   }\textcolor{comment}{/* @brief KBC Controller IRQ Line */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define MOUSE\_IRQ   12  }\textcolor{comment}{/* @brief Mouse IRQ Line */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{/* Delay for KBC */}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define DELAY           20000 }\textcolor{comment}{/* @brief KBC Response Delay */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define KBC\_NUM\_TRIES   20    }\textcolor{comment}{/* @brief Number of tries to issue command before timeout */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{/* I/O Ports Addresses */}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define KBC\_CMD     0x64 }\textcolor{comment}{/* @brief Address to send commands to KBC */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define KBC\_CMD\_ARG 0x60 }\textcolor{comment}{/* @brief Address to write KBC Command Arguments */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define STATUS\_REG  0x64 }\textcolor{comment}{/* @brief KBC Status Register address */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define OUTPUT\_BUF  0x60 }\textcolor{comment}{/* @brief Address of Output Buffer of KBC */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{/* KBC Commands */}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define READ\_KBC\_CMD    0x20 }\textcolor{comment}{/* @brief Read KBC Command Byte */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define WRITE\_KBC\_CMD   0x60 }\textcolor{comment}{/* @brief Write KBC Command Byte */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define KBC\_SELF\_TEST   0xAA }\textcolor{comment}{/* @brief KBC Diagnostic Tests */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define KBC\_INT\_TEST    0xAB }\textcolor{comment}{/* @brief Tests Keyboard Clock and Data lines */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define KBC\_INT\_DISABLE 0xAD }\textcolor{comment}{/* @brief Disable KBC Interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define KBC\_INT\_ENABLE  0xAE }\textcolor{comment}{/* @brief Enable KBC Interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define MOUSE\_DISABLE   0xA7 }\textcolor{comment}{/* @brief Disable Mouse */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define MOUSE\_ENABLE    0xA8 }\textcolor{comment}{/* @brief Enable Mouse */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define MOUSE\_INT\_TEST  0xA9 }\textcolor{comment}{/* @brief Tests Mouse data line */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define MOUSE\_WRITE\_B   0xD4 }\textcolor{comment}{/* @brief Write a byte directly to the mouse */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/* Status Byte Masking */}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define OUT\_BUF\_FUL     BIT(0) }\textcolor{comment}{/* @brief Output Buffer State */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define IN\_BUF\_FULL     BIT(1) }\textcolor{comment}{/* @brief Input Buffer State */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define SYS\_FLAG        BIT(2) }\textcolor{comment}{/* @brief System Flag */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define DATA\_CMD\_WRITE  BIT(3) }\textcolor{comment}{/* @brief Identifier of type of byte in input buffer */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define INH\_FLAG        BIT(4) }\textcolor{comment}{/* @brief Keyboard inihibited */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define AUX\_MOUSE       BIT(5) }\textcolor{comment}{/* @brief Mouse Data */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define TIME\_OUT\_REC    BIT(6) }\textcolor{comment}{/* @brief Time Out Error -\/ Invalid Data */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define PARITY\_ERROR    BIT(7) }\textcolor{comment}{/* @brief Parity Error -\/ Invalid Data */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{comment}{/* Keycodes */}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define ESC\_BREAK\_CODE  0x81    }\textcolor{comment}{/* @brief ESC Break Code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define W\_MAKE          0x11    }\textcolor{comment}{/* @brief W Make Code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define W\_BREAK         0x91    }\textcolor{comment}{/* @brief W Break Code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define A\_MAKE          0x1E    }\textcolor{comment}{/* @brief A Make Code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define A\_BREAK         0x9E    }\textcolor{comment}{/* @brief A Break Code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define S\_MAKE          0x1F    }\textcolor{comment}{/* @brief S Make Code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define S\_BREAK         0x9F    }\textcolor{comment}{/* @brief S Break Code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define D\_MAKE          0x20    }\textcolor{comment}{/* @brief D Make Code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define D\_BREAK         0xA0    }\textcolor{comment}{/* @brief D Break Code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{comment}{/* Scancode Constants */}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define TWO\_BYTE\_CODE   0xE0    }\textcolor{comment}{/* @brief First byte of a two byte Scancode */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define BREAK\_CODE\_BIT  BIT(7)  }\textcolor{comment}{/* @brief Bit to distinguish between Make code and Break code */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{comment}{/* Command byte masks */}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define INT\_KBD         BIT(0)  }\textcolor{comment}{/* @brief Enable Keyboard Interrupts */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define INT\_MOU         BIT(1)  }\textcolor{comment}{/* @brief Enable Mouse Interrupts */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define DIS\_KBD         BIT(4)  }\textcolor{comment}{/* @brief Disable Keyboard */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define DIS\_MOU         BIT(5)  }\textcolor{comment}{/* @brief Disable Mouse */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//KBC\_MACROS\_H\_INCLUDED}}
+
+\end{DoxyCode}

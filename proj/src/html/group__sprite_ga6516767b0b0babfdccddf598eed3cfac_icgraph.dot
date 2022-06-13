@@ -1,0 +1,25 @@
+digraph "sprite_get_h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="sprite_get_h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Gets height from default basic sprite."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="build_map",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__elements.html#gaa9cc820ca222189d0563d9cfe365a92e",tooltip="Builds the map struct where the game takes place."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="collision_bullet_enemy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__elements.html#gae4f8f5e94c6f675160d8cab11f02de8a",tooltip="Checks if there's a collision between the bullet and an enemy."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="collision_bullet_wall",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__elements.html#gab29dd799825a7ef67e792614a745f023",tooltip="Checks if there's a collision between the bullet and a wall."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="collision_enemy_wall",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__elements.html#ga3ec2d05dd6ff70dcdd5073c3e09f07db",tooltip="Checks if there's a collision between the enemy and a wall."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="collision_player_enemy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__elements.html#ga92a08df434beb84ee099d8b42a9ea591",tooltip="Checks if there are collisions between the player and an enemy."];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="collision_player_wall",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__elements.html#gaab4a77fca8a5a695b4db1f62bff0b2a9",tooltip="Checks if there are collisions between the player and a wall."];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="wall_collision",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__elements.html#gaf215806a957e2b3490a52f0d9340c15f",tooltip="Checks if there's a collision between object in (x, y) position with the wall."];
+  Node8 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

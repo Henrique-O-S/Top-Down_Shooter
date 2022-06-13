@@ -1,0 +1,141 @@
+\hypertarget{group__kbd}{}\doxysection{kbd}
+\label{group__kbd}\index{kbd@{kbd}}
+Collaboration diagram for kbd\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{group__kbd_gab35cfc697428fac7727ef5a6411b86f0}{subscribe\+\_\+kbc\+\_\+interrupt}} (uint8\+\_\+t interrupt\+\_\+bit, int $\ast$interrupt\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Subscribes Keyboard Interrupts. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__kbd_ga5761bd4aad91ac1d68916ad88f583d9f}\label{group__kbd_ga5761bd4aad91ac1d68916ad88f583d9f}} 
+void() {\bfseries kbc\+\_\+ih} (void)
+\begin{DoxyCompactList}\small\item\em KBC interrupt handler. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{group__kbd_gac83c39ace6f539167f5cc34f6c689cd2}{keyboard\+\_\+poll}} (uint8\+\_\+t bytes\mbox{[}$\,$\mbox{]}, uint8\+\_\+t $\ast$size)
+\begin{DoxyCompactList}\small\item\em Poll keyboard for scancodes. \end{DoxyCompactList}\item 
+const uint8\+\_\+t $\ast$() \mbox{\hyperlink{group__kbd_gaf9fae340464cde05ae307740c23e57b8}{get\+\_\+scancode}} ()
+\begin{DoxyCompactList}\small\item\em Get scancode read from keyboard. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__kbd_ga6b5a3839c3253ab21aa69739a1cdfa0f}{keyboard\+\_\+get\+\_\+done}} (void)
+\begin{DoxyCompactList}\small\item\em Get state of reading (done) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__kbd_ga2ebba414b43d0a512cbf6ed4fc93ff61}{keyboard\+\_\+get\+\_\+size}} (void)
+\begin{DoxyCompactList}\small\item\em Get size of read scancode. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__kbd_ga92aeaf639bfed417b8a439361f92f221}{keyboard\+\_\+get\+\_\+error}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if keyboard interrupt handler had errors while running. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__kbd_ga01577ed8d3646775ae6a8e00d24c1d94}\label{group__kbd_ga01577ed8d3646775ae6a8e00d24c1d94}} 
+uint8\+\_\+t {\bfseries scancode} \mbox{[}2\mbox{]}
+\item 
+\mbox{\Hypertarget{group__kbd_ga5992b274cfdcacdbc1fa8347fd01ebde}\label{group__kbd_ga5992b274cfdcacdbc1fa8347fd01ebde}} 
+int {\bfseries done}
+\item 
+\mbox{\Hypertarget{group__kbd_ga0e1ea19fb9fa7881d15d84eff4c090e1}\label{group__kbd_ga0e1ea19fb9fa7881d15d84eff4c090e1}} 
+int {\bfseries sz}
+\item 
+\mbox{\Hypertarget{group__kbd_ga6729a7041834743f389446708ab0b24d}\label{group__kbd_ga6729a7041834743f389446708ab0b24d}} 
+int {\bfseries got\+\_\+error\+\_\+keyboard}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__kbd_gaf9fae340464cde05ae307740c23e57b8}\label{group__kbd_gaf9fae340464cde05ae307740c23e57b8}} 
+\index{kbd@{kbd}!get\_scancode@{get\_scancode}}
+\index{get\_scancode@{get\_scancode}!kbd@{kbd}}
+\doxysubsubsection{\texorpdfstring{get\_scancode()}{get\_scancode()}}
+{\footnotesize\ttfamily const uint8\+\_\+t $\ast$() get\+\_\+scancode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get scancode read from keyboard. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to begin of scancode array 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{group__kbd_ga6b5a3839c3253ab21aa69739a1cdfa0f}\label{group__kbd_ga6b5a3839c3253ab21aa69739a1cdfa0f}} 
+\index{kbd@{kbd}!keyboard\_get\_done@{keyboard\_get\_done}}
+\index{keyboard\_get\_done@{keyboard\_get\_done}!kbd@{kbd}}
+\doxysubsubsection{\texorpdfstring{keyboard\_get\_done()}{keyboard\_get\_done()}}
+{\footnotesize\ttfamily int keyboard\+\_\+get\+\_\+done (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get state of reading (done) 
+
+\begin{DoxyReturn}{Returns}
+1 if done, 0 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__kbd_ga92aeaf639bfed417b8a439361f92f221}\label{group__kbd_ga92aeaf639bfed417b8a439361f92f221}} 
+\index{kbd@{kbd}!keyboard\_get\_error@{keyboard\_get\_error}}
+\index{keyboard\_get\_error@{keyboard\_get\_error}!kbd@{kbd}}
+\doxysubsubsection{\texorpdfstring{keyboard\_get\_error()}{keyboard\_get\_error()}}
+{\footnotesize\ttfamily int keyboard\+\_\+get\+\_\+error (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if keyboard interrupt handler had errors while running. 
+
+\begin{DoxyReturn}{Returns}
+1 if had any errors, 0 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__kbd_ga2ebba414b43d0a512cbf6ed4fc93ff61}\label{group__kbd_ga2ebba414b43d0a512cbf6ed4fc93ff61}} 
+\index{kbd@{kbd}!keyboard\_get\_size@{keyboard\_get\_size}}
+\index{keyboard\_get\_size@{keyboard\_get\_size}!kbd@{kbd}}
+\doxysubsubsection{\texorpdfstring{keyboard\_get\_size()}{keyboard\_get\_size()}}
+{\footnotesize\ttfamily int keyboard\+\_\+get\+\_\+size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get size of read scancode. 
+
+\begin{DoxyReturn}{Returns}
+Size of scancode 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{group__kbd_gac83c39ace6f539167f5cc34f6c689cd2}\label{group__kbd_gac83c39ace6f539167f5cc34f6c689cd2}} 
+\index{kbd@{kbd}!keyboard\_poll@{keyboard\_poll}}
+\index{keyboard\_poll@{keyboard\_poll}!kbd@{kbd}}
+\doxysubsubsection{\texorpdfstring{keyboard\_poll()}{keyboard\_poll()}}
+{\footnotesize\ttfamily int() keyboard\+\_\+poll (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{bytes\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t $\ast$}]{size }\end{DoxyParamCaption})}
+
+
+
+Poll keyboard for scancodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bytes} & Array to put read bytes \\
+\hline
+{\em size} & Number of ready bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{group__kbd_gab35cfc697428fac7727ef5a6411b86f0}\label{group__kbd_gab35cfc697428fac7727ef5a6411b86f0}} 
+\index{kbd@{kbd}!subscribe\_kbc\_interrupt@{subscribe\_kbc\_interrupt}}
+\index{subscribe\_kbc\_interrupt@{subscribe\_kbc\_interrupt}!kbd@{kbd}}
+\doxysubsubsection{\texorpdfstring{subscribe\_kbc\_interrupt()}{subscribe\_kbc\_interrupt()}}
+{\footnotesize\ttfamily int() subscribe\+\_\+kbc\+\_\+interrupt (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{interrupt\+\_\+bit,  }\item[{int $\ast$}]{interrupt\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Subscribes Keyboard Interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interrupt\+\_\+bit} & Bit of Interrupt Vector that will be set when Keyboard Interrupt is pending \\
+\hline
+{\em interrupt\+\_\+id} & Keyboard Interrupt ID to specify the Keyboard Interrupt in other calls \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}

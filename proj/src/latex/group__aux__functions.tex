@@ -1,0 +1,173 @@
+\hypertarget{group__aux__functions}{}\doxysection{aux\+\_\+functions}
+\label{group__aux__functions}\index{aux\_functions@{aux\_functions}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structkeys}{keys}}
+\begin{DoxyCompactList}\small\item\em Struct that refers if a given key was/was not pressed. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtext}{text}}
+\begin{DoxyCompactList}\small\item\em Struct that can draw in screen numbers from 0 to 999. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structdate}{date}}
+\begin{DoxyCompactList}\small\item\em Struct that can draw dates from 00-\/00-\/2000 to 31-\/12-\/2099. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__aux__functions_ga7e73507e11719429d41bacdb8e73d1ee}\label{group__aux__functions_ga7e73507e11719429d41bacdb8e73d1ee}} 
+typedef struct \mbox{\hyperlink{structkeys}{keys}} {\bfseries keys\+\_\+t}
+\item 
+\mbox{\Hypertarget{group__aux__functions_gab8b633d1c95b75912dd4220aec9b9460}\label{group__aux__functions_gab8b633d1c95b75912dd4220aec9b9460}} 
+typedef struct \mbox{\hyperlink{structtext}{text}} {\bfseries text\+\_\+t}
+\item 
+\mbox{\Hypertarget{group__aux__functions_gaf2dd156f017b10d1acb76502c324931d}\label{group__aux__functions_gaf2dd156f017b10d1acb76502c324931d}} 
+typedef struct \mbox{\hyperlink{structdate}{date}} {\bfseries date\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtext}{text\+\_\+t}} $\ast$() \mbox{\hyperlink{group__aux__functions_ga390e100b1979862f65b90b1c550f92de}{text\+\_\+ctor}} (int16\+\_\+t x, int16\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em Text constructor that loads numbers and default position in screen. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__aux__functions_gaa44ed1dddad05a46684d78465aa371cf}{text\+\_\+set\+\_\+number}} (\mbox{\hyperlink{structtext}{text\+\_\+t}} $\ast$t, int16\+\_\+t pos2, int16\+\_\+t pos1, int16\+\_\+t pos0)
+\begin{DoxyCompactList}\small\item\em Sets number for 3 positions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__aux__functions_ga5a200d1a18d60b4cd045d19a821cf363}\label{group__aux__functions_ga5a200d1a18d60b4cd045d19a821cf363}} 
+void {\bfseries update\+\_\+key\+\_\+press} (void)
+\begin{DoxyCompactList}\small\item\em Updates mouse pressed into the global keys. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__aux__functions_ga94a12c3e7ce26b37d2cbb55f9bbfb1f6}{update\+\_\+mouse\+\_\+press}} (struct packet pp)
+\begin{DoxyCompactList}\small\item\em Updates mouse pressed into the global keys. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structkeys}{keys\+\_\+t}} $\ast$() \mbox{\hyperlink{group__aux__functions_ga2276f20ec5cf6f7c8814010a2c3168e8}{get\+\_\+key\+\_\+press}} (void)
+\begin{DoxyCompactList}\small\item\em Gets global key struct. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__aux__functions_gaa703783c111b1274caa9a409d80b61ba}\label{group__aux__functions_gaa703783c111b1274caa9a409d80b61ba}} 
+void() {\bfseries set\+\_\+hud} ()
+\begin{DoxyCompactList}\small\item\em Sets default HUD components. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__aux__functions_gae07ebb66a89e6bb847cfcccc8cdbf3b1}{draw\+\_\+hud}} (int h, int k, int t)
+\begin{DoxyCompactList}\small\item\em Draws HUD with new values. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__aux__functions_ga313878f42073bab6512b601c0466beca}{set\+\_\+highscore}} (int k)
+\begin{DoxyCompactList}\small\item\em Sets Highscore with new kills value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__aux__functions_gabde09d8c2f7b39a40e4651f5f0417966}\label{group__aux__functions_gabde09d8c2f7b39a40e4651f5f0417966}} 
+void() {\bfseries start\+\_\+highscore} ()
+\begin{DoxyCompactList}\small\item\em Sets default highscore components. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__aux__functions_gaab476630d5192277f388ebc7dd64ef91}\label{group__aux__functions_gaab476630d5192277f388ebc7dd64ef91}} 
+void() {\bfseries draw\+\_\+highscore} ()
+\begin{DoxyCompactList}\small\item\em Draws High score. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__aux__functions_ga6debe472ff6500830686e52bb98a07f9}{draw\+\_\+end\+\_\+game}} (int k, int t)
+\begin{DoxyCompactList}\small\item\em Draws end game screen. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__aux__functions_gaeb704c5cd972000129f5068ed61baaef}\label{group__aux__functions_gaeb704c5cd972000129f5068ed61baaef}} 
+void() {\bfseries set\+\_\+menu} ()
+\begin{DoxyCompactList}\small\item\em Set menu components. \end{DoxyCompactList}\item 
+uint16\+\_\+t() \mbox{\hyperlink{group__aux__functions_ga56706f876d01dbcb1a5d68dcdaa03c85}{mouse\+\_\+on\+\_\+top}} ()
+\begin{DoxyCompactList}\small\item\em Gets value if its on top of a menu item. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__aux__functions_ga8b436345808e86cfdb278061a65a0fe7}\label{group__aux__functions_ga8b436345808e86cfdb278061a65a0fe7}} 
+void() {\bfseries draw\+\_\+menu} ()
+\begin{DoxyCompactList}\small\item\em Draws Main Menu. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__aux__functions_ga777be9eeed8e675bca3bad2ae6f227ee}\label{group__aux__functions_ga777be9eeed8e675bca3bad2ae6f227ee}} 
+uint16\+\_\+t() {\bfseries mouse\+\_\+in\+\_\+box} ()
+\item 
+int() \mbox{\hyperlink{group__aux__functions_gac6f69849f230723470b53eb28f9625e6}{process\+\_\+mouse}} (struct packet $\ast$p, int in\+\_\+game)
+\begin{DoxyCompactList}\small\item\em Processes mouse position in screen for a given scenario. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdate}{date\+\_\+t}} $\ast$() \mbox{\hyperlink{group__aux__functions_gaeb42c482fcaaae3a7713f0e5b49c57d6}{date\+\_\+ctor}} (int16\+\_\+t x, int16\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em Date constructor. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__aux__functions_ga34cc26bfefefb0611da2436c7575e714}{date\+\_\+set\+\_\+number}} (\mbox{\hyperlink{structdate}{date\+\_\+t}} $\ast$t, int16\+\_\+t pos2, int16\+\_\+t pos1, int16\+\_\+t pos0)
+\begin{DoxyCompactList}\small\item\em Sets new score into date. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{group__aux__functions_ga5eeaeae55f39b7ee5bbf72e40875dbc3}{date\+\_\+draw}} (\mbox{\hyperlink{structdate}{date\+\_\+t}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em Draws a given date. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__aux__functions_gab3153e95c6ca2790ddc6d28951633442}\label{group__aux__functions_gab3153e95c6ca2790ddc6d28951633442}} 
+int() {\bfseries map1\+\_\+init} ()
+\item 
+\mbox{\Hypertarget{group__aux__functions_gaa77dc8c2b8195984b56f48ae5161d438}\label{group__aux__functions_gaa77dc8c2b8195984b56f48ae5161d438}} 
+void() {\bfseries map1\+\_\+background} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__aux__functions_ga1eaafd47968d878ad96db4da8f1f3b41}\label{group__aux__functions_ga1eaafd47968d878ad96db4da8f1f3b41}} 
+\mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$ {\bfseries bsp\+\_\+play}
+\item 
+\mbox{\Hypertarget{group__aux__functions_ga50cf41cff3919baa85109f1d56db3062}\label{group__aux__functions_ga50cf41cff3919baa85109f1d56db3062}} 
+\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$ {\bfseries sp\+\_\+play}
+\item 
+\mbox{\Hypertarget{group__aux__functions_gaea86de382795db42b9b4f2d8fd7b15ff}\label{group__aux__functions_gaea86de382795db42b9b4f2d8fd7b15ff}} 
+\mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$ {\bfseries bsp\+\_\+exit}
+\item 
+\mbox{\Hypertarget{group__aux__functions_ga4e4aeed04b31028b1635ad02f72d6147}\label{group__aux__functions_ga4e4aeed04b31028b1635ad02f72d6147}} 
+\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$ {\bfseries sp\+\_\+exit}
+\item 
+\mbox{\Hypertarget{group__aux__functions_ga39a2356fa3a5e7946d27222ce7a1e7fd}\label{group__aux__functions_ga39a2356fa3a5e7946d27222ce7a1e7fd}} 
+\mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$ {\bfseries bsp\+\_\+instructions}
+\item 
+\mbox{\Hypertarget{group__aux__functions_gaf7c9501220aaeee2732d75f83c6d154b}\label{group__aux__functions_gaf7c9501220aaeee2732d75f83c6d154b}} 
+\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$ {\bfseries sp\+\_\+instructions}
+\item 
+\mbox{\Hypertarget{group__aux__functions_gadd830153e819a6a50b25693bf8576427}\label{group__aux__functions_gadd830153e819a6a50b25693bf8576427}} 
+\mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$ {\bfseries bsp\+\_\+highscore}
+\item 
+\mbox{\Hypertarget{group__aux__functions_gaa13bed87122565ad9efe62a1bbcc4881}\label{group__aux__functions_gaa13bed87122565ad9efe62a1bbcc4881}} 
+\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$ {\bfseries sp\+\_\+highscore}
+\item 
+\mbox{\Hypertarget{group__aux__functions_gafa97affbc5ee6334ae19f09052acb61c}\label{group__aux__functions_gafa97affbc5ee6334ae19f09052acb61c}} 
+\mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$ {\bfseries bsp\+\_\+numbers}
+\item 
+\mbox{\Hypertarget{group__aux__functions_ga52919acf051a3b8ff477cfe33c639f8c}\label{group__aux__functions_ga52919acf051a3b8ff477cfe33c639f8c}} 
+\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$ {\bfseries sp\+\_\+numbers}
+\item 
+\mbox{\Hypertarget{group__aux__functions_ga43e99bef7b4e6ea7bf1349ee40dbc2cd}\label{group__aux__functions_ga43e99bef7b4e6ea7bf1349ee40dbc2cd}} 
+\mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$ {\bfseries bsp\+\_\+hud}
+\item 
+\mbox{\Hypertarget{group__aux__functions_ga3c32eeadeefbabba6567f2ddc9799c59}\label{group__aux__functions_ga3c32eeadeefbabba6567f2ddc9799c59}} 
+\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$ {\bfseries sp\+\_\+hud}
+\item 
+\mbox{\Hypertarget{group__aux__functions_ga67ed21baae2d47b8509d36ce7c92ea25}\label{group__aux__functions_ga67ed21baae2d47b8509d36ce7c92ea25}} 
+\mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$ {\bfseries bsp\+\_\+slash}
+\item 
+\mbox{\Hypertarget{group__aux__functions_gadca235031f2950272f2a22c330878d47}\label{group__aux__functions_gadca235031f2950272f2a22c330878d47}} 
+\mbox{\hyperlink{structsprite}{sprite\+\_\+t}} $\ast$ {\bfseries sp\+\_\+slash}
+\item 
+\mbox{\Hypertarget{group__aux__functions_gadead8956601338a62620294f041d9a98}\label{group__aux__functions_gadead8956601338a62620294f041d9a98}} 
+\mbox{\hyperlink{structtext}{text\+\_\+t}} $\ast$ {\bfseries p\+\_\+health}
+\item 
+\mbox{\Hypertarget{group__aux__functions_ga53c5cdbb99020f14493152953e53ab47}\label{group__aux__functions_ga53c5cdbb99020f14493152953e53ab47}} 
+\mbox{\hyperlink{structtext}{text\+\_\+t}} $\ast$ {\bfseries p\+\_\+kills}
+\item 
+\mbox{\Hypertarget{group__aux__functions_ga28912e6f862e3f8d178ab34778f53551}\label{group__aux__functions_ga28912e6f862e3f8d178ab34778f53551}} 
+\mbox{\hyperlink{structtext}{text\+\_\+t}} $\ast$ {\bfseries game\+\_\+timer}
+\item 
+\mbox{\Hypertarget{group__aux__functions_ga3b4ef1a2343e1ef9fac4f8d070723e01}\label{group__aux__functions_ga3b4ef1a2343e1ef9fac4f8d070723e01}} 
+\mbox{\hyperlink{structtext}{text\+\_\+t}} $\ast$ {\bfseries end\+\_\+p\+\_\+kills}
+\item 
+\mbox{\Hypertarget{group__aux__functions_gac11eb1fd852c95317b658cc78454fffc}\label{group__aux__functions_gac11eb1fd852c95317b658cc78454fffc}} 
+\mbox{\hyperlink{structtext}{text\+\_\+t}} $\ast$ {\bfseries end\+\_\+game\+\_\+timer}
+\item 
+\mbox{\Hypertarget{group__aux__functions_gae239bb9cfb9ad434035ae3a18b19cfbf}\label{group__aux__functions_gae239bb9cfb9ad434035ae3a18b19cfbf}} 
+\mbox{\hyperlink{structdate}{date\+\_\+t}} $\ast$ {\bfseries date1}
+\item 
+\mbox{\Hypertarget{group__aux__functions_gafff5129f7896c702b3316f65e84bde15}\label{group__aux__functions_gafff5129f7896c702b3316f65e84bde15}} 
+\mbox{\hyperlink{structdate}{date\+\_\+t}} $\ast$ {\bfseries date2}
+\item 
+\mbox{\Hypertarget{group__aux__functions_gaa7012cbee91210af7b89b144b654c43f}\label{group__aux__functions_gaa7012cbee91210af7b89b144b654c43f}} 
+\mbox{\hyperlink{structdate}{date\+\_\+t}} $\ast$ {\bfseries date3}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__aux__functions_gaeb42c482fcaaae3a7713f0e5b49c57d6}\label{group__aux__functions_gaeb42c482fcaaae3a7713f0e5b49c57d6}} 
+\index{aux\_functions@{aux\_functions}!date\_ctor@{date\_ctor}}
+\index{date\_ctor@{date\_ctor}!aux\_functions@{aux\_functions}}
+\doxysubsubsection{\texorpdfstring{date\_ctor()}{date\_ctor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structdate}{date\+\_\+t}} $\ast$() date\+\_\+ctor (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+Date constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & horizontal position \\
+\hline
+{\em y} & vertical position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+date 
+\end{DoxyReturn}
+Here is the call graph for this function\+:

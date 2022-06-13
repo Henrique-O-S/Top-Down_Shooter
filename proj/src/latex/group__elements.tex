@@ -1,0 +1,244 @@
+\hypertarget{group__elements}{}\doxysection{elements}
+\label{group__elements}\index{elements@{elements}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structret__pair}{ret\+\_\+pair}}
+\item 
+struct \mbox{\hyperlink{structplayer}{player}}
+\item 
+struct \mbox{\hyperlink{structenemy}{enemy}}
+\item 
+struct \mbox{\hyperlink{structbullet}{bullet}}
+\item 
+struct \mbox{\hyperlink{structmap}{map}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__elements_gaf49bad41acef45feb40939c0cf9d5d35}\label{group__elements_gaf49bad41acef45feb40939c0cf9d5d35}} 
+\#define {\bfseries PLAYER\+\_\+\+SPEED}~5
+\item 
+\mbox{\Hypertarget{group__elements_ga918e3124d6f55628dce6a99d2a615be6}\label{group__elements_ga918e3124d6f55628dce6a99d2a615be6}} 
+\#define {\bfseries ENEMY\+\_\+\+SPEED}~4
+\item 
+\mbox{\Hypertarget{group__elements_ga70b3e643b533b8f785b7912e69434161}\label{group__elements_ga70b3e643b533b8f785b7912e69434161}} 
+\#define {\bfseries BULLET\+\_\+\+SPEED}~30
+\item 
+\mbox{\Hypertarget{group__elements_ga87010ba8737bbdc9c672a04acc9a378e}\label{group__elements_ga87010ba8737bbdc9c672a04acc9a378e}} 
+\#define {\bfseries SHOT\+\_\+\+COOLDOWN}~10
+\item 
+\mbox{\Hypertarget{group__elements_ga200709d3c21daaf3ce4fee30c138aa8d}\label{group__elements_ga200709d3c21daaf3ce4fee30c138aa8d}} 
+\#define {\bfseries BORDER\+\_\+\+OFFSET}~25
+\item 
+\mbox{\Hypertarget{group__elements_ga00719a0387f578831fd8b092bd4d38d3}\label{group__elements_ga00719a0387f578831fd8b092bd4d38d3}} 
+\#define {\bfseries DISTANCE\+\_\+\+THRESHOLD}~500
+\item 
+\mbox{\Hypertarget{group__elements_ga1b274c6654f206bab57cf9578b7e2b31}\label{group__elements_ga1b274c6654f206bab57cf9578b7e2b31}} 
+\#define {\bfseries ATTACK\+\_\+\+THRESHOLD}~175
+\item 
+\mbox{\Hypertarget{group__elements_ga4a40bf0e420cc12b54963b54750d99d2}\label{group__elements_ga4a40bf0e420cc12b54963b54750d99d2}} 
+\#define {\bfseries PLAYER\+\_\+\+SPAWN\+\_\+X}~500
+\item 
+\mbox{\Hypertarget{group__elements_ga8d8711a1eb437af56b982a7c781135fe}\label{group__elements_ga8d8711a1eb437af56b982a7c781135fe}} 
+\#define {\bfseries PLAYER\+\_\+\+SPAWN\+\_\+Y}~500
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structret__pair}{ret\+\_\+pair}} \mbox{\hyperlink{group__elements_gae82a683cc51eb7f73ffc6bbb470bdcda}{ret\+\_\+pair\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Pair defining if a position is beyond a border. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structplayer}{player}} \mbox{\hyperlink{group__elements_ga9df65ef34efcf40007091fa0e679ea0c}{player\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Player struct. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structenemy}{enemy}} \mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Enemy struct. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{group__elements_ga753b243f53ea6b43745e2fa18c01e6ab}{bullet\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Bullet struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__elements_gaefd042701d43329a869bfc984c707991}\label{group__elements_gaefd042701d43329a869bfc984c707991}} 
+\mbox{\hyperlink{group__elements_gae82a683cc51eb7f73ffc6bbb470bdcda}{ret\+\_\+pair\+\_\+t}}() {\bfseries is\+\_\+border} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Function that checks if a position is beyond a border, returning a ret\+\_\+pair\+\_\+t with 1 in a parameter if it\textquotesingle{}s beyond the border in that direction and 0 if it isn\textquotesingle{}t. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_gae0dac1708fbe2a046854077e7ecbc0d2}\label{group__elements_gae0dac1708fbe2a046854077e7ecbc0d2}} 
+double {\bfseries get\+\_\+angle} (\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} e)
+\begin{DoxyCompactList}\small\item\em Returns the angle between the enemy and the position it enters the house. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga3e4354fb607b4fce626593db3cd13036}\label{group__elements_ga3e4354fb607b4fce626593db3cd13036}} 
+double {\bfseries get\+\_\+angle\+\_\+two\+\_\+points} (int x, int y, int x1, int y1)
+\begin{DoxyCompactList}\small\item\em Returns the angle between two points. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga68d3b014b391718c3b3c2494f1a82074}\label{group__elements_ga68d3b014b391718c3b3c2494f1a82074}} 
+double {\bfseries get\+\_\+angle\+\_\+to\+\_\+player} (\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} e)
+\begin{DoxyCompactList}\small\item\em Returns the angle between an enemy and the player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga232cb07c89a848cf1feb7f84e2c135fe}\label{group__elements_ga232cb07c89a848cf1feb7f84e2c135fe}} 
+int {\bfseries get\+\_\+distance} (\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} e)
+\begin{DoxyCompactList}\small\item\em Returns 1 if the enemy is in a position it should enter the house and 0 if it isn\textquotesingle{}t. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_gaa9cc820ca222189d0563d9cfe365a92e}\label{group__elements_gaa9cc820ca222189d0563d9cfe365a92e}} 
+void() {\bfseries build\+\_\+map} ()
+\begin{DoxyCompactList}\small\item\em Builds the map struct where the game takes place. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga3b11d835d79f07bc68a7411380ab079f}\label{group__elements_ga3b11d835d79f07bc68a7411380ab079f}} 
+void() {\bfseries draw\+\_\+map} ()
+\begin{DoxyCompactList}\small\item\em Draws the map on the screen. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga151be3f921bf438accdb3df006886671}\label{group__elements_ga151be3f921bf438accdb3df006886671}} 
+int() {\bfseries build\+\_\+player} (int start\+\_\+x, int start\+\_\+y, \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$idle, \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$shooting)
+\begin{DoxyCompactList}\small\item\em Builds the player struct with the values it has at the start of the game. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga376d69c2a7a538c8eac0b0b4eeecd92d}\label{group__elements_ga376d69c2a7a538c8eac0b0b4eeecd92d}} 
+void() {\bfseries despawn\+\_\+player} (void)
+\begin{DoxyCompactList}\small\item\em Despawns the player from the game, resetting its values when the game ends. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_gabd47ce64b64a5dcb39f1129a92eaad3b}\label{group__elements_gabd47ce64b64a5dcb39f1129a92eaad3b}} 
+void() {\bfseries draw\+\_\+player} ()
+\begin{DoxyCompactList}\small\item\em Draws the player on the screen. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga6b811a4bbaec41619a5ff000813ae112}\label{group__elements_ga6b811a4bbaec41619a5ff000813ae112}} 
+void() {\bfseries update\+\_\+player} (\mbox{\hyperlink{structkeys}{keys\+\_\+t}} $\ast$\mbox{\hyperlink{structkeys}{keys}})
+\begin{DoxyCompactList}\small\item\em Updates the state of the player based on keys pressed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga2dcbae50a90d8664f409cacb03aef5f0}\label{group__elements_ga2dcbae50a90d8664f409cacb03aef5f0}} 
+void() {\bfseries update\+\_\+player\+\_\+pos} ()
+\begin{DoxyCompactList}\small\item\em Updates the position of the player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_gaee839e89257b78e751b27dc840b28ece}\label{group__elements_gaee839e89257b78e751b27dc840b28ece}} 
+int() {\bfseries get\+\_\+player\+\_\+status} ()
+\begin{DoxyCompactList}\small\item\em Returns if the player is alive or not. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga5dba4439f40be12c1b51d4015f21bfa7}\label{group__elements_ga5dba4439f40be12c1b51d4015f21bfa7}} 
+int() {\bfseries get\+\_\+enemies\+\_\+alive} ()
+\begin{DoxyCompactList}\small\item\em Returns how many enemies are currently alive. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga92a08df434beb84ee099d8b42a9ea591}\label{group__elements_ga92a08df434beb84ee099d8b42a9ea591}} 
+int() {\bfseries collision\+\_\+player\+\_\+enemy} (\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} \mbox{\hyperlink{structenemy}{enemy}}, \mbox{\hyperlink{group__elements_ga9df65ef34efcf40007091fa0e679ea0c}{player\+\_\+t}} \mbox{\hyperlink{structplayer}{player}})
+\begin{DoxyCompactList}\small\item\em Checks if there are collisions between the player and an enemy. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_gaab4a77fca8a5a695b4db1f62bff0b2a9}\label{group__elements_gaab4a77fca8a5a695b4db1f62bff0b2a9}} 
+int() {\bfseries collision\+\_\+player\+\_\+wall} (\mbox{\hyperlink{group__elements_ga9df65ef34efcf40007091fa0e679ea0c}{player\+\_\+t}} \mbox{\hyperlink{structplayer}{player}}, int threshold)
+\begin{DoxyCompactList}\small\item\em Checks if there are collisions between the player and a wall. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_gaf8a181a7d6795c7d3c5d636133530a98}\label{group__elements_gaf8a181a7d6795c7d3c5d636133530a98}} 
+int() {\bfseries player\+\_\+get\+\_\+kills} (void)
+\begin{DoxyCompactList}\small\item\em Returns how many kills the player got. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_gaba86813a27d4869e71be86e0f481e8a0}\label{group__elements_gaba86813a27d4869e71be86e0f481e8a0}} 
+int() {\bfseries player\+\_\+get\+\_\+health} (void)
+\begin{DoxyCompactList}\small\item\em Returns how much health the player has. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_gaed39f5647ba1389c4f630492902c69f6}\label{group__elements_gaed39f5647ba1389c4f630492902c69f6}} 
+int() {\bfseries in\+\_\+range\+\_\+of\+\_\+player} (\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} \mbox{\hyperlink{structenemy}{enemy}})
+\begin{DoxyCompactList}\small\item\em Returns distance between an enemy and player. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga2a7787e00191dc02f23bf13ffd53f072}\label{group__elements_ga2a7787e00191dc02f23bf13ffd53f072}} 
+void() {\bfseries tick\+\_\+cooldown} ()
+\begin{DoxyCompactList}\small\item\em Advances the shot cooldown 1 tick. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga1eed60a7b4449704210dbec3e9eef30e}\label{group__elements_ga1eed60a7b4449704210dbec3e9eef30e}} 
+int() {\bfseries build\+\_\+enemies} (\mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$idle, \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$attacking)
+\begin{DoxyCompactList}\small\item\em Builds the enemy structs with the values they should have at the start of the game. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga6269d449cf87c82827507d14986e349d}\label{group__elements_ga6269d449cf87c82827507d14986e349d}} 
+void() {\bfseries draw\+\_\+enemies} ()
+\begin{DoxyCompactList}\small\item\em Draws the enemies on the screen. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga6d8b80d7c68beff8bcfd57116796c2ae}\label{group__elements_ga6d8b80d7c68beff8bcfd57116796c2ae}} 
+void() {\bfseries spawn\+\_\+enemies} (void)
+\begin{DoxyCompactList}\small\item\em Spawns the enemies on the game. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga7da15278550e3cf51c6c15c130da16ff}\label{group__elements_ga7da15278550e3cf51c6c15c130da16ff}} 
+void() {\bfseries despawn\+\_\+enemies} (void)
+\begin{DoxyCompactList}\small\item\em Despawns the enemies at the end of the game, resetting their values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga75f4b25d3615afbf98cf7c4b720261d9}\label{group__elements_ga75f4b25d3615afbf98cf7c4b720261d9}} 
+void() {\bfseries update\+\_\+enemy\+\_\+pos} ()
+\begin{DoxyCompactList}\small\item\em Updates the positions of enemies, moving them. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga8e4712871418dcc7d5fb3a072b468601}\label{group__elements_ga8e4712871418dcc7d5fb3a072b468601}} 
+int() {\bfseries in\+\_\+sight\+\_\+of\+\_\+player} (\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} \mbox{\hyperlink{structenemy}{enemy}})
+\begin{DoxyCompactList}\small\item\em Returns 1 if the enemy has the player on its sight. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga3ec2d05dd6ff70dcdd5073c3e09f07db}\label{group__elements_ga3ec2d05dd6ff70dcdd5073c3e09f07db}} 
+int() {\bfseries collision\+\_\+enemy\+\_\+wall} (\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} \mbox{\hyperlink{structenemy}{enemy}}, int threshold)
+\begin{DoxyCompactList}\small\item\em Checks if there\textquotesingle{}s a collision between the enemy and a wall. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_gabb16c955532dc3bd8792020db469174b}\label{group__elements_gabb16c955532dc3bd8792020db469174b}} 
+int() {\bfseries build\+\_\+bullets} (int startx, int starty, \mbox{\hyperlink{structbasic__sprite}{basic\+\_\+sprite\+\_\+t}} $\ast$$\ast$\mbox{\hyperlink{structsprite}{sprite}})
+\begin{DoxyCompactList}\small\item\em Builds the bullet structs with the values they should have at the start of the game. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_gac833fc6b98694f7e6cb26e54f6e19b04}\label{group__elements_gac833fc6b98694f7e6cb26e54f6e19b04}} 
+void() {\bfseries spawn\+\_\+bullet} ()
+\begin{DoxyCompactList}\small\item\em Spawns a bullet when it is shot with the right direction and position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga377d41d4a15324537b316bfc7a421168}\label{group__elements_ga377d41d4a15324537b316bfc7a421168}} 
+void {\bfseries despawn\+\_\+bullets} (void)
+\begin{DoxyCompactList}\small\item\em Despawns all bullets at the end of the game, resetting their values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_ga284ddfc73c5ee0be160e0bb766d231e4}\label{group__elements_ga284ddfc73c5ee0be160e0bb766d231e4}} 
+void() {\bfseries draw\+\_\+bullets} ()
+\begin{DoxyCompactList}\small\item\em Draws all bullets on the screen. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_gab1f4d04853abc689afcf236a444fa5e0}\label{group__elements_gab1f4d04853abc689afcf236a444fa5e0}} 
+void() {\bfseries update\+\_\+bullet\+\_\+pos} ()
+\begin{DoxyCompactList}\small\item\em Updates the position of the bullets, moving them. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_gab29dd799825a7ef67e792614a745f023}\label{group__elements_gab29dd799825a7ef67e792614a745f023}} 
+int() {\bfseries collision\+\_\+bullet\+\_\+wall} (struct \mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{structbullet}{bullet}})
+\begin{DoxyCompactList}\small\item\em Checks if there\textquotesingle{}s a collision between the bullet and a wall. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_gae4f8f5e94c6f675160d8cab11f02de8a}\label{group__elements_gae4f8f5e94c6f675160d8cab11f02de8a}} 
+int() {\bfseries collision\+\_\+bullet\+\_\+enemy} (\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} \mbox{\hyperlink{structenemy}{enemy}}, struct \mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{structbullet}{bullet}})
+\begin{DoxyCompactList}\small\item\em Checks if there\textquotesingle{}s a collision between the bullet and an enemy. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__elements_gaf215806a957e2b3490a52f0d9340c15f}\label{group__elements_gaf215806a957e2b3490a52f0d9340c15f}} 
+int() {\bfseries wall\+\_\+collision} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Checks if there\textquotesingle{}s a collision between object in (x, y) position with the wall. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__elements_ga56f5fc5c4c51589477f728309cde2c65}\label{group__elements_ga56f5fc5c4c51589477f728309cde2c65}} 
+\mbox{\hyperlink{group__elements_ga9df65ef34efcf40007091fa0e679ea0c}{player\+\_\+t}} {\bfseries p}
+\item 
+\mbox{\Hypertarget{group__elements_gaa9a8beea197e3d552d9bc0a4efe57f07}\label{group__elements_gaa9a8beea197e3d552d9bc0a4efe57f07}} 
+int {\bfseries n\+\_\+enemies}
+\item 
+\mbox{\Hypertarget{group__elements_gaf258526e67bb744432573017e7d7bc73}\label{group__elements_gaf258526e67bb744432573017e7d7bc73}} 
+\mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}} {\bfseries enemies} \mbox{[}10\mbox{]}
+\item 
+\mbox{\Hypertarget{group__elements_gaba491a8e216507a1e9286e8bd652d8c8}\label{group__elements_gaba491a8e216507a1e9286e8bd652d8c8}} 
+int {\bfseries n\+\_\+bullets}
+\item 
+\mbox{\Hypertarget{group__elements_gae3fe896396a0916c265fa1dc483de70c}\label{group__elements_gae3fe896396a0916c265fa1dc483de70c}} 
+\mbox{\hyperlink{group__elements_ga753b243f53ea6b43745e2fa18c01e6ab}{bullet\+\_\+t}} {\bfseries bullets} \mbox{[}5\mbox{]}
+\item 
+struct \mbox{\hyperlink{structmap}{map}} \mbox{\hyperlink{group__elements_gaceb1ca55c7458494b7fe73d271432ad8}{map}}
+\begin{DoxyCompactList}\small\item\em Map where the game takes place. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__elements_ga753b243f53ea6b43745e2fa18c01e6ab}\label{group__elements_ga753b243f53ea6b43745e2fa18c01e6ab}} 
+\index{elements@{elements}!bullet\_t@{bullet\_t}}
+\index{bullet\_t@{bullet\_t}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{bullet\_t}{bullet\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structbullet}{bullet}} \mbox{\hyperlink{group__elements_ga753b243f53ea6b43745e2fa18c01e6ab}{bullet\+\_\+t}}}
+
+
+
+Bullet struct. 
+
+This struct contains all information relevant to the bullet, including sprite, position, speed, firing angle, if it is spawned in currently and time it stays spawned in if it doesn\textquotesingle{}t hit anything \mbox{\Hypertarget{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}\label{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}} 
+\index{elements@{elements}!enemy\_t@{enemy\_t}}
+\index{enemy\_t@{enemy\_t}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{enemy\_t}{enemy\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structenemy}{enemy}} \mbox{\hyperlink{group__elements_gaa72127f30fec41dd9cbd716e9b45b104}{enemy\+\_\+t}}}
+
+
+
+Enemy struct. 
+
+This struct contains all information relevant to the enemy, including its sprites, position, speed and direction its moving, spawn point, where it will try to enter the house, if it\textquotesingle{}s alive or not, and time the enemy stays in the stabbing animation \mbox{\Hypertarget{group__elements_ga9df65ef34efcf40007091fa0e679ea0c}\label{group__elements_ga9df65ef34efcf40007091fa0e679ea0c}} 
+\index{elements@{elements}!player\_t@{player\_t}}
+\index{player\_t@{player\_t}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{player\_t}{player\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structplayer}{player}} \mbox{\hyperlink{group__elements_ga9df65ef34efcf40007091fa0e679ea0c}{player\+\_\+t}}}
+
+
+
+Player struct. 
+
+This struct contains all information relevant to the player, including its sprites, position, speed and direction its moving, number of kills, cooldown between shots, health and if it\textquotesingle{}s alive or not, and time the player stays in the shooting animation \mbox{\Hypertarget{group__elements_gae82a683cc51eb7f73ffc6bbb470bdcda}\label{group__elements_gae82a683cc51eb7f73ffc6bbb470bdcda}} 
+\index{elements@{elements}!ret\_pair\_t@{ret\_pair\_t}}
+\index{ret\_pair\_t@{ret\_pair\_t}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{ret\_pair\_t}{ret\_pair\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structret__pair}{ret\+\_\+pair}} \mbox{\hyperlink{group__elements_gae82a683cc51eb7f73ffc6bbb470bdcda}{ret\+\_\+pair\+\_\+t}}}
+
+
+
+Pair defining if a position is beyond a border. 
+
+This pair contains a x and a y argument, each taking the value of 1 if a position is beyond a border and 0 if it\textquotesingle{}s inside 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group__elements_gaceb1ca55c7458494b7fe73d271432ad8}\label{group__elements_gaceb1ca55c7458494b7fe73d271432ad8}} 
+\index{elements@{elements}!map@{map}}
+\index{map@{map}!elements@{elements}}
+\doxysubsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structmap}{map}} \mbox{\hyperlink{structmap}{map}}}
+
+
+
+Map where the game takes place. 
+
+This struct contains information to draw the map where the game takes place and which parts of it are walls so they have collisions 

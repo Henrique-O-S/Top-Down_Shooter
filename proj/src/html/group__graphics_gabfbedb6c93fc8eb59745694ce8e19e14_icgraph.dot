@@ -1,0 +1,16 @@
+digraph "draw_hline"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="draw_hline",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="draws horizontal line into the buffer"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="draw_rectangle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__graphics.html#ga31178cc71e7af0d6045707842517b225",tooltip="draws rectangle into the buffer"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="paint_screen",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__graphics.html#ga1430d88a17cc33c0fb2a40dd6a4aaabc",tooltip="Paints the full screen with a given color."];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="vg_draw_rectangle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__graphics.html#ga99d2da2559e11200c6b40c469e9977ec",tooltip="aux function to draw rectangle into the buffer"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="draw_menu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__aux__functions.html#ga8b436345808e86cfdb278061a65a0fe7",tooltip="Draws Main Menu."];
+}

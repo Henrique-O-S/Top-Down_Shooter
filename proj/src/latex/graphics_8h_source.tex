@@ -1,0 +1,65 @@
+\hypertarget{graphics_8h_source}{}\doxysection{graphics.\+h}
+\label{graphics_8h_source}\index{libraries/graphics/include/graphics.h@{libraries/graphics/include/graphics.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GRAPHICS\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GRAPHICS\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <lcom/lcf.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}graphics\_macros.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define GET\_RED(n)          (0xFF \& ((n) >> 16))}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GET\_GRE(n)          (0xFF \& ((n) >>  8))}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define GET\_BLU(n)          (0xFF \& (n      ))}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define SET\_RED(n)          (((n)\&0xFF) << 16)}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define SET\_GRE(n)          (((n)\&0xFF) <<  8)}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define SET\_BLU(n)          (((n)\&0xFF)      )}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define SET\_COLOR(r,g,b)    (SET\_RED(r) | SET\_GRE(g) | SET\_BLU(b))}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define FAR2PHYS(n)         ((((n)>>12) \& 0xFFFFFFF0) + ((n) \& 0x0000FFFF))}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{29 int (\mbox{\hyperlink{group__graphics_ga270cebf5612b0408b5103d5c98fdc7c6}{set\_vbe\_mode}})(uint16\_t mode);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{38 int (\mbox{\hyperlink{group__graphics_gab202e9acd2a0826e183d01a13930d5d6}{set\_pixel}})(uint16\_t x, uint16\_t y, uint32\_t color);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{48 int (\mbox{\hyperlink{group__graphics_gabfbedb6c93fc8eb59745694ce8e19e14}{draw\_hline}})(uint16\_t x, uint16\_t y, uint16\_t len, uint32\_t color);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{59 int (\mbox{\hyperlink{group__graphics_ga31178cc71e7af0d6045707842517b225}{draw\_rectangle}})(uint16\_t x, uint16\_t y,uint16\_t width, uint16\_t height, uint32\_t color);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{70 int (\mbox{\hyperlink{group__graphics_ga99d2da2559e11200c6b40c469e9977ec}{vg\_draw\_rectangle}})(uint16\_t x, uint16\_t y,uint16\_t width, uint16\_t height, uint32\_t color);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{78 int (\mbox{\hyperlink{group__graphics_ga3f35ae9212b60b107e7fa82d6fad6d22}{get\_permission}})(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} base\_addr, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{85 int (\mbox{\hyperlink{group__graphics_ga43e7a2cc7510bba330b712f0c35f4182}{vbe\_get\_mode\_information}})(uint16\_t mode);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{91 int (\mbox{\hyperlink{group__graphics_gacfc4589de71bef6e8446198c70e28974}{free\_memory\_map}})(void);}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{96 void (\mbox{\hyperlink{group__graphics_ga59fe4af42434741fab1b76cc42d51058}{draw\_double\_buffer}})(void);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{102 int (\mbox{\hyperlink{group__graphics_ga78fda8a56aed2c406353ad605e361073}{map\_vram}})(void);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{108 uint16\_t \mbox{\hyperlink{group__graphics_ga9b1703881c2c7c2fc1d05679a867dfed}{get\_bits\_pixel}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{114 uint16\_t \mbox{\hyperlink{group__graphics_gafa7636d40c82e2b1a63585e2ad8138ff}{get\_bytes\_pixel}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{120 uint16\_t \mbox{\hyperlink{group__graphics_ga1e78ad9ed25b03687bc0b0d06b3957e4}{get\_XRes}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{126 uint16\_t \mbox{\hyperlink{group__graphics_gaff98c1ed5146900037a3747de30f6a79}{get\_YRes}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{132 uint16\_t \mbox{\hyperlink{group__graphics_gafb4ad1f3736c17e4e000461243e3faf6}{get\_RedMaskSize}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{138 uint16\_t \mbox{\hyperlink{group__graphics_gadda5dcfacfba9f9657c8f70a266adee2}{get\_GreenMaskSize}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{144 uint16\_t \mbox{\hyperlink{group__graphics_gab1eee0c55083ae85a35e6c5f4b0c5493}{get\_BlueMaskSize}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{150 phys\_bytes \mbox{\hyperlink{group__graphics_gacaadaa500eac72ea406149bc3cdb59d3}{get\_phys\_addr}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{156 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{group__graphics_gadd9a51710818c110bb5699378f1af8cb}{get\_vram\_size}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{163 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__graphics_ga1430d88a17cc33c0fb2a40dd6a4aaabc}{paint\_screen}}(uint32\_t color);}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{169 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__graphics_gafa445e5837d138c8bc596dd2f287fc44}{clear\_screen}}();}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//GRAPHICS\_H\_INCLUDED}}
+
+\end{DoxyCode}

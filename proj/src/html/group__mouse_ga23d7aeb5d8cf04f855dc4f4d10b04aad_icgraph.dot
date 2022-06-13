@@ -1,0 +1,10 @@
+digraph "get_mouse_X"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="get_mouse_X",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Gets mouse horizontal position."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="mouse_on_top",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__aux__functions.html#ga56706f876d01dbcb1a5d68dcdaa03c85",tooltip="Gets value if its on top of a menu item."];
+}
