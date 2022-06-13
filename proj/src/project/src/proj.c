@@ -1,4 +1,4 @@
- #include <lcom/lcf.h>
+#include <lcom/lcf.h>
 
 #include "proj.h"
 #include "player0.h"
@@ -87,7 +87,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
   build_map();
   build_player(500, 500, bsp_player_idle, bsp_player_shooting); 
-  build_monsters(bsp_enemy_idle, bsp_enemy_attacking);
+  build_enemies(bsp_enemy_idle, bsp_enemy_attacking);
   build_bullets(170, 80, bsp_bullet);
 
 
@@ -121,7 +121,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
 
                       if(game_enter){
                         if(game_display(keys)) {
-                          game_dispawn_everyting();
+                          game_despawn_everyting();
                           game_enter = false;
                           gameover = true;
                         }
@@ -156,7 +156,7 @@ int(proj_main_loop)(int argc, char* argv[]) {
                     }
                     if(get_scancode()[0] == 0x81){ //ESC scancode, can probably done in key process in kbd
                       if(game_enter) {
-                        game_dispawn_everyting();
+                        game_despawn_everyting();
                         game_enter = false;
                         gameover = true;
                       }

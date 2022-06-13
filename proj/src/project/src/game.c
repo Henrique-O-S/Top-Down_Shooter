@@ -18,13 +18,13 @@ int(game_display)(keys_t *keys) {
   tick_cooldown();
   map1_background();
   draw_map();
-  if(get_no_interupts()/60 <= 60) spawn_monsters();
-  update_monster_pos();
+  if(get_no_interupts()/60 <= 60) spawn_enemies();
+  update_enemy_pos();
 
-  set_player_pos(keys);
+  update_player(keys);
 
   draw_player();
-  draw_monsters();
+  draw_enemies();
 
   update_bullet_pos();
   draw_bullets();
@@ -37,17 +37,17 @@ int(game_display)(keys_t *keys) {
   draw_double_buffer();
 
   if (!get_player_status()) return 1;
-  if (!get_game_status() && get_no_interupts()/60 > 60) return 1;
+  if (!get_enemies_alive() && get_no_interupts()/60 > 60) return 1;
 
   return 0;
 }
 
-void(game_dispawn_everyting()) {
+void(game_despawn_everyting()) {
   player_kills = player_get_kills();
   end_game_time = get_no_interupts()/60;
-  dispawn_monsters();
-  dispawn_player();
-  dispawn_bullets();
+  despawn_enemies();
+  despawn_player();
+  despawn_bullets();
   set_highscore(player_kills);
 }
 

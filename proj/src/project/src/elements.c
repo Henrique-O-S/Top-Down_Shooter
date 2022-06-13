@@ -55,7 +55,7 @@ int (build_player)(int start_x, int start_y,  basic_sprite_t **idle,  basic_spri
     return 0; 
 }
 
-void (dispawn_player)(void) {
+void (despawn_player)(void) {
     p.x = PLAYER_SPAWN_X; p.y = PLAYER_SPAWN_Y;
     p.health = 3;
     p.alive = 1;
@@ -81,14 +81,14 @@ void (draw_player)(){
     }
 }
 
-void (set_player_pos)(keys_t *keys) {
+void (update_player)(keys_t *keys) {
     p.yMov = keys->s_pressed - keys->w_pressed;
     p.xMov = keys->d_pressed - keys->a_pressed;
     update_player_pos();
 
     if(keys->lb_pressed && p.cur_cooldown == 0) {
         p.wait = p.wait_threshold;
-        spawn_bullets();
+        spawn_bullet();
         p.cur_cooldown = p.shot_cooldown;
     }
 }
@@ -124,9 +124,7 @@ void (update_player_pos)(){
         } 
         
         for(int i = 0; i < n_enemies; i++){
-            if(enemies[i].alive && collision_player_monster(enemies[i], p) && enemies[i].wait == 7){
-                // enemies[i].alive = 0; //for test
-                // enemy_reset(&enemies[i]); // for test
+            if(enemies[i].alive && collision_player_enemy(enemies[i], p) && enemies[i].wait == 7){
                 
                 p.health--;
                 if (!p.health)
@@ -141,7 +139,7 @@ int (get_player_status)() {
     return p.alive;
 }
 
-int (get_game_status)() {
+int (get_enemies_alive)() {
     int r = 0;
     for(int i = 0; i < n_enemies; i++) {
         if(enemies[i].alive) r++;
@@ -149,7 +147,7 @@ int (get_game_status)() {
     return r;
 }
 
-int (collision_player_monster)(enemy_t enemy, player_t player) {
+int (collision_player_enemy)(enemy_t enemy, player_t player) {
     double player_radius = fmax(sprite_get_w(player.player_idle), sprite_get_h(player.player_idle))/2.0;
     double monster_radius = fmax(sprite_get_w(enemy.enemy_idle), sprite_get_h(enemy.enemy_idle))/2.0;
     double distance_x = enemy.x - player.x;
@@ -194,17 +192,6 @@ ret_pair_t (is_border)(int x, int y) {
     return ret;
 }
 
-ret_pair_t (path_to_take)(int x, int y) {
-    ret_pair_t ret;
-    
-    ret.x = (x - p.x < 0)? 1 : -1 ;
-    ret.y = (y - p.y < 0)? 1 : -1 ;
-    if(x-p.x == 0) ret.x = 0;
-    if(y-p.y == 0) ret.y = 0;
-
-    return ret;
-}
-
 int (in_range_of_player)(enemy_t enemy) {
     int x = abs(enemy.x - p.x);
     int y = abs(enemy.y - p.y);
@@ -239,7 +226,7 @@ int get_distance(enemy_t e) {
 
 int n_enemies = 4;
 
-int (build_monsters)(basic_sprite_t **idle,  basic_sprite_t **attacking) {
+int (build_enemies)(basic_sprite_t **idle,  basic_sprite_t **attacking) {
     for(int i = 0; i < n_enemies; i++){
         enemy_t m;
         m.id = i;
@@ -262,7 +249,7 @@ int (build_monsters)(basic_sprite_t **idle,  basic_sprite_t **attacking) {
     return 0; 
 }
 
-void (draw_monsters)() {
+void (draw_enemies)() {
     for(int i = 0; i < n_enemies; i++){
         if(enemies[i].alive){
             
@@ -285,7 +272,7 @@ void (draw_monsters)() {
     }
 }
 
-void (spawn_monsters)(void) {
+void (spawn_enemies)(void) {
     for(int i = 0; i < n_enemies; i++){
         if(!enemies[i].alive) {
             enemies[i].alive = 1;
@@ -304,7 +291,7 @@ void (spawn_monsters)(void) {
     }
 }
 
-void (dispawn_monsters)(void) {
+void (despawn_enemies)(void) {
     for(int i = 0; i < n_enemies; i++){
         if(enemies[i].alive) {
             enemies[i].alive = 0;
@@ -315,12 +302,7 @@ void (dispawn_monsters)(void) {
     }
 }
 
-void (enemy_reset)(enemy_t *enemy) {
-    sprite_update_animation(enemy->enemy_attacking, 1);
-    enemy->wait = 0;
-}
-
-void (update_monster_pos)(){
+void (update_enemy_pos)(){
     for(int i = 0; i < n_enemies; i++){
         if(enemies[i].alive){
             int x0 = enemies[i].x;
@@ -363,7 +345,7 @@ void (update_monster_pos)(){
                 }              
             }
 
-            if(collision_monster_wall(enemies[i], -30)){
+            if(collision_enemy_wall(enemies[i], -30)){
                 enemies[i].x = x0;
                 enemies[i].y = y0;
             }
@@ -396,7 +378,7 @@ int (in_sight_of_player)(enemy_t enemy) {
     return 0;
 }
 
-int (collision_monster_wall)( enemy_t enemy, int threshold) {
+int (collision_enemy_wall)( enemy_t enemy, int threshold) {
     double radius = fmax(sprite_get_w(enemy.enemy_idle), sprite_get_h(enemy.enemy_idle))/7.0;
     radius += threshold;
     for (double x = -radius; x <= radius; x += 1) {
@@ -429,7 +411,7 @@ int (build_bullets)(int start_x, int start_y, basic_sprite_t **sprite){
     return 0; 
 }
 
-void (spawn_bullets)(void) {
+void (spawn_bullet)(void) {
 
      for(int i = 0; i < n_bullets; i++){
         if(!bullets[i].fired) {
@@ -446,7 +428,7 @@ void (spawn_bullets)(void) {
     
 }
 
-void dispawn_bullets(void) {
+void despawn_bullets(void) {
     for(int i = 0; i < n_bullets; i++){
         if(bullets[i].fired) {
             bullets[i].fired = 0;
@@ -487,7 +469,7 @@ void (update_bullet_pos)(){
              //NEEDS TO BE FIXED
             for(int j = 0; j < n_enemies; j++){
                 if(enemies[j].alive){
-                    if(collision_bullet_monster(enemies[j], bullets[i])) {
+                    if(collision_bullet_enemy(enemies[j], bullets[i])) {
                         p.kills++;
                         bullets[i].fired = 0;
                         bullets[i].wait = 0;
@@ -510,7 +492,7 @@ int (collision_bullet_wall)(bullet_t bullet) {
     return 0;
 }
 
-int (collision_bullet_monster)(enemy_t enemy, bullet_t bullet) {
+int (collision_bullet_enemy)(enemy_t enemy, bullet_t bullet) {
     double bullet_radius = fmax(sprite_get_w(bullet.bullet_sprite), sprite_get_h(bullet.bullet_sprite))/2.0;
     double monster_radius = fmax(sprite_get_w(enemy.enemy_idle), sprite_get_h(enemy.enemy_idle))/4.0;
     double distance_x = enemy.x - bullet.x;
