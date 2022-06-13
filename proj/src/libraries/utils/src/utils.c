@@ -32,4 +32,5 @@ int (util_sys_inb)(int port, uint8_t *value) {
 }
 
 int16_t min(int16_t a, int16_t b){ return (b < a ? b : a); }
+
 int16_t max(int16_t a, int16_t b){ return (a < b ? b : a); }

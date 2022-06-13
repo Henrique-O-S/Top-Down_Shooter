@@ -9,14 +9,14 @@
 #include "utils.h"
 #include "sprite.h"
 
-int mouse_subscribe_int(uint8_t interrupt_bit, int *interrupt_id){
+int (mouse_subscribe_int)(uint8_t interrupt_bit, int *interrupt_id){
     if (interrupt_id == NULL) return 1;
     *interrupt_id = interrupt_bit;
     if(sys_irqsetpolicy(MOUSE_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, interrupt_id)) return 1;
     return 0;
 }
 
-int mouse_unsubscribe_int(int *interrupt_id){
+int (mouse_unsubscribe_int)(int *interrupt_id){
     if (interrupt_id == NULL) return 1;
     if(sys_irqrmpolicy(interrupt_id)) return 1;
     return 0;
@@ -68,16 +68,15 @@ void (update_mouse)(struct packet *p) {
     mouse_y = max(0, mouse_y - p->delta_y);
     mouse_y = min(mouse_y, (int16_t)get_YRes() - 1);
 
-    //key_presses.lb_pressed = p->lb;
 }
-int16_t get_mouse_X(void) { 
+int16_t (get_mouse_X)(void) { 
     return mouse_x; 
 }
-int16_t get_mouse_Y(void) { 
+int16_t (get_mouse_Y)(void) { 
     return mouse_y;
 }
 
-double get_mouse_angle(const sprite_t *p) {
+double (get_mouse_angle)(const sprite_t *p) {
     return atan2(sprite_get_Y(p) - mouse_y, mouse_x - sprite_get_X(p));
 }
 

@@ -2,7 +2,6 @@
 #define KBC_H_INCLUDED
 
 /**
-<<<<<<< HEAD
  * @defgroup kbc kbc
  * @ingroup libraries
  *

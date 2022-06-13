@@ -40,7 +40,20 @@ int(util_get_MSB)(uint16_t val, uint8_t *msb);
  */
 int (util_sys_inb)(int port, uint8_t *value);
 
+/**
+ * @brief Gets the minimum between to given values
+ * @param a value to be compared
+ * @param b value to be compared
+ * @return smaller value between the two
+ */
 int16_t min(int16_t a, int16_t b);
+
+/**
+ * @brief Gets the maximum between to given values
+ * @param a value to be compared
+ * @param b value to be compared
+ * @return bigger value between the two
+ */
 int16_t max(int16_t a, int16_t b);
 
 /**@}*/
